@@ -1,0 +1,19 @@
+# Zelvori Software
+
+> Zelvori Software turns ideas into digital products, including websites, web applications, mobile apps, e-commerce, business software, AI integration and custom software.
+
+Official website: https://zelvori.software/
+
+## Services
+- [Website and web app development](https://zelvori.software/services/website-development.html): Business websites, landing pages, portals, browser-based apps and responsive front-end work.
+- [Mobile app development](https://zelvori.software/services/mobile-app-development.html): Android and iOS product planning, mobile experiences, integrations and release preparation.
+- [E-commerce development](https://zelvori.software/services/ecommerce-development.html): Storefronts, catalogs, checkout planning and commerce workflows.
+- [Business software](https://zelvori.software/services/business-software.html): CRM, HRMS, ERP, workflow portals and reporting dashboards.
+- [AI and automation](https://zelvori.software/services/ai-automation.html): Practical AI integration, document workflows and task automation with human review where appropriate.
+- [Custom software](https://zelvori.software/services/custom-software.html): Purpose-built internal tools, integrations and digital platforms.
+
+## Contact
+The website currently lists hello@zelvori.software as its contact address. Confirm that the mailbox is active before relying on it.
+
+## Notes
+Descriptions explain service areas, not guaranteed outcomes. No client names, testimonials, awards, pricing or performance metrics are asserted by this site.
