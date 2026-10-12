@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zelvori.software/sitemap.xml
