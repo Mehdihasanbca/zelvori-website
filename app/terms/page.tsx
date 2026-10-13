@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     'Terms of Service governing the use of the Zelvori Software website and professional digital engineering engagements.',
   alternates: {
-    canonical: 'https://zelvori.software/terms',
+    canonical: 'https://zelvori.software/terms/',
   },
 };
 
