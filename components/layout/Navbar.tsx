@@ -62,7 +62,7 @@ export function Navbar() {
         </div>
 
         {/* Zone 2: 4-5 Concise Single-Line Nav Links */}
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+        <nav className="hidden md:flex items-center gap-5 text-sm font-medium text-slate-300">
           {/* Services dropdown */}
           <div
             className="relative"
@@ -149,6 +149,22 @@ export function Navbar() {
             }`}
           >
             Pricing
+          </Link>
+          <Link
+            href="/stories/"
+            className={`hover:text-white transition-colors whitespace-nowrap shrink-0 py-2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-cyan-400 rounded ${
+              pathname.startsWith('/stories') ? 'text-cyan-400' : 'text-slate-300'
+            }`}
+          >
+            Stories
+          </Link>
+          <Link
+            href="/resources/"
+            className={`hover:text-white transition-colors whitespace-nowrap shrink-0 py-2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-cyan-400 rounded ${
+              pathname.startsWith('/resources') ? 'text-cyan-400' : 'text-slate-300'
+            }`}
+          >
+            Resources
           </Link>
           <Link
             href="/#work"
@@ -254,6 +270,20 @@ export function Navbar() {
               className="block px-3 py-2.5 text-sm font-medium text-slate-200 hover:text-white hover:bg-slate-900/80 rounded-xl transition-colors"
             >
               Pricing &amp; Packages
+            </Link>
+            <Link
+              href="/stories/"
+              onClick={closeMenus}
+              className="block px-3 py-2.5 text-sm font-medium text-slate-200 hover:text-white hover:bg-slate-900/80 rounded-xl transition-colors"
+            >
+              Industry Stories
+            </Link>
+            <Link
+              href="/resources/"
+              onClick={closeMenus}
+              className="block px-3 py-2.5 text-sm font-medium text-cyan-300 hover:text-cyan-200 hover:bg-cyan-950/30 rounded-xl transition-colors"
+            >
+              Free Developer Resources
             </Link>
             <Link
               href="/payments"
