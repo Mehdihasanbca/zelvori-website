@@ -1,0 +1,33 @@
+# Zelvori Software
+> Ideas Into Digital Reality.
+
+Zelvori Software (https://zelvori.software/) is an international digital product development partner serving startups, growing companies, and enterprises. The company specializes in modern web application development, iOS and Android mobile applications, bespoke e-commerce platforms, custom enterprise business software (CRM, HRMS, ERP), and AI integration & workflow automation.
+
+## Core Services
+
+- Website & Web Application Development (https://zelvori.software/services/web-development)
+  Custom SaaS platforms, Next.js and React web apps, high-conversion web properties, REST/GraphQL APIs, and headless CMS integrations.
+- Android & iOS Mobile App Development (https://zelvori.software/services/mobile-apps)
+  Cross-platform React Native and Flutter applications, native Swift and Kotlin engineering, offline-first data sync, and app store publishing.
+- E-Commerce Website Development (https://zelvori.software/services/ecommerce)
+  Custom headless commerce, Shopify Plus architectures, multi-currency international storefronts, and automated inventory sync.
+- Custom CRM, HRMS, ERP & Business Software (https://zelvori.software/services/business-software)
+  Bespoke operational systems designed for proprietary business workflows, role-based access control (RBAC), and automated reporting.
+- AI Integration & Workflow Automation (https://zelvori.software/services/ai-automation)
+  Production-grade LLM integrations, document parsing, RAG knowledge bases, queue automation, and intelligent support routing.
+- Custom Software & System Integrations (https://zelvori.software/services/custom-software)
+  Backend architectures, microservices, third-party API orchestration, legacy modernization, and distributed event systems.
+
+## Architectural Archetypes & Capabilities
+
+- Selected Work Showcase (https://zelvori.software/#work)
+  Production architectures covering Multi-Tenant Treasury & Billing, Global Fleet Telemetry & Dispatch, Enterprise Document Extraction, and Omnichannel Headless Commerce.
+
+## Company Information
+
+- Website: https://zelvori.software
+- Contact: hello@zelvori.software
+- About: https://zelvori.software/about
+- Project Inquiry: https://zelvori.software/contact
+- Privacy Policy: https://zelvori.software/privacy
+- Terms of Service: https://zelvori.software/terms

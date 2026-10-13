@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="zelvoriGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="50%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#6366f1" />
+    </linearGradient>
+    <linearGradient id="zelvoriDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#070b14" />
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#zelvoriDark)" stroke="#1e293b" stroke-width="1.5" />
+  <!-- Geometric Interlocking Z Monogram -->
+  <path d="M16 20 H48 L32 36 H48 V44 H16 L32 28 H16 Z" fill="url(#zelvoriGrad)" fill-rule="evenodd" />
+  <!-- Precision node accents -->
+  <circle cx="16" cy="20" r="2.5" fill="#22d3ee" />
+  <circle cx="48" cy="44" r="2.5" fill="#818cf8" />
+</svg>

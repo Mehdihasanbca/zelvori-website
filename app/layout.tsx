@@ -1,0 +1,134 @@
+import type { Metadata } from 'next';
+import './globals.css';
+import { Navbar } from '@/components/layout/Navbar';
+import { Footer } from '@/components/layout/Footer';
+import { criticalCss } from '@/lib/critical-css';
+
+export const metadata: Metadata = {
+  metadataBase: new URL('https://zelvori.software'),
+  title: {
+    default: 'Zelvori Software — Ideas Into Digital Reality',
+    template: '%s | Zelvori Software',
+  },
+  description:
+    'International digital product development partner. We engineer high-performance web applications, mobile apps, e-commerce platforms, custom ERP/CRM software, and AI workflow automation.',
+  keywords: [
+    'Zelvori Software',
+    'web development',
+    'mobile app development',
+    'custom software',
+    'ERP systems',
+    'CRM software',
+    'AI workflow automation',
+    'enterprise software development',
+    'Next.js development',
+    'React Native apps',
+  ],
+  authors: [{ name: 'Zelvori Software' }],
+  creator: 'Zelvori Software',
+  publisher: 'Zelvori Software',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  alternates: {
+    canonical: 'https://zelvori.software/',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://zelvori.software/',
+    title: 'Zelvori Software — Ideas Into Digital Reality',
+    description:
+      'International digital product development partner. Engineering scalable web platforms, native mobile apps, custom business systems, and AI automation for global companies.',
+    siteName: 'Zelvori Software',
+    images: [
+      {
+        url: '/icon.svg',
+        width: 1200,
+        height: 630,
+        alt: 'Zelvori Software — Ideas Into Digital Reality',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Zelvori Software — Ideas Into Digital Reality',
+    description:
+      'International digital product development partner building web applications, mobile apps, enterprise business software, and AI workflow automation.',
+    images: ['/icon.svg'],
+  },
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/icon.svg', type: 'image/svg+xml' },
+    ],
+    apple: [{ url: '/icon.svg' }],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+};
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Zelvori Software',
+  alternateName: 'Zelvori',
+  url: 'https://zelvori.software',
+  logo: 'https://zelvori.software/icon.svg',
+  description:
+    'International digital product development partner specializing in web applications, mobile apps, e-commerce, custom ERP/CRM software, and AI workflow automation.',
+  email: 'hello@zelvori.software',
+  sameAs: [
+    'https://github.com/Mehdihasanbca/zelvori-website',
+    'https://www.linkedin.com/company/zelvori-software',
+    'https://x.com/zelvorisoftware',
+  ],
+  knowsAbout: [
+    'Web Application Development',
+    'Mobile Application Development',
+    'E-Commerce Development',
+    'Custom CRM and ERP Systems',
+    'AI Workflow Automation',
+    'System Integrations',
+  ],
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en" className="dark scroll-smooth">
+      <head>
+        {/* Critical Above-The-Fold CSS Inlined for Instant Paint & Zero Render Blocking */}
+        <style
+          id="critical-css"
+          dangerouslySetInnerHTML={{ __html: criticalCss }}
+        />
+        {/* Resource Pre-Connect Hints */}
+        <link rel="preconnect" href="https://zelvori.software" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+      </head>
+      <body className="min-h-screen bg-[#070b14] text-slate-100 flex flex-col font-sans selection:bg-cyan-500/20 selection:text-cyan-300" suppressHydrationWarning>
+        <Navbar />
+        <main className="flex-1">{children}</main>
+        <Footer />
+      </body>
+    </html>
+  );
+}

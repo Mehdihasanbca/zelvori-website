@@ -1,24 +1,78 @@
-# Zelvori Software website
+# Zelvori Software
 
-Official static website for [zelvori.software](https://zelvori.software/).
+> Ideas Into Digital Reality.
 
-## Contents
-- `index.html` — responsive homepage and organization metadata
-- `assets/css/styles.css` — responsive dark/cyan visual system
-- `assets/js/main.js` — small accessible navigation interaction
-- `services/` — search-friendly service pages
-- `robots.txt` and `sitemap.xml` — crawler guidance and sitemap
-- `.github/workflows/pages.yml` — GitHub Pages deployment
+Official website for **Zelvori Software** ([zelvori.software](https://zelvori.software/)), engineered with **Next.js 15 (App Router)**, TypeScript, and Tailwind CSS.
 
-## Deploy with GitHub Pages
-The included Actions workflow publishes the repository root to GitHub Pages when commits land on `main`. In repository Settings → Pages, choose **GitHub Actions** as the build and deployment source.
+## Architecture
 
-For a custom domain, ensure the domain is registered and its DNS records point to GitHub Pages. Then enter `zelvori.software` in Settings → Pages → Custom domain, enable Enforce HTTPS when available, and verify both apex and `www` behavior.
+This project is configured for **static export (`output: 'export'`)** with trailing slash resolution (`trailingSlash: true`), optimized for automated hosting on **GitHub Pages** with a custom apex domain.
 
-## Before promoting the site
-- Confirm the custom domain DNS and HTTPS are working.
-- Set up and test the published contact address `hello@zelvori.software`, or replace it in `index.html` and service pages with the preferred contact address.
-- Add real company details and project examples only when ready; the current copy intentionally avoids fabricated client logos, testimonials, awards, or performance claims.
-- A sitemap helps search engines discover pages but does not guarantee indexing or ranking. Submit it in Google Search Console and Bing Webmaster Tools after launch.
+- **Framework:** Next.js 15 (App Router)
+- **Styling:** Tailwind CSS with critical CSS extraction
+- **Static Export Directory:** `out/`
+- **Custom Domain:** `https://zelvori.software/` (managed via `public/CNAME`)
+- **Backend Dependencies:** None (100% static, client-side, zero secret API keys required)
 
-This is a static site. No backend database or contact-form submission service is currently configured.
+## Project Structure
+
+```
+├── .github/workflows/
+│   └── deploy.yml          # Automated GitHub Pages build & deploy workflow
+├── app/                    # Next.js 15 App Router pages & layouts
+│   ├── about/              # About Zelvori Software
+│   ├── contact/            # Project Inquiry Builder & Contact Desk
+│   ├── services/           # 6 Dedicated Service Pages
+│   │   ├── ai-automation/
+│   │   ├── business-software/
+│   │   ├── custom-software/
+│   │   ├── ecommerce/
+│   │   ├── mobile-apps/
+│   │   └── web-development/
+│   ├── privacy/            # Privacy Policy
+│   ├── terms/              # Terms of Service
+│   ├── globals.css         # Tailwind & global design tokens
+│   ├── layout.tsx          # Root Layout & Metadata
+│   ├── not-found.tsx       # Branded 404 handler
+│   └── page.tsx            # Homepage with Hero, Selected Work & Services
+├── components/             # Reusable UI, layout & section components
+├── hooks/                  # Custom React hooks (useIsMobile, etc.)
+├── lib/                    # Configuration, critical CSS & schema definitions
+│   ├── critical-css.ts     # Inlined above-the-fold critical CSS
+│   └── site-config.ts      # Central configurable contact & navigation data
+└── public/                 # Static assets (CNAME, sitemap, robots, llms)
+    ├── CNAME               # Custom domain pointer (zelvori.software)
+    ├── favicon.svg         # SVG favicon
+    ├── icon.svg            # Web clip icon
+    ├── llms.txt            # LLM discovery context
+    ├── robots.txt          # Crawler instructions
+    └── sitemap.xml         # Production XML sitemap
+```
+
+## Local Development
+
+```bash
+# Install dependencies
+npm install
+
+# Start local development server
+npm run dev
+# Server runs on http://localhost:3000
+
+# Build static production export
+npm run build
+# Compiles static HTML/CSS/JS into the ./out directory
+```
+
+## GitHub Pages Deployment
+
+Deployment is fully automated using GitHub Actions via `.github/workflows/deploy.yml`:
+
+1. Push commits to `main` or `master`.
+2. The workflow checks out the repository, installs dependencies, runs `npm run build`, verifies that `out/` and `out/CNAME` exist, and deploys the `out/` directory using official `actions/deploy-pages@v4`.
+3. In repository **Settings** → **Pages**, ensure **Source** is set to **GitHub Actions**.
+4. In repository **Settings** → **Pages** → **Custom domain**, enter `zelvori.software` and enable **Enforce HTTPS**.
+
+## Contact Configuration
+
+All contact information is centralized in `lib/site-config.ts`. The default placeholder is `hello@zelvori.software`.
