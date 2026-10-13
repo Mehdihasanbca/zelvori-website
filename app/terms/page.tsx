@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { siteConfig } from '@/lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Terms of Service | Zelvori',
+  title: 'Terms of Service',
   description:
     'Terms of Service governing the use of the Zelvori website and professional digital engineering engagements.',
   alternates: {

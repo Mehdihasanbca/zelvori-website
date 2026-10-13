@@ -5,7 +5,7 @@ import { ContactForm } from '@/components/contact/ContactForm';
 import { Mail, Clock, ShieldCheck, MessageSquare, ArrowUpRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Contact Engineering Desk | Zelvori',
+  title: 'Contact Engineering Desk',
   description:
     'Start a project engagement with Zelvori. Submit your requirements or email hello@zelvori.software for technical consultation and project estimates.',
   alternates: {

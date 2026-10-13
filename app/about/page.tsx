@@ -14,7 +14,7 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'About Zelvori — Engineering Ideas Into Digital Reality',
+  title: 'About — Ideas Into Digital Reality',
   description:
     'Learn about Zelvori: our engineering standards, collaboration model, and mission to deliver production-grade digital products for global businesses.',
   alternates: {

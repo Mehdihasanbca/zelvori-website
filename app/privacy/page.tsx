@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { siteConfig } from '@/lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | Zelvori',
+  title: 'Privacy Policy',
   description:
     'Privacy Policy for Zelvori. Learn how we handle project inquiries, protect confidential client information, and ensure data privacy.',
   alternates: {
