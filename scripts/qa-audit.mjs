@@ -197,7 +197,7 @@ assert(
   'payments/index.html requires an approved quotation'
 );
 assert(
-  paymentsHtml.includes('payment status must be verified in the merchant dashboard'),
+  paymentsHtml.includes('Payment status must be verified in the merchant dashboard'),
   'payments/index.html requires authoritative dashboard payment verification'
 );
 assert(
