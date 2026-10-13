@@ -49,11 +49,11 @@ assert(robots.includes('User-agent: *') && robots.includes('Allow: /'), 'robots.
 assert(robots.includes('Sitemap: https://zelvori.software/sitemap.xml'), 'robots.txt points to the canonical sitemap');
 for (const bot of allowedDiscoveryBots) {
   const group = robots.match(new RegExp('User-agent:\\s*' + bot + '\\s*\\n([\\s\\S]*?)(?=\\nUser-agent:|\\nSitemap:|$)', 'i'))?.[1] ?? '';
-  assert(/Allow:\\s*\\//i.test(group), 'robots.txt allows search/retrieval crawler ' + bot);
+  assert(/Allow:\s*\//i.test(group), 'robots.txt allows search/retrieval crawler ' + bot);
 }
 for (const bot of trainingFocusedBots) {
   const group = robots.match(new RegExp('User-agent:\\s*' + bot + '\\s*\\n([\\s\\S]*?)(?=\\nUser-agent:|\\nSitemap:|$)', 'i'))?.[1] ?? '';
-  assert(/Disallow:\\s*\\//i.test(group), 'robots.txt blocks training-focused crawler ' + bot + ' without blocking search crawlers');
+  assert(/Disallow:\s*\//i.test(group), 'robots.txt blocks training-focused crawler ' + bot + ' without blocking search crawlers');
 }
 assert(sitemap.includes('<urlset') && sitemap.includes('</urlset>'), 'sitemap.xml is present and has a URL-set root');
 assert(llms.includes('https://zelvori.software/'), 'llms.txt describes the canonical site');
