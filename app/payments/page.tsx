@@ -129,9 +129,7 @@ export default function PaymentsPage() {
               No one-size-fits-all advance amount
             </h2>
             <p className="text-sm leading-relaxed text-slate-300">
-              The advance may differ by project. The ₹11,970 payment button shown in
-              the merchant dashboard is a fixed-amount button and must not be treated
-              as the universal checkout for every customer. Use a separate Live Mode
+              The advance may differ by project. Any fixed-amount payment button configured in the merchant dashboard must not be treated as the universal checkout for every customer. Use a separate Live Mode
               Payment Link for each approved quote and its agreed amount.
             </p>
             <a
