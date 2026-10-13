@@ -25,6 +25,18 @@ Zelvori (https://zelvori.software/) is an international digital product developm
 - Selected Work Showcase (https://zelvori.software/#work)
   Production architectures covering Multi-Tenant Treasury & Billing, Global Fleet Telemetry & Dispatch, Enterprise Document Extraction, and Omnichannel Headless Commerce.
 
+## Industry Stories & Use Cases
+
+- Industry stories (https://zelvori.software/stories/)
+  Illustrative digital transformation scenarios for legal practices, clinics, freelancers, growing companies, brands, creators, educators, and service organisations. These are use cases, not claimed customer testimonials.
+
+## Free Developer Resources
+
+- Developer resource hub (https://zelvori.software/resources/)
+  Curated links to AI-assisted coding tools, open-source UI libraries, animation resources, icons, fonts, design assets, starter templates, and free web-development learning materials.
+- Free Build Prompt Studio (https://zelvori.software/resources/#prompt-studio)
+  A browser-based brief generator for website and app ideas. It generates text locally from user selections; it does not call an AI model or send user data to an AI service.
+
 ## Company Information
 
 - Website: https://zelvori.software/
