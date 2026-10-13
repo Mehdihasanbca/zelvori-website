@@ -1,0 +1,87 @@
+{
+  "name": "@zelvori/core",
+  "version": "0.1.0",
+  "description": "Core Framework & Architecture SDK for Zelvori digital products, security primitives, design tokens, and UI components.",
+  "author": "Zelvori <hello@zelvori.software>",
+  "license": "MIT",
+  "homepage": "https://zelvori.software/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mehdihasanbca/zelvori-website.git",
+    "directory": "packages/core"
+  },
+  "type": "module",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    },
+    "./theme": {
+      "types": "./dist/types/theme/index.d.ts",
+      "import": "./dist/esm/theme/index.js",
+      "require": "./dist/cjs/theme/index.js"
+    },
+    "./security": {
+      "types": "./dist/types/security/index.d.ts",
+      "import": "./dist/esm/security/index.js",
+      "require": "./dist/cjs/security/index.js"
+    },
+    "./seo": {
+      "types": "./dist/types/seo/index.d.ts",
+      "import": "./dist/esm/seo/index.js",
+      "require": "./dist/cjs/seo/index.js"
+    },
+    "./config": {
+      "types": "./dist/types/config/index.d.ts",
+      "import": "./dist/esm/config/index.js",
+      "require": "./dist/cjs/config/index.js"
+    },
+    "./utils": {
+      "types": "./dist/types/utils/index.d.ts",
+      "import": "./dist/esm/utils/index.js",
+      "require": "./dist/cjs/utils/index.js"
+    },
+    "./ui": {
+      "types": "./dist/types/ui/index.d.ts",
+      "import": "./dist/esm/ui/index.js",
+      "require": "./dist/cjs/ui/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "node build.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test dist/tests/*.test.js"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    }
+  },
+  "keywords": [
+    "zelvori",
+    "framework",
+    "sdk",
+    "architecture",
+    "design-system",
+    "security",
+    "wcag",
+    "contrast",
+    "seo"
+  ]
+}
