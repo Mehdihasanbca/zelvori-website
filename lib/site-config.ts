@@ -34,7 +34,7 @@ export const siteConfig = {
   // Contact settings (Configurable placeholders)
   contact: {
     email: "hello@zelvori.software",
-    whatsapp: "", // Configurable: e.g., "+1234567890" (leave empty if not currently active)
+    whatsapp: "+919162530999", // Official WhatsApp Business Desk
     bookingUrl: "", // Optional calendar booking link
     responseWindow: "Within 24 business hours",
     availability: "Accepting new client engagements for Q2–Q4",
@@ -43,6 +43,16 @@ export const siteConfig = {
   // Social & Repository links (Configurable)
   social: {
     github: "https://github.com/Mehdihasanbca/zelvori-website",
+  },
+
+  // Brand media and cinematic assets
+  brandAssets: {
+    brandReelVideo: "/videos/brand-reel.mp4",
+    adsVideo: "/videos/brand-ads.mp4",
+    wallpaper: "/images/brand/zelvori-futuristic-tech-wallpaper.png",
+    logoDark: "/images/brand/zelvori-logo-dark.svg",
+    logoLight: "/images/brand/zelvori-logo-light.svg",
+    icon: "/images/brand/zelvori-icon.svg",
   },
 
   // Primary navigation links

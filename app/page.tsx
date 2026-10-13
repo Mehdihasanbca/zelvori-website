@@ -35,6 +35,11 @@ const AiAutomationSection = dynamic(
   { ssr: true }
 );
 
+const BrandExperienceSection = dynamic(
+  () => import('@/components/home/BrandExperienceSection').then((mod) => mod.BrandExperienceSection),
+  { ssr: true }
+);
+
 const TrustSecuritySection = dynamic(
   () => import('@/components/home/TrustSecuritySection').then((mod) => mod.TrustSecuritySection),
   { ssr: true }
@@ -70,6 +75,7 @@ export default function HomePage() {
       <ProcessSection />
       <SolutionsSection />
       <AiAutomationSection />
+      <BrandExperienceSection />
       <TrustSecuritySection />
       <FounderSection />
       <ApproachSection />

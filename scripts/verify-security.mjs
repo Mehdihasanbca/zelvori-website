@@ -37,6 +37,16 @@ for (const file of requiredFiles) {
   assert(fs.existsSync(path.join(outDir, file)), `out/${file} exists`);
 }
 
+// 2b. Phase 22 Brand Cinematic Media Assets
+const brandMediaFiles = [
+  'videos/brand-reel.mp4',
+  'videos/brand-ads.mp4',
+  'images/brand/zelvori-futuristic-tech-wallpaper.png',
+];
+for (const file of brandMediaFiles) {
+  assert(fs.existsSync(path.join(outDir, file)), `out/${file} exists`);
+}
+
 // 3. Expected Route Inventory (24 core routes)
 const expectedRoutes = [
   '',

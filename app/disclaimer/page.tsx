@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { AlertTriangle, ShieldCheck, CheckCircle2, ArrowRight, ExternalLink, HelpCircle } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Disclaimer | Zelvori',
+  title: 'Disclaimer',
   description:
     'Zelvori Technical & Commercial Disclaimer. Clarifies indicative estimates, third-party platform dependencies, reference architectures, and outcome expectations.',
   alternates: {

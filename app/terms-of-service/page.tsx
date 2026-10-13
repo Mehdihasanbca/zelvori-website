@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import TermsOfServicePage from '@/app/terms/page';
 
 export const metadata: Metadata = {
-  title: 'Terms of Service | Zelvori',
+  title: 'Terms of Service',
   description:
     'Terms of Service governing the use of the Zelvori website, technical project proposals, and professional software engineering engagements.',
   alternates: {

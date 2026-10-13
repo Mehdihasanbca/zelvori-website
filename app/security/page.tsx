@@ -517,7 +517,7 @@ export default function SecurityTrustCentrePage() {
               Engineering Desk: <a href={`mailto:${siteConfig.contact.email}`} className="text-cyan-400 hover:underline">{siteConfig.contact.email}</a>
             </div>
             <div>
-              Direct WhatsApp: <a href="https://wa.me/919934212978" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">+91 99342 12978</a>
+              Direct WhatsApp: <a href="https://wa.me/919162530999" target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">+91 91625 30999</a>
             </div>
             <div>
               Domain Verification: <span className="text-slate-300 font-mono">https://zelvori.software/</span>

@@ -116,6 +116,10 @@ for (const file of htmlFiles) {
       !titleMatch[1].includes('Zelvori Software'),
       `[${rel}] Page title uses "Zelvori", not "Zelvori Software": "${titleMatch[1]}"`
     );
+    assert(
+      !titleMatch[1].includes('Zelvori | Zelvori'),
+      `[${rel}] Page title has no duplicated brand suffix: "${titleMatch[1]}"`
+    );
   }
 
   // Ensure domain references are zelvori.software
@@ -289,6 +293,46 @@ for (const slug of expectedBlueprints) {
     );
   }
 }
+
+// 12. Phase 22 Brand Cinematic Assets & WhatsApp Business Verification
+const brandReelPath = path.join(outDir, 'videos/brand-reel.mp4');
+const brandAdsPath = path.join(outDir, 'videos/brand-ads.mp4');
+const brandWallpaperPath = path.join(outDir, 'images/brand/zelvori-futuristic-tech-wallpaper.png');
+
+assert(fs.existsSync(brandReelPath), 'out/videos/brand-reel.mp4 exists in static export');
+assert(fs.existsSync(brandAdsPath), 'out/videos/brand-ads.mp4 exists in static export');
+assert(fs.existsSync(brandWallpaperPath), 'out/images/brand/zelvori-futuristic-tech-wallpaper.png exists in static export');
+
+if (fs.existsSync(brandReelPath)) {
+  const reelSize = fs.statSync(brandReelPath).size;
+  assert(reelSize > 2000000, `Brand Reel MP4 has valid payload size (${reelSize} bytes)`);
+}
+
+if (fs.existsSync(brandAdsPath)) {
+  const adsSize = fs.statSync(brandAdsPath).size;
+  assert(adsSize > 3500000, `Commercial Ads MP4 has valid payload size (${adsSize} bytes)`);
+}
+
+// Verify WhatsApp Desk widget across root pages
+const rootHtml = fs.readFileSync(path.join(outDir, 'index.html'), 'utf8');
+assert(
+  rootHtml.includes('WhatsApp Desk') && (rootHtml.includes('9162530999') || rootHtml.includes('91625 30999')),
+  'index.html renders floating WhatsApp Business widget with official +91 91625 30999 number'
+);
+assert(
+  rootHtml.includes('Brand Tech Reel') && rootHtml.includes('Commercial Ads'),
+  'index.html includes Brand Experience cinema section with multi-video switcher'
+);
+
+const aboutHtml = fs.readFileSync(path.join(outDir, 'about/index.html'), 'utf8');
+assert(
+  aboutHtml.includes('WhatsApp Desk') && (aboutHtml.includes('9162530999') || aboutHtml.includes('91625 30999')),
+  'about/index.html renders floating WhatsApp Business widget'
+);
+assert(
+  aboutHtml.includes('Zelvori Brand Experience &amp; Cinema') || aboutHtml.includes('Zelvori Brand Experience & Cinema'),
+  'about/index.html renders dedicated brand cinema identity showcase'
+);
 
 console.log(`\n========================================`);
 console.log(`Total QA Checks Executed: ${checks}`);

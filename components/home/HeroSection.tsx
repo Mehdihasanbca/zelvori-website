@@ -18,9 +18,12 @@ import {
   Activity,
   Laptop,
   Tablet,
+  Play,
 } from 'lucide-react';
+import { BrandVideoModal } from '@/components/ui/BrandVideoModal';
 
 export function HeroSection() {
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<'architecture' | 'interfaces' | 'automation'>('architecture');
   const [selectedNode, setSelectedNode] = useState<string>('gateway');
   const [devicePreview, setDevicePreview] = useState<'desktop' | 'tablet' | 'mobile'>('desktop');
@@ -69,7 +72,7 @@ export function HeroSection() {
             </p>
 
             {/* CTAs */}
-            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
+            <div className="pt-2 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 sm:gap-4">
               <Link
                 href="/contact"
                 className="group relative inline-flex items-center justify-center gap-2.5 px-6 py-3.5 text-sm font-semibold text-slate-950 bg-gradient-to-r from-cyan-400 via-sky-300 to-cyan-300 hover:from-cyan-300 hover:to-sky-200 rounded-xl shadow-lg shadow-cyan-500/25 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 whitespace-nowrap"
@@ -78,9 +81,20 @@ export function HeroSection() {
                 <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
               </Link>
 
+              <button
+                type="button"
+                onClick={() => setIsVideoModalOpen(true)}
+                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 text-sm font-medium text-cyan-300 hover:text-white liquid-glass-pill rounded-xl transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 whitespace-nowrap shadow-md group"
+              >
+                <span className="w-5 h-5 rounded-full bg-cyan-400/20 border border-cyan-400/40 flex items-center justify-center text-cyan-300 group-hover:scale-110 transition-transform">
+                  <Play className="w-2.5 h-2.5 fill-current ml-0.5" />
+                </span>
+                <span>Watch Brand Reel</span>
+              </button>
+
               <Link
                 href="#services"
-                className="inline-flex items-center justify-center gap-2 px-5 py-3.5 text-sm font-medium text-slate-300 hover:text-white bg-slate-900/80 hover:bg-slate-800/90 border border-slate-800 hover:border-slate-700 rounded-xl transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-2 px-4 py-3.5 text-sm font-medium text-slate-300 hover:text-white bg-slate-900/80 hover:bg-slate-800/90 border border-slate-800 hover:border-slate-700 rounded-xl transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 whitespace-nowrap"
               >
                 <span>Explore 6 Core Services</span>
               </Link>
@@ -394,6 +408,13 @@ export function HeroSection() {
 
         </div>
       </div>
+
+      {/* Brand Cinema & Video Showcase Modal */}
+      <BrandVideoModal
+        isOpen={isVideoModalOpen}
+        onClose={() => setIsVideoModalOpen(false)}
+        initialVideo="reel"
+      />
     </section>
   );
 }

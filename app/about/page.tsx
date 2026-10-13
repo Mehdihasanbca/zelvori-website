@@ -12,6 +12,7 @@ import {
   Compass,
   Cpu,
   Workflow,
+  Download,
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -181,6 +182,77 @@ export default function AboutPage() {
               <div className="text-slate-200">PostgreSQL · Redis · Docker</div>
               <div className="text-slate-400 text-[10px]">Cloud Run · AWS · Temporal</div>
             </div>
+          </div>
+        </div>
+
+        {/* Brand Identity & Cinematic Lab */}
+        <div className="p-8 sm:p-12 liquid-glass rounded-3xl border border-white/10 space-y-8">
+          <div className="max-w-3xl space-y-3">
+            <div className="text-xs uppercase tracking-widest text-cyan-400 font-semibold">
+              Visual Identity &amp; Motion
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-bold text-white">
+              Zelvori Brand Experience &amp; Cinema
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Our aesthetic embodies precision engineering: obsidian carbon tones, luminescent cybernetic interconnects, and fluid micro-surfaces inspired by modern Unix systems and Apple VisionOS.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Reel card */}
+            <div className="p-6 bg-[#070c18]/80 rounded-2xl border border-white/10 space-y-4">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-semibold text-cyan-300 font-mono">BRAND TECH REEL</span>
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-950 text-cyan-400 border border-cyan-800/40">2.74 MB MP4</span>
+              </div>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                3D procedural visualization of distributed nodes, quantum logic flows, and reactive network topology.
+              </p>
+              <video
+                src="/videos/brand-reel.mp4"
+                controls
+                playsInline
+                className="w-full rounded-xl border border-white/10 aspect-video object-contain bg-black"
+              >
+                Your browser does not support the video tag.
+              </video>
+            </div>
+
+            {/* Ads card */}
+            <div className="p-6 bg-[#070c18]/80 rounded-2xl border border-white/10 space-y-4">
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-semibold text-indigo-300 font-mono">COMMERCIAL ADS FILM</span>
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-indigo-950 text-indigo-400 border border-indigo-800/40">3.99 MB MP4</span>
+              </div>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                Motion showcase of multi-device software interfaces, mobile native UI, and real-time client dashboards.
+              </p>
+              <video
+                src="/videos/brand-ads.mp4"
+                controls
+                playsInline
+                className="w-full rounded-xl border border-white/10 aspect-video object-contain bg-black"
+              >
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+
+          {/* Wallpaper asset link */}
+          <div className="pt-4 border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div className="text-xs text-slate-400">
+              Official Zelvori 4K Wallpaper (1.54 MB PNG) available for high-resolution displays.
+            </div>
+            <a
+              href="/images/brand/zelvori-futuristic-tech-wallpaper.png"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl liquid-glass-pill text-xs font-semibold text-cyan-300 hover:text-white transition-all shadow-md"
+            >
+              <Download className="w-4 h-4" />
+              <span>Download 4K Wallpaper</span>
+            </a>
           </div>
         </div>
 

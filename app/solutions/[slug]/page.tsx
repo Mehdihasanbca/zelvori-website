@@ -20,23 +20,23 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!blueprint) {
     return {
-      title: 'Industry Blueprint Not Found | Zelvori',
+      title: 'Industry Blueprint Not Found',
       description: 'The requested industry architecture blueprint could not be found.',
     };
   }
 
-  const title = `${blueprint.title} Architecture Blueprint | Zelvori`;
+  const pageTitle = `${blueprint.title} Architecture Blueprint`;
   const description = `${blueprint.tagline} Production-ready reference architecture, 6-tier zero-trust stack, RBAC matrix, and phased delivery roadmap by Zelvori.`;
   const url = `https://zelvori.software/solutions/${blueprint.slug}/`;
 
   return {
-    title,
+    title: pageTitle,
     description,
     alternates: {
       canonical: url,
     },
     openGraph: {
-      title,
+      title: `${blueprint.title} Architecture Blueprint | Zelvori`,
       description,
       url,
       images: [

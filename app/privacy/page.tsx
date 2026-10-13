@@ -5,7 +5,7 @@ import { Shield, AlertCircle, ExternalLink, Mail, CheckCircle2, FileText, ArrowR
 import { siteConfig } from '@/lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | Zelvori',
+  title: 'Privacy Policy',
   description:
     'Privacy Policy for Zelvori. Learn how we handle client enquiries, mailto workflows, DPDP compliance considerations, and outbound affiliate links.',
   alternates: {

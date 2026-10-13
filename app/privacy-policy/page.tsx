@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import PrivacyPolicyPage from '@/app/privacy/page';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | Zelvori',
+  title: 'Privacy Policy',
   description:
     'Privacy Policy for Zelvori. Learn how we handle client enquiries, mailto workflows, DPDP compliance considerations, and outbound affiliate links.',
   alternates: {
