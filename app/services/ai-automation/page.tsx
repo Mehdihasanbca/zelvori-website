@@ -10,13 +10,13 @@ export const metadata: Metadata = {
   description:
     'Production-grade AI integration, intelligent document extraction, private RAG knowledge bases, and webhook automation that eliminates operational drag.',
   alternates: {
-    canonical: 'https://zelvori.software/services/ai-automation',
+    canonical: 'https://zelvori.software/services/ai-automation/',
   },
   openGraph: {
     title: 'AI Integration & Workflow Automation | Zelvori Software',
     description:
       'Pragmatic, secure artificial intelligence integrations designed for enterprise workflows, document parsing, and automated support triage.',
-    url: 'https://zelvori.software/services/ai-automation',
+    url: 'https://zelvori.software/services/ai-automation/',
   },
 };
 
