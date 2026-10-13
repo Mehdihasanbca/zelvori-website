@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useMemo, useState } from 'react';
-import { Check, Copy, RotateCcw, Sparkles } from 'lucide-react';
+import { Check, Copy, Download, RotateCcw, Sparkles } from 'lucide-react';
 
 const projectTypes = [
   'Business website',
@@ -47,6 +47,78 @@ const features = [
   'API, CRM or third-party integrations',
   'Analytics with privacy-conscious configuration',
   'Documentation, tests and deployment instructions',
+];
+
+const presets = [
+  {
+    name: 'Full-Stack Next.js 15',
+    projectType: 'SaaS / web application',
+    industry: 'Technology & SaaS',
+    audience: 'Subscribers and team members',
+    goal: 'Help users discover and use a web application',
+    stack: 'Next.js + React + TypeScript + Tailwind CSS',
+    style: 'Premium, clear, modern and accessible',
+    features: [
+      features[0],
+      features[1],
+      features[2],
+      features[3],
+      features[4],
+      features[5],
+      features[8],
+      features[11],
+    ],
+  },
+  {
+    name: 'Offline Mobile App',
+    projectType: 'Service request portal',
+    industry: 'Logistics & field operations',
+    audience: 'Mobile operators and clients',
+    goal: 'Organise internal operations and reporting',
+    stack: 'Flutter (mobile app)',
+    style: 'Data-dense, efficient and keyboard-friendly',
+    features: [
+      features[0],
+      features[4],
+      features[5],
+      features[7],
+      features[9],
+      features[11],
+    ],
+  },
+  {
+    name: 'Enterprise CRM / ERP',
+    projectType: 'Internal CRM / ERP tool',
+    industry: 'Enterprise operations',
+    audience: 'Internal staff and department managers',
+    goal: 'Organise internal operations and reporting',
+    stack: 'Next.js + React + TypeScript + Tailwind CSS',
+    style: 'Data-dense, efficient and keyboard-friendly',
+    features: [
+      features[2],
+      features[5],
+      features[6],
+      features[9],
+      features[11],
+    ],
+  },
+  {
+    name: 'Headless E-Commerce',
+    projectType: 'E-commerce store',
+    industry: 'Retail & direct-to-consumer',
+    audience: 'Online shoppers and store admins',
+    goal: 'Sell products or digital services',
+    stack: 'Next.js + React + TypeScript + Tailwind CSS',
+    style: 'Commerce-first and product-led',
+    features: [
+      features[0],
+      features[3],
+      features[4],
+      features[6],
+      features[8],
+      features[11],
+    ],
+  },
 ];
 
 export function BuildPromptStudio() {
@@ -132,6 +204,29 @@ export function BuildPromptStudio() {
     setCopied(false);
   };
 
+  const applyPreset = (preset: (typeof presets)[0]) => {
+    setProjectType(preset.projectType);
+    setIndustry(preset.industry);
+    setAudience(preset.audience);
+    setGoal(preset.goal);
+    setStack(preset.stack);
+    setStyle(preset.style);
+    setSelectedFeatures(preset.features);
+    setCopied(false);
+  };
+
+  const downloadPrompt = () => {
+    const blob = new Blob([prompt], { type: 'text/markdown;charset=utf-8;' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `zelvori-project-brief-${projectType.toLowerCase().replace(/[^a-z0-9]+/g, '-')}.md`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  };
+
   return (
     <section id="prompt-studio" className="scroll-mt-28 rounded-3xl border border-cyan-500/20 bg-slate-900/70 p-5 shadow-2xl shadow-cyan-950/10 sm:p-8">
       <div className="flex flex-wrap items-start justify-between gap-4">
@@ -147,6 +242,23 @@ export function BuildPromptStudio() {
         <button type="button" onClick={reset} className="inline-flex items-center gap-2 rounded-lg border border-slate-700 px-3 py-2 text-xs font-medium text-slate-300 transition hover:border-slate-500 hover:text-white">
           <RotateCcw className="h-3.5 w-3.5" /> Reset
         </button>
+      </div>
+
+      {/* Quick Architectural Presets */}
+      <div className="mt-6 flex flex-wrap items-center gap-2 border-t border-slate-800/80 pt-4">
+        <span className="text-xs font-mono uppercase tracking-wider text-cyan-400 mr-1">
+          Quick Presets:
+        </span>
+        {presets.map((preset) => (
+          <button
+            key={preset.name}
+            type="button"
+            onClick={() => applyPreset(preset)}
+            className="rounded-lg border border-slate-800 bg-slate-950/80 px-3 py-1.5 text-xs font-medium text-slate-300 transition hover:border-cyan-500/40 hover:text-cyan-300"
+          >
+            {preset.name}
+          </button>
+        ))}
       </div>
 
       <div className="mt-7 grid gap-6 lg:grid-cols-2">
@@ -221,6 +333,14 @@ export function BuildPromptStudio() {
           <button type="button" onClick={copyPrompt} className="inline-flex items-center gap-2 rounded-xl bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300">
             {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
             {copied ? 'Copied prompt' : 'Copy full prompt'}
+          </button>
+          <button
+            type="button"
+            onClick={downloadPrompt}
+            className="inline-flex items-center gap-2 rounded-xl border border-slate-700 bg-slate-900 px-5 py-3 text-sm font-semibold text-slate-200 transition hover:border-cyan-500/50 hover:text-white"
+          >
+            <Download className="h-4 w-4 text-cyan-400" />
+            Download brief (.md)
           </button>
           <p aria-live="polite" className="text-xs text-slate-400">
             {copied ? 'Ready to paste into your chosen AI coding tool.' : 'Free to use. No login, API key or server request required for generation.'}

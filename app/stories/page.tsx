@@ -3,18 +3,10 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import {
   ArrowRight,
-  BriefcaseBusiness,
-  Building2,
-  HeartPulse,
-  Landmark,
-  Palette,
-  PenTool,
-  School,
   ShieldCheck,
-  ShoppingBag,
   Sparkles,
-  Users,
 } from 'lucide-react';
+import { StoriesFilterGrid } from '@/components/stories/StoriesFilterGrid';
 
 export const metadata: Metadata = {
   title: 'Digital Transformation Stories by Industry',
@@ -23,13 +15,29 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://zelvori.software/stories/',
   },
+  openGraph: {
+    title: 'Digital Transformation Stories by Industry | Zelvori',
+    description:
+      'Explore illustrative digital transformation stories for legal practices, clinics, freelancers, growing companies, brands, creators, educators, and service teams.',
+    url: 'https://zelvori.software/stories/',
+    images: [
+      {
+        url: 'https://zelvori.software/images/brand/zelvori-og.png',
+        width: 1200,
+        height: 630,
+        alt: 'Digital Transformation Stories by Industry — Zelvori',
+        type: 'image/png',
+      },
+    ],
+  },
 };
 
 const stories = [
   {
     number: '01',
-    icon: Landmark,
+    iconName: 'Landmark',
     sector: 'Legal practices',
+    category: 'Legal practices',
     title: 'Less time chasing documents. More time preparing the work.',
     person: 'A small law practice with a growing client list',
     challenge:
@@ -44,8 +52,9 @@ const stories = [
   },
   {
     number: '02',
-    icon: HeartPulse,
+    iconName: 'HeartPulse',
     sector: 'Doctors & clinics',
+    category: 'Healthcare & clinics',
     title: 'A smoother patient journey starts before the appointment.',
     person: 'A clinic coordinating appointments and follow-ups',
     challenge:
@@ -60,8 +69,9 @@ const stories = [
   },
   {
     number: '03',
-    icon: BriefcaseBusiness,
+    iconName: 'BriefcaseBusiness',
     sector: 'Freelancers & consultants',
+    category: 'Freelancers & solo experts',
     title: 'Turn scattered enquiries into a professional client journey.',
     person: 'An independent consultant balancing delivery and sales',
     challenge:
@@ -76,8 +86,9 @@ const stories = [
   },
   {
     number: '04',
-    icon: Building2,
+    iconName: 'Building2',
     sector: 'Growing companies',
+    category: 'Growing companies',
     title: 'Connect the work that spreadsheets cannot keep connected.',
     person: 'A small or mid-sized company with several teams',
     challenge:
@@ -92,8 +103,9 @@ const stories = [
   },
   {
     number: '05',
-    icon: ShoppingBag,
+    iconName: 'ShoppingBag',
     sector: 'Brands & retailers',
+    category: 'Independent brands & e-commerce',
     title: 'Make it easier to discover the product—and finish the purchase.',
     person: 'A product brand selling across social channels',
     challenge:
@@ -108,8 +120,9 @@ const stories = [
   },
   {
     number: '06',
-    icon: Palette,
+    iconName: 'Palette',
     sector: 'Creators & personal brands',
+    category: 'Creators & personal brands',
     title: 'Own a home for your work beyond the social feed.',
     person: 'A creator, coach, artist, or subject expert',
     challenge:
@@ -124,8 +137,9 @@ const stories = [
   },
   {
     number: '07',
-    icon: School,
+    iconName: 'School',
     sector: 'Educators & training providers',
+    category: 'Educators & training providers',
     title: 'Help learners find the right course and the next lesson.',
     person: 'A trainer or institute managing several programmes',
     challenge:
@@ -140,8 +154,9 @@ const stories = [
   },
   {
     number: '08',
-    icon: Users,
+    iconName: 'Users',
     sector: 'Service teams & organisations',
+    category: 'Service teams & organisations',
     title: 'Give every request a clear owner and next step.',
     person: 'A field-service firm, agency, or community organisation',
     challenge:
@@ -213,52 +228,9 @@ export default function StoriesPage() {
         </div>
       </section>
 
-      <section className="mx-auto mt-14 grid max-w-7xl grid-cols-1 gap-5 px-4 sm:px-6 md:grid-cols-2 lg:mt-20 lg:grid-cols-3 lg:px-8">
-        {stories.map((story) => {
-          const Icon = story.icon;
-          return (
-            <article key={story.number} className="flex h-full flex-col rounded-2xl border border-slate-800 bg-slate-900/55 p-6 transition duration-200 hover:-translate-y-1 hover:border-cyan-500/40 hover:bg-slate-900/90">
-              <div className="flex items-start justify-between gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-cyan-500/20 bg-cyan-500/10 text-cyan-300">
-                  <Icon className="h-5 w-5" />
-                </div>
-                <span className="text-xs font-mono text-slate-500">{story.number}</span>
-              </div>
-              <p className="mt-5 text-xs font-semibold uppercase tracking-wider text-cyan-300">{story.sector}</p>
-              <h2 className="mt-2 text-xl font-bold leading-snug text-white">{story.title}</h2>
-              <p className="mt-3 text-xs font-medium text-slate-400">{story.person}</p>
-              <div className="mt-5 space-y-4 text-sm leading-relaxed">
-                <div>
-                  <h3 className="text-xs font-semibold uppercase tracking-wide text-slate-200">The challenge</h3>
-                  <p className="mt-1.5 text-slate-400">{story.challenge}</p>
-                </div>
-                <div>
-                  <h3 className="text-xs font-semibold uppercase tracking-wide text-slate-200">The story</h3>
-                  <p className="mt-1.5 text-slate-400">{story.story}</p>
-                </div>
-                <div>
-                  <h3 className="text-xs font-semibold uppercase tracking-wide text-slate-200">How Zelvori can help</h3>
-                  <p className="mt-1.5 text-slate-300">{story.zelvori}</p>
-                </div>
-                <div className="rounded-xl border border-emerald-500/15 bg-emerald-950/20 p-4">
-                  <h3 className="text-xs font-semibold uppercase tracking-wide text-emerald-200">Potential direction</h3>
-                  <p className="mt-1.5 text-sm leading-relaxed text-slate-300">{story.outcome}</p>
-                </div>
-              </div>
-              <div className="mt-5 flex flex-wrap gap-2">
-                {story.services.map((service) => (
-                  <span key={service} className="rounded-full border border-slate-700 bg-slate-950/60 px-2.5 py-1 text-[11px] text-slate-300">{service}</span>
-                ))}
-              </div>
-              <div className="mt-auto pt-6">
-                <Link href="/contact/" className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-300 transition hover:text-cyan-200">
-                  Map my use case <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
-            </article>
-          );
-        })}
-      </section>
+      <div className="mt-14 lg:mt-20">
+        <StoriesFilterGrid stories={stories} />
+      </div>
 
       <section className="mx-auto mt-16 max-w-6xl px-4 sm:px-6 lg:mt-24 lg:px-8">
         <div className="rounded-3xl border border-slate-800 bg-slate-900/50 p-6 sm:p-9">

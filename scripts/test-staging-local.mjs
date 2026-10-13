@@ -55,10 +55,14 @@ server.listen(PORT, async () => {
 
   const testRoutes = [
     '/',
-    '/about/',
+    '//about/',
     '/contact/',
     '/pricing/',
     '/payments/',
+    '/stories/',
+    '/resources/',
+    '/privacy/',
+    '/terms/',
     '/previews/',
     '/previews/web-development/',
     '/previews/mobile-apps/',
@@ -67,7 +71,14 @@ server.listen(PORT, async () => {
     '/previews/ai-automation/',
     '/previews/custom-software/',
     '/previews/application-security/',
-  ];
+    '/services/web-development/',
+    '/services/mobile-apps/',
+    '/services/ecommerce/',
+    '/services/business-software/',
+    '/services/ai-automation/',
+    '/services/custom-software/',
+    '/services/application-security/',
+  ].map(r => r.replace('//', '/'));
 
   let passed = 0;
   let failed = 0;
@@ -91,20 +102,20 @@ server.listen(PORT, async () => {
     }
   }
 
+  function check(label, condition) {
+    if (condition) {
+      console.log(`✅ [CHECK PASS] ${label}`);
+      passed++;
+    } else {
+      console.error(`❌ [CHECK FAIL] ${label}`);
+      failed++;
+    }
+  }
+
   // Deep checks on /payments/
   console.log('\n--- Deep Inspection on /payments/ ---');
   const paymentsRes = await fetch(`http://localhost:${PORT}/payments/`);
   const paymentsHtml = await paymentsRes.text();
-
-  function check(label, condition) {
-    if (condition) {
-      console.log(`✅ [PAYMENT CHECK PASS] ${label}`);
-      passed++;
-    } else {
-      console.error(`❌ [PAYMENT CHECK FAIL] ${label}`);
-      failed++;
-    }
-  }
 
   // Check JS chunks referenced by /payments/ do not load payment-button.js
   const scriptMatches = [...paymentsHtml.matchAll(/src="(\/_next\/static\/chunks\/[^"]+)"/g)].map(m => m[1]);
@@ -127,6 +138,25 @@ server.listen(PORT, async () => {
   check('No payment-button.js loaded on client', !foundScriptInChunk && !paymentsHtml.includes('payment-button.js'));
   check('Zero unverified sandbox mode claims', !paymentsHtml.includes('Razorpay Sandbox / Test Mode (Verified)'));
   check('Zero live secret keys present', !paymentsHtml.includes('rzp_live_') && !paymentsHtml.includes('RAZORPAY_KEY_SECRET'));
+
+  // Deep checks on /stories/
+  console.log('\n--- Deep Inspection on /stories/ ---');
+  const storiesRes = await fetch(`http://localhost:${PORT}/stories/`);
+  const storiesHtml = await storiesRes.text();
+  check('Renders Industry stories title and headline', storiesHtml.includes('Digital Transformation Stories by Industry'));
+  check('Contains illustrative scenarios disclaimer', storiesHtml.includes('illustrative scenarios, not claims about named clients'));
+  check('Contains category filter bar', storiesHtml.includes('Explore Scenarios by Sector') || storiesHtml.includes('All Industries'));
+  check('Presents fair comparison module', storiesHtml.includes('When is Zelvori the right fit?'));
+
+  // Deep checks on /resources/
+  console.log('\n--- Deep Inspection on /resources/ ---');
+  const resourcesRes = await fetch(`http://localhost:${PORT}/resources/`);
+  const resourcesHtml = await resourcesRes.text();
+  check('Renders Developer Resource Hub title', resourcesHtml.includes('Free Developer Resources'));
+  check('Contains Build Prompt Studio generator', resourcesHtml.includes('Build Prompt Studio'));
+  check('Contains Copy full prompt action', resourcesHtml.includes('Copy full prompt'));
+  check('Contains Download brief action', resourcesHtml.includes('Download brief (.md)'));
+  check('Discloses prompt tool does not call an AI API', resourcesHtml.includes('does not call an AI API'));
 
   console.log(`\n========================================`);
   console.log(`Local Staging Test Results:`);

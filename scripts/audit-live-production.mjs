@@ -8,9 +8,24 @@ const routes = [
   '/contact/',
   '/pricing/',
   '/payments/',
+  '/stories/',
+  '/resources/',
+  '/privacy/',
+  '/terms/',
   '/previews/',
+  '/previews/web-development/',
+  '/previews/mobile-apps/',
+  '/previews/ecommerce/',
+  '/previews/business-software/',
+  '/previews/ai-automation/',
+  '/previews/custom-software/',
+  '/previews/application-security/',
   '/services/web-development/',
+  '/services/mobile-apps/',
+  '/services/ecommerce/',
   '/services/business-software/',
+  '/services/ai-automation/',
+  '/services/custom-software/',
   '/services/application-security/',
 ];
 
@@ -90,6 +105,53 @@ async function audit() {
 
   } catch (err) {
     console.error(`❌ [LIVE PAYMENT ERROR]: ${err.message}`);
+    failed++;
+  }
+
+  // Deep checks on live /stories/
+  console.log('\n--- Deep Inspection on Live /stories/ Endpoint ---');
+  try {
+    const storiesRes = await fetchUrl(`${BASE_URL}/stories/`);
+    const storiesHtml = storiesRes.body;
+    function checkStories(label, condition) {
+      if (condition) {
+        console.log(`✅ [LIVE STORIES PASS] ${label}`);
+        passed++;
+      } else {
+        console.error(`❌ [LIVE STORIES FAIL] ${label}`);
+        failed++;
+      }
+    }
+    checkStories('Returns HTTP 200 OK', storiesRes.statusCode === 200);
+    checkStories('Contains illustrative scenario disclaimer', storiesHtml.includes('illustrative scenarios, not claims about named clients'));
+    checkStories('Contains fair comparison section', storiesHtml.includes('When is Zelvori the right fit?'));
+    checkStories('References OpenGraph raster card', storiesHtml.includes('zelvori-og.png'));
+  } catch (err) {
+    console.error(`❌ [LIVE STORIES ERROR]: ${err.message}`);
+    failed++;
+  }
+
+  // Deep checks on live /resources/
+  console.log('\n--- Deep Inspection on Live /resources/ Endpoint ---');
+  try {
+    const resourcesRes = await fetchUrl(`${BASE_URL}/resources/`);
+    const resourcesHtml = resourcesRes.body;
+    function checkResources(label, condition) {
+      if (condition) {
+        console.log(`✅ [LIVE RESOURCES PASS] ${label}`);
+        passed++;
+      } else {
+        console.error(`❌ [LIVE RESOURCES FAIL] ${label}`);
+        failed++;
+      }
+    }
+    checkResources('Returns HTTP 200 OK', resourcesRes.statusCode === 200);
+    checkResources('Contains Build Prompt Studio', resourcesHtml.includes('Build Prompt Studio'));
+    checkResources('Contains Copy full prompt action', resourcesHtml.includes('Copy full prompt'));
+    checkResources('Discloses no external AI API called', resourcesHtml.includes('does not call an AI API'));
+    checkResources('References OpenGraph raster card', resourcesHtml.includes('zelvori-og.png'));
+  } catch (err) {
+    console.error(`❌ [LIVE RESOURCES ERROR]: ${err.message}`);
     failed++;
   }
 

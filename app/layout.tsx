@@ -50,10 +50,11 @@ export const metadata: Metadata = {
     siteName: 'Zelvori',
     images: [
       {
-        url: '/icon.svg',
+        url: 'https://zelvori.software/images/brand/zelvori-og.png',
         width: 1200,
         height: 630,
         alt: 'Zelvori — Ideas Into Digital Reality',
+        type: 'image/png',
       },
     ],
   },
@@ -62,7 +63,7 @@ export const metadata: Metadata = {
     title: 'Zelvori — Ideas Into Digital Reality',
     description:
       'International digital product development partner building web applications, mobile apps, enterprise business software, and AI workflow automation.',
-    images: ['/icon.svg'],
+    images: ['https://zelvori.software/images/brand/zelvori-og.png'],
   },
   icons: {
     icon: [

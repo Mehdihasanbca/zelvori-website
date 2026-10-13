@@ -24,6 +24,21 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://zelvori.software/resources/',
   },
+  openGraph: {
+    title: 'Free Developer Resources, AI Tools & Animation Libraries | Zelvori',
+    description:
+      'Explore developer-friendly open-source libraries, AI coding tools, UI components, animations, icons, fonts, design assets, learning guides and app templates curated by Zelvori.',
+    url: 'https://zelvori.software/resources/',
+    images: [
+      {
+        url: 'https://zelvori.software/images/brand/zelvori-og.png',
+        width: 1200,
+        height: 630,
+        alt: 'Free Developer Resources & Build Prompt Studio — Zelvori',
+        type: 'image/png',
+      },
+    ],
+  },
 };
 
 type Resource = {
