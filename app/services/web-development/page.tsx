@@ -10,13 +10,13 @@ export const metadata: Metadata = {
   description:
     'Custom web application development with React, Next.js, and TypeScript. We engineer high-performance SaaS platforms, customer portals, and web products.',
   alternates: {
-    canonical: 'https://zelvori.software/services/web-development',
+    canonical: 'https://zelvori.software/services/web-development/',
   },
   openGraph: {
     title: 'Website & Web Application Development | Zelvori Software',
     description:
       'High-performance, scalable web applications and SaaS platforms engineered with React, Next.js, and modern cloud infrastructure.',
-    url: 'https://zelvori.software/services/web-development',
+    url: 'https://zelvori.software/services/web-development/',
   },
 };
 
