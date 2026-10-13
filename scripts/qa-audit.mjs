@@ -212,6 +212,48 @@ assert(
   'payments/index.html does not misrepresent unverified payment mode'
 );
 
+
+const storiesHtml = fs.readFileSync(path.join(outDir, 'stories/index.html'), 'utf8');
+assert(
+  storiesHtml.includes('illustrative scenarios, not claims about named clients'),
+  'stories page labels use cases as illustrative rather than client testimonials'
+);
+assert(
+  storiesHtml.includes('How Zelvori can help') &&
+    storiesHtml.includes('When is Zelvori the right fit?'),
+  'stories page explains Zelvori use cases and comparison considerations'
+);
+
+const resourcesHtml = fs.readFileSync(path.join(outDir, 'resources/index.html'), 'utf8');
+assert(
+  resourcesHtml.includes('Build Prompt Studio') &&
+    resourcesHtml.includes('Copy full prompt'),
+  'resource hub provides a usable free prompt builder'
+);
+assert(
+  resourcesHtml.includes('Continue') &&
+    resourcesHtml.includes('Motion for React') &&
+    resourcesHtml.includes('shadcn/ui') &&
+    resourcesHtml.includes('Next.js documentation'),
+  'resource hub covers AI coding, UI, motion and app-building references'
+);
+assert(
+  resourcesHtml.includes('does not call an AI API') &&
+    resourcesHtml.includes('licences can change'),
+  'resource hub avoids presenting prompt generation or resource licensing inaccurately'
+);
+assert(
+  resourcesHtml.includes('rel="noopener noreferrer"'),
+  'external resource links use safe new-tab link attributes'
+);
+
+const homeResourceHtml = fs.readFileSync(path.join(outDir, 'index.html'), 'utf8');
+assert(
+  homeResourceHtml.includes('Stories by industry') &&
+    homeResourceHtml.includes('Free developer resource hub'),
+  'homepage highlights the stories and developer resources'
+);
+
 console.log(`\n========================================`);
 console.log(`Total QA Checks Executed: ${checks}`);
 console.log(`Total QA Failures: ${errors}`);
