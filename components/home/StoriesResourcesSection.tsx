@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { ArrowRight, BookOpen, Code2, Sparkles } from 'lucide-react';
+import { ArrowRight, BookOpen, Code2, Sparkles, Wrench } from 'lucide-react';
 
 export function StoriesResourcesSection() {
   return (
@@ -14,10 +14,10 @@ export function StoriesResourcesSection() {
             Learn what is possible. Find the tools to start.
           </h2>
           <p className="mt-4 text-sm leading-relaxed text-slate-300 sm:text-base">
-            Explore practical digital transformation scenarios for different professions and businesses, or browse carefully linked developer tools, open-source libraries, animations and free learning resources.
+            Explore practical digital transformation scenarios for different professions and businesses, or browse carefully linked developer tools, open-source libraries, animations, and free browser utilities.
           </p>
         </div>
-        <div className="mt-7 grid gap-4 md:grid-cols-2">
+        <div className="mt-7 grid gap-4 md:grid-cols-3">
           <Link href="/stories/" className="group rounded-2xl border border-slate-700 bg-slate-950/60 p-5 transition hover:border-cyan-500/50 hover:bg-slate-950">
             <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-cyan-500/20 bg-cyan-500/10 text-cyan-300">
               <BookOpen className="h-5 w-5" />
@@ -40,6 +40,18 @@ export function StoriesResourcesSection() {
             </p>
             <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-cyan-300">
               Browse free resources <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </span>
+          </Link>
+          <Link href="/tools/" className="group rounded-2xl border border-slate-700 bg-slate-950/60 p-5 transition hover:border-cyan-500/50 hover:bg-slate-950">
+            <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-emerald-500/20 bg-emerald-500/10 text-emerald-300">
+              <Wrench className="h-5 w-5" />
+            </div>
+            <h3 className="mt-4 text-lg font-semibold text-white">Zelvori Dev Lab</h3>
+            <p className="mt-2 text-sm leading-relaxed text-slate-400">
+              Free browser tools: SEO snippets, WCAG contrast checking, CSS gradient/shadow generators, JSON formatters and social cards.
+            </p>
+            <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-cyan-300">
+              Launch free tools <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </span>
           </Link>
         </div>

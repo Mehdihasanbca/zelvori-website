@@ -185,6 +185,42 @@ assert(
   sitemapContent.includes('https://zelvori.software/resources/'),
   'sitemap.xml includes developer resource hub'
 );
+assert(
+  sitemapContent.includes('https://zelvori.software/tools/'),
+  'sitemap.xml includes tools hub'
+);
+assert(
+  sitemapContent.includes('https://zelvori.software/tools/seo-meta-preview/') &&
+    sitemapContent.includes('https://zelvori.software/tools/color-contrast/') &&
+    sitemapContent.includes('https://zelvori.software/tools/css-generator/') &&
+    sitemapContent.includes('https://zelvori.software/tools/json-formatter/') &&
+    sitemapContent.includes('https://zelvori.software/tools/social-preview/'),
+  'sitemap.xml includes all 5 individual browser tools'
+);
+
+const toolsHtml = fs.readFileSync(path.join(outDir, 'tools', 'index.html'), 'utf8');
+assert(
+  toolsHtml.includes('100% Client-Side Privacy'),
+  'tools hub states client-side privacy guarantee'
+);
+
+const contrastHtml = fs.readFileSync(path.join(outDir, 'tools', 'color-contrast', 'index.html'), 'utf8');
+assert(
+  contrastHtml.includes('does not describe a color pair as fully WCAG-compliant'),
+  'color contrast tool includes mandatory caveat about full WCAG compliance'
+);
+
+const jsonHtml = fs.readFileSync(path.join(outDir, 'tools', 'json-formatter', 'index.html'), 'utf8');
+assert(
+  jsonHtml.includes('RFC 8259') && jsonHtml.includes('Client-Side Memory'),
+  'json formatter tool states RFC 8259 compliance and client-side memory safety'
+);
+
+const socialHtml = fs.readFileSync(path.join(outDir, 'tools', 'social-preview', 'index.html'), 'utf8');
+assert(
+  socialHtml.includes('preview is simulated and actual rendering varies'),
+  'social preview tool states platform simulation disclaimer truthfully'
+);
 
 
 const storiesHtml = fs.readFileSync(path.join(outDir, 'stories', 'index.html'), 'utf8');

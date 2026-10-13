@@ -75,6 +75,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/tools/" className="hover:text-cyan-400 transition-colors block py-0.5">
+                  Dev Lab (Browser Tools)
+                </Link>
+              </li>
+              <li>
                 <Link href="/pricing" className="hover:text-cyan-400 transition-colors block py-0.5">
                   Transparent Pricing
                 </Link>

@@ -78,6 +78,12 @@ server.listen(PORT, async () => {
     '/services/ai-automation/',
     '/services/custom-software/',
     '/services/application-security/',
+    '/tools/',
+    '/tools/seo-meta-preview/',
+    '/tools/color-contrast/',
+    '/tools/css-generator/',
+    '/tools/json-formatter/',
+    '/tools/social-preview/',
   ].map(r => r.replace('//', '/'));
 
   let passed = 0;
@@ -157,6 +163,28 @@ server.listen(PORT, async () => {
   check('Contains Copy full prompt action', resourcesHtml.includes('Copy full prompt'));
   check('Contains Download brief action', resourcesHtml.includes('Download brief (.md)'));
   check('Discloses prompt tool does not call an AI API', resourcesHtml.includes('does not call an AI API'));
+
+  // Deep checks on /tools/
+  console.log('\n--- Deep Inspection on /tools/ ---');
+  const toolsRes = await fetch(`http://localhost:${PORT}/tools/`);
+  const toolsHtml = await toolsRes.text();
+  check('Renders Dev Lab title and headline', toolsHtml.includes('Zelvori Dev Lab') || toolsHtml.includes('Free Developer Lab'));
+  check('Displays 100% Client-Side Privacy guarantee', toolsHtml.includes('100% Client-Side Privacy'));
+  check('Links to SEO Meta Preview', toolsHtml.includes('/tools/seo-meta-preview/'));
+  check('Links to Color Contrast Checker', toolsHtml.includes('/tools/color-contrast/'));
+  check('Links to CSS Generator', toolsHtml.includes('/tools/css-generator/'));
+  check('Links to JSON Formatter', toolsHtml.includes('/tools/json-formatter/'));
+  check('Links to Social Preview', toolsHtml.includes('/tools/social-preview/'));
+
+  // Deep check on /tools/color-contrast/
+  const contrastRes = await fetch(`http://localhost:${PORT}/tools/color-contrast/`);
+  const contrastHtml = await contrastRes.text();
+  check('Color Contrast tool includes non-exhaustive WCAG caveat', contrastHtml.includes('does not describe a color pair as fully WCAG-compliant'));
+
+  // Deep check on /tools/json-formatter/
+  const jsonRes = await fetch(`http://localhost:${PORT}/tools/json-formatter/`);
+  const jsonHtml = await jsonRes.text();
+  check('JSON Formatter includes RFC 8259 compliance statement', jsonHtml.includes('RFC 8259'));
 
   console.log(`\n========================================`);
   console.log(`Local Staging Test Results:`);

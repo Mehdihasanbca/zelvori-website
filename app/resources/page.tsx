@@ -14,6 +14,7 @@ import {
   Paintbrush,
   Sparkles,
   WandSparkles,
+  Zap,
 } from 'lucide-react';
 import { BuildPromptStudio } from '@/components/resources/BuildPromptStudio';
 
@@ -151,6 +152,9 @@ export default function ResourcesPage() {
           <a href="#prompt-studio" className="inline-flex items-center gap-2 rounded-xl bg-cyan-400 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-cyan-300">
             <Sparkles className="h-4 w-4" /> Use free Build Prompt Studio
           </a>
+          <Link href="/tools/" className="inline-flex items-center gap-2 rounded-xl border border-cyan-500/40 bg-cyan-950/40 px-5 py-3 text-sm font-semibold text-cyan-300 transition hover:bg-cyan-900/50 hover:text-cyan-200">
+            <Zap className="h-4 w-4" /> Open Free Dev Lab (Tools)
+          </Link>
           <Link href="/stories/" className="inline-flex items-center gap-2 rounded-xl border border-slate-700 bg-slate-900 px-5 py-3 text-sm font-medium text-slate-200 transition hover:border-cyan-500/40">
             Read industry stories <ArrowUpRight className="h-4 w-4" />
           </Link>

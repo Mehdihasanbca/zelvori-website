@@ -167,6 +167,14 @@ export function Navbar() {
             Resources
           </Link>
           <Link
+            href="/tools/"
+            className={`hover:text-white transition-colors whitespace-nowrap shrink-0 py-2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-cyan-400 rounded ${
+              pathname.startsWith('/tools') ? 'text-cyan-400' : 'text-slate-300'
+            }`}
+          >
+            Tools
+          </Link>
+          <Link
             href="/#work"
             className="hover:text-white transition-colors whitespace-nowrap shrink-0 py-2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-cyan-400 rounded"
           >
@@ -284,6 +292,13 @@ export function Navbar() {
               className="block px-3 py-2.5 text-sm font-medium text-cyan-300 hover:text-cyan-200 hover:bg-cyan-950/30 rounded-xl transition-colors"
             >
               Free Developer Resources
+            </Link>
+            <Link
+              href="/tools/"
+              onClick={closeMenus}
+              className="block px-3 py-2.5 text-sm font-medium text-cyan-300 hover:text-cyan-200 hover:bg-cyan-950/30 rounded-xl transition-colors"
+            >
+              Dev Lab (Browser Tools)
             </Link>
             <Link
               href="/payments"

@@ -27,6 +27,12 @@ const routes = [
   '/services/ai-automation/',
   '/services/custom-software/',
   '/services/application-security/',
+  '/tools/',
+  '/tools/seo-meta-preview/',
+  '/tools/color-contrast/',
+  '/tools/css-generator/',
+  '/tools/json-formatter/',
+  '/tools/social-preview/',
 ];
 
 function fetchUrl(url) {
@@ -152,6 +158,42 @@ async function audit() {
     checkResources('References OpenGraph raster card', resourcesHtml.includes('zelvori-og.png'));
   } catch (err) {
     console.error(`❌ [LIVE RESOURCES ERROR]: ${err.message}`);
+    failed++;
+  }
+
+  // Deep checks on live /tools/
+  console.log('\n--- Deep Inspection on Live /tools/ Endpoint ---');
+  try {
+    const toolsRes = await fetchUrl(`${BASE_URL}/tools/`);
+    const toolsHtml = toolsRes.body;
+    function checkTools(label, condition) {
+      if (condition) {
+        console.log(`✅ [LIVE TOOLS PASS] ${label}`);
+        passed++;
+      } else {
+        console.error(`❌ [LIVE TOOLS FAIL] ${label}`);
+        failed++;
+      }
+    }
+    checkTools('Returns HTTP 200 OK', toolsRes.statusCode === 200);
+    checkTools('Contains Dev Lab title and headline', toolsHtml.includes('Zelvori Dev Lab') || toolsHtml.includes('Free Developer Lab'));
+    checkTools('Displays 100% Client-Side Privacy guarantee', toolsHtml.includes('100% Client-Side Privacy'));
+    checkTools('Links to SEO Meta Preview', toolsHtml.includes('/tools/seo-meta-preview/'));
+    checkTools('Links to Color Contrast Checker', toolsHtml.includes('/tools/color-contrast/'));
+    checkTools('Links to CSS Generator', toolsHtml.includes('/tools/css-generator/'));
+    checkTools('Links to JSON Formatter', toolsHtml.includes('/tools/json-formatter/'));
+    checkTools('Links to Social Preview', toolsHtml.includes('/tools/social-preview/'));
+    checkTools('References OpenGraph raster card', toolsHtml.includes('zelvori-og.png'));
+
+    // Deep check on live /tools/color-contrast/
+    const contrastRes = await fetchUrl(`${BASE_URL}/tools/color-contrast/`);
+    checkTools('Color Contrast tool returns 200 and includes WCAG caveat', contrastRes.statusCode === 200 && contrastRes.body.includes('does not describe a color pair as fully WCAG-compliant'));
+
+    // Deep check on live /tools/json-formatter/
+    const jsonRes = await fetchUrl(`${BASE_URL}/tools/json-formatter/`);
+    checkTools('JSON Formatter tool returns 200 and includes RFC 8259 compliance statement', jsonRes.statusCode === 200 && jsonRes.body.includes('RFC 8259'));
+  } catch (err) {
+    console.error(`❌ [LIVE TOOLS ERROR]: ${err.message}`);
     failed++;
   }
 
