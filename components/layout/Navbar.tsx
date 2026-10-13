@@ -68,7 +68,7 @@ export function Navbar() {
                 <div className="p-3 bg-[#0d1424]/95 border border-slate-800/90 rounded-2xl shadow-2xl backdrop-blur-2xl">
                   <div className="text-[10px] font-mono uppercase tracking-wider text-cyan-400 px-3 py-1.5 border-b border-slate-800/80 mb-1.5 flex items-center justify-between">
                     <span>Engineering Practices</span>
-                    <span>06 SERVICES</span>
+                    <span>{siteConfig.services.length.toString().padStart(2, '0')} SERVICES</span>
                   </div>
                   {siteConfig.services.map((service) => (
                     <Link

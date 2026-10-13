@@ -23,7 +23,12 @@ export const metadata: Metadata = {
     'enterprise software development',
     'Next.js development',
     'React Native apps',
+    'application security',
+    'secure software engineering',
+    'threat modeling',
+    'API security',
   ],
+  referrer: 'origin-when-cross-origin',
   authors: [{ name: 'Zelvori' }],
   creator: 'Zelvori',
   publisher: 'Zelvori',
@@ -99,6 +104,8 @@ const organizationSchema = {
     'Custom CRM and ERP Systems',
     'AI Workflow Automation',
     'System Integrations',
+    'Application Security & Threat Modeling',
+    'DevSecOps & Defensive Architecture',
   ],
 };
 
@@ -110,6 +117,8 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark scroll-smooth">
       <head>
+        {/* Referrer Policy Client-Side Meta Tag for Static Hosting */}
+        <meta name="referrer" content="strict-origin-when-cross-origin" />
         {/* Critical Above-The-Fold CSS Inlined for Instant Paint & Zero Render Blocking */}
         <style
           id="critical-css"
@@ -119,7 +128,9 @@ export default function RootLayout({
         <link rel="preconnect" href="https://zelvori.software" />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema).replace(/</g, '\\u003c'),
+          }}
         />
       </head>
       <body className="min-h-screen bg-[#070b14] text-slate-100 flex flex-col font-sans selection:bg-cyan-500/20 selection:text-cyan-300" suppressHydrationWarning>

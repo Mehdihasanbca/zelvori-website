@@ -25,7 +25,7 @@ const capabilityDetails = [
   { artifact: 'Strict TypeScript & Polyglot APIs', metric: 'Compile-Time Type Safety' },
   { artifact: 'Event-Driven Webhooks & Messaging', metric: 'Sub-15ms Latency' },
   { artifact: 'Automated CI/CD Test Matrices', metric: 'Zero-Downtime Deploy' },
-  { artifact: 'Kubernetes, Cloud Run & Observability', metric: '24/7 SLA Telemetry' },
+  { artifact: 'Kubernetes, Cloud Run & Observability', metric: 'Automated Health Telemetry' },
 ];
 
 export function CapabilitiesSection() {

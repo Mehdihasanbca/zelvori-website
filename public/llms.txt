@@ -17,6 +17,8 @@ Zelvori (https://zelvori.software/) is an international digital product developm
   Production-grade LLM integrations, document parsing, RAG knowledge bases, queue automation, and intelligent support routing.
 - Custom Software & System Integrations (https://zelvori.software/services/custom-software/)
   Backend architectures, microservices, third-party API orchestration, legacy modernization, and distributed event systems.
+- Application Security & Secure Software Engineering (https://zelvori.software/services/application-security/)
+  Defensive software architecture, STRIDE threat modeling, API vulnerability reviews, identity & access hardening (MFA/RBAC), data protection, supply-chain verification, and AI application guardrails.
 
 ## Architectural Archetypes & Capabilities
 

@@ -8,8 +8,10 @@ import {
   Building2,
   Cpu,
   Layers,
+  ShieldCheck,
   ArrowRight,
   Check,
+  Lock,
 } from 'lucide-react';
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -19,6 +21,7 @@ const iconMap: Record<string, React.ReactNode> = {
   Building2: <Building2 className="w-5 h-5 text-cyan-300" />,
   Cpu: <Cpu className="w-5 h-5 text-sky-300" />,
   Layers: <Layers className="w-5 h-5 text-indigo-300" />,
+  Shield: <ShieldCheck className="w-5 h-5 text-emerald-400" />,
 };
 
 export function ServicesSection() {
@@ -48,10 +51,86 @@ export function ServicesSection() {
           </p>
         </div>
 
-        {/* 6 Clickable Service Cards with layered depth and hover lift */}
+        {/* 7 Clickable Service Cards with layered depth and security showcase */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {siteConfig.services.map((service, index) => {
             const icon = iconMap[service.iconName] || <Globe className="w-5 h-5 text-cyan-400" />;
+            const isFeaturedSecurity = service.slug === 'application-security';
+
+            if (isFeaturedSecurity) {
+              return (
+                <Link
+                  key={service.slug}
+                  href={`/services/${service.slug}`}
+                  className="group md:col-span-2 lg:col-span-3 relative p-8 sm:p-10 bg-gradient-to-br from-[#0c1326] via-[#091022] to-[#070b18] hover:from-[#0f1730] hover:to-[#0a1228] border border-cyan-500/30 hover:border-cyan-400/60 rounded-3xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-cyan-950/40 overflow-hidden card-shine focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+                >
+                  <div
+                    className="absolute top-0 right-0 w-80 h-80 bg-emerald-500/08 rounded-full blur-3xl group-hover:bg-cyan-500/12 transition-colors pointer-events-none"
+                    aria-hidden="true"
+                  />
+
+                  <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+                    <div className="max-w-2xl space-y-4">
+                      <div className="flex flex-wrap items-center gap-3">
+                        <div className="w-12 h-12 rounded-xl bg-slate-900/90 border border-emerald-500/30 flex items-center justify-center group-hover:scale-105 transition-all">
+                          {icon}
+                        </div>
+                        <span className="px-2.5 py-1 text-[11px] font-mono tracking-wider text-emerald-400 bg-emerald-950/60 border border-emerald-500/30 rounded-lg">
+                          NEW · DEVSECOPS & APPSEC
+                        </span>
+                        <span className="text-xs font-mono text-slate-400">
+                          0{index + 1} · CORE PRACTICE
+                        </span>
+                      </div>
+
+                      <div>
+                        <h3 className="text-2xl sm:text-3xl font-bold text-white group-hover:text-cyan-200 transition-colors">
+                          {service.title}
+                        </h3>
+                        <p className="mt-1.5 text-xs sm:text-sm text-cyan-400 font-medium">
+                          {service.tagline}
+                        </p>
+                      </div>
+
+                      <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                        {service.description}
+                      </p>
+
+                      <div className="flex flex-wrap items-center gap-2 pt-2">
+                        {service.technologies.slice(0, 5).map((tech) => (
+                          <span
+                            key={tech}
+                            className="px-2.5 py-1 text-[11px] font-mono text-slate-300 bg-slate-900/80 border border-slate-800 rounded-md"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="lg:w-80 shrink-0 p-6 bg-slate-900/70 border border-slate-800/80 rounded-2xl space-y-3">
+                      <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-slate-300">
+                        <Lock className="w-3.5 h-3.5 text-emerald-400" />
+                        <span>Core Deliverables</span>
+                      </div>
+                      <div className="space-y-2">
+                        {service.deliverables.slice(0, 4).map((item) => (
+                          <div key={item} className="flex items-start gap-2 text-xs text-slate-300">
+                            <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0 mt-0.5" />
+                            <span className="line-clamp-1">{item}</span>
+                          </div>
+                        ))}
+                      </div>
+
+                      <div className="pt-3 border-t border-slate-800 flex items-center justify-between text-xs font-semibold text-cyan-400 group-hover:text-cyan-300">
+                        <span>Explore Security Practice</span>
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              );
+            }
 
             return (
               <Link

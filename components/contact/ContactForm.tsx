@@ -155,6 +155,7 @@ ${formData.message}`;
               id="name"
               name="name"
               required
+              maxLength={100}
               value={formData.name}
               onChange={handleChange}
               placeholder="e.g. Alex Chen"
@@ -171,6 +172,7 @@ ${formData.message}`;
               id="email"
               name="email"
               required
+              maxLength={120}
               value={formData.email}
               onChange={handleChange}
               placeholder="e.g. alex@company.com"
@@ -188,6 +190,7 @@ ${formData.message}`;
               type="text"
               id="company"
               name="company"
+              maxLength={120}
               value={formData.company}
               onChange={handleChange}
               placeholder="e.g. Acme Technologies"
@@ -265,6 +268,7 @@ ${formData.message}`;
             name="message"
             required
             rows={4}
+            maxLength={4000}
             value={formData.message}
             onChange={handleChange}
             placeholder="Describe your technical objectives: What are you building? Who will use it? Any required integrations or performance constraints?"

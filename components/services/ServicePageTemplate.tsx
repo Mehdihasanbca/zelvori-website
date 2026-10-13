@@ -51,7 +51,9 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
       {/* JSON-LD Schema for the service */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(schemaData).replace(/</g, '\\u003c'),
+        }}
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 lg:space-y-28 relative z-10">

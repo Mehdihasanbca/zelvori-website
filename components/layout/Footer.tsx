@@ -99,6 +99,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/#security" className="hover:text-cyan-400 transition-colors block py-0.5">
+                  Trust & Security Standards
+                </Link>
+              </li>
+              <li>
                 <a
                   href={siteConfig.social.github}
                   target="_blank"

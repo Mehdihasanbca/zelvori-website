@@ -22,8 +22,9 @@ This project is configured for **static export (`output: 'export'`)** with trail
 ├── app/                    # Next.js 15 App Router pages & layouts
 │   ├── about/              # About Zelvori
 │   ├── contact/            # Project Inquiry Builder & Contact Desk
-│   ├── services/           # 6 Dedicated Service Pages
+│   ├── services/           # 7 Dedicated Service Pages
 │   │   ├── ai-automation/
+│   │   ├── application-security/
 │   │   ├── business-software/
 │   │   ├── custom-software/
 │   │   ├── ecommerce/
@@ -34,8 +35,11 @@ This project is configured for **static export (`output: 'export'`)** with trail
 │   ├── globals.css         # Tailwind & global design tokens
 │   ├── layout.tsx          # Root Layout & Metadata
 │   ├── not-found.tsx       # Branded 404 handler
-│   └── page.tsx            # Homepage with Hero, Selected Work & Services
+│   └── page.tsx            # Homepage with Hero, Work, Services & Trust
 ├── components/             # Reusable UI, layout & section components
+├── docs/                   # Engineering & Security Documentation
+│   ├── SECURITY_ENGINEERING_BLUEPRINT.md # Layer A-H Defensive Blueprint
+│   └── SECURITY_CONTROLS_MATRIX.md       # Internal Controls & Evidence Matrix
 ├── hooks/                  # Custom React hooks (useIsMobile, etc.)
 ├── lib/                    # Configuration, critical CSS & schema definitions
 │   ├── critical-css.ts     # Inlined above-the-fold critical CSS

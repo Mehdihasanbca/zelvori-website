@@ -34,6 +34,11 @@ const AiAutomationSection = dynamic(
   { ssr: true }
 );
 
+const TrustSecuritySection = dynamic(
+  () => import('@/components/home/TrustSecuritySection').then((mod) => mod.TrustSecuritySection),
+  { ssr: true }
+);
+
 const ApproachSection = dynamic(
   () => import('@/components/home/ApproachSection').then((mod) => mod.ApproachSection),
   { ssr: true }
@@ -59,6 +64,7 @@ export default function HomePage() {
       <ProcessSection />
       <SolutionsSection />
       <AiAutomationSection />
+      <TrustSecuritySection />
       <ApproachSection />
       <FaqSection />
       <ContactCtaSection />

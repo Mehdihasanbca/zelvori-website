@@ -374,6 +374,76 @@ export const siteConfig = {
         },
       ],
     },
+    {
+      id: "application-security",
+      slug: "application-security",
+      title: "Application Security & Secure Software Engineering",
+      shortTitle: "Application Security",
+      tagline: "Threat-resilient architectures, defensive engineering, and vulnerability remediation.",
+      description:
+        "We embed security engineering directly into product design and delivery. From threat modeling and API vulnerability reviews to least-privilege IAM hardening and supply-chain verification, we protect critical business assets without stalling product velocity.",
+      summary:
+        "Defensive software architecture, application and API security reviews, sensitive-data protection, and pragmatic vulnerability remediation for high-growth systems.",
+      badge: "DevSecOps & AppSec",
+      iconName: "Shield",
+      deliverables: [
+        "Secure Software Architecture & Threat Modeling (STRIDE)",
+        "Application & API Security Reviews (OWASP ASVS & API Top 10)",
+        "Identity, Authentication & Authorization Hardening (MFA / RBAC)",
+        "Data Protection, Privacy-by-Design & Sensitive Data Minimization",
+        "Secure Cloud Configuration & Secrets Management (AWS / GCP / Cloudflare)",
+        "Software Supply-Chain & Dependency Vulnerability Remediation (SBOM / SCA)",
+        "Security Controls & Guardrails for AI-Enabled Applications",
+        "Security Logging, Audit Trails & Incident Recovery Planning",
+        "Authorized Penetration Testing (Subject to scope and qualified resources)",
+      ],
+      technologies: [
+        "OWASP ASVS",
+        "OAuth 2.1 & OIDC",
+        "PostgreSQL RLS",
+        "AWS KMS & Cloud KMS",
+        "HashiCorp Vault",
+        "Trivy & Snyk",
+        "Cloudflare Zero Trust",
+        "GitHub Actions OIDC",
+      ],
+      useCases: [
+        {
+          title: "Pre-Launch & Post-Funding Security Hardening",
+          desc: "Comprehensive application audit before commercial rollout or enterprise due diligence, verifying authentication boundaries, object-level authorization (BOLA), and tenant isolation.",
+        },
+        {
+          title: "B2B SaaS Multi-Tenant Isolation & Identity Modernization",
+          desc: "Hardening multi-tenant B2B architectures with row-level security (RLS), cryptographically signed session tokens, MFA integration, and granular role-based access control.",
+        },
+        {
+          title: "AI & RAG System Security Architecture",
+          desc: "Defense-in-depth for generative AI workflows: prompt-injection boundaries, server-side document access authorization, sensitive-data redaction, and human-in-the-loop controls.",
+        },
+      ],
+      faqs: [
+        {
+          question: "Does Zelvori guarantee that an application will be 100% hack-proof or zero risk?",
+          answer:
+            "No reputable security engineer makes that claim. Zero risk does not exist in production software. Our focus is defense-in-depth: eliminating high-probability attack vectors, minimizing data blast radius, enforcing least-privilege controls, and ensuring rapid detection and recovery if an incident occurs.",
+        },
+        {
+          question: "Does Zelvori operate a 24/7 Security Operations Center (SOC) or issue ISO 27001 certifications?",
+          answer:
+            "No. Zelvori provides application security engineering, architecture reviews, secure coding, and vulnerability remediation. We do not operate a managed 24/7 SOC, nor do we act as an accredited ISO 27001 / SOC 2 certification registrar. We help engineering teams implement the technical controls and evidence needed to succeed in external third-party compliance audits.",
+        },
+        {
+          question: "How are authorized penetration tests conducted?",
+          answer:
+            "Penetration testing engagements require explicit written authorization, verified rules of engagement, defined scope, and allocated qualified security personnel. We focus on application-layer logic, authentication bypass, authorization flaws, and API vulnerabilities rather than untargeted automated scans.",
+        },
+        {
+          question: "What standards and frameworks guide your security recommendations?",
+          answer:
+            "Our engineering practices align with NIST Cybersecurity Framework (CSF) 2.0, NIST Secure Software Development Framework (SP 800-218), OWASP Top 10:2025, and OWASP API Security Top 10:2023. These serve as rigorous technical benchmarks for defensive implementation.",
+        },
+      ],
+    },
   ] as ServiceItem[],
 
   // Process Steps
