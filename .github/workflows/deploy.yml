@@ -36,6 +36,9 @@ jobs:
         run: |
           npm ci --prefer-offline
 
+      - name: Run ESLint
+        run: npm run lint
+
       - name: Build Static Site with Next.js
         run: |
           npm run build
@@ -52,6 +55,8 @@ jobs:
           fi
           echo "Running automated security regression tests:"
           npm run verify
+          echo "Running generated-site QA and interaction audits:"
+          node scripts/qa-audit.mjs
 
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
