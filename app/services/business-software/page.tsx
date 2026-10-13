@@ -10,13 +10,13 @@ export const metadata: Metadata = {
   description:
     'Tailored enterprise software designed for proprietary operations. Custom CRM, HRMS, inventory, and ERP systems with role-based access control and zero per-seat licensing fees.',
   alternates: {
-    canonical: 'https://zelvori.software/services/business-software',
+    canonical: 'https://zelvori.software/services/business-software/',
   },
   openGraph: {
     title: 'Custom CRM, HRMS, ERP & Business Software | Zelvori Software',
     description:
       'Bespoke enterprise software platforms engineered to eliminate manual spreadsheets and automate proprietary business workflows.',
-    url: 'https://zelvori.software/services/business-software',
+    url: 'https://zelvori.software/services/business-software/',
   },
 };
 
