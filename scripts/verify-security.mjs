@@ -64,6 +64,22 @@ const expectedRoutes = [
   'services/ai-automation',
   'services/custom-software',
   'services/application-security',
+  'tools',
+  'tools/seo-meta-preview',
+  'tools/color-contrast',
+  'tools/css-generator',
+  'tools/json-formatter',
+  'tools/social-preview',
+  'solutions',
+  'solutions/healthcare',
+  'solutions/legal',
+  'solutions/business-operations',
+  'solutions/marketplace',
+  'solutions/food-delivery',
+  'solutions/ecommerce',
+  'solutions/creators',
+  'solutions/education',
+  'solutions/logistics',
 ];
 
 for (const route of expectedRoutes) {

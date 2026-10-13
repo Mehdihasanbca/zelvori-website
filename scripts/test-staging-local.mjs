@@ -85,6 +85,16 @@ server.listen(PORT, async () => {
     '/tools/css-generator/',
     '/tools/json-formatter/',
     '/tools/social-preview/',
+    '/solutions/',
+    '/solutions/healthcare/',
+    '/solutions/legal/',
+    '/solutions/business-operations/',
+    '/solutions/marketplace/',
+    '/solutions/food-delivery/',
+    '/solutions/ecommerce/',
+    '/solutions/creators/',
+    '/solutions/education/',
+    '/solutions/logistics/',
   ].map(r => r.replace('//', '/'));
 
   let passed = 0;

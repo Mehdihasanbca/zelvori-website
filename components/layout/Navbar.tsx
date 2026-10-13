@@ -189,8 +189,10 @@ export function Navbar() {
             Work
           </Link>
           <Link
-            href="/#solutions"
-            className="hover:text-white transition-colors whitespace-nowrap shrink-0 py-2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-cyan-400 rounded"
+            href="/solutions/"
+            className={`hover:text-white transition-colors whitespace-nowrap shrink-0 py-2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-cyan-400 rounded ${
+              pathname.startsWith('/solutions') ? 'text-cyan-400' : 'text-slate-300'
+            }`}
           >
             Solutions
           </Link>
@@ -330,11 +332,11 @@ export function Navbar() {
               Selected Work
             </Link>
             <Link
-              href="/#solutions"
+              href="/solutions/"
               onClick={closeMenus}
-              className="block px-3 py-2.5 text-sm font-medium text-slate-200 hover:text-white hover:bg-slate-900/80 rounded-xl transition-colors"
+              className="block px-3 py-2.5 text-sm font-medium text-cyan-300 hover:text-cyan-200 hover:bg-cyan-950/30 rounded-xl transition-colors"
             >
-              Solutions
+              Industry Solutions
             </Link>
             <Link
               href="/#process"

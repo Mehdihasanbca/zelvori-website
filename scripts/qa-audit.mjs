@@ -254,6 +254,42 @@ assert(
   'homepage promotes industry stories and developer resources'
 );
 
+// 11. Phase 18 Solutions Hub & 9 Industry Blueprints Verification
+const solutionsHubHtml = fs.readFileSync(path.join(outDir, 'solutions/index.html'), 'utf8');
+assert(
+  solutionsHubHtml.includes('Phase 18 Master Architecture Blueprints') &&
+    solutionsHubHtml.includes('Build vs Buy vs DIY') &&
+    solutionsHubHtml.includes('Explore the 9 Industry Blueprints'),
+  'solutions hub page renders master blueprints, competitive positioning matrix, and catalog'
+);
+
+const expectedBlueprints = [
+  'healthcare',
+  'legal',
+  'business-operations',
+  'marketplace',
+  'food-delivery',
+  'ecommerce',
+  'creators',
+  'education',
+  'logistics',
+];
+
+for (const slug of expectedBlueprints) {
+  const blueprintPath = path.join(outDir, 'solutions', slug, 'index.html');
+  assert(fs.existsSync(blueprintPath), `Industry Blueprint out/solutions/${slug}/index.html exists`);
+  if (fs.existsSync(blueprintPath)) {
+    const bpContent = fs.readFileSync(blueprintPath, 'utf8');
+    assert(
+      bpContent.includes('6-Tier Zero-Trust Reference Architecture') &&
+        bpContent.includes('Role-Based Access Control') &&
+        bpContent.includes('Definition of Done') &&
+        bpContent.includes('Request Custom Scope'),
+      `[solutions/${slug}] Contains complete 16-point blueprint sections and zero-trust controls`
+    );
+  }
+}
+
 console.log(`\n========================================`);
 console.log(`Total QA Checks Executed: ${checks}`);
 console.log(`Total QA Failures: ${errors}`);

@@ -90,8 +90,8 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/#solutions" className="hover:text-cyan-400 transition-colors block py-0.5">
-                  Solutions by Sector
+                <Link href="/solutions/" className="hover:text-cyan-400 transition-colors block py-0.5">
+                  Industry Solutions Hub
                 </Link>
               </li>
               <li>
