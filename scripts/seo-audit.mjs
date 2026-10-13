@@ -5,6 +5,7 @@ const outDir = path.resolve('out');
 const origin = 'https://zelvori.software';
 const indexNowKey = 'f5440ecc35943a75c29c1b4cf9e00d90';
 const allowedDiscoveryBots = [
+  'Googlebot', 'bingbot',
   'OAI-SearchBot', 'ChatGPT-User',
   'Claude-SearchBot', 'Claude-User',
   'PerplexityBot', 'Perplexity-User',

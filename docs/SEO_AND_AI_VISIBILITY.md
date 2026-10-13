@@ -5,8 +5,8 @@ This document records website-side changes and the remaining owner-authorized ac
 ## Implemented in the repository
 
 - Canonical HTTPS domain: https://zelvori.software/
-- public/robots.txt allows public crawling and explicitly permits the ChatGPT, Claude and Perplexity search/retrieval crawlers; it also permits Google-Extended and Meta-ExternalAgent for broader AI-product discovery.
-- Training-focused tokens GPTBot, ClaudeBot, Applebot-Extended and Bytespider are explicitly disallowed, while their separate search/retrieval crawlers remain allowed. Google-Extended and Meta-ExternalAgent can also be used for training; they remain allowed to prioritize the requested wider AI-product discovery.
+- public/robots.txt allows public crawling and explicitly permits Googlebot, Bingbot, ChatGPT search/retrieval, Claude search/retrieval and Perplexity search/retrieval crawlers; it also permits Google-Extended and Meta-ExternalAgent for wider AI-product discovery.
+- Training-focused tokens GPTBot, ClaudeBot, Applebot-Extended and Bytespider are explicitly disallowed, while their separate search/retrieval crawlers remain allowed. Google-Extended is intentionally allowed to permit Gemini Apps grounding, with the trade-off that it can also permit Gemini model-training use. Google's documentation says Google-Extended does not control Google Search inclusion or ranking.
 - public/sitemap.xml lists only canonical paths, excluding duplicate privacy-policy and terms-of-service aliases.
 - public/llms.txt describes real service pages and labels visual architecture demos as illustrative rather than named client case studies.
 - A public IndexNow verification key file is deployed at the site root.
@@ -34,7 +34,7 @@ Submitting a sitemap is a discovery hint, not a guarantee that Google will crawl
 The GitHub Actions workflow submits sitemap URLs to IndexNow after successful deployment. An accepted notification means the service received URL-change information; it does not confirm indexing or rankings.
 
 ## AI search crawler policies
-The robots policy permits general crawling and search/retrieval crawlers where their search role is documented. Training-focused crawlers are separately disallowed when they have distinct user-agent tokens. Google-Extended and Meta-ExternalAgent are kept allowed to prioritize wider AI product discovery, with the trade-off that these tokens can also permit uses beyond conventional search. Crawl permission makes retrieval possible but does not guarantee citation or inclusion in any AI answer.
+The robots policy permits general crawling and search/retrieval crawlers where their search role is documented. Training-focused crawlers with distinct tokens are separately disallowed. Google-Extended remains allowed to permit Gemini Apps grounding, with the trade-off that Google may also use content to train Gemini models; this token does not affect Google Search inclusion or ranking. Meta-ExternalAgent remains allowed for wider Meta AI discovery. Crawl permission makes retrieval possible but does not guarantee citation or inclusion in any AI answer.
 
 - OpenAI crawler documentation: https://developers.openai.com/api/docs/bots
 - Google Search Central sitemap guidance: https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap

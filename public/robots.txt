@@ -5,6 +5,13 @@
 User-agent: *
 Allow: /
 
+# Google and Bing web search
+User-agent: Googlebot
+Allow: /
+
+User-agent: bingbot
+Allow: /
+
 # ChatGPT Search and user-requested browsing (separate from model-training crawler)
 User-agent: OAI-SearchBot
 Allow: /
@@ -26,8 +33,8 @@ Allow: /
 User-agent: Perplexity-User
 Allow: /
 
-# Gemini grounding and AI product discovery; this token can also permit use
-# of crawled content for model training. See Google's crawler documentation.
+# Gemini Apps grounding and AI product discovery; Google-Extended can also
+# permit use for Gemini model training. It does not control Google Search indexing.
 User-agent: Google-Extended
 Allow: /
 
@@ -36,8 +43,8 @@ Allow: /
 User-agent: Meta-ExternalAgent
 Allow: /
 
-# Separate training-focused crawlers are not needed for search discovery.
-# Googlebot, Applebot and the search/retrieval bots above remain allowed.
+# Separate training-focused crawlers are not needed for conventional search discovery.
+# Googlebot/Bingbot and the AI search/retrieval bots above remain allowed.
 User-agent: GPTBot
 Disallow: /
 
