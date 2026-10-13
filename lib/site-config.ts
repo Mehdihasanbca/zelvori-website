@@ -34,7 +34,7 @@ export const siteConfig = {
   // Contact settings (Configurable placeholders)
   contact: {
     email: "hello@zelvori.software",
-    whatsapp: "", // Configurable: e.g., "+1234567890" (leave empty if not currently active)
+    whatsapp: "+919162530999", // Zelvori business WhatsApp; update only when the owner changes the official contact number.
     bookingUrl: "", // Optional calendar booking link
     responseWindow: "Within 24 business hours",
     availability: "Accepting new client engagements for Q2–Q4",

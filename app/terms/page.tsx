@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { AlertCircle, FileCheck, ArrowRight, Shield, Layers, Scale } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Terms of Service | Zelvori',
+  title: 'Terms of Service',
   description:
     'Terms of Service governing the use of the Zelvori website, technical project proposals, and professional software engineering engagements.',
   alternates: {

@@ -22,7 +22,7 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Hostycare Hosting Recommendations & Setup Guide | Zelvori',
+  title: 'Hostycare Hosting Recommendations & Setup Guide',
   description:
     'Explore verified hosting options recommended by Zelvori for small business websites, WordPress, e-commerce, and cloud VPS deployments with transparent affiliate disclosure.',
   alternates: {
@@ -260,7 +260,7 @@ export default function HostycareHostingPage() {
             </Link>
           </div>
 
-          {/* Prominent Affiliate Disclosure (ASCI & FTC Compliant) */}
+          {/* Prominent Affiliate Disclosure & Transparency Note */}
           <div className="mt-8 mx-auto max-w-3xl rounded-xl border border-emerald-900/40 bg-emerald-950/20 p-4 text-left sm:p-5">
             <div className="flex items-start gap-3">
               <Shield className="h-5 w-5 text-emerald-400 shrink-0 mt-0.5" />
@@ -270,7 +270,7 @@ export default function HostycareHostingPage() {
                 affiliate referral links. If you purchase hosting services through these links, Zelvori may
                 earn a referral commission at <strong className="text-white">no additional cost to you</strong>.
                 We recommend hosting infrastructure based on technical fit, storage performance, and budget
-                proportionality. For full compliance terms, please consult our{' '}
+                proportionality. For details about our affiliate relationship and disclosure approach, please consult our{' '}
                 <Link href="/affiliate-disclosure/" className="text-emerald-400 underline underline-offset-2 hover:text-emerald-300">
                   Affiliate Disclosure Policy
                 </Link>

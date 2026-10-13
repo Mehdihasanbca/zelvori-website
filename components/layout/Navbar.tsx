@@ -49,7 +49,7 @@ export function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full transition-all duration-300 border-b ${
+      className={`zv-glass-nav sticky top-0 z-50 w-full transition-all duration-300 border-b ${
         scrolled
           ? 'bg-[#070b14]/92 backdrop-blur-xl border-slate-800/90 shadow-2xl shadow-black/40'
           : 'bg-[#070b14]/80 backdrop-blur-md border-slate-800/50'
@@ -97,7 +97,7 @@ export function Navbar() {
                 className="absolute top-full left-0 w-84 pt-2 z-50"
                 role="menu"
               >
-                <div className="p-3 bg-[#0d1424]/95 border border-slate-800/90 rounded-2xl shadow-2xl backdrop-blur-2xl">
+                <div className="zv-glass-popover p-3 bg-[#0d1424]/95 border border-slate-800/90 rounded-2xl shadow-2xl backdrop-blur-2xl">
                   <div className="text-[10px] font-mono uppercase tracking-wider text-cyan-400 px-3 py-1.5 border-b border-slate-800/80 mb-1.5 flex items-center justify-between">
                     <span>Engineering Practices</span>
                     <span>{siteConfig.services.length.toString().padStart(2, '0')} SERVICES</span>
@@ -253,7 +253,7 @@ export function Navbar() {
         <div
           id="mobile-navigation-drawer"
           aria-labelledby="mobile-menu-button"
-          className="md:hidden border-b border-slate-800/90 bg-[#070b14]/98 backdrop-blur-2xl px-5 pt-3 pb-8 max-h-[85vh] overflow-y-auto space-y-4"
+          className="zv-glass-mobile-nav md:hidden border-b border-slate-800/90 bg-[#070b14]/98 backdrop-blur-2xl px-5 pt-3 pb-8 max-h-[85vh] overflow-y-auto space-y-4"
         >
           <div className="space-y-1">
             <div className="py-2 px-1 text-[10px] font-mono uppercase tracking-wider text-cyan-400">

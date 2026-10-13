@@ -4,16 +4,16 @@ import Link from 'next/link';
 import { AlertCircle, ExternalLink, CheckCircle2, ArrowRight, ShieldCheck, DollarSign } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Affiliate Disclosure | Zelvori',
+  title: 'Affiliate Disclosure',
   description:
-    'Zelvori Affiliate Disclosure. Explains our referral partnerships, commission transparency, Hostycare hosting links, and ASCI guidelines compliance.',
+    'Zelvori's affiliate disclosure explains referral relationships, commission transparency and how hosting recommendations are presented.',
   alternates: {
     canonical: 'https://zelvori.software/affiliate-disclosure/',
   },
   openGraph: {
     title: 'Affiliate Disclosure | Zelvori',
     description:
-      'Transparent disclosure of our affiliate relationships, Hostycare referral links, commission model, and adherence to ASCI advertising standards.',
+      'Learn about Zelvori's affiliate relationships, referral commissions and transparent hosting recommendations.',
     url: 'https://zelvori.software/affiliate-disclosure/',
     images: [
       {
@@ -54,7 +54,7 @@ export default function AffiliateDisclosurePage() {
         <div className="p-4 rounded-xl border border-cyan-500/30 bg-cyan-950/20 text-xs text-slate-200 leading-relaxed flex items-start gap-3">
           <ShieldCheck className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
           <div>
-            <strong className="text-cyan-300">Material Connection Disclosure:</strong> In compliance with the Advertising Standards Council of India (ASCI) guidelines and global consumer transparency rules, we disclose that certain external links on this website are affiliate links. If you purchase products through these links, Zelvori may earn a referral commission at no additional cost to you.
+            <strong className="text-cyan-300">Material Connection Disclosure:</strong> We aim to make affiliate relationships clear and visible with reference to applicable advertising-disclosure guidance, including ASCI guidance. This statement describes our disclosure approach and is not a certification or a guarantee of legal compliance. Certain external links on this website are affiliate links. If you purchase products through these links, Zelvori may earn a referral commission at no additional cost to you.
           </div>
         </div>
 

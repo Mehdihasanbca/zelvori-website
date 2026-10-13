@@ -358,7 +358,7 @@ assert(
 );
 assert(
   hostycareHtml.includes('tid1=zelvori') && hostycareHtml.includes('tid2=hostycare_page'),
-  'hosting/hostycare/index.html includes verified tracking parameters'
+  'hosting/hostycare/index.html contains configured campaign parameters; vendor attribution is not asserted'
 );
 assert(
   hostycareHtml.includes('rel="noopener noreferrer sponsored"') || (hostycareHtml.includes('noopener') && hostycareHtml.includes('sponsored')),

@@ -20,7 +20,7 @@ import { SolutionsFilterGrid } from '@/components/solutions/SolutionsFilterGrid'
 import { CompetitivePositioningTable } from '@/components/solutions/CompetitivePositioningTable';
 
 export const metadata: Metadata = {
-  title: 'Industry Solutions & Architecture Blueprints | Zelvori',
+  title: 'Industry Solutions & Architecture Blueprints',
   description:
     'Production-ready reference architectures and delivery blueprints for 9 major industries. Zero SaaS per-seat tax, complete database sovereignty, and transparent milestone engineering.',
   alternates: {

@@ -116,6 +116,10 @@ for (const file of htmlFiles) {
       !titleMatch[1].includes('Zelvori Software'),
       `[${rel}] Page title uses "Zelvori", not "Zelvori Software": "${titleMatch[1]}"`
     );
+    assert(
+      !/(?:\s*\|\s*Zelvori){2,}$/i.test(titleMatch[1]),
+      "[" + rel + "] Page title contains only one Zelvori suffix: \"" + titleMatch[1] + "\""
+    );
   }
 
   // Ensure domain references are zelvori.software

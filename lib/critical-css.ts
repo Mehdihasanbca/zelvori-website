@@ -43,13 +43,13 @@ header {
   z-index: 50;
   width: 100%;
   height: 5rem;
-  background-color: rgba(7, 11, 20, 0.88);
+  background-color: rgba(7, 11, 20, 0.68);
   border-bottom: 1px solid rgba(30, 41, 59, 0.5);
 }
 @supports (backdrop-filter: blur(12px)) or (-webkit-backdrop-filter: blur(12px)) {
   header {
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(18px) saturate(160%);
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
   }
 }
 .header-inner {

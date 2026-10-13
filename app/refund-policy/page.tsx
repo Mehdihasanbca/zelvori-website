@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { AlertCircle, RefreshCw, CheckCircle2, ArrowRight, DollarSign, Mail, FileText } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Refund & Cancellation Policy | Zelvori',
+  title: 'Refund & Cancellation Policy',
   description:
     'Zelvori Refund and Cancellation Policy. Explains advance project deposits, milestone billing, partial refund calculations, and dispute workflows.',
   alternates: {
