@@ -10,13 +10,13 @@ export const metadata: Metadata = {
   description:
     'Native and cross-platform mobile apps for iOS and Android using React Native, Flutter, Swift, and Kotlin. Offline-ready and fluid 60fps performance.',
   alternates: {
-    canonical: 'https://zelvori.software/services/mobile-apps',
+    canonical: 'https://zelvori.software/services/mobile-apps/',
   },
   openGraph: {
     title: 'Android & iOS Mobile App Development | Zelvori Software',
     description:
       'High-performance mobile applications engineered for iOS and Android with fluid interactions and offline-first capabilities.',
-    url: 'https://zelvori.software/services/mobile-apps',
+    url: 'https://zelvori.software/services/mobile-apps/',
   },
 };
 
