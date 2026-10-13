@@ -106,7 +106,7 @@ server.listen(PORT, async () => {
     }
   }
 
-  // Check JS chunks referenced by /payments/
+  // Check JS chunks referenced by /payments/ do not load payment-button.js
   const scriptMatches = [...paymentsHtml.matchAll(/src="(\/_next\/static\/chunks\/[^"]+)"/g)].map(m => m[1]);
   let foundScriptInChunk = false;
   for (const scriptUrl of scriptMatches) {
@@ -118,12 +118,14 @@ server.listen(PORT, async () => {
     }
   }
 
-  check('Embeds exact button ID pl_TnOD6Jz1AQC5PU', paymentsHtml.includes('pl_TnOD6Jz1AQC5PU'));
-  check('Client chunk loads Razorpay embed script checkout.razorpay.com/v1/payment-button.js', foundScriptInChunk);
-  check('Explicitly displays Test Mode badge', paymentsHtml.includes('Mode: Razorpay Sandbox / Test Mode (Verified)'));
-  check('Contains quotation match requirement notice', paymentsHtml.includes('Pay only against an approved quotation or invoice'));
-  check('Contains receipt retention notice', paymentsHtml.includes('Retain your receipt and payment ID'));
-  check('Contains incorrect amount warning', paymentsHtml.includes('Verify reference &amp; amount before paying') || paymentsHtml.includes('Verify reference & amount before paying'));
+  check('Renders Request Project Advance Link CTA', paymentsHtml.includes('Request Project Advance Link'));
+  check('Contains prefilled mailto link with quotation fields', paymentsHtml.includes('mailto:hello@zelvori.software') && paymentsHtml.includes('Quotation%20or%20SOW%20reference'));
+  check('Explains project-specific advance amount rationale', paymentsHtml.includes('No one-size-fits-all advance amount'));
+  check('States authoritative merchant dashboard verification requirement', paymentsHtml.includes('Payment status must be verified in the merchant dashboard'));
+  check('Warns that browser redirect is not proof of settlement', paymentsHtml.includes('A browser redirect or screenshot alone is not proof of settlement'));
+  check('Zero fixed-amount button IDs embedded (pl_TnOD6Jz1AQC5PU / pl_TnOizH1tevZEe5)', !paymentsHtml.includes('pl_TnOD6Jz1AQC5PU') && !paymentsHtml.includes('pl_TnOizH1tevZEe5'));
+  check('No payment-button.js loaded on client', !foundScriptInChunk && !paymentsHtml.includes('payment-button.js'));
+  check('Zero unverified sandbox mode claims', !paymentsHtml.includes('Razorpay Sandbox / Test Mode (Verified)'));
   check('Zero live secret keys present', !paymentsHtml.includes('rzp_live_') && !paymentsHtml.includes('RAZORPAY_KEY_SECRET'));
 
   console.log(`\n========================================`);
