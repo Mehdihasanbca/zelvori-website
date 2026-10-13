@@ -89,10 +89,11 @@ export const metadata: Metadata = {
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
+  '@id': 'https://zelvori.software/#organization',
   name: 'Zelvori',
-  alternateName: 'Zelvori',
-  url: 'https://zelvori.software',
-  logo: 'https://zelvori.software/icon.svg',
+  alternateName: 'Zelvori Software',
+  url: 'https://zelvori.software/',
+  logo: 'https://zelvori.software/images/brand/favicon-512.png',
   description:
     'Zelvori is an international digital product development partner specializing in web applications, mobile apps, e-commerce, custom ERP/CRM software, and AI workflow automation.',
   email: 'hello@zelvori.software',
@@ -109,6 +110,18 @@ const organizationSchema = {
     'Application Security & Threat Modeling',
     'DevSecOps & Defensive Architecture',
   ],
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': 'https://zelvori.software/#website',
+  name: 'Zelvori',
+  alternateName: ['Zelvori Software', 'zelvori.software'],
+  url: 'https://zelvori.software/',
+  publisher: {
+    '@id': 'https://zelvori.software/#organization',
+  },
 };
 
 export default function RootLayout({
@@ -132,6 +145,12 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(organizationSchema).replace(/</g, '\\u003c'),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteSchema).replace(/</g, '\\u003c'),
           }}
         />
       </head>
