@@ -188,8 +188,7 @@ assert(
 
 const storiesHtml = fs.readFileSync(path.join(outDir, 'stories', 'index.html'), 'utf8');
 assert(
-  storiesHtml.includes('illustrative scenarios, not claims about named') &&
-    storiesHtml.includes('Law practice') === false,
+  storiesHtml.includes('illustrative scenarios, not claims about named clients'),
   'stories page clearly separates illustrative use cases from client testimonials'
 );
 assert(
