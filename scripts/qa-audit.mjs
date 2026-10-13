@@ -186,23 +186,30 @@ assert(
   'pricing/index.html includes formal owner approval and SOW commercial notice'
 );
 
-// 10. Razorpay Payments Page & Button ID Verification
+// 10. Project-specific Razorpay Advance Request Verification
 const paymentsHtml = fs.readFileSync(path.join(outDir, 'payments/index.html'), 'utf8');
 assert(
-  paymentsHtml.includes('pl_TnOD6Jz1AQC5PU'),
-  'payments/index.html embeds exact supplied Razorpay button ID pl_TnOD6Jz1AQC5PU'
+  paymentsHtml.includes('Request Project Advance Link'),
+  'payments/index.html offers a project-specific advance-link request'
 );
 assert(
-  paymentsHtml.includes('Pay only against an approved quotation'),
-  'payments/index.html enforces payment only against approved quotation/invoice'
+  paymentsHtml.includes('approved quotation'),
+  'payments/index.html requires an approved quotation'
 );
 assert(
-  paymentsHtml.includes('Retain your receipt'),
-  'payments/index.html instructs customer to retain payment receipt and ID'
+  paymentsHtml.includes('payment status must be verified in the merchant dashboard'),
+  'payments/index.html requires authoritative dashboard payment verification'
 );
 assert(
-  paymentsHtml.includes('Razorpay Sandbox / Test Mode (Verified)') || paymentsHtml.includes('Test Environment Active'),
-  'payments/index.html marks verified Razorpay Test Mode status clearly'
+  !paymentsHtml.includes('pl_TnOD6Jz1AQC5PU') &&
+    !paymentsHtml.includes('pl_TnOizH1tevZEe5') &&
+    !paymentsHtml.includes('payment-button.js'),
+  'payments/index.html does not expose fixed-amount payment-button embeds'
+);
+assert(
+  !paymentsHtml.includes('Razorpay Sandbox / Test Mode (Verified)') &&
+    !paymentsHtml.includes('Test Environment Active'),
+  'payments/index.html does not misrepresent unverified payment mode'
 );
 
 console.log(`\n========================================`);
