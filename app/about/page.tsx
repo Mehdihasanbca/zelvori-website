@@ -18,13 +18,13 @@ export const metadata: Metadata = {
   description:
     'Learn about Zelvori Software: our engineering standards, collaboration model, and mission to deliver production-grade digital products for global businesses.',
   alternates: {
-    canonical: 'https://zelvori.software/about',
+    canonical: 'https://zelvori.software/about/',
   },
   openGraph: {
     title: 'About Zelvori Software — Engineering Ideas Into Digital Reality',
     description:
       'We are an international digital product development partner committed to architectural rigor, clean codebases, and client ownership.',
-    url: 'https://zelvori.software/about',
+    url: 'https://zelvori.software/about/',
   },
 };
 
