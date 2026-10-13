@@ -30,7 +30,7 @@ export function ContactForm() {
     const subject = encodeURIComponent(
       `Project Inquiry: ${formData.service} — ${formData.company || formData.name}`
     );
-    const bodyContent = `Hello Zelvori Software Team,
+    const bodyContent = `Hello Zelvori Team,
 
 I would like to discuss a project engagement with the following details:
 
@@ -54,7 +54,7 @@ ${formData.name}
   };
 
   const getFormattedSummary = () => {
-    return `Project Inquiry for Zelvori Software (${siteConfig.contact.email})
+    return `Project Inquiry for Zelvori (${siteConfig.contact.email})
 Client Name: ${formData.name}
 Email: ${formData.email}
 Company: ${formData.company || 'N/A'}

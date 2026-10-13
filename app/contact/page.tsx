@@ -5,16 +5,16 @@ import { ContactForm } from '@/components/contact/ContactForm';
 import { Mail, Clock, ShieldCheck, MessageSquare, ArrowUpRight } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'Contact Engineering Desk — Zelvori Software',
+  title: 'Contact Engineering Desk | Zelvori',
   description:
-    'Start a project engagement with Zelvori Software. Submit your requirements or email hello@zelvori.software for technical consultation and project estimates.',
+    'Start a project engagement with Zelvori. Submit your requirements or email hello@zelvori.software for technical consultation and project estimates.',
   alternates: {
     canonical: 'https://zelvori.software/contact/',
   },
   openGraph: {
-    title: 'Contact Engineering Desk — Zelvori Software',
+    title: 'Contact Engineering Desk | Zelvori',
     description:
-      'Discuss your software, mobile application, or automation requirements with Zelvori Software senior leads.',
+      'Discuss your software, mobile application, or automation requirements with Zelvori senior leads.',
     url: 'https://zelvori.software/contact/',
   },
 };

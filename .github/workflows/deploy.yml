@@ -1,4 +1,4 @@
-name: Deploy Zelvori Software to GitHub Pages
+name: Deploy Zelvori to GitHub Pages
 
 on:
   push:

@@ -18,7 +18,7 @@ export function Footer() {
               “{siteConfig.tagline}”
             </p>
             <p className="text-xs text-slate-400 max-w-sm leading-relaxed">
-              Zelvori Software is an international digital product development partner. We engineer high-performance web applications, mobile apps, e-commerce platforms, custom ERP/CRM business software, and intelligent workflow automation.
+              Zelvori is an international digital product development partner. We engineer high-performance web applications, mobile apps, e-commerce platforms, custom ERP/CRM business software, and intelligent workflow automation.
             </p>
             <div className="pt-2">
               <a
@@ -119,7 +119,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <div>
-            © {currentYear} Zelvori Software. All rights reserved. Ideas Into Digital Reality.
+            © {currentYear} Zelvori. All rights reserved. Ideas Into Digital Reality.
           </div>
           <div className="flex items-center gap-6">
             <Link href="/privacy" className="hover:text-slate-400 transition-colors">

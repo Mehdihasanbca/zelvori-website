@@ -1,5 +1,5 @@
 /**
- * Zelvori Software - Global Configuration File
+ * Zelvori - Global Configuration File
  * 
  * Update contact details, social URLs, and brand parameters here.
  * This single configuration drives headers, footers, meta tags, and contact forms.
@@ -22,14 +22,14 @@ export interface ServiceItem {
 }
 
 export const siteConfig = {
-  name: "Zelvori Software",
-  legalName: "Zelvori Software",
+  name: "Zelvori",
+  legalName: "Zelvori",
   domain: "https://zelvori.software",
   tagline: "Ideas Into Digital Reality.",
   shortDescription:
     "International digital product development partner building web applications, mobile apps, e-commerce, custom ERP/CRM software, and AI workflow automation.",
   longDescription:
-    "Zelvori Software transforms complex ideas into scalable, high-performance digital reality. We partner with ambitious startups, growing businesses, and enterprises worldwide to engineer modern web applications, native and cross-platform mobile apps, bespoke business systems, and intelligent workflow automation.",
+    "Zelvori transforms complex ideas into scalable, high-performance digital reality. We partner with ambitious startups, growing businesses, and enterprises worldwide to engineer modern web applications, native and cross-platform mobile apps, bespoke business systems, and intelligent workflow automation.",
 
   // Contact settings (Configurable placeholders)
   contact: {
@@ -43,8 +43,6 @@ export const siteConfig = {
   // Social & Repository links (Configurable)
   social: {
     github: "https://github.com/Mehdihasanbca/zelvori-website",
-    linkedin: "https://www.linkedin.com/company/zelvori-software",
-    x: "https://x.com/zelvorisoftware",
   },
 
   // Primary navigation links
@@ -488,7 +486,7 @@ export const siteConfig = {
   // General FAQs
   faqs: [
     {
-      question: "How does Zelvori Software structure client engagements?",
+      question: "How does Zelvori structure client engagements?",
       answer:
         "We offer two primary collaboration models: Milestone-Based Project Delivery (fixed-scope deliverables with transparent timelines) and Dedicated Engineering Squads (agile monthly retainers for continuous product development). We recommend the best model based on your project requirements.",
     },

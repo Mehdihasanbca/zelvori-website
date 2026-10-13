@@ -19,7 +19,7 @@ export default function NotFound() {
             Page Not Located
           </h1>
           <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
-            The requested digital resource does not exist or has been relocated to another route in the Zelvori Software system.
+            The requested digital resource does not exist or has been relocated to another route in the Zelvori system.
           </p>
         </div>
 

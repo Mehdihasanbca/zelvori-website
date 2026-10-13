@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     canonical: 'https://zelvori.software/services/web-development/',
   },
   openGraph: {
-    title: 'Website & Web Application Development | Zelvori Software',
+    title: 'Website & Web Application Development | Zelvori',
     description:
       'High-performance, scalable web applications and SaaS platforms engineered with React, Next.js, and modern cloud infrastructure.',
     url: 'https://zelvori.software/services/web-development/',

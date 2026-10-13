@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     canonical: 'https://zelvori.software/services/ai-automation/',
   },
   openGraph: {
-    title: 'AI Integration & Workflow Automation | Zelvori Software',
+    title: 'AI Integration & Workflow Automation | Zelvori',
     description:
       'Pragmatic, secure artificial intelligence integrations designed for enterprise workflows, document parsing, and automated support triage.',
     url: 'https://zelvori.software/services/ai-automation/',

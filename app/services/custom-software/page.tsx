@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     canonical: 'https://zelvori.software/services/custom-software/',
   },
   openGraph: {
-    title: 'Custom Software & System Integrations | Zelvori Software',
+    title: 'Custom Software & System Integrations | Zelvori',
     description:
       'Mission-critical software, custom API gateways, and distributed data pipelines engineered for enterprise scale.',
     url: 'https://zelvori.software/services/custom-software/',

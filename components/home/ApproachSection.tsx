@@ -19,7 +19,7 @@ export function ApproachSection() {
             </h2>
 
             <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-              Many agencies rush prototypes that quickly collapse under scale or trap clients in opaque technical debt. Zelvori Software operates like a dedicated internal engineering team—prioritizing strict schema contracts, comprehensive documentation, and direct accountability.
+              Many agencies rush prototypes that quickly collapse under scale or trap clients in opaque technical debt. Zelvori operates like a dedicated internal engineering team—prioritizing strict schema contracts, comprehensive documentation, and direct accountability.
             </p>
 
             <div className="pt-2">

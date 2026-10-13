@@ -1,8 +1,8 @@
-# Zelvori Software
+# Zelvori
 
 > Ideas Into Digital Reality.
 
-Official website for **Zelvori Software** ([zelvori.software](https://zelvori.software/)), engineered with **Next.js 15 (App Router)**, TypeScript, and Tailwind CSS.
+Official website for **Zelvori** ([zelvori.software](https://zelvori.software/)), engineered with **Next.js 15 (App Router)**, TypeScript, and Tailwind CSS.
 
 ## Architecture
 
@@ -20,7 +20,7 @@ This project is configured for **static export (`output: 'export'`)** with trail
 ├── .github/workflows/
 │   └── deploy.yml          # Automated GitHub Pages build & deploy workflow
 ├── app/                    # Next.js 15 App Router pages & layouts
-│   ├── about/              # About Zelvori Software
+│   ├── about/              # About Zelvori
 │   ├── contact/            # Project Inquiry Builder & Contact Desk
 │   ├── services/           # 6 Dedicated Service Pages
 │   │   ├── ai-automation/

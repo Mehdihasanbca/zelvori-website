@@ -32,7 +32,7 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
     serviceType: service.title,
     provider: {
       '@type': 'Organization',
-      name: 'Zelvori Software',
+      name: 'Zelvori',
       url: 'https://zelvori.software',
       email: 'hello@zelvori.software',
     },

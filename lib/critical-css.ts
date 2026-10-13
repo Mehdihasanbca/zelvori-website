@@ -1,5 +1,5 @@
 /**
- * Critical Above-The-Fold CSS for Zelvori Software
+ * Critical Above-The-Fold CSS for Zelvori
  * 
  * Inlined directly into <head> to eliminate render-blocking CSS bottlenecks,
  * achieve sub-second First Contentful Paint (FCP), and ensure 0.00 Cumulative Layout Shift (CLS)

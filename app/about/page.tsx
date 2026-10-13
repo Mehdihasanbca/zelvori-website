@@ -14,14 +14,14 @@ import {
 } from 'lucide-react';
 
 export const metadata: Metadata = {
-  title: 'About Zelvori Software — Engineering Ideas Into Digital Reality',
+  title: 'About Zelvori — Engineering Ideas Into Digital Reality',
   description:
-    'Learn about Zelvori Software: our engineering standards, collaboration model, and mission to deliver production-grade digital products for global businesses.',
+    'Learn about Zelvori: our engineering standards, collaboration model, and mission to deliver production-grade digital products for global businesses.',
   alternates: {
     canonical: 'https://zelvori.software/about/',
   },
   openGraph: {
-    title: 'About Zelvori Software — Engineering Ideas Into Digital Reality',
+    title: 'About Zelvori — Engineering Ideas Into Digital Reality',
     description:
       'We are an international digital product development partner committed to architectural rigor, clean codebases, and client ownership.',
     url: 'https://zelvori.software/about/',
@@ -44,7 +44,7 @@ export default function AboutPage() {
             “{siteConfig.tagline}”
           </p>
           <p className="text-base text-slate-300 leading-relaxed">
-            Zelvori Software was founded on a straightforward principle: great digital products are built through direct engineering accountability, clean architecture, and honest collaboration—not bloated agency overhead or disposable prototypes.
+            Zelvori was founded on a straightforward principle: great digital products are built through direct engineering accountability, clean architecture, and honest collaboration—not bloated agency overhead or disposable prototypes.
           </p>
         </div>
 
@@ -116,7 +116,7 @@ export default function AboutPage() {
 
             <div className="lg:col-span-7 space-y-5 text-xs sm:text-sm text-slate-400 leading-relaxed">
               <p>
-                At Zelvori Software, we treat every system as a long-term commercial asset. We architect database schemas with relational integrity, construct frontend components using predictable design systems, and decouple business logic through well-documented APIs.
+                At Zelvori, we treat every system as a long-term commercial asset. We architect database schemas with relational integrity, construct frontend components using predictable design systems, and decouple business logic through well-documented APIs.
               </p>
               <p>
                 Whether building a consumer mobile app, a multi-tenant SaaS application, an e-commerce platform, or an internal ERP workflow, our objective is to leave you with software that your own engineers can maintain, scale, and build upon for years to come.

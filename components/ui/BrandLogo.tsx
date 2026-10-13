@@ -24,7 +24,7 @@ export function BrandLogo({ className = '', size = 'md', hideText = false }: Bra
     <Link
       href="/"
       className={`inline-flex items-center gap-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 rounded-lg group ${className}`}
-      aria-label="Zelvori Software - Home"
+      aria-label="Zelvori - Home"
     >
       <div className={`relative ${iconSizes[size]} shrink-0 transition-all duration-300 group-hover:scale-105`}>
         {/* Glow halo behind logo on hover */}
@@ -90,14 +90,9 @@ export function BrandLogo({ className = '', size = 'md', hideText = false }: Bra
       </div>
 
       {!hideText && (
-        <div className="flex flex-col leading-none">
-          <span className={`font-bold tracking-tight text-white group-hover:text-cyan-100 transition-colors ${textSizes[size]}`}>
-            ZELVORI
-          </span>
-          <span className="text-[10px] tracking-[0.24em] text-cyan-400 font-semibold uppercase mt-0.5">
-            SOFTWARE
-          </span>
-        </div>
+        <span className={`font-bold tracking-wider text-white group-hover:text-cyan-200 transition-colors ${textSizes[size]}`}>
+          ZELVORI
+        </span>
       )}
     </Link>
   );

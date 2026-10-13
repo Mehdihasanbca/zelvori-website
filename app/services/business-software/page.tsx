@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     canonical: 'https://zelvori.software/services/business-software/',
   },
   openGraph: {
-    title: 'Custom CRM, HRMS, ERP & Business Software | Zelvori Software',
+    title: 'Custom CRM, HRMS, ERP & Business Software | Zelvori',
     description:
       'Bespoke enterprise software platforms engineered to eliminate manual spreadsheets and automate proprietary business workflows.',
     url: 'https://zelvori.software/services/business-software/',

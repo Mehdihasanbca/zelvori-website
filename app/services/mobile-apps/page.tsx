@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     canonical: 'https://zelvori.software/services/mobile-apps/',
   },
   openGraph: {
-    title: 'Android & iOS Mobile App Development | Zelvori Software',
+    title: 'Android & iOS Mobile App Development | Zelvori',
     description:
       'High-performance mobile applications engineered for iOS and Android with fluid interactions and offline-first capabilities.',
     url: 'https://zelvori.software/services/mobile-apps/',

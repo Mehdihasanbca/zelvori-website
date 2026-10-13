@@ -4,9 +4,9 @@ import Link from 'next/link';
 import { siteConfig } from '@/lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Terms of Service — Zelvori Software',
+  title: 'Terms of Service | Zelvori',
   description:
-    'Terms of Service governing the use of the Zelvori Software website and professional digital engineering engagements.',
+    'Terms of Service governing the use of the Zelvori website and professional digital engineering engagements.',
   alternates: {
     canonical: 'https://zelvori.software/terms/',
   },
@@ -24,7 +24,7 @@ export default function TermsOfServicePage() {
             Terms of Service
           </h1>
           <p className="text-xs text-slate-400 mt-2">
-            Last Updated: October 2026 · Zelvori Software (https://zelvori.software)
+            Last Updated: October 2026 · Zelvori (https://zelvori.software)
           </p>
         </div>
 
@@ -34,7 +34,7 @@ export default function TermsOfServicePage() {
               1. Agreement to Terms
             </h2>
             <p>
-              By accessing the website https://zelvori.software or engaging Zelvori Software for digital engineering, product development, or technical advisory services, you agree to be bound by these Terms of Service. If you are entering into this agreement on behalf of a company or other legal entity, you represent that you have the authority to bind such entity to these terms.
+              By accessing the website https://zelvori.software or engaging Zelvori for digital engineering, product development, or technical advisory services, you agree to be bound by these Terms of Service. If you are entering into this agreement on behalf of a company or other legal entity, you represent that you have the authority to bind such entity to these terms.
             </p>
           </section>
 
@@ -43,7 +43,7 @@ export default function TermsOfServicePage() {
               2. Nature of Professional Services
             </h2>
             <p>
-              Zelvori Software provides specialized digital product development services, including website and web application development, iOS and Android mobile app development, custom e-commerce engineering, bespoke business systems (CRM, HRMS, ERP), custom integrations, and AI workflow automation. Specific deliverables, sprint schedules, milestones, and payment terms for client projects are formally defined in bilateral Master Services Agreements (MSAs) or Statements of Work (SOWs).
+              Zelvori provides specialized digital product development services, including website and web application development, iOS and Android mobile app development, custom e-commerce engineering, bespoke business systems (CRM, HRMS, ERP), custom integrations, and AI workflow automation. Specific deliverables, sprint schedules, milestones, and payment terms for client projects are formally defined in bilateral Master Services Agreements (MSAs) or Statements of Work (SOWs).
             </p>
           </section>
 
@@ -62,7 +62,7 @@ export default function TermsOfServicePage() {
                 <strong className="text-slate-200">Pre-Existing Open Source:</strong> Standard open-source libraries, packages, or utilities incorporated into projects remain subject to their respective open-source licenses (such as MIT, Apache 2.0).
               </li>
               <li>
-                <strong className="text-slate-200">Website Property:</strong> The Zelvori Software brand mark, wordmark, website copy, visual layouts, and logos are the proprietary property of Zelvori Software and may not be reproduced without prior written permission.
+                <strong className="text-slate-200">Website Property:</strong> The Zelvori brand mark, wordmark, website copy, visual layouts, and logos are the proprietary property of Zelvori and may not be reproduced without prior written permission.
               </li>
             </ul>
           </section>
@@ -81,7 +81,7 @@ export default function TermsOfServicePage() {
               5. Warranties & Quality Assurance
             </h2>
             <p>
-              Zelvori Software warrants that all engineering work will be performed in a professional, workmanlike manner adhering to current industry standards for security, code maintainability, and architectural discipline. Following production release, projects include an agreed post-launch warranty period to remediate any verifiable defects or bugs within the agreed scope.
+              Zelvori warrants that all engineering work will be performed in a professional, workmanlike manner adhering to current industry standards for security, code maintainability, and architectural discipline. Following production release, projects include an agreed post-launch warranty period to remediate any verifiable defects or bugs within the agreed scope.
             </p>
           </section>
 
@@ -90,7 +90,7 @@ export default function TermsOfServicePage() {
               6. Limitation of Liability
             </h2>
             <p>
-              To the fullest extent permitted by applicable law, in no event will Zelvori Software be liable for any indirect, incidental, special, consequential, or punitive damages, including loss of profits, data, or goodwill, arising from or related to the use of our website or services.
+              To the fullest extent permitted by applicable law, in no event will Zelvori be liable for any indirect, incidental, special, consequential, or punitive damages, including loss of profits, data, or goodwill, arising from or related to the use of our website or services.
             </p>
           </section>
 
@@ -102,7 +102,7 @@ export default function TermsOfServicePage() {
               For legal notices or questions regarding these Terms of Service, please contact:
             </p>
             <div className="p-4 bg-[#0b1120] border border-slate-800 rounded-xl text-xs space-y-1">
-              <div className="font-semibold text-slate-200">Zelvori Software — Legal & Operations</div>
+              <div className="font-semibold text-slate-200">Zelvori — Legal & Operations</div>
               <div className="text-cyan-400 font-mono">{siteConfig.contact.email}</div>
               <div className="text-slate-400">Website: https://zelvori.software</div>
             </div>

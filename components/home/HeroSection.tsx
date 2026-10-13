@@ -50,7 +50,7 @@ export function HeroSection() {
             {/* Subtle editorial kicker without pill enclosure */}
             <div className="flex items-center gap-2 text-xs font-semibold tracking-wider text-cyan-400 uppercase">
               <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
-              <span>Zelvori Software</span>
+              <span>Zelvori</span>
               <span className="text-slate-500" aria-hidden="true">/</span>
               <span className="text-slate-400 font-medium tracking-normal normal-case">Digital Product Development Partner</span>
             </div>
@@ -123,14 +123,14 @@ export function HeroSection() {
                     <span className="w-2.5 h-2.5 rounded-full bg-sky-400/80" />
                     <span className="w-2.5 h-2.5 rounded-full bg-indigo-400/80" />
                     <span className="ml-2 font-mono text-[11px] text-slate-400 hidden sm:inline">
-                      zelvori-software // engineering-console
+                      zelvori // engineering-console
                     </span>
                   </div>
 
                   <div className="flex items-center gap-2">
                     <span className="inline-flex items-center gap-1.5 text-[10px] font-mono text-cyan-300 bg-cyan-950/60 border border-cyan-800/60 px-2 py-0.5 rounded-md">
                       <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
-                      LIVE BLUEPRINT
+                      SYSTEM ARCHITECTURE
                     </span>
                   </div>
                 </div>
@@ -246,8 +246,8 @@ export function HeroSection() {
                           {selectedNode === 'data' && 'Database & Intelligent Pipeline Tier'}
                         </span>
                         <span className="font-mono text-emerald-400 text-[11px]">
-                          {selectedNode === 'clients' && 'LCP < 0.8s'}
-                          {selectedNode === 'gateway' && '99.99% UPTIME'}
+                          {selectedNode === 'clients' && 'SUB-SECOND FCP'}
+                          {selectedNode === 'gateway' && 'HIGH AVAILABILITY'}
                           {selectedNode === 'data' && 'ACID COMPLIANT'}
                         </span>
                       </div>
@@ -262,9 +262,9 @@ export function HeroSection() {
                       </div>
 
                       <div className="pt-2 flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] font-mono text-slate-400">
-                        <span>LATENCY: ~12ms</span>
+                        <span>ROUTING: LOW-LATENCY EDGE</span>
                         <span>·</span>
-                        <span>SECURITY: SOC2/GDPR READINESS</span>
+                        <span>SECURITY: RBAC & ZERO TRUST</span>
                         <span>·</span>
                         <span>OWNERSHIP: 100% REPOSITORY TRANSFER</span>
                       </div>

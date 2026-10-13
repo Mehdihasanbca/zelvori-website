@@ -4,9 +4,9 @@ import Link from 'next/link';
 import { siteConfig } from '@/lib/site-config';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy — Zelvori Software',
+  title: 'Privacy Policy | Zelvori',
   description:
-    'Privacy Policy for Zelvori Software. Learn how we handle project inquiries, protect confidential client information, and ensure data privacy.',
+    'Privacy Policy for Zelvori. Learn how we handle project inquiries, protect confidential client information, and ensure data privacy.',
   alternates: {
     canonical: 'https://zelvori.software/privacy/',
   },
@@ -24,7 +24,7 @@ export default function PrivacyPolicyPage() {
             Privacy Policy
           </h1>
           <p className="text-xs text-slate-400 mt-2">
-            Last Updated: October 2026 · Zelvori Software (https://zelvori.software)
+            Last Updated: October 2026 · Zelvori (https://zelvori.software)
           </p>
         </div>
 
@@ -34,7 +34,7 @@ export default function PrivacyPolicyPage() {
               1. Overview & Commitment
             </h2>
             <p>
-              Zelvori Software (&quot;Zelvori&quot;, &quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) operates the website https://zelvori.software. We respect your personal privacy and are committed to protecting the confidential information you share with us. This Privacy Policy explains what information we collect when you visit our website or contact our engineering desk, how that data is used, and your rights regarding that information.
+              Zelvori (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;) operates the website https://zelvori.software. We respect your personal privacy and are committed to protecting the confidential information you share with us. This Privacy Policy explains what information we collect when you visit our website or contact our engineering desk, how that data is used, and your rights regarding that information.
             </p>
           </section>
 
@@ -81,7 +81,7 @@ export default function PrivacyPolicyPage() {
               4. Client Data & Intellectual Property Confidentiality
             </h2>
             <p>
-              When clients engage Zelvori Software for custom development, all proprietary software code, business requirements, trade secrets, and customer data are governed by strict bilateral Non-Disclosure Agreements (NDAs). Client code repositories and project workspaces are isolated in private, role-restricted environments.
+              When clients engage Zelvori for custom development, all proprietary software code, business requirements, trade secrets, and customer data are governed by strict bilateral Non-Disclosure Agreements (NDAs). Client code repositories and project workspaces are isolated in private, role-restricted environments.
             </p>
           </section>
 
@@ -111,7 +111,7 @@ export default function PrivacyPolicyPage() {
               If you have any questions or requests concerning this Privacy Policy, please email our team at:
             </p>
             <div className="p-4 bg-[#0b1120] border border-slate-800 rounded-xl text-xs space-y-1">
-              <div className="font-semibold text-slate-200">Zelvori Software — Privacy & Compliance</div>
+              <div className="font-semibold text-slate-200">Zelvori — Privacy & Compliance</div>
               <div className="text-cyan-400 font-mono">{siteConfig.contact.email}</div>
               <div className="text-slate-400">Website: https://zelvori.software</div>
             </div>

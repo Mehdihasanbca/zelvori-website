@@ -7,13 +7,13 @@ import { criticalCss } from '@/lib/critical-css';
 export const metadata: Metadata = {
   metadataBase: new URL('https://zelvori.software'),
   title: {
-    default: 'Zelvori Software — Ideas Into Digital Reality',
-    template: '%s | Zelvori Software',
+    default: 'Zelvori — Ideas Into Digital Reality',
+    template: '%s | Zelvori',
   },
   description:
-    'International digital product development partner. We engineer high-performance web applications, mobile apps, e-commerce platforms, custom ERP/CRM software, and AI workflow automation.',
+    'International digital product development partner. Zelvori engineers high-performance web applications, mobile apps, e-commerce platforms, custom ERP/CRM software, and AI workflow automation.',
   keywords: [
-    'Zelvori Software',
+    'Zelvori',
     'web development',
     'mobile app development',
     'custom software',
@@ -24,9 +24,9 @@ export const metadata: Metadata = {
     'Next.js development',
     'React Native apps',
   ],
-  authors: [{ name: 'Zelvori Software' }],
-  creator: 'Zelvori Software',
-  publisher: 'Zelvori Software',
+  authors: [{ name: 'Zelvori' }],
+  creator: 'Zelvori',
+  publisher: 'Zelvori',
   formatDetection: {
     email: false,
     address: false,
@@ -39,22 +39,22 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://zelvori.software/',
-    title: 'Zelvori Software — Ideas Into Digital Reality',
+    title: 'Zelvori — Ideas Into Digital Reality',
     description:
       'International digital product development partner. Engineering scalable web platforms, native mobile apps, custom business systems, and AI automation for global companies.',
-    siteName: 'Zelvori Software',
+    siteName: 'Zelvori',
     images: [
       {
         url: '/icon.svg',
         width: 1200,
         height: 630,
-        alt: 'Zelvori Software — Ideas Into Digital Reality',
+        alt: 'Zelvori — Ideas Into Digital Reality',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Zelvori Software — Ideas Into Digital Reality',
+    title: 'Zelvori — Ideas Into Digital Reality',
     description:
       'International digital product development partner building web applications, mobile apps, enterprise business software, and AI workflow automation.',
     images: ['/icon.svg'],
@@ -82,17 +82,15 @@ export const metadata: Metadata = {
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'Zelvori Software',
+  name: 'Zelvori',
   alternateName: 'Zelvori',
   url: 'https://zelvori.software',
   logo: 'https://zelvori.software/icon.svg',
   description:
-    'International digital product development partner specializing in web applications, mobile apps, e-commerce, custom ERP/CRM software, and AI workflow automation.',
+    'Zelvori is an international digital product development partner specializing in web applications, mobile apps, e-commerce, custom ERP/CRM software, and AI workflow automation.',
   email: 'hello@zelvori.software',
   sameAs: [
     'https://github.com/Mehdihasanbca/zelvori-website',
-    'https://www.linkedin.com/company/zelvori-software',
-    'https://x.com/zelvorisoftware',
   ],
   knowsAbout: [
     'Web Application Development',

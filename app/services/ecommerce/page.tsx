@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     canonical: 'https://zelvori.software/services/ecommerce/',
   },
   openGraph: {
-    title: 'E-Commerce Website Development | Zelvori Software',
+    title: 'E-Commerce Website Development | Zelvori',
     description:
       'High-converting, bespoke digital commerce storefronts with fast checkout, ERP sync, and international multi-currency support.',
     url: 'https://zelvori.software/services/ecommerce/',

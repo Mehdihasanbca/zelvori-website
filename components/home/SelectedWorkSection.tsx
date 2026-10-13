@@ -26,7 +26,7 @@ const projects: Project[] = [
     title: 'Multi-Tenant Treasury & Billing Infrastructure',
     tagline: 'High-throughput transactional web platform with automated ledger reconciliation.',
     description:
-      'Architected a multi-tenant corporate treasury platform supporting dynamic tenant isolation, encrypted balance ledgers, and automated webhook subscriptions. Engineered with server-rendered Next.js frontends and transactional PostgreSQL backends.',
+      'Representative architecture for a multi-tenant corporate treasury platform supporting dynamic tenant isolation, encrypted balance ledgers, and automated webhook subscriptions. Engineered with server-rendered Next.js frontends and transactional PostgreSQL backends.',
     serviceSlug: 'web-development',
     technologies: ['Next.js 15', 'TypeScript', 'PostgreSQL', 'Stripe API', 'Tailwind CSS'],
     capabilitiesDemonstrated: [
@@ -35,9 +35,9 @@ const projects: Project[] = [
       'Granular Role-Based Access Control (RBAC) with cryptographic audit trails',
     ],
     metrics: [
-      { label: 'Reconciliation Latency', value: '< 240ms' },
-      { label: 'Uptime Reliability', value: '99.99%' },
-      { label: 'Architecture', value: 'ACID Compliant' },
+      { label: 'Tenancy Isolation', value: 'Postgres RLS' },
+      { label: 'Consistency', value: 'ACID Guaranteed' },
+      { label: 'Rendering', value: 'Next.js SSR' },
     ],
     graphicType: 'fintech',
   },
@@ -48,7 +48,7 @@ const projects: Project[] = [
     title: 'Global Fleet Telemetry & Dispatch Operations',
     tagline: 'Offline-first native mobile application with 60fps telemetry mapping.',
     description:
-      'Engineered a cross-platform mobile dispatch system for distributed field logistics. Features encrypted offline caching, background GPS delta streaming, and automated bi-directional synchronization with cloud operations desks.',
+      'Representative engineering blueprint for cross-platform mobile dispatch logistics. Features encrypted offline caching, background GPS delta streaming, and automated bi-directional synchronization with cloud operations desks.',
     serviceSlug: 'mobile-apps',
     technologies: ['React Native', 'TypeScript', 'WebSockets', 'SQLite Local', 'Redis'],
     capabilitiesDemonstrated: [
@@ -57,9 +57,9 @@ const projects: Project[] = [
       'Instant push alerting and biometric device security authentication',
     ],
     metrics: [
-      { label: 'Frame Rate', value: '60 FPS Native' },
-      { label: 'Sync Latency', value: '~15ms Edge' },
-      { label: 'Offline Persistence', value: '100% Caching' },
+      { label: 'Sync Pipeline', value: 'Delta Streaming' },
+      { label: 'Target Refresh', value: '60 FPS Native' },
+      { label: 'Local Store', value: 'Offline SQLite' },
     ],
     graphicType: 'fleet',
   },
@@ -70,18 +70,18 @@ const projects: Project[] = [
     title: 'Intelligent Contract & Invoice Extraction Engine',
     tagline: 'Deterministic document parsing with zero-training private vector boundaries.',
     description:
-      'Constructed an automated document ingestion pipeline converting unstructured PDFs into strictly validated PostgreSQL schemas. Uses high-accuracy optical extraction, confidence threshold validation, and human-in-the-loop review queues.',
+      'Representative architecture for automated document ingestion converting unstructured PDFs into strictly validated PostgreSQL schemas. Uses high-accuracy optical extraction, confidence threshold validation, and human-in-the-loop review queues.',
     serviceSlug: 'ai-automation',
     technologies: ['Python', 'FastAPI', 'pgvector', 'Zod / Pydantic', 'Temporal'],
     capabilitiesDemonstrated: [
       'Zero-data-retention VPC architecture with enterprise privacy controls',
-      'Strict Zod schema validation ensuring 100% type safety before database writes',
+      'Strict schema validation ensuring type safety before database writes',
       'Automated background retry queues with exponential backoff telemetry',
     ],
     metrics: [
-      { label: 'Field Accuracy', value: '99.6% Verified' },
-      { label: 'Cycle Time Reduction', value: '88% Faster' },
-      { label: 'Data Leakage', value: '0% Guaranteed' },
+      { label: 'Schema Guard', value: 'Strict Validation' },
+      { label: 'Data Boundary', value: 'Zero-Retention VPC' },
+      { label: 'Review Flow', value: 'Human-in-the-Loop' },
     ],
     graphicType: 'ai',
   },
@@ -92,7 +92,7 @@ const projects: Project[] = [
     title: 'Omnichannel Headless Storefront & Catalog Fabric',
     tagline: 'Ultra-fast modular e-commerce with real-time multi-warehouse inventory sync.',
     description:
-      'Developed a headless commerce storefront decoupled from the commerce engine. Delivers instant faceted search, localized multi-currency pricing, and bi-directional ERP inventory hooks that eliminate out-of-stock overselling.',
+      'Representative headless commerce storefront decoupled from the commerce engine. Delivers instant faceted search, localized multi-currency pricing, and bi-directional ERP inventory hooks that eliminate out-of-stock overselling.',
     serviceSlug: 'ecommerce',
     technologies: ['Next.js Commerce', 'GraphQL', 'Shopify Storefront', 'Meilisearch', 'Docker'],
     capabilitiesDemonstrated: [
@@ -101,9 +101,9 @@ const projects: Project[] = [
       'Multi-currency tax calculation and tokenized checkout security',
     ],
     metrics: [
-      { label: 'Lighthouse Score', value: '98/100 Mobile' },
-      { label: 'Instant Search', value: '< 20ms Query' },
-      { label: 'Checkout Time', value: '-42% Friction' },
+      { label: 'Architecture', value: 'Headless API' },
+      { label: 'Catalog State', value: 'Real-Time Sync' },
+      { label: 'Edge Strategy', value: 'Static ISR' },
     ],
     graphicType: 'commerce',
   },
@@ -137,10 +137,10 @@ export function SelectedWorkSection() {
           <div className="max-w-2xl space-y-3">
             <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-cyan-400 font-semibold">
               <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
-              <span>Selected Work // Architecture Archetypes</span>
+              <span>Architectural Archetypes // Capabilities</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white text-balance leading-tight">
-              Engineering breadth in production environments.
+              Engineering breadth across digital tiers.
             </h2>
           </div>
 
