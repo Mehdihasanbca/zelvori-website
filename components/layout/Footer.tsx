@@ -65,6 +65,16 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/stories/" className="hover:text-cyan-400 transition-colors block py-0.5">
+                  Industry Stories
+                </Link>
+              </li>
+              <li>
+                <Link href="/resources/" className="hover:text-cyan-400 transition-colors block py-0.5">
+                  Free Developer Resources
+                </Link>
+              </li>
+              <li>
                 <Link href="/pricing" className="hover:text-cyan-400 transition-colors block py-0.5">
                   Transparent Pricing
                 </Link>
