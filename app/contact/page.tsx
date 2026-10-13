@@ -9,13 +9,13 @@ export const metadata: Metadata = {
   description:
     'Start a project engagement with Zelvori Software. Submit your requirements or email hello@zelvori.software for technical consultation and project estimates.',
   alternates: {
-    canonical: 'https://zelvori.software/contact',
+    canonical: 'https://zelvori.software/contact/',
   },
   openGraph: {
     title: 'Contact Engineering Desk — Zelvori Software',
     description:
       'Discuss your software, mobile application, or automation requirements with Zelvori Software senior leads.',
-    url: 'https://zelvori.software/contact',
+    url: 'https://zelvori.software/contact/',
   },
 };
 
