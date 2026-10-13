@@ -50,8 +50,8 @@ jobs:
             echo "Copying CNAME to out directory..."
             cp public/CNAME out/CNAME || echo "zelvori.software" > out/CNAME
           fi
-          echo "Generated static files:"
-          ls -la out
+          echo "Running automated security regression tests:"
+          npm run verify
 
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
