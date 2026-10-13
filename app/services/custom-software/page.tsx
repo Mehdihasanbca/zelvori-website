@@ -10,13 +10,13 @@ export const metadata: Metadata = {
   description:
     'Bespoke software architectures, microservices, and system integrations bridging legacy software with modern cloud APIs. Built for reliability and performance.',
   alternates: {
-    canonical: 'https://zelvori.software/services/custom-software',
+    canonical: 'https://zelvori.software/services/custom-software/',
   },
   openGraph: {
     title: 'Custom Software & System Integrations | Zelvori Software',
     description:
       'Mission-critical software, custom API gateways, and distributed data pipelines engineered for enterprise scale.',
-    url: 'https://zelvori.software/services/custom-software',
+    url: 'https://zelvori.software/services/custom-software/',
   },
 };
 
