@@ -352,13 +352,15 @@ assert(
 
 // 8b. Legal Policies & Hostycare Affiliate Transparency Checks
 assert(
-  sitemapContent.includes('https://zelvori.software/privacy-policy/') &&
-    sitemapContent.includes('https://zelvori.software/terms-of-service/') &&
+  sitemapContent.includes('https://zelvori.software/privacy/') &&
+    sitemapContent.includes('https://zelvori.software/terms/') &&
     sitemapContent.includes('https://zelvori.software/refund-policy/') &&
     sitemapContent.includes('https://zelvori.software/disclaimer/') &&
     sitemapContent.includes('https://zelvori.software/affiliate-disclosure/') &&
-    sitemapContent.includes('https://zelvori.software/hosting/hostycare/'),
-  'sitemap.xml includes all Phase 19 legal policies and Hostycare hosting landing page'
+    sitemapContent.includes('https://zelvori.software/hosting/hostycare/') &&
+    !sitemapContent.includes('https://zelvori.software/privacy-policy/') &&
+    !sitemapContent.includes('https://zelvori.software/terms-of-service/'),
+  'sitemap.xml includes canonical legal policies and Hostycare landing page without duplicate alias URLs'
 );
 
 const hostycareHtml = fs.readFileSync(path.join(outDir, 'hosting', 'hostycare', 'index.html'), 'utf8');
