@@ -1,6 +1,7 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 import { HeroSection } from '@/components/home/HeroSection';
+import { StoriesResourcesSection } from '@/components/home/StoriesResourcesSection';
 
 // Code-split below-the-fold sections to defer non-critical JavaScript on mobile devices
 // while preserving 100% static HTML generation during export.
@@ -73,6 +74,7 @@ export default function HomePage() {
       <FounderSection />
       <ApproachSection />
       <FaqSection />
+      <StoriesResourcesSection />
       <ContactCtaSection />
     </>
   );
