@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { siteConfig } from '@/lib/site-config';
 import { Mail, Send, Copy, Check, Info } from 'lucide-react';
 
@@ -18,6 +18,28 @@ export function ContactForm() {
   const [copied, setCopied] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [validationError, setValidationError] = useState('');
+
+  // Pre-select service from URL query parameter (e.g. /contact?service=application-security)
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const params = new URLSearchParams(window.location.search);
+    const serviceParam = params.get('service');
+    if (serviceParam) {
+      const normalized = serviceParam.trim().toLowerCase();
+      const matched = siteConfig.services.find(
+        (s) =>
+          s.slug.toLowerCase() === normalized ||
+          s.id.toLowerCase() === normalized ||
+          s.title.toLowerCase() === normalized ||
+          s.shortTitle.toLowerCase() === normalized
+      );
+      if (matched) {
+        requestAnimationFrame(() => {
+          setFormData((prev) => ({ ...prev, service: matched.title }));
+        });
+      }
+    }
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
@@ -95,10 +117,11 @@ ${formData.message}`;
     try {
       await navigator.clipboard.writeText(getFormattedSummary());
       setCopied(true);
+      if (validationError) setValidationError('');
       setTimeout(() => setCopied(false), 3000);
     } catch {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 3000);
+      setCopied(false);
+      setValidationError('Clipboard copy was blocked by browser permissions. Please select the formatted brief text manually or open your email draft.');
     }
   };
 
@@ -124,19 +147,28 @@ ${formData.message}`;
       </div>
 
       {validationError && (
-        <div className="mb-6 p-4 rounded-xl bg-red-950/70 border border-red-800 text-xs text-red-200">
+        <div
+          id="contact-form-error"
+          role="alert"
+          aria-live="polite"
+          className="mb-6 p-4 rounded-xl bg-red-950/70 border border-red-800 text-xs text-red-200"
+        >
           {validationError}
         </div>
       )}
 
       {submitted && (
-        <div className="mb-6 p-4 rounded-xl bg-cyan-950/60 border border-cyan-800 text-xs space-y-2">
+        <div
+          role="status"
+          aria-live="polite"
+          className="mb-6 p-4 rounded-xl bg-cyan-950/60 border border-cyan-800 text-xs space-y-2"
+        >
           <div className="flex items-center gap-2 text-cyan-300 font-semibold text-sm">
             <Check className="w-4 h-4 text-cyan-400" />
-            <span>Email Client Dispatched</span>
+            <span>Email Client Draft Prepared</span>
           </div>
-          <p className="text-slate-300">
-            Your email client has opened with your pre-formatted project specifications. If it didn&apos;t open automatically, you can copy the summary below and email it directly to{' '}
+          <p className="text-slate-300 leading-relaxed">
+            A pre-formatted email draft has opened in your default mail application. <strong>Please review the details and click &quot;Send&quot; in your mail app</strong> to transmit the inquiry to our engineering team. If your mail client did not open automatically, you can copy the formatted brief below and email it directly to{' '}
             <a href={`mailto:${siteConfig.contact.email}`} className="text-cyan-400 underline font-semibold">
               {siteConfig.contact.email}
             </a>.
@@ -155,6 +187,9 @@ ${formData.message}`;
               id="name"
               name="name"
               required
+              aria-required="true"
+              aria-invalid={validationError && !formData.name.trim() ? 'true' : undefined}
+              aria-describedby={validationError ? 'contact-form-error' : undefined}
               maxLength={100}
               value={formData.name}
               onChange={handleChange}
@@ -172,6 +207,9 @@ ${formData.message}`;
               id="email"
               name="email"
               required
+              aria-required="true"
+              aria-invalid={validationError && (!formData.email.trim() || !formData.email.includes('@')) ? 'true' : undefined}
+              aria-describedby={validationError ? 'contact-form-error' : undefined}
               maxLength={120}
               value={formData.email}
               onChange={handleChange}
@@ -267,6 +305,9 @@ ${formData.message}`;
             id="message"
             name="message"
             required
+            aria-required="true"
+            aria-invalid={validationError && !formData.message.trim() ? 'true' : undefined}
+            aria-describedby={validationError ? 'contact-form-error' : undefined}
             rows={4}
             maxLength={4000}
             value={formData.message}
@@ -274,6 +315,18 @@ ${formData.message}`;
             placeholder="Describe your technical objectives: What are you building? Who will use it? Any required integrations or performance constraints?"
             className="w-full px-4 py-3 bg-slate-900/90 border border-slate-800 rounded-xl text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all"
           />
+          <div className="flex items-center justify-between mt-1.5 text-[11px] text-slate-500">
+            <span>Include key goals, target audience, timeline, or architecture constraints</span>
+            <span
+              className={
+                formData.message.length >= 3800
+                  ? 'text-amber-400 font-mono font-medium'
+                  : 'text-slate-500 font-mono'
+              }
+            >
+              {formData.message.length} / 4000
+            </span>
+          </div>
         </div>
 
         {/* Action Buttons */}
@@ -283,7 +336,7 @@ ${formData.message}`;
             className="w-full sm:w-auto flex-1 inline-flex items-center justify-center gap-2.5 px-6 py-3.5 text-xs font-semibold text-slate-950 bg-gradient-to-r from-cyan-400 via-sky-300 to-cyan-300 hover:from-cyan-300 hover:to-sky-200 rounded-xl shadow-md transition-all whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
           >
             <Send className="w-4 h-4" />
-            <span>Launch Email Client</span>
+            <span>Open Mail Client Draft</span>
           </button>
 
           <button
@@ -309,7 +362,7 @@ ${formData.message}`;
         <div className="pt-3 border-t border-slate-800/80 text-[11px] text-slate-400 leading-normal flex items-start gap-2">
           <Info className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
           <span>
-            Delivered directly to <strong className="text-slate-200">{siteConfig.contact.email}</strong>. No middleman databases or third-party CRM trackers.
+            Generates an email draft directly to <strong className="text-slate-200">{siteConfig.contact.email}</strong> in your local email app. No tracking databases, intermediary servers, or marketing lists.
           </span>
         </div>
       </form>

@@ -39,23 +39,32 @@ export function FaqSection() {
                   isOpen ? 'border-cyan-500/40 shadow-lg shadow-cyan-950/20' : 'border-slate-800 hover:border-slate-700'
                 }`}
               >
-                <button
-                  onClick={() => toggle(index)}
-                  className="w-full py-5 px-6 text-left flex items-center justify-between gap-4 text-slate-100 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
-                  aria-expanded={isOpen}
-                >
-                  <span className="text-sm sm:text-base font-semibold leading-relaxed">
-                    {faq.question}
-                  </span>
-                  <div className={`w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center shrink-0 transition-transform duration-200 ${
-                    isOpen ? 'rotate-180 border-cyan-500/40 text-cyan-300' : 'text-slate-400'
-                  }`}>
-                    <ChevronDown className="w-4 h-4" />
-                  </div>
-                </button>
+                <h3 className="m-0 p-0 text-left font-normal">
+                  <button
+                    id={`homepage-faq-btn-${index}`}
+                    type="button"
+                    onClick={() => toggle(index)}
+                    className="w-full py-5 px-6 text-left flex items-center justify-between gap-4 text-slate-100 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+                    aria-expanded={isOpen}
+                    aria-controls={`homepage-faq-panel-${index}`}
+                  >
+                    <span className="text-sm sm:text-base font-semibold leading-relaxed">
+                      {faq.question}
+                    </span>
+                    <div className={`w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center shrink-0 transition-transform duration-200 ${
+                      isOpen ? 'rotate-180 border-cyan-500/40 text-cyan-300' : 'text-slate-400'
+                    }`}>
+                      <ChevronDown className="w-4 h-4" />
+                    </div>
+                  </button>
+                </h3>
 
                 {isOpen && (
-                  <div className="px-6 pb-6 pt-1 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/80">
+                  <div
+                    id={`homepage-faq-panel-${index}`}
+                    aria-labelledby={`homepage-faq-btn-${index}`}
+                    className="px-6 pb-6 pt-1 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/80"
+                  >
                     {faq.answer}
                   </div>
                 )}

@@ -31,5 +31,6 @@ Zelvori (https://zelvori.software/) is an international digital product developm
 - Contact: hello@zelvori.software
 - About: https://zelvori.software/about/
 - Project Inquiry: https://zelvori.software/contact/
+- Payments & Settlements: https://zelvori.software/payments/
 - Privacy Policy: https://zelvori.software/privacy/
 - Terms of Service: https://zelvori.software/terms/

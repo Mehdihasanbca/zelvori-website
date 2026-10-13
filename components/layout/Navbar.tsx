@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { BrandLogo } from '@/components/ui/BrandLogo';
@@ -13,6 +13,9 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
+  const servicesButtonRef = useRef<HTMLButtonElement>(null);
+  const mobileMenuButtonRef = useRef<HTMLButtonElement>(null);
+
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 15);
@@ -20,6 +23,24 @@ export function Navbar() {
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Dismiss menus on Escape key and return focus gracefully to opener
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        if (servicesDropdownOpen) {
+          setServicesDropdownOpen(false);
+          servicesButtonRef.current?.focus();
+        }
+        if (mobileMenuOpen) {
+          setMobileMenuOpen(false);
+          mobileMenuButtonRef.current?.focus();
+        }
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [servicesDropdownOpen, mobileMenuOpen]);
 
   const closeMenus = () => {
     setMobileMenuOpen(false);
@@ -47,14 +68,23 @@ export function Navbar() {
             className="relative"
             onMouseEnter={() => setServicesDropdownOpen(true)}
             onMouseLeave={() => setServicesDropdownOpen(false)}
+            onBlur={(e) => {
+              if (!e.currentTarget.contains(e.relatedTarget as Node | null)) {
+                setServicesDropdownOpen(false);
+              }
+            }}
           >
             <button
+              ref={servicesButtonRef}
+              id="services-menu-button"
+              type="button"
               onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
               className={`flex items-center gap-1.5 py-2 hover:text-white transition-colors whitespace-nowrap focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-cyan-400 rounded ${
                 pathname.startsWith('/services') ? 'text-cyan-400' : 'text-slate-300'
               }`}
               aria-expanded={servicesDropdownOpen}
               aria-haspopup="true"
+              aria-controls="services-menu-dropdown"
             >
               <span>Services</span>
               <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${servicesDropdownOpen ? 'rotate-180 text-cyan-400' : ''}`} />
@@ -62,6 +92,8 @@ export function Navbar() {
 
             {servicesDropdownOpen && (
               <div
+                id="services-menu-dropdown"
+                aria-labelledby="services-menu-button"
                 className="absolute top-full left-0 w-84 pt-2 z-50"
                 role="menu"
               >
@@ -87,11 +119,37 @@ export function Navbar() {
                       </p>
                     </Link>
                   ))}
+                  <div className="pt-2 mt-2 border-t border-slate-800/80 px-3">
+                    <Link
+                      href="/previews"
+                      onClick={closeMenus}
+                      className="text-[11px] font-mono text-cyan-400 hover:text-cyan-300 flex items-center justify-between py-1"
+                    >
+                      <span>Interactive Practice Previews</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
+                  </div>
                 </div>
               </div>
             )}
           </div>
 
+          <Link
+            href="/previews"
+            className={`hover:text-white transition-colors whitespace-nowrap shrink-0 py-2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-cyan-400 rounded ${
+              pathname.startsWith('/previews') ? 'text-cyan-400' : 'text-slate-300'
+            }`}
+          >
+            Previews
+          </Link>
+          <Link
+            href="/pricing"
+            className={`hover:text-white transition-colors whitespace-nowrap shrink-0 py-2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-cyan-400 rounded ${
+              pathname === '/pricing' ? 'text-cyan-400' : 'text-slate-300'
+            }`}
+          >
+            Pricing
+          </Link>
           <Link
             href="/#work"
             className="hover:text-white transition-colors whitespace-nowrap shrink-0 py-2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-cyan-400 rounded"
@@ -142,10 +200,14 @@ export function Navbar() {
         {/* Mobile menu hamburger toggle */}
         <div className="flex md:hidden items-center">
           <button
+            ref={mobileMenuButtonRef}
+            id="mobile-menu-button"
+            type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-2.5 text-slate-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 rounded-xl bg-slate-900/80 border border-slate-800"
             aria-label={mobileMenuOpen ? 'Close Navigation Menu' : 'Open Navigation Menu'}
             aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-navigation-drawer"
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -154,7 +216,11 @@ export function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-b border-slate-800/90 bg-[#070b14]/98 backdrop-blur-2xl px-5 pt-3 pb-8 max-h-[85vh] overflow-y-auto space-y-4">
+        <div
+          id="mobile-navigation-drawer"
+          aria-labelledby="mobile-menu-button"
+          className="md:hidden border-b border-slate-800/90 bg-[#070b14]/98 backdrop-blur-2xl px-5 pt-3 pb-8 max-h-[85vh] overflow-y-auto space-y-4"
+        >
           <div className="space-y-1">
             <div className="py-2 px-1 text-[10px] font-mono uppercase tracking-wider text-cyan-400">
               Services
@@ -165,7 +231,7 @@ export function Navbar() {
                   key={service.slug}
                   href={`/services/${service.slug}`}
                   onClick={closeMenus}
-                  className="px-3 py-2.5 text-xs font-medium text-slate-300 hover:text-cyan-300 hover:bg-slate-900/80 rounded-xl block transition-colors flex items-center justify-between"
+                  className="px-3 py-2.5 text-xs font-medium text-slate-300 hover:text-cyan-300 hover:bg-slate-900/80 rounded-xl transition-colors flex items-center justify-between"
                 >
                   <span>{service.shortTitle}</span>
                   <span className="text-[10px] text-slate-400 font-mono">SPEC</span>
@@ -175,6 +241,27 @@ export function Navbar() {
 
             <div className="my-3 border-t border-slate-800/80" />
 
+            <Link
+              href="/previews"
+              onClick={closeMenus}
+              className="block px-3 py-2.5 text-sm font-medium text-cyan-300 hover:text-cyan-200 hover:bg-cyan-950/30 rounded-xl transition-colors"
+            >
+              Interactive Previews
+            </Link>
+            <Link
+              href="/pricing"
+              onClick={closeMenus}
+              className="block px-3 py-2.5 text-sm font-medium text-slate-200 hover:text-white hover:bg-slate-900/80 rounded-xl transition-colors"
+            >
+              Pricing &amp; Packages
+            </Link>
+            <Link
+              href="/payments"
+              onClick={closeMenus}
+              className="block px-3 py-2.5 text-sm font-medium text-slate-200 hover:text-white hover:bg-slate-900/80 rounded-xl transition-colors"
+            >
+              Payments &amp; Invoices
+            </Link>
             <Link
               href="/#work"
               onClick={closeMenus}

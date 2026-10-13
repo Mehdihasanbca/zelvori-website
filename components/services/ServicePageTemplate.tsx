@@ -13,6 +13,7 @@ import {
   Mail,
   ShieldCheck,
   Check,
+  Sparkles,
 } from 'lucide-react';
 
 interface ServicePageTemplateProps {
@@ -28,16 +29,63 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
 
   const schemaData = {
     '@context': 'https://schema.org',
-    '@type': 'Service',
-    serviceType: service.title,
-    provider: {
-      '@type': 'Organization',
-      name: 'Zelvori',
-      url: 'https://zelvori.software',
-      email: 'hello@zelvori.software',
-    },
-    areaServed: 'Worldwide',
-    description: service.description,
+    '@graph': [
+      {
+        '@type': 'Service',
+        '@id': `https://zelvori.software/services/${service.slug}#service`,
+        name: service.title,
+        serviceType: service.title,
+        description: service.description,
+        url: `https://zelvori.software/services/${service.slug}`,
+        provider: {
+          '@type': 'Organization',
+          name: 'Zelvori',
+          url: 'https://zelvori.software',
+          email: 'hello@zelvori.software',
+        },
+        areaServed: 'Worldwide',
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `https://zelvori.software/services/${service.slug}#breadcrumb`,
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://zelvori.software',
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Services',
+            item: 'https://zelvori.software/#services',
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: service.shortTitle,
+            item: `https://zelvori.software/services/${service.slug}`,
+          },
+        ],
+      },
+      ...(service.faqs && service.faqs.length > 0
+        ? [
+            {
+              '@type': 'FAQPage',
+              '@id': `https://zelvori.software/services/${service.slug}#faq`,
+              mainEntity: service.faqs.map((faq) => ({
+                '@type': 'Question',
+                name: faq.question,
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: faq.answer,
+                },
+              })),
+            },
+          ]
+        : []),
+    ],
   };
 
   return (
@@ -97,11 +145,19 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
             {/* Top CTAs */}
             <div className="pt-4 flex flex-wrap items-center gap-4">
               <Link
-                href="/contact"
+                href={`/contact?service=${service.slug}`}
                 className="inline-flex items-center gap-2 px-7 py-3.5 text-xs sm:text-sm font-semibold text-slate-950 bg-gradient-to-r from-cyan-400 via-sky-300 to-cyan-300 hover:from-cyan-300 hover:to-sky-200 rounded-xl shadow-lg shadow-cyan-500/25 transition-all whitespace-nowrap"
               >
                 <span>Request Project Scope</span>
                 <ArrowRight className="w-4 h-4" />
+              </Link>
+
+              <Link
+                href={`/previews/${service.slug}`}
+                className="inline-flex items-center gap-2 px-6 py-3.5 text-xs sm:text-sm font-semibold text-cyan-300 hover:text-white bg-cyan-950/40 hover:bg-cyan-900/60 border border-cyan-500/40 rounded-xl transition-all whitespace-nowrap shadow-md shadow-cyan-950/30"
+              >
+                <Sparkles className="w-4 h-4 text-cyan-400" />
+                <span>Launch Interactive Preview</span>
               </Link>
 
               <a
@@ -115,6 +171,29 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
               </a>
             </div>
           </div>
+        </div>
+
+        {/* Interactive Practice Preview Banner */}
+        <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-cyan-950/40 via-slate-900 to-blue-950/30 border border-cyan-500/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 shadow-xl">
+          <div className="space-y-1.5">
+            <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-cyan-400 font-semibold">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>Interactive Sandbox Simulator</span>
+            </div>
+            <h3 className="text-lg sm:text-xl font-bold text-white">
+              Test This Practice in Real-Time
+            </h3>
+            <p className="text-xs sm:text-sm text-slate-300 max-w-2xl leading-relaxed">
+              Explore dynamic simulated interfaces, state transitions, responsive views, and code architecture for {service.title} in our dedicated sandbox.
+            </p>
+          </div>
+          <Link
+            href={`/previews/${service.slug}`}
+            className="inline-flex items-center gap-2 px-6 py-3 text-xs sm:text-sm font-semibold text-slate-950 bg-cyan-400 hover:bg-cyan-300 rounded-xl transition-colors shrink-0 shadow-lg shadow-cyan-950/40"
+          >
+            <span>Open {service.shortTitle} Preview</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
 
         {/* Deliverables & Scope Grid */}
@@ -259,20 +338,29 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
                       isOpen ? 'border-cyan-500/40 shadow-lg shadow-cyan-950/20' : 'border-slate-800 hover:border-slate-700'
                     }`}
                   >
-                    <button
-                      onClick={() => toggleFaq(idx)}
-                      className="w-full py-5 px-6 text-left flex items-center justify-between gap-4 text-slate-100 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
-                      aria-expanded={isOpen}
-                    >
-                      <span className="text-sm sm:text-base font-semibold">{faq.question}</span>
-                      <div className={`w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center shrink-0 transition-transform duration-200 ${
-                        isOpen ? 'rotate-180 border-cyan-500/40 text-cyan-300' : 'text-slate-400'
-                      }`}>
-                        <ChevronDown className="w-4 h-4" />
-                      </div>
-                    </button>
+                    <h3 className="m-0 p-0 text-left font-normal">
+                      <button
+                        id={`service-faq-btn-${service.slug}-${idx}`}
+                        type="button"
+                        onClick={() => toggleFaq(idx)}
+                        className="w-full py-5 px-6 text-left flex items-center justify-between gap-4 text-slate-100 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+                        aria-expanded={isOpen}
+                        aria-controls={`service-faq-panel-${service.slug}-${idx}`}
+                      >
+                        <span className="text-sm sm:text-base font-semibold">{faq.question}</span>
+                        <div className={`w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center shrink-0 transition-transform duration-200 ${
+                          isOpen ? 'rotate-180 border-cyan-500/40 text-cyan-300' : 'text-slate-400'
+                        }`}>
+                          <ChevronDown className="w-4 h-4" />
+                        </div>
+                      </button>
+                    </h3>
                     {isOpen && (
-                      <div className="px-6 pb-6 pt-1 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/80">
+                      <div
+                        id={`service-faq-panel-${service.slug}-${idx}`}
+                        aria-labelledby={`service-faq-btn-${service.slug}-${idx}`}
+                        className="px-6 pb-6 pt-1 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/80"
+                      >
                         {faq.answer}
                       </div>
                     )}
@@ -317,7 +405,7 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
 
           <div className="flex items-center gap-3 shrink-0">
             <Link
-              href="/contact"
+              href={`/contact?service=${service.slug}`}
               className="px-7 py-4 text-xs sm:text-sm font-semibold text-slate-950 bg-gradient-to-r from-cyan-400 via-sky-300 to-cyan-300 hover:from-cyan-300 hover:to-sky-200 rounded-xl shadow-lg shadow-cyan-500/25 whitespace-nowrap transition-all"
             >
               Start Project Inquiry

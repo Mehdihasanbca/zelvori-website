@@ -31,61 +31,54 @@ export function BrandLogo({ className = '', size = 'md', hideText = false }: Bra
         <div className="absolute inset-0 rounded-xl bg-cyan-400/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         
         <svg
-          viewBox="0 0 64 64"
+          viewBox="0 0 256 256"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           className="relative w-full h-full"
+          aria-hidden="true"
         >
           <defs>
-            <linearGradient id="logoBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#0f172a" />
-              <stop offset="100%" stopColor="#060913" />
+            <linearGradient id="zTop" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stopColor="#21D4E8" />
+              <stop offset="1" stopColor="#2478F2" />
             </linearGradient>
-            <linearGradient id="logoZGrad" x1="12" y1="16" x2="52" y2="48" gradientUnits="userSpaceOnUse">
-              <stop stopColor="#22d3ee" />
-              <stop offset="0.45" stopColor="#38bdf8" />
-              <stop offset="1" stopColor="#818cf8" />
+            <linearGradient id="zDiag" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stopColor="#2478F2" />
+              <stop offset="1" stopColor="#21D4E8" />
             </linearGradient>
-            <linearGradient id="facetHighlight" x1="16" y1="20" x2="48" y2="28" gradientUnits="userSpaceOnUse">
-              <stop stopColor="#ffffff" stopOpacity="0.4" />
-              <stop offset="1" stopColor="#ffffff" stopOpacity="0" />
+            <linearGradient id="zBottom" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0" stopColor="#2478F2" />
+              <stop offset="1" stopColor="#28BFD1" />
             </linearGradient>
           </defs>
 
-          {/* Base rounded slate badge */}
+          {/* Rounded base badge */}
           <rect
-            width="64"
-            height="64"
-            rx="14"
-            fill="url(#logoBgGrad)"
-            stroke="rgba(255, 255, 255, 0.12)"
-            strokeWidth="1.2"
+            x="8"
+            y="8"
+            width="240"
+            height="240"
+            rx="52"
+            fill="#0B1220"
+            stroke="rgba(33, 212, 232, 0.25)"
+            strokeWidth="2.5"
           />
 
-          {/* Subtle tech micro-grid */}
-          <path
-            d="M10 32H54M32 10V54"
-            stroke="rgba(34, 211, 238, 0.12)"
-            strokeWidth="0.8"
-            strokeDasharray="2 3"
-          />
-
-          {/* Precision interlocking Z Monogram with depth */}
-          <path
-            d="M16 20 H48 L32 36 H48 V44 H16 L32 28 H16 Z"
-            fill="url(#logoZGrad)"
-            fillRule="evenodd"
-          />
-
-          {/* Top facet bevel highlight */}
-          <path
-            d="M16 20 H48 L44 24 H20 Z"
-            fill="url(#facetHighlight)"
-          />
-
-          {/* Corner digital nodes */}
-          <circle cx="16" cy="20" r="2.5" fill="#38bdf8" />
-          <circle cx="48" cy="44" r="2.5" fill="#818cf8" />
+          {/* Approved Geometric Z mark */}
+          <g transform="translate(31 43) scale(1.05)">
+            <path
+              d="M18 14 H154 Q160 14 156 20 L127 53 H60 Q54 53 59 47 L80 25 H18 Q10 25 13 19 Q14 14 18 14 Z"
+              fill="url(#zTop)"
+            />
+            <path
+              d="M148 20 L176 20 Q182 20 179 26 L91 124 Q88 128 82 128 H51 Q44 128 49 122 L137 24 Q141 20 148 20 Z"
+              fill="url(#zDiag)"
+            />
+            <path
+              d="M54 89 H121 Q127 89 132 94 L157 117 Q162 123 154 123 H29 Q22 123 27 116 L44 96 Q48 89 54 89 Z"
+              fill="url(#zBottom)"
+            />
+          </g>
         </svg>
       </div>
 

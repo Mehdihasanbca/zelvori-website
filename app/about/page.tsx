@@ -2,6 +2,7 @@ import React from 'react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { siteConfig } from '@/lib/site-config';
+import { FounderSection } from '@/components/home/FounderSection';
 import {
   Code2,
   ShieldCheck,
@@ -98,6 +99,9 @@ export default function AboutPage() {
             </p>
           </div>
         </div>
+
+        {/* Founder Story & Profile */}
+        <FounderSection />
 
         {/* Narrative Section: What We Believe */}
         <div className="p-8 sm:p-12 bg-[#060a12] border border-slate-800 rounded-3xl">
