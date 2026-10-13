@@ -37,13 +37,15 @@ for (const file of requiredFiles) {
   assert(fs.existsSync(path.join(outDir, file)), `out/${file} exists`);
 }
 
-// 3. Expected Route Inventory (21 core routes)
+// 3. Expected Route Inventory (24 core routes)
 const expectedRoutes = [
   '',
   'about',
   'contact',
   'payments',
   'pricing',
+  'stories',
+  'resources',
   'privacy',
   'terms',
   'previews',
@@ -174,6 +176,42 @@ assert(
 assert(
   sitemapContent.includes('https://zelvori.software/payments/'),
   'sitemap.xml includes payments page'
+);
+assert(
+  sitemapContent.includes('https://zelvori.software/stories/'),
+  'sitemap.xml includes industry stories page'
+);
+assert(
+  sitemapContent.includes('https://zelvori.software/resources/'),
+  'sitemap.xml includes developer resource hub'
+);
+
+
+const storiesHtml = fs.readFileSync(path.join(outDir, 'stories', 'index.html'), 'utf8');
+assert(
+  storiesHtml.includes('illustrative scenarios, not claims about named clients'),
+  'stories page labels its scenarios as illustrative, not client testimonials'
+);
+assert(
+  ['Legal practices', 'Doctors &amp; clinics', 'Freelancers &amp; consultants', 'Brands &amp; retailers', 'Creators &amp; personal brands'].every((term) => storiesHtml.includes(term)),
+  'stories page represents key professional and business audiences'
+);
+
+const resourcesHtml = fs.readFileSync(path.join(outDir, 'resources', 'index.html'), 'utf8');
+assert(
+  resourcesHtml.includes('Build Prompt Studio'),
+  'resource hub includes the free browser-based Build Prompt Studio'
+);
+assert(
+  resourcesHtml.includes('Continue') &&
+    resourcesHtml.includes('Motion for React') &&
+    resourcesHtml.includes('React Bits') &&
+    resourcesHtml.includes('MDN Learn Web Development'),
+  'resource hub lists coding, animation and learning resources'
+);
+assert(
+  resourcesHtml.includes('does not call an AI API') && resourcesHtml.includes('licences can change'),
+  'resource hub states prompt generator limitations and variable resource licensing'
 );
 
 // 6. Contact Form Truthfulness & Accessibility
