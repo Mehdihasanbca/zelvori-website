@@ -80,6 +80,12 @@ const expectedRoutes = [
   'solutions/creators',
   'solutions/education',
   'solutions/logistics',
+  'privacy-policy',
+  'terms-of-service',
+  'refund-policy',
+  'disclaimer',
+  'affiliate-disclosure',
+  'hosting/hostycare',
 ];
 
 for (const route of expectedRoutes) {
@@ -128,15 +134,16 @@ for (const file of htmlFiles) {
     }
   }
 
-  // Check External Links for noopener noreferrer
+  // Check External Links for noopener noreferrer (and optional sponsored for affiliate links)
   const linkMatches = content.matchAll(/<a\s+[^>]*href=["'](https?:\/\/[^"']+)["'][^>]*>/gi);
   for (const match of linkMatches) {
     const fullTag = match[0];
     const url = match[1];
     if (!url.startsWith('https://zelvori.software') && !url.startsWith('mailto:')) {
+      const hasSafeRel = fullTag.includes('rel="noopener noreferrer"') || (fullTag.includes('noopener') && fullTag.includes('noreferrer'));
       assert(
-        fullTag.includes('rel="noopener noreferrer"'),
-        `[${relativeName}] External link to ${url} enforces rel="noopener noreferrer"`
+        hasSafeRel,
+        `[${relativeName}] External link to ${url} enforces safe rel attributes (noopener, noreferrer)`
       );
     }
   }
@@ -148,10 +155,14 @@ for (const file of htmlFiles) {
   );
 }
 
-// 4b. Confidential internal docs exclusion check
+// 4b. Confidential internal docs and deliverables exclusion check
 assert(
   !fs.existsSync(path.join(outDir, 'docs')),
   'out/docs directory does not exist (internal documentation excluded from public static build)'
+);
+assert(
+  !fs.existsSync(path.join(outDir, 'private-deliverables')),
+  'out/private-deliverables directory does not exist (confidential templates excluded from public static build)'
 );
 
 // 4c. Project-specific payment workflow validation
@@ -327,6 +338,43 @@ assert(
 assert(
   homeHtml.includes('id="mobile-menu-button"') && homeHtml.includes('aria-controls="mobile-navigation-drawer"'),
   'index.html mobile menu button specifies id and aria-controls'
+);
+
+// 8b. Legal Policies & Hostycare Affiliate Transparency Checks
+assert(
+  sitemapContent.includes('https://zelvori.software/privacy-policy/') &&
+    sitemapContent.includes('https://zelvori.software/terms-of-service/') &&
+    sitemapContent.includes('https://zelvori.software/refund-policy/') &&
+    sitemapContent.includes('https://zelvori.software/disclaimer/') &&
+    sitemapContent.includes('https://zelvori.software/affiliate-disclosure/') &&
+    sitemapContent.includes('https://zelvori.software/hosting/hostycare/'),
+  'sitemap.xml includes all Phase 19 legal policies and Hostycare hosting landing page'
+);
+
+const hostycareHtml = fs.readFileSync(path.join(outDir, 'hosting', 'hostycare', 'index.html'), 'utf8');
+assert(
+  hostycareHtml.includes('Affiliate Disclosure') && hostycareHtml.includes('no additional cost to you'),
+  'hosting/hostycare/index.html includes ASCI/FTC affiliate transparency disclosure'
+);
+assert(
+  hostycareHtml.includes('tid1=zelvori') && hostycareHtml.includes('tid2=hostycare_page'),
+  'hosting/hostycare/index.html includes verified tracking parameters'
+);
+assert(
+  hostycareHtml.includes('rel="noopener noreferrer sponsored"') || (hostycareHtml.includes('noopener') && hostycareHtml.includes('sponsored')),
+  'hosting/hostycare/index.html affiliate links specify rel="noopener noreferrer sponsored"'
+);
+
+const refundHtml = fs.readFileSync(path.join(outDir, 'refund-policy', 'index.html'), 'utf8');
+assert(
+  refundHtml.includes('Advance Payments &amp; Project Deposits') || refundHtml.includes('Advance Payments & Project Deposits'),
+  'refund-policy/index.html defines advance deposit terms'
+);
+
+const affiliateHtml = fs.readFileSync(path.join(outDir, 'affiliate-disclosure', 'index.html'), 'utf8');
+assert(
+  affiliateHtml.includes('Advertising Standards Council of India') || affiliateHtml.includes('ASCI'),
+  'affiliate-disclosure/index.html references ASCI guidelines'
 );
 
 // 9. Asset Integrity & MIME/Magic Verification

@@ -95,6 +95,12 @@ server.listen(PORT, async () => {
     '/solutions/creators/',
     '/solutions/education/',
     '/solutions/logistics/',
+    '/privacy-policy/',
+    '/terms-of-service/',
+    '/refund-policy/',
+    '/disclaimer/',
+    '/affiliate-disclosure/',
+    '/hosting/hostycare/',
   ].map(r => r.replace('//', '/'));
 
   let passed = 0;
@@ -206,6 +212,24 @@ server.listen(PORT, async () => {
   check('Outlines SSDLC gates G0 to G5', secHtml.includes('From Threat Model to Production: Gates G0 to G5'));
   check('Discloses Verify Before Claiming commitment', secHtml.includes('Verify Before Claiming'));
   check('Truthfully disclaims 100% secure claims', secHtml.includes('100% secure') && secHtml.includes('unhackable'));
+
+  // --- Deep Inspection on /hosting/hostycare/ ---
+  console.log('\n--- Deep Inspection on /hosting/hostycare/ ---');
+  const hostRes = await fetch(`http://localhost:${PORT}/hosting/hostycare/`);
+  const hostHtml = await hostRes.text();
+  check('Renders Hostycare recommendations hero', hostHtml.includes('Launch Your Website with the') && hostHtml.includes('Right Hosting'));
+  check('Displays ASCI/FTC affiliate transparency disclosure', hostHtml.includes('Affiliate Disclosure') && hostHtml.includes('no additional cost to you'));
+  check('Contains verified tracking identifiers (tid1=zelvori, tid2=hostycare_page)', hostHtml.includes('tid1=zelvori') && hostHtml.includes('tid2=hostycare_page'));
+  check('Enforces rel="noopener noreferrer sponsored" on outbound affiliate links', hostHtml.includes('rel="noopener noreferrer sponsored"') || (hostHtml.includes('noopener') && hostHtml.includes('sponsored')));
+  check('Includes direct client infrastructure sovereignty guarantee', hostHtml.includes('Direct Client Sovereignty'));
+  check('Provides engineering setup assistance CTA to contact', hostHtml.includes('Discuss Hosting Setup with Zelvori') || hostHtml.includes('/contact/'));
+
+  // --- Deep Inspection on /affiliate-disclosure/ ---
+  console.log('\n--- Deep Inspection on /affiliate-disclosure/ ---');
+  const affRes = await fetch(`http://localhost:${PORT}/affiliate-disclosure/`);
+  const affHtml = await affRes.text();
+  check('Affiliate disclosure references ASCI compliance', affHtml.includes('Advertising Standards Council of India') || affHtml.includes('ASCI'));
+  check('Affiliate disclosure states independent technical vetting', affHtml.includes('Commercial Independence') || affHtml.includes('Editorial Independence'));
 
   console.log(`\n========================================`);
   console.log(`Local Staging Test Results:`);

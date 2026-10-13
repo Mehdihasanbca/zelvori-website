@@ -95,6 +95,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/hosting/hostycare" className="hover:text-cyan-400 transition-colors block py-0.5">
+                  Hosting Recommendations
+                </Link>
+              </li>
+              <li>
                 <Link href="/#process" className="hover:text-cyan-400 transition-colors block py-0.5">
                   Delivery Process
                 </Link>
@@ -121,6 +126,21 @@ export function Footer() {
               <li>
                 <Link href="/terms" className="hover:text-cyan-400 transition-colors block py-0.5">
                   Terms of Service
+                </Link>
+              </li>
+              <li>
+                <Link href="/refund-policy" className="hover:text-cyan-400 transition-colors block py-0.5">
+                  Refund &amp; Cancellation
+                </Link>
+              </li>
+              <li>
+                <Link href="/disclaimer" className="hover:text-cyan-400 transition-colors block py-0.5">
+                  Disclaimer
+                </Link>
+              </li>
+              <li>
+                <Link href="/affiliate-disclosure" className="hover:text-cyan-400 transition-colors block py-0.5">
+                  Affiliate Disclosure
                 </Link>
               </li>
               <li>
