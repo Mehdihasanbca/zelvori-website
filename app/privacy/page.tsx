@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     'Privacy Policy for Zelvori Software. Learn how we handle project inquiries, protect confidential client information, and ensure data privacy.',
   alternates: {
-    canonical: 'https://zelvori.software/privacy',
+    canonical: 'https://zelvori.software/privacy/',
   },
 };
 
