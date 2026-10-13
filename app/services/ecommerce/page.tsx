@@ -10,13 +10,13 @@ export const metadata: Metadata = {
   description:
     'Custom headless e-commerce platforms, Shopify Plus architectures, and checkout pipelines designed for high conversion, multi-currency, and global scaling.',
   alternates: {
-    canonical: 'https://zelvori.software/services/ecommerce',
+    canonical: 'https://zelvori.software/services/ecommerce/',
   },
   openGraph: {
     title: 'E-Commerce Website Development | Zelvori Software',
     description:
       'High-converting, bespoke digital commerce storefronts with fast checkout, ERP sync, and international multi-currency support.',
-    url: 'https://zelvori.software/services/ecommerce',
+    url: 'https://zelvori.software/services/ecommerce/',
   },
 };
 
