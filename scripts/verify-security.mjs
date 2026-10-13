@@ -135,15 +135,26 @@ assert(
   'out/docs directory does not exist (internal documentation excluded from public static build)'
 );
 
-// 4c. Payment button ID & Test Mode validation
+// 4c. Project-specific payment workflow validation
 const exportedPaymentsHtml = fs.readFileSync(path.join(outDir, 'payments', 'index.html'), 'utf8');
 assert(
-  exportedPaymentsHtml.includes('pl_TnOD6Jz1AQC5PU'),
-  'payments/index.html embeds verified supplied button ID pl_TnOD6Jz1AQC5PU'
+  exportedPaymentsHtml.includes('Request Project Advance Link'),
+  'payments/index.html provides a project-specific advance-link request action'
 );
 assert(
-  exportedPaymentsHtml.includes('Mode: Razorpay Sandbox / Test Mode (Verified)'),
-  'payments/index.html displays confirmed Sandbox / Test Mode badge'
+  exportedPaymentsHtml.includes('No one-size-fits-all advance amount'),
+  'payments/index.html explains that project advance amounts vary'
+);
+assert(
+  !exportedPaymentsHtml.includes('pl_TnOD6Jz1AQC5PU') &&
+    !exportedPaymentsHtml.includes('pl_TnOizH1tevZEe5') &&
+    !exportedPaymentsHtml.includes('payment-button.js'),
+  'payments/index.html does not embed either fixed-amount Razorpay button'
+);
+assert(
+  !exportedPaymentsHtml.includes('Razorpay Sandbox / Test Mode (Verified)') &&
+    !exportedPaymentsHtml.includes('confirmed in Razorpay Test'),
+  'payments/index.html makes no unverified claim about Razorpay environment mode'
 );
 
 // 5. Check Sitemap consistency with canonical URLs
