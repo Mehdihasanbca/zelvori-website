@@ -129,8 +129,8 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/#security" className="hover:text-cyan-400 transition-colors block py-0.5">
-                  Trust & Security Standards
+                <Link href="/security/" className="hover:text-cyan-400 transition-colors block py-0.5">
+                  Security &amp; Trust Centre
                 </Link>
               </li>
               <li>

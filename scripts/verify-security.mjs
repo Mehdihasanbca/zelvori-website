@@ -44,6 +44,7 @@ const expectedRoutes = [
   'contact',
   'payments',
   'pricing',
+  'security',
   'stories',
   'resources',
   'privacy',
@@ -170,6 +171,10 @@ assert(
   'sitemap.xml includes pricing page'
 );
 assert(
+  sitemapContent.includes('https://zelvori.software/security/'),
+  'sitemap.xml includes security trust centre page'
+);
+assert(
   sitemapContent.includes('https://zelvori.software/previews/'),
   'sitemap.xml includes previews gallery'
 );
@@ -220,6 +225,32 @@ const socialHtml = fs.readFileSync(path.join(outDir, 'tools', 'social-preview', 
 assert(
   socialHtml.includes('preview is simulated and actual rendering varies'),
   'social preview tool states platform simulation disclaimer truthfully'
+);
+
+const securityHtml = fs.readFileSync(path.join(outDir, 'security', 'index.html'), 'utf8');
+assert(
+  securityHtml.includes('Security Built Into Design &amp; Delivery') || securityHtml.includes('Security Built Into Design & Delivery'),
+  'security/index.html renders primary headline'
+);
+assert(
+  securityHtml.includes('Reference Architecture Specification') && securityHtml.includes('Pattern v1.0'),
+  'security/index.html renders reference architecture specification'
+);
+assert(
+  securityHtml.includes('14 Core Security Controls') || securityHtml.includes('Controls &amp; Evidence Matrix'),
+  'security/index.html renders 14 core controls matrix'
+);
+assert(
+  securityHtml.includes('From Threat Model to Production: Gates G0 to G5'),
+  'security/index.html renders SSDLC gates G0 to G5'
+);
+assert(
+  securityHtml.includes('Verify Before Claiming'),
+  'security/index.html includes Verify Before Claiming commitment'
+);
+assert(
+  securityHtml.includes('100% secure') && securityHtml.includes('unhackable'),
+  'security/index.html prominently disclaims false 100% secure claims'
 );
 
 

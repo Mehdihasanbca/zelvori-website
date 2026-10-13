@@ -58,6 +58,7 @@ server.listen(PORT, async () => {
     '//about/',
     '/contact/',
     '/pricing/',
+    '/security/',
     '/payments/',
     '/stories/',
     '/resources/',
@@ -185,6 +186,16 @@ server.listen(PORT, async () => {
   const jsonRes = await fetch(`http://localhost:${PORT}/tools/json-formatter/`);
   const jsonHtml = await jsonRes.text();
   check('JSON Formatter includes RFC 8259 compliance statement', jsonHtml.includes('RFC 8259'));
+
+  // --- Deep Inspection on /security/ ---
+  const secRes = await fetch(`http://localhost:${PORT}/security/`);
+  const secHtml = await secRes.text();
+  check('Renders Security & Trust Centre headline', secHtml.includes('Security Built Into Design &amp; Delivery') || secHtml.includes('Security Built Into Design & Delivery'));
+  check('Renders Reference Architecture diagram', secHtml.includes('Reference Architecture Specification'));
+  check('Presents defensible controls matrix', secHtml.includes('14 Core Security Controls') || secHtml.includes('Controls &amp; Evidence Matrix'));
+  check('Outlines SSDLC gates G0 to G5', secHtml.includes('From Threat Model to Production: Gates G0 to G5'));
+  check('Discloses Verify Before Claiming commitment', secHtml.includes('Verify Before Claiming'));
+  check('Truthfully disclaims 100% secure claims', secHtml.includes('100% secure') && secHtml.includes('unhackable'));
 
   console.log(`\n========================================`);
   console.log(`Local Staging Test Results:`);

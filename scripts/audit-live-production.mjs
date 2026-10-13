@@ -7,6 +7,7 @@ const routes = [
   '/about/',
   '/contact/',
   '/pricing/',
+  '/security/',
   '/payments/',
   '/stories/',
   '/resources/',
@@ -194,6 +195,35 @@ async function audit() {
     checkTools('JSON Formatter tool returns 200 and includes RFC 8259 compliance statement', jsonRes.statusCode === 200 && jsonRes.body.includes('RFC 8259'));
   } catch (err) {
     console.error(`❌ [LIVE TOOLS ERROR]: ${err.message}`);
+    failed++;
+  }
+
+  // --- Deep Inspection on Live /security/ Endpoint ---
+  try {
+    console.log(`\n--- Deep Inspection on Live /security/ Endpoint ---`);
+    const secRes = await fetchUrl(`${BASE_URL}/security/`);
+    const secHtml = secRes.body;
+
+    function checkSec(desc, condition) {
+      if (condition) {
+        console.log(`✅ [LIVE SECURITY PASS] ${desc}`);
+        passed++;
+      } else {
+        console.error(`❌ [LIVE SECURITY FAIL] ${desc}`);
+        failed++;
+      }
+    }
+
+    checkSec('Returns HTTP 200 OK', secRes.statusCode === 200);
+    checkSec('Renders primary headline', secHtml.includes('Security Built Into Design &amp; Delivery') || secHtml.includes('Security Built Into Design & Delivery'));
+    checkSec('Renders Reference Architecture diagram', secHtml.includes('Reference Architecture Specification'));
+    checkSec('Contains defensible controls matrix', secHtml.includes('14 Core Security Controls') || secHtml.includes('Controls &amp; Evidence Matrix'));
+    checkSec('Displays SSDLC release gates G0 to G5', secHtml.includes('From Threat Model to Production: Gates G0 to G5'));
+    checkSec('Discloses Verify Before Claiming commitment', secHtml.includes('Verify Before Claiming'));
+    checkSec('Truthfully disclaims 100% secure claims', secHtml.includes('100% secure') && secHtml.includes('unhackable'));
+    checkSec('References OpenGraph raster card', secHtml.includes('zelvori-og.png'));
+  } catch (err) {
+    console.error(`❌ [LIVE SECURITY ERROR]: ${err.message}`);
     failed++;
   }
 
