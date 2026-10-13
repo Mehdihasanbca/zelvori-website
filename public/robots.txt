@@ -1,9 +1,49 @@
-# https://www.robotstxt.org/robotstxt.html
+# Zelvori — public crawling policy
+# Public pages are intended to be discoverable by search engines and AI search services.
+# Do not publish private data or secrets on a public website.
+
 User-agent: *
 Allow: /
 
-# Host
-Host: https://zelvori.software
+# ChatGPT Search and user-initiated ChatGPT browsing
+User-agent: OAI-SearchBot
+Allow: /
 
-# Sitemaps
+User-agent: ChatGPT-User
+Allow: /
+
+# OpenAI model-training crawler (separate from ChatGPT Search)
+User-agent: GPTBot
+Allow: /
+
+# Claude search and user-initiated retrieval
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+# Perplexity search and user-initiated fetch
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# AI-related crawlers and assistants
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Meta-ExternalAgent
+Allow: /
+
 Sitemap: https://zelvori.software/sitemap.xml

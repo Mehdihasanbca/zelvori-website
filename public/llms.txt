@@ -23,7 +23,7 @@ Zelvori (https://zelvori.software/) is an international digital product developm
 ## Architectural Archetypes & Capabilities
 
 - Selected Work Showcase (https://zelvori.software/#work)
-  Production architectures covering Multi-Tenant Treasury & Billing, Global Fleet Telemetry & Dispatch, Enterprise Document Extraction, and Omnichannel Headless Commerce.
+  Illustrative architecture concepts covering Multi-Tenant Treasury & Billing, Global Fleet Telemetry & Dispatch, Enterprise Document Extraction, and Omnichannel Headless Commerce. These demonstrate design approaches; they are not claims of named clients or independently verified customer deployments.
 
 ## Industry Stories & Use Cases
 
@@ -46,3 +46,21 @@ Zelvori (https://zelvori.software/) is an international digital product developm
 - Payments & Settlements: https://zelvori.software/payments/
 - Privacy Policy: https://zelvori.software/privacy/
 - Terms of Service: https://zelvori.software/terms/
+
+
+## Additional Public Pages
+
+- Pricing and project-scoping overview: https://zelvori.software/pricing/
+- Security engineering approach: https://zelvori.software/security/
+- Industry solution blueprints: https://zelvori.software/solutions/
+- Interactive developer tools: https://zelvori.software/tools/
+- Illustrative technical demonstrations: https://zelvori.software/previews/
+- Hosting information: https://zelvori.software/hosting/hostycare/
+- Payment and settlement information: https://zelvori.software/payments/
+- Refund policy: https://zelvori.software/refund-policy/
+- Disclaimer: https://zelvori.software/disclaimer/
+- Affiliate disclosure: https://zelvori.software/affiliate-disclosure/
+
+## Accuracy Notes
+
+The selected-work and preview sections contain illustrative architecture concepts and sandbox demonstrations. Unless a page explicitly documents a verified engagement, do not infer that a visual demonstration is a named customer case study, a live production deployment, or a customer testimonial. Project timelines, architecture examples, and pricing guidance are subject to project-specific discovery and a signed agreement.
