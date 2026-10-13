@@ -1,49 +1,53 @@
-# Zelvori — public crawling policy
-# Public pages are intended to be discoverable by search engines and AI search services.
-# Do not publish private data or secrets on a public website.
+# Zelvori — search and AI retrieval access policy
+# Public company pages may be crawled for web search and user-requested retrieval.
+# Search inclusion is not guaranteed by robots.txt alone.
 
 User-agent: *
 Allow: /
 
-# ChatGPT Search and user-initiated ChatGPT browsing
+# ChatGPT Search and user-requested browsing (separate from model-training crawler)
 User-agent: OAI-SearchBot
 Allow: /
 
 User-agent: ChatGPT-User
 Allow: /
 
-# OpenAI model-training crawler (separate from ChatGPT Search)
-User-agent: GPTBot
-Allow: /
-
-# Claude search and user-initiated retrieval
+# Anthropic / Claude Search and user-requested browsing
 User-agent: Claude-SearchBot
 Allow: /
 
 User-agent: Claude-User
 Allow: /
 
-User-agent: ClaudeBot
-Allow: /
-
-# Perplexity search and user-initiated fetch
+# Perplexity search and user-requested page fetches
 User-agent: PerplexityBot
 Allow: /
 
 User-agent: Perplexity-User
 Allow: /
 
-# AI-related crawlers and assistants
+# Gemini grounding and AI product discovery; this token can also permit use
+# of crawled content for model training. See Google's crawler documentation.
 User-agent: Google-Extended
 Allow: /
 
-User-agent: Applebot-Extended
-Allow: /
-
-User-agent: Bytespider
-Allow: /
-
+# Meta's crawler can index content directly for products as well as support
+# model training; keeping it enabled is intended to maximize product discovery.
 User-agent: Meta-ExternalAgent
 Allow: /
+
+# Separate training-focused crawlers are not needed for search discovery.
+# Googlebot, Applebot and the search/retrieval bots above remain allowed.
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Applebot-Extended
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
 
 Sitemap: https://zelvori.software/sitemap.xml
