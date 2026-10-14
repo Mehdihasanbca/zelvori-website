@@ -24,7 +24,7 @@ import {
 export const metadata: Metadata = {
   title: 'Hostycare Hosting Recommendations & Setup Guide',
   description:
-    'Explore verified hosting options recommended by Zelvori for small business websites, WordPress, e-commerce, and cloud VPS deployments with transparent affiliate disclosure.',
+    'Compare hosting options for small business sites, WordPress, e-commerce, and cloud VPS deployments, with clear affiliate disclosures.',
   alternates: {
     canonical: 'https://zelvori.software/hosting/hostycare/',
   },
