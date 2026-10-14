@@ -38,6 +38,11 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+  verification: {
+    other: {
+      'msvalidate.01': '06236155CCFE57BA008B422F19673DE5',
+    },
+  },
   alternates: {
     canonical: 'https://zelvori.software/',
   },
