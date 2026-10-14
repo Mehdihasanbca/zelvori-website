@@ -35,8 +35,8 @@ export function FaqSection() {
             return (
               <div
                 key={faq.question}
-                className={`bg-[#0b1120] border rounded-2xl overflow-hidden transition-all duration-200 ${
-                  isOpen ? 'border-cyan-500/40 shadow-lg shadow-cyan-950/20' : 'border-slate-800 hover:border-slate-700'
+                className={`liquid-glass-card rounded-2xl overflow-hidden transition-all duration-200 ${
+                  isOpen ? 'border-cyan-500/50 shadow-lg shadow-cyan-950/20' : 'hover:border-slate-700'
                 }`}
               >
                 <h3 className="m-0 p-0 text-left font-normal">
@@ -51,7 +51,7 @@ export function FaqSection() {
                     <span className="text-sm sm:text-base font-semibold leading-relaxed">
                       {faq.question}
                     </span>
-                    <div className={`w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center shrink-0 transition-transform duration-200 ${
+                    <div className={`w-8 h-8 rounded-lg bg-white/[0.04] border border-white/10 flex items-center justify-center shrink-0 transition-transform duration-200 ${
                       isOpen ? 'rotate-180 border-cyan-500/40 text-cyan-300' : 'text-slate-400'
                     }`}>
                       <ChevronDown className="w-4 h-4" />
@@ -63,7 +63,7 @@ export function FaqSection() {
                   <div
                     id={`homepage-faq-panel-${index}`}
                     aria-labelledby={`homepage-faq-btn-${index}`}
-                    className="px-6 pb-6 pt-1 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-slate-800/80"
+                    className="px-6 pb-6 pt-1 text-xs sm:text-sm text-slate-300 leading-relaxed border-t border-white/10"
                   >
                     {faq.answer}
                   </div>

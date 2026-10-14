@@ -51,7 +51,7 @@ export default function TermsOfServicePage() {
         </div>
 
         {/* Legal Disclaimer Callout */}
-        <div className="p-4 rounded-xl border border-amber-500/30 bg-amber-950/20 text-xs text-amber-200/90 leading-relaxed flex items-start gap-3">
+        <div className="p-4 rounded-xl border border-amber-500/30 liquid-glass-readable text-xs text-amber-200/90 leading-relaxed flex items-start gap-3">
           <AlertCircle className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
           <div>
             <strong className="text-amber-300">Contracting Notice:</strong> These website terms govern general use of <code className="text-amber-300 font-mono">zelvori.software</code> and exploratory project proposals. Paid engineering engagements require a mutually signed bilateral Service Agreement / Statement of Work (SOW) defining precise milestones, acceptance criteria, and payment terms.
@@ -81,7 +81,7 @@ export default function TermsOfServicePage() {
             <p>
               Zelvori provides specialized digital product engineering services, including custom web application development, mobile applications, enterprise ERP/CRM business software, e-commerce architectures, and application security hardening.
             </p>
-            <div className="p-4 rounded-xl border border-slate-800 bg-slate-900/60 space-y-2 text-xs">
+            <div className="p-4 rounded-xl liquid-glass-card space-y-2 text-xs">
               <p className="text-slate-200 font-semibold">Distinction Between Website Content and Project Contracts:</p>
               <ul className="list-disc pl-5 space-y-1 text-slate-400">
                 <li>Information, architecture diagrams, and cost calculators on this website are illustrative guidelines and technical reference blueprints, not binding fixed-price offers.</li>

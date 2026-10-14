@@ -52,7 +52,7 @@ export default function PrivacyPolicyPage() {
         </div>
 
         {/* Legal Disclaimer Callout */}
-        <div className="p-4 rounded-xl border border-amber-500/30 bg-amber-950/20 text-xs text-amber-200/90 leading-relaxed flex items-start gap-3">
+        <div className="p-4 rounded-xl border border-amber-500/30 liquid-glass-readable text-xs text-amber-200/90 leading-relaxed flex items-start gap-3">
           <AlertCircle className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
           <div>
             <strong className="text-amber-300">Notice to Visitors &amp; Legal Counsel:</strong> This Privacy Policy accurately reflects the actual technical implementation of the Zelvori website as a static GitHub Pages site with client-side mailto workflows. Official registration particulars and final statutory determinations under the Digital Personal Data Protection Act, 2023 are subject to formal legal review.
@@ -196,7 +196,7 @@ export default function PrivacyPolicyPage() {
             <p>
               To exercise your data privacy rights, request deletion of your email correspondence, or raise questions regarding our data handling:
             </p>
-            <div className="p-4 rounded-xl border border-slate-800 bg-slate-900/80 space-y-2 text-xs">
+            <div className="p-4 rounded-xl liquid-glass-card space-y-2 text-xs">
               <div className="flex items-center gap-2 text-cyan-400 font-semibold">
                 <Mail className="w-4 h-4" />
                 <span>Zelvori Privacy Desk</span>

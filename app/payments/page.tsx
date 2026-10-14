@@ -67,7 +67,7 @@ export default function PaymentsPage() {
         <div className="flex flex-col justify-center gap-3 pt-2 sm:flex-row">
           <a
             href={requestHref}
-            className="inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-950/40 transition-colors hover:bg-cyan-300"
+            className="inline-flex items-center justify-center gap-2 rounded-xl liquid-glass-btn-primary px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-950/40 transition-colors"
           >
             <Mail className="h-4 w-4" />
             Request Project Advance Link
@@ -75,7 +75,7 @@ export default function PaymentsPage() {
           </a>
           <Link
             href="/pricing/"
-            className="inline-flex items-center justify-center gap-2 rounded-xl border border-slate-700 bg-slate-900 px-6 py-3 text-sm font-medium text-slate-200 transition-colors hover:border-slate-500 hover:bg-slate-800"
+            className="inline-flex items-center justify-center gap-2 rounded-xl liquid-glass-btn-secondary px-6 py-3 text-sm font-medium text-slate-200 transition-colors hover:text-white"
           >
             Review Services & Pricing
           </Link>
@@ -86,7 +86,7 @@ export default function PaymentsPage() {
       </section>
 
       <section className="mx-auto grid max-w-6xl grid-cols-1 gap-5 px-4 sm:px-6 md:grid-cols-3 lg:px-8">
-        <article className="space-y-3 rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+        <article className="space-y-3 rounded-2xl liquid-glass-card p-6">
           <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-cyan-500/20 bg-cyan-500/10 text-cyan-300">
             <FileText className="h-5 w-5" />
           </div>
@@ -96,7 +96,7 @@ export default function PaymentsPage() {
             milestone in writing before requesting an advance.
           </p>
         </article>
-        <article className="space-y-3 rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+        <article className="space-y-3 rounded-2xl liquid-glass-card p-6">
           <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-blue-500/20 bg-blue-500/10 text-blue-300">
             <Wallet className="h-5 w-5" />
           </div>
@@ -106,7 +106,7 @@ export default function PaymentsPage() {
             for the agreed amount and quotation reference.
           </p>
         </article>
-        <article className="space-y-3 rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
+        <article className="space-y-3 rounded-2xl liquid-glass-card p-6">
           <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-emerald-500/20 bg-emerald-500/10 text-emerald-300">
             <CheckCircle2 className="h-5 w-5" />
           </div>
@@ -119,7 +119,7 @@ export default function PaymentsPage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-6 rounded-3xl border border-slate-800 bg-slate-900/60 p-6 sm:p-8 lg:grid-cols-[1.1fr_0.9fr] lg:p-10">
+        <div className="grid gap-6 rounded-3xl liquid-glass-readable border border-slate-800/80 p-6 sm:p-8 lg:grid-cols-[1.1fr_0.9fr] lg:p-10">
           <div className="space-y-4">
             <div className="flex items-center gap-2 text-sm font-semibold text-cyan-300">
               <LockKeyhole className="h-4 w-4" />
@@ -134,13 +134,13 @@ export default function PaymentsPage() {
             </p>
             <a
               href={requestHref}
-              className="inline-flex items-center gap-2 rounded-xl border border-cyan-500/40 px-4 py-2.5 text-sm font-semibold text-cyan-200 transition-colors hover:bg-cyan-950/50"
+              className="inline-flex items-center gap-2 rounded-xl liquid-glass-btn-secondary px-4 py-2.5 text-sm font-semibold text-cyan-200 transition-colors"
             >
               Request the correct payment link
               <ArrowRight className="h-4 w-4" />
             </a>
           </div>
-          <aside className="space-y-4 rounded-2xl border border-amber-500/20 bg-amber-950/20 p-5">
+          <aside className="space-y-4 rounded-2xl liquid-glass-card border border-amber-500/20 p-5">
             <div className="flex items-center gap-2 text-sm font-semibold text-amber-200">
               <AlertTriangle className="h-4 w-4" />
               Before you pay
@@ -165,7 +165,7 @@ export default function PaymentsPage() {
         </p>
         <a
           href={requestHref}
-          className="mt-6 inline-flex items-center justify-center gap-2 rounded-xl bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 transition-colors hover:bg-cyan-300"
+          className="mt-6 inline-flex items-center justify-center gap-2 rounded-xl liquid-glass-btn-primary px-6 py-3 text-sm font-semibold text-slate-950 transition-colors"
         >
           <Mail className="h-4 w-4" />
           Email Zelvori

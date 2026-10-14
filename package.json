@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint .",
     "verify": "node scripts/verify-security.mjs",
+    "check:duplicates": "node scripts/check-duplicates.mjs",
     "clean": "next clean"
   },
   "dependencies": {

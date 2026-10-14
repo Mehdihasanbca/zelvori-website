@@ -126,7 +126,7 @@ ${formData.message}`;
   };
 
   return (
-    <div className="glass-panel rounded-3xl p-6 sm:p-10 border border-slate-800 shadow-2xl relative overflow-hidden">
+    <div className="liquid-glass-card rounded-3xl p-6 sm:p-10 shadow-2xl relative overflow-hidden">
       {/* Decorative top ambient light */}
       <div
         className="absolute top-0 right-0 w-48 h-48 bg-cyan-500/05 blur-2xl pointer-events-none rounded-full"
@@ -194,7 +194,7 @@ ${formData.message}`;
               value={formData.name}
               onChange={handleChange}
               placeholder="e.g. Alex Chen"
-              className="w-full px-4 py-3 bg-slate-900/90 border border-slate-800 rounded-xl text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all"
+              className="w-full px-4 py-3 liquid-glass-input rounded-xl text-sm placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all"
             />
           </div>
 
@@ -214,7 +214,7 @@ ${formData.message}`;
               value={formData.email}
               onChange={handleChange}
               placeholder="e.g. alex@company.com"
-              className="w-full px-4 py-3 bg-slate-900/90 border border-slate-800 rounded-xl text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all"
+              className="w-full px-4 py-3 liquid-glass-input rounded-xl text-sm placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all"
             />
           </div>
         </div>
@@ -269,12 +269,12 @@ ${formData.message}`;
               name="timeline"
               value={formData.timeline}
               onChange={handleChange}
-              className="w-full px-4 py-3 bg-slate-900/90 border border-slate-800 rounded-xl text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all"
+              className="w-full px-4 py-3 liquid-glass-input rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all"
             >
-              <option value="Urgent (1-4 weeks)">Urgent (1-4 weeks)</option>
-              <option value="Within 1-2 months">Within 1-2 months</option>
-              <option value="Within 3-6 months">Within 3-6 months</option>
-              <option value="Flexible / Discovery Phase">Flexible / Discovery Phase</option>
+              <option value="Urgent (1-4 weeks)" className="bg-slate-900 text-white">Urgent (1-4 weeks)</option>
+              <option value="Within 1-2 months" className="bg-slate-900 text-white">Within 1-2 months</option>
+              <option value="Within 3-6 months" className="bg-slate-900 text-white">Within 3-6 months</option>
+              <option value="Flexible / Discovery Phase" className="bg-slate-900 text-white">Flexible / Discovery Phase</option>
             </select>
           </div>
 
@@ -287,12 +287,12 @@ ${formData.message}`;
               name="budget"
               value={formData.budget}
               onChange={handleChange}
-              className="w-full px-4 py-3 bg-slate-900/90 border border-slate-800 rounded-xl text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all"
+              className="w-full px-4 py-3 liquid-glass-input rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all"
             >
-              <option value="Fixed Milestone Project">Fixed Milestone Project</option>
-              <option value="Dedicated Engineering Squad (Monthly Retainer)">Dedicated Engineering Squad (Monthly Retainer)</option>
-              <option value="Technical Advisory & Architecture Audit">Technical Advisory & Architecture Audit</option>
-              <option value="Flexible / To be estimated">Flexible / To be estimated</option>
+              <option value="Fixed Milestone Project" className="bg-slate-900 text-white">Fixed Milestone Project</option>
+              <option value="Dedicated Engineering Squad (Monthly Retainer)" className="bg-slate-900 text-white">Dedicated Engineering Squad (Monthly Retainer)</option>
+              <option value="Technical Advisory & Architecture Audit" className="bg-slate-900 text-white">Technical Advisory & Architecture Audit</option>
+              <option value="Flexible / To be estimated" className="bg-slate-900 text-white">Flexible / To be estimated</option>
             </select>
           </div>
         </div>
@@ -313,7 +313,7 @@ ${formData.message}`;
             value={formData.message}
             onChange={handleChange}
             placeholder="Describe your technical objectives: What are you building? Who will use it? Any required integrations or performance constraints?"
-            className="w-full px-4 py-3 bg-slate-900/90 border border-slate-800 rounded-xl text-sm text-slate-100 placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-transparent transition-all"
+            className="w-full px-4 py-3 liquid-glass-input rounded-xl text-sm placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition-all"
           />
           <div className="flex items-center justify-between mt-1.5 text-[11px] text-slate-500">
             <span>Include key goals, target audience, timeline, or architecture constraints</span>
@@ -333,7 +333,7 @@ ${formData.message}`;
         <div className="pt-2 flex flex-col sm:flex-row items-center gap-3">
           <button
             type="submit"
-            className="w-full sm:w-auto flex-1 inline-flex items-center justify-center gap-2.5 px-6 py-3.5 text-xs font-semibold text-slate-950 bg-gradient-to-r from-cyan-400 via-sky-300 to-cyan-300 hover:from-cyan-300 hover:to-sky-200 rounded-xl shadow-md transition-all whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+            className="w-full sm:w-auto flex-1 inline-flex items-center justify-center gap-2.5 px-6 py-3.5 text-xs font-semibold liquid-glass-btn-primary rounded-xl transition-all whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
           >
             <Send className="w-4 h-4" />
             <span>Open Mail Client Draft</span>
@@ -342,7 +342,7 @@ ${formData.message}`;
           <button
             type="button"
             onClick={handleCopySummary}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 text-xs font-medium text-slate-300 hover:text-white bg-slate-900/90 hover:bg-slate-800 border border-slate-700/80 rounded-xl transition-colors whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3.5 text-xs font-medium text-slate-300 hover:text-white liquid-glass-btn-secondary rounded-xl transition-colors whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400"
           >
             {copied ? (
               <>

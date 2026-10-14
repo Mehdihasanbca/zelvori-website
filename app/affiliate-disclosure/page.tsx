@@ -51,7 +51,7 @@ export default function AffiliateDisclosurePage() {
         </div>
 
         {/* Primary Transparency Notice */}
-        <div className="p-4 rounded-xl border border-cyan-500/30 bg-cyan-950/20 text-xs text-slate-200 leading-relaxed flex items-start gap-3">
+        <div className="p-4 rounded-xl border border-cyan-500/30 liquid-glass-readable text-xs text-slate-200 leading-relaxed flex items-start gap-3">
           <ShieldCheck className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
           <div>
             <strong className="text-cyan-300">Material Connection Disclosure:</strong> In transparent alignment with the Advertising Standards Council of India (ASCI) guidance on influencer and affiliate transparency and consumer disclosure principles, we disclose that certain external links on this website are affiliate links. If you purchase products through these links, Zelvori may earn a referral commission at no additional cost to you.
@@ -84,7 +84,7 @@ export default function AffiliateDisclosurePage() {
             <p>
               We provide an educational hosting catalog and plan comparison at <Link href="/hosting/hostycare/" className="text-cyan-400 hover:underline">/hosting/hostycare/</Link> to assist developers, startups, and clients seeking budget-friendly shared hosting, WordPress hosting, WooCommerce setups, or virtual private servers (VPS).
             </p>
-            <div className="p-4 rounded-xl border border-slate-800 bg-slate-900/60 space-y-2 text-xs">
+            <div className="p-4 rounded-xl liquid-glass-card space-y-2 text-xs">
               <p className="text-slate-200 font-semibold">Key Facts Regarding Hostycare Referrals:</p>
               <ul className="list-disc pl-5 space-y-1 text-slate-400">
                 <li><strong className="text-slate-300">&ldquo;At No Additional Cost to You&rdquo;:</strong> You do not pay any extra surcharge or premium by clicking our affiliate link. In many instances, affiliate links provide access to promotional discounts or standard introductory rates offered directly by Hostycare.</li>

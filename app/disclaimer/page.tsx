@@ -51,7 +51,7 @@ export default function DisclaimerPage() {
         </div>
 
         {/* Executive Disclaimer Callout */}
-        <div className="p-4 rounded-xl border border-slate-800 bg-slate-900/60 text-xs text-slate-300 leading-relaxed flex items-start gap-3">
+        <div className="p-4 rounded-xl border border-slate-800/80 liquid-glass-readable text-xs text-slate-300 leading-relaxed flex items-start gap-3">
           <AlertTriangle className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
           <div>
             <strong className="text-white">Core Principle:</strong> Zelvori believes in engineering honesty over marketing hype. We provide clear technical specifications, transparent security controls, and realistic delivery boundaries rather than unverifiable promises or guaranteed commercial outcomes.
@@ -81,7 +81,7 @@ export default function DisclaimerPage() {
             <p>
               Our website features 9 comprehensive industry blueprints at <Link href="/solutions/" className="text-cyan-400 hover:underline">/solutions/</Link> (covering Healthcare, Legal, CRM/ERP, Marketplaces, Food Delivery, E-Commerce, Media, Education, and Field Logistics) and interactive technical demonstrations at <Link href="/previews/" className="text-cyan-400 hover:underline">/previews/</Link>.
             </p>
-            <div className="p-4 rounded-xl border border-slate-800 bg-slate-900/60 space-y-2 text-xs">
+            <div className="p-4 rounded-xl liquid-glass-card space-y-2 text-xs">
               <p className="text-slate-200 font-semibold">Important Architectural Distinctions:</p>
               <ul className="list-disc pl-5 space-y-1 text-slate-400">
                 <li>These blueprints represent <strong>reference engineering designs and proven architectural patterns</strong>. They illustrate what can be built through phased milestones; they do not represent active, live client implementations or pre-certified off-the-shelf software packages.</li>

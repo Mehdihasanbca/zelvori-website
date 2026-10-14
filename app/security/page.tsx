@@ -185,7 +185,7 @@ export default function SecurityTrustCentrePage() {
           </div>
 
           {/* Core Philosophy Notice */}
-          <div className="max-w-3xl bg-slate-900/80 border border-slate-800 p-5 rounded-2xl space-y-2 text-xs sm:text-sm text-slate-300 leading-relaxed">
+          <div className="max-w-3xl liquid-glass-readable p-5 rounded-2xl space-y-2 text-xs sm:text-sm text-slate-300 leading-relaxed">
             <div className="font-semibold text-slate-100 flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-cyan-400" />
               <span>Our Security Philosophy & Grounding Reality</span>
@@ -200,19 +200,19 @@ export default function SecurityTrustCentrePage() {
 
           {/* Quick Indicator Pills */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 max-w-4xl">
-            <div className="p-3.5 rounded-xl bg-slate-950/80 border border-slate-800 text-xs space-y-1">
+            <div className="p-3.5 rounded-xl liquid-glass-card text-xs space-y-1">
               <div className="font-mono text-cyan-400 font-bold">ZERO SECRETS</div>
               <div className="text-slate-400 text-[11px]">Enforced in source code & CI</div>
             </div>
-            <div className="p-3.5 rounded-xl bg-slate-950/80 border border-slate-800 text-xs space-y-1">
+            <div className="p-3.5 rounded-xl liquid-glass-card text-xs space-y-1">
               <div className="font-mono text-cyan-400 font-bold">6 ARCH LAYERS</div>
               <div className="text-slate-400 text-[11px]">Strict trust boundary gates</div>
             </div>
-            <div className="p-3.5 rounded-xl bg-slate-950/80 border border-slate-800 text-xs space-y-1">
+            <div className="p-3.5 rounded-xl liquid-glass-card text-xs space-y-1">
               <div className="font-mono text-cyan-400 font-bold">14 CONTROL AREAS</div>
               <div className="text-slate-400 text-[11px]">Defensible status matrix</div>
             </div>
-            <div className="p-3.5 rounded-xl bg-slate-950/80 border border-slate-800 text-xs space-y-1">
+            <div className="p-3.5 rounded-xl liquid-glass-card text-xs space-y-1">
               <div className="font-mono text-cyan-400 font-bold">6 SDLC GATES</div>
               <div className="text-slate-400 text-[11px]">G0 to G5 release criteria</div>
             </div>
@@ -220,25 +220,25 @@ export default function SecurityTrustCentrePage() {
 
           {/* Quick Jump Links */}
           <div className="pt-2 flex flex-wrap gap-2 text-xs">
-            <a href="#architecture" className="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-cyan-400 hover:border-slate-700 transition-colors">
+            <a href="#architecture" className="px-3 py-1.5 rounded-lg liquid-glass-btn-secondary text-slate-300 hover:text-cyan-400 transition-colors">
               ↓ Reference Architecture
             </a>
-            <a href="#controls" className="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-cyan-400 hover:border-slate-700 transition-colors">
+            <a href="#controls" className="px-3 py-1.5 rounded-lg liquid-glass-btn-secondary text-slate-300 hover:text-cyan-400 transition-colors">
               ↓ Controls Matrix
             </a>
-            <a href="#privacy-data" className="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-cyan-400 hover:border-slate-700 transition-colors">
+            <a href="#privacy-data" className="px-3 py-1.5 rounded-lg liquid-glass-btn-secondary text-slate-300 hover:text-cyan-400 transition-colors">
               ↓ Privacy & Data Handling
             </a>
-            <a href="#sdlc" className="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-cyan-400 hover:border-slate-700 transition-colors">
+            <a href="#sdlc" className="px-3 py-1.5 rounded-lg liquid-glass-btn-secondary text-slate-300 hover:text-cyan-400 transition-colors">
               ↓ Secure SDLC Gates
             </a>
-            <a href="#profiles" className="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-cyan-400 hover:border-slate-700 transition-colors">
+            <a href="#profiles" className="px-3 py-1.5 rounded-lg liquid-glass-btn-secondary text-slate-300 hover:text-cyan-400 transition-colors">
               ↓ Project Profiles
             </a>
-            <a href="#industries" className="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-cyan-400 hover:border-slate-700 transition-colors">
+            <a href="#industries" className="px-3 py-1.5 rounded-lg liquid-glass-btn-secondary text-slate-300 hover:text-cyan-400 transition-colors">
               ↓ Industry Realities
             </a>
-            <a href="#evidence" className="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-300 hover:text-cyan-400 hover:border-slate-700 transition-colors">
+            <a href="#evidence" className="px-3 py-1.5 rounded-lg liquid-glass-btn-secondary text-slate-300 hover:text-cyan-400 transition-colors">
               ↓ Evidence Pack
             </a>
           </div>
@@ -305,7 +305,7 @@ export default function SecurityTrustCentrePage() {
           </div>
 
           {/* Architecture Boundary Callout */}
-          <div className="bg-slate-900 border border-cyan-500/30 rounded-2xl p-6 sm:p-8 space-y-4">
+          <div className="liquid-glass-readable border border-cyan-500/30 rounded-2xl p-6 sm:p-8 space-y-4">
             <div className="flex items-center gap-3">
               <div className="p-2.5 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400">
                 <ShieldCheck className="w-5 h-5" />
@@ -336,7 +336,7 @@ export default function SecurityTrustCentrePage() {
             {PRIVACY_DISCOVERY_QUESTIONS.map((item, idx) => (
               <div
                 key={idx}
-                className="bg-slate-900/60 border border-slate-800 rounded-xl p-4 space-y-2"
+                className="liquid-glass-card rounded-xl p-4 space-y-2"
               >
                 <h4 className="text-xs font-bold text-cyan-300">
                   {item.question}
@@ -371,7 +371,7 @@ export default function SecurityTrustCentrePage() {
             {SDLC_GATES.map((g) => (
               <div
                 key={g.gate}
-                className="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 space-y-4 hover:border-slate-700 transition-all flex flex-col justify-between"
+                className="liquid-glass-card rounded-2xl p-6 space-y-4 hover:border-cyan-500/40 transition-all flex flex-col justify-between"
               >
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
@@ -383,13 +383,13 @@ export default function SecurityTrustCentrePage() {
                     </span>
                   </div>
                   <h3 className="text-base font-bold text-slate-100">{g.title}</h3>
-                  <div className="text-xs text-slate-300 leading-relaxed bg-slate-950/60 p-3 rounded-xl border border-slate-800/80">
+                  <div className="text-xs text-slate-300 leading-relaxed liquid-glass-readable p-3 rounded-xl border border-slate-800/80">
                     <span className="font-semibold text-slate-200 block mb-1">Activities:</span>
                     {g.work}
                   </div>
                 </div>
 
-                <div className="pt-3 border-t border-slate-800">
+                <div className="pt-3 border-t border-slate-800/80">
                   <div className="text-[11px] text-emerald-300 leading-relaxed">
                     <span className="font-semibold block mb-0.5 text-emerald-400">Definition of Done:</span>
                     {g.dod}
@@ -485,7 +485,7 @@ export default function SecurityTrustCentrePage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
             <Link
               href="/contact"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-cyan-500 text-slate-950 font-bold text-sm hover:bg-cyan-400 transition-colors shadow-lg shadow-cyan-500/20"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl liquid-glass-btn-primary font-bold text-sm shadow-lg shadow-cyan-500/20"
             >
               <span>Discuss a Security-Sensitive Project</span>
               <ArrowRight className="w-4 h-4" />
@@ -497,7 +497,7 @@ export default function SecurityTrustCentrePage() {
               )}&body=${encodeURIComponent(
                 'Hello Zelvori Engineering Desk,\n\nWe are looking to scope a digital application and would like to schedule a security architecture discovery session.\n\nProject Overview:\nKey Data Types Handled:\nTarget Delivery Timeline:\n\nThank you,\n[Name / Organization]'
               )}`}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-slate-900 border border-slate-700 text-slate-200 font-semibold text-sm hover:bg-slate-800 hover:text-white transition-colors"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl liquid-glass-btn-secondary text-slate-200 font-semibold text-sm hover:text-white transition-colors"
             >
               <Mail className="w-4 h-4" />
               <span>Request Security Architecture Review</span>
@@ -505,7 +505,7 @@ export default function SecurityTrustCentrePage() {
 
             <Link
               href="/services/application-security"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-300 font-medium text-sm hover:text-cyan-400 transition-colors"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl liquid-glass-btn-secondary text-slate-300 font-medium text-sm hover:text-cyan-400 transition-colors"
             >
               <span>Application Security Practice</span>
             </Link>

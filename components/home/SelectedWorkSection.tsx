@@ -150,7 +150,7 @@ export function SelectedWorkSection() {
         </div>
 
         {/* Filter controls */}
-        <div className="flex items-center gap-1.5 p-1 bg-slate-900/90 border border-slate-800 rounded-xl mb-12 w-fit overflow-x-auto max-w-full">
+        <div className="flex items-center gap-1.5 p-1 liquid-glass-dock rounded-xl mb-12 w-fit overflow-x-auto max-w-full">
           <button
             onClick={() => setActiveFilter('all')}
             className={`px-3.5 py-1.5 text-xs font-medium rounded-lg transition-all whitespace-nowrap ${
@@ -208,7 +208,7 @@ export function SelectedWorkSection() {
           {filteredProjects.map((project, idx) => (
             <div
               key={project.id}
-              className="p-8 sm:p-10 lg:p-12 bg-[#0b1120] hover:bg-[#0c1426] border border-slate-800/90 hover:border-slate-700 rounded-3xl transition-all duration-300 shadow-2xl relative overflow-hidden group card-shine"
+              className="p-8 sm:p-10 lg:p-12 liquid-glass-card rounded-3xl transition-all duration-300 shadow-2xl relative overflow-hidden group card-shine hover:border-cyan-500/30"
             >
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
                 

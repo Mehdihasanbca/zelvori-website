@@ -146,7 +146,7 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
             <div className="pt-4 flex flex-wrap items-center gap-4">
               <Link
                 href={`/contact?service=${service.slug}`}
-                className="inline-flex items-center gap-2 px-7 py-3.5 text-xs sm:text-sm font-semibold text-slate-950 bg-gradient-to-r from-cyan-400 via-sky-300 to-cyan-300 hover:from-cyan-300 hover:to-sky-200 rounded-xl shadow-lg shadow-cyan-500/25 transition-all whitespace-nowrap"
+                className="inline-flex items-center gap-2 px-7 py-3.5 text-xs sm:text-sm font-semibold liquid-glass-btn-primary rounded-xl transition-all whitespace-nowrap"
               >
                 <span>Request Project Scope</span>
                 <ArrowRight className="w-4 h-4" />
@@ -154,7 +154,7 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
 
               <Link
                 href={`/previews/${service.slug}`}
-                className="inline-flex items-center gap-2 px-6 py-3.5 text-xs sm:text-sm font-semibold text-cyan-300 hover:text-white bg-cyan-950/40 hover:bg-cyan-900/60 border border-cyan-500/40 rounded-xl transition-all whitespace-nowrap shadow-md shadow-cyan-950/30"
+                className="inline-flex items-center gap-2 px-6 py-3.5 text-xs sm:text-sm font-semibold liquid-glass-btn-secondary rounded-xl transition-all whitespace-nowrap"
               >
                 <Sparkles className="w-4 h-4 text-cyan-400" />
                 <span>Launch Interactive Preview</span>
@@ -164,7 +164,7 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
                 href={`mailto:${siteConfig.contact.email}?subject=${encodeURIComponent(
                   `Inquiry: ${service.title}`
                 )}`}
-                className="inline-flex items-center gap-2 px-6 py-3.5 text-xs sm:text-sm font-medium text-slate-300 hover:text-white bg-slate-900/80 hover:bg-slate-800 border border-slate-700/80 rounded-xl transition-colors whitespace-nowrap"
+                className="inline-flex items-center gap-2 px-6 py-3.5 text-xs sm:text-sm font-medium text-slate-300 hover:text-white liquid-glass-btn-secondary rounded-xl transition-colors whitespace-nowrap"
               >
                 <Mail className="w-4 h-4 text-cyan-400" />
                 <span>Email Engineering Desk</span>
@@ -174,7 +174,7 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
         </div>
 
         {/* Interactive Practice Preview Banner */}
-        <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-cyan-950/40 via-slate-900 to-blue-950/30 border border-cyan-500/30 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 shadow-xl">
+        <div className="p-6 sm:p-8 rounded-3xl liquid-glass-card border-cyan-500/40 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 shadow-xl">
           <div className="space-y-1.5">
             <div className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-cyan-400 font-semibold">
               <Sparkles className="w-3.5 h-3.5" />
@@ -189,7 +189,7 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
           </div>
           <Link
             href={`/previews/${service.slug}`}
-            className="inline-flex items-center gap-2 px-6 py-3 text-xs sm:text-sm font-semibold text-slate-950 bg-cyan-400 hover:bg-cyan-300 rounded-xl transition-colors shrink-0 shadow-lg shadow-cyan-950/40"
+            className="inline-flex items-center gap-2 px-6 py-3 text-xs sm:text-sm font-semibold liquid-glass-btn-primary rounded-xl transition-colors shrink-0"
           >
             <span>Open {service.shortTitle} Preview</span>
             <ArrowRight className="w-4 h-4" />
@@ -197,7 +197,7 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
         </div>
 
         {/* Deliverables & Scope Grid */}
-        <div className="glass-panel p-8 sm:p-12 rounded-3xl border border-slate-800/90 shadow-2xl">
+        <div className="liquid-glass-card p-8 sm:p-12 rounded-3xl shadow-2xl">
           <div className="max-w-2xl mb-10 space-y-2">
             <div className="text-xs uppercase tracking-widest text-cyan-400 font-semibold">
               Deliverables & Scope
@@ -214,7 +214,7 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
             {service.deliverables.map((item) => (
               <div
                 key={item}
-                className="p-5 bg-slate-900/80 hover:bg-slate-900 border border-slate-800/90 hover:border-slate-700 rounded-2xl flex items-start gap-3.5 transition-colors card-shine"
+                className="p-5 bg-white/[0.03] hover:bg-white/[0.06] border border-white/10 rounded-2xl flex items-start gap-3.5 transition-colors card-shine"
               >
                 <Check className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
                 <span className="text-sm text-slate-200 font-medium">
@@ -225,7 +225,7 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
           </div>
 
           {/* Tech Stack Banner */}
-          <div className="mt-10 pt-8 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-4">
+          <div className="mt-10 pt-8 border-t border-white/10 flex flex-wrap items-center justify-between gap-4">
             <div className="text-xs text-slate-400 flex flex-wrap items-center gap-2">
               <Cpu className="w-4 h-4 text-cyan-400 shrink-0" />
               <span className="font-semibold text-slate-200">Core Technologies:</span>
@@ -256,7 +256,7 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
             {service.useCases.map((uc, i) => (
               <div
                 key={uc.title}
-                className="p-7 bg-[#0b1120] hover:bg-[#0d1629] border border-slate-800 rounded-2xl flex flex-col justify-between transition-all duration-300 card-shine"
+                className="p-7 liquid-glass-card liquid-glass-card-interactive rounded-2xl flex flex-col justify-between transition-all duration-300 card-shine"
               >
                 <div>
                   <span className="text-xs font-mono text-cyan-400 font-semibold">
@@ -269,7 +269,7 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
                     {uc.desc}
                   </p>
                 </div>
-                <div className="mt-8 pt-4 border-t border-slate-800/80 text-[11px] text-slate-400 font-mono">
+                <div className="mt-8 pt-4 border-t border-white/10 text-[11px] text-slate-400 font-mono">
                   Production Validated Pattern
                 </div>
               </div>
@@ -278,7 +278,7 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
         </div>
 
         {/* Delivery Approach for this Service */}
-        <div className="p-8 sm:p-12 bg-[#060a12] border border-slate-800 rounded-3xl">
+        <div className="p-8 sm:p-12 liquid-glass-card rounded-3xl">
           <div className="max-w-2xl mb-10 space-y-2">
             <div className="text-xs uppercase tracking-widest text-cyan-400 font-semibold">
               Methodology
@@ -289,25 +289,25 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <div className="p-5 bg-slate-900/70 border border-slate-800 rounded-2xl space-y-2">
+            <div className="p-5 bg-white/[0.03] border border-white/10 rounded-2xl space-y-2">
               <div className="text-cyan-400 font-mono text-xs font-bold">01. ARCHITECTURE</div>
               <p className="text-sm text-slate-200 font-semibold">Specification & Schema</p>
               <p className="text-xs text-slate-400 leading-relaxed">Data models, API contracts, and user flows documented and agreed upfront.</p>
             </div>
 
-            <div className="p-5 bg-slate-900/70 border border-slate-800 rounded-2xl space-y-2">
+            <div className="p-5 bg-white/[0.03] border border-white/10 rounded-2xl space-y-2">
               <div className="text-cyan-400 font-mono text-xs font-bold">02. ITERATION</div>
               <p className="text-sm text-slate-200 font-semibold">Bi-Weekly Sprints</p>
               <p className="text-xs text-slate-400 leading-relaxed">Live testable staging deployments every two weeks with transparent progress.</p>
             </div>
 
-            <div className="p-5 bg-slate-900/70 border border-slate-800 rounded-2xl space-y-2">
+            <div className="p-5 bg-white/[0.03] border border-white/10 rounded-2xl space-y-2">
               <div className="text-cyan-400 font-mono text-xs font-bold">03. SECURITY</div>
               <p className="text-sm text-slate-200 font-semibold">Hardened Audit & QA</p>
               <p className="text-xs text-slate-400 leading-relaxed">Automated unit/integration tests, role permissions, and performance benchmarks.</p>
             </div>
 
-            <div className="p-5 bg-slate-900/70 border border-slate-800 rounded-2xl space-y-2">
+            <div className="p-5 bg-white/[0.03] border border-white/10 rounded-2xl space-y-2">
               <div className="text-cyan-400 font-mono text-xs font-bold">04. HANDOVER</div>
               <p className="text-sm text-slate-200 font-semibold">Clean Transfer & SLA</p>
               <p className="text-xs text-slate-400 leading-relaxed">Complete repository transfer, architecture docs, and SLA maintenance options.</p>
@@ -334,8 +334,8 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
                 return (
                   <div
                     key={faq.question}
-                    className={`bg-[#0b1120] border rounded-2xl overflow-hidden transition-all duration-200 ${
-                      isOpen ? 'border-cyan-500/40 shadow-lg shadow-cyan-950/20' : 'border-slate-800 hover:border-slate-700'
+                    className={`liquid-glass-card rounded-2xl overflow-hidden transition-all duration-200 ${
+                      isOpen ? 'border-cyan-500/50 shadow-lg shadow-cyan-950/20' : 'hover:border-slate-700'
                     }`}
                   >
                     <h3 className="m-0 p-0 text-left font-normal">

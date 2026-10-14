@@ -63,11 +63,11 @@ export function CapabilitiesSection() {
             return (
               <div
                 key={cap.title}
-                className="group p-7 bg-[#0b1120] hover:bg-[#0d1629] border border-slate-800/90 hover:border-slate-700 rounded-2xl flex flex-col justify-between transition-all duration-300 card-shine"
+                className="group p-7 liquid-glass-card liquid-glass-card-interactive rounded-2xl flex flex-col justify-between transition-all duration-300 card-shine"
               >
                 <div>
                   <div className="flex items-center justify-between mb-5">
-                    <div className="w-11 h-11 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center group-hover:scale-105 group-hover:border-cyan-500/30 transition-all">
+                    <div className="w-11 h-11 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center group-hover:scale-105 group-hover:border-cyan-500/30 transition-all">
                       <Icon className="w-5 h-5 text-cyan-400" />
                     </div>
                     <span className="text-[11px] font-mono text-slate-400 group-hover:text-cyan-400 transition-colors">
@@ -84,7 +84,7 @@ export function CapabilitiesSection() {
                   </p>
                 </div>
 
-                <div className="mt-8 pt-4 border-t border-slate-800/70 flex items-center justify-between text-[11px]">
+                <div className="mt-8 pt-4 border-t border-white/10 flex items-center justify-between text-[11px]">
                   <span className="font-mono text-cyan-400/90 truncate max-w-[170px]">
                     {detail.artifact}
                   </span>

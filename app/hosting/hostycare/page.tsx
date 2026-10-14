@@ -245,7 +245,7 @@ export default function HostycareHostingPage() {
               href={HOSTYCARE_LINKS.cloudHosting}
               target="_blank"
               rel="noopener noreferrer sponsored"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-500 px-6 py-3.5 text-sm font-semibold text-neutral-950 transition-all hover:bg-emerald-400 hover:shadow-lg hover:shadow-emerald-500/20 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:ring-offset-2 focus:ring-offset-neutral-950"
+              className="inline-flex items-center justify-center gap-2 rounded-xl liquid-glass-btn-primary px-6 py-3.5 text-sm font-semibold text-neutral-950 transition-all shadow-lg shadow-emerald-500/20"
             >
               Browse Cloud Hosting on Hostycare
               <ExternalLink className="h-4 w-4" />
@@ -253,7 +253,7 @@ export default function HostycareHostingPage() {
 
             <Link
               href="/contact/"
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-neutral-700 bg-neutral-900/80 px-6 py-3.5 text-sm font-semibold text-white transition-all hover:border-neutral-600 hover:bg-neutral-800"
+              className="inline-flex items-center justify-center gap-2 rounded-xl liquid-glass-btn-secondary px-6 py-3.5 text-sm font-semibold text-white transition-all hover:text-white"
             >
               Request Zelvori Setup Assistance
               <ArrowRight className="h-4 w-4" />
@@ -261,7 +261,7 @@ export default function HostycareHostingPage() {
           </div>
 
           {/* Prominent Affiliate Disclosure (ASCI & FTC Alignment) */}
-          <div className="mt-8 mx-auto max-w-3xl rounded-xl border border-emerald-900/40 bg-emerald-950/20 p-4 text-left sm:p-5">
+          <div className="mt-8 mx-auto max-w-3xl rounded-xl border border-emerald-500/30 liquid-glass-readable p-4 text-left sm:p-5">
             <div className="flex items-start gap-3">
               <Shield className="h-5 w-5 text-emerald-400 shrink-0 mt-0.5" />
               <div className="text-xs text-neutral-300 leading-relaxed">
@@ -285,22 +285,22 @@ export default function HostycareHostingPage() {
       <section className="border-b border-neutral-900 bg-neutral-900/30 px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:gap-6">
-            <div className="rounded-xl border border-neutral-800 bg-neutral-900/50 p-4 text-center">
+            <div className="rounded-xl liquid-glass-card p-4 text-center">
               <HardDrive className="mx-auto h-6 w-6 text-emerald-400 mb-2" />
               <h3 className="text-sm font-semibold text-white">NVMe SSD Storage</h3>
               <p className="mt-1 text-xs text-neutral-400">High-speed IOPS for quick page loads</p>
             </div>
-            <div className="rounded-xl border border-neutral-800 bg-neutral-900/50 p-4 text-center">
+            <div className="rounded-xl liquid-glass-card p-4 text-center">
               <Shield className="mx-auto h-6 w-6 text-teal-400 mb-2" />
               <h3 className="text-sm font-semibold text-white">Automated SSL</h3>
               <p className="mt-1 text-xs text-neutral-400">Compliant HTTPS encryption included</p>
             </div>
-            <div className="rounded-xl border border-neutral-800 bg-neutral-900/50 p-4 text-center">
+            <div className="rounded-xl liquid-glass-card p-4 text-center">
               <Zap className="mx-auto h-6 w-6 text-amber-400 mb-2" />
               <h3 className="text-sm font-semibold text-white">DDoS Protection</h3>
               <p className="mt-1 text-xs text-neutral-400">Network-level traffic filtering</p>
             </div>
-            <div className="rounded-xl border border-neutral-800 bg-neutral-900/50 p-4 text-center">
+            <div className="rounded-xl liquid-glass-card p-4 text-center">
               <Headphones className="mx-auto h-6 w-6 text-indigo-400 mb-2" />
               <h3 className="text-sm font-semibold text-white">24/7 Tech Support</h3>
               <p className="mt-1 text-xs text-neutral-400">Ticket & live support from Hostycare</p>
@@ -326,7 +326,7 @@ export default function HostycareHostingPage() {
             {HOSTING_TIERS.map((tier) => (
               <div
                 key={tier.id}
-                className="flex flex-col justify-between rounded-2xl border border-neutral-800 bg-neutral-900/50 p-6 sm:p-8 transition-all hover:border-neutral-700 hover:shadow-xl hover:shadow-black/40"
+                className="flex flex-col justify-between rounded-2xl liquid-glass-card p-6 sm:p-8 transition-all hover:border-emerald-500/40 hover:shadow-xl hover:shadow-black/40"
               >
                 <div>
                   <div className="flex items-center justify-between gap-4">
@@ -369,7 +369,7 @@ export default function HostycareHostingPage() {
                       href={tier.primaryLink}
                       target="_blank"
                       rel="noopener noreferrer sponsored"
-                      className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-500 px-4 py-2.5 text-xs font-semibold text-neutral-950 transition hover:bg-emerald-400"
+                      className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl liquid-glass-btn-primary px-4 py-2.5 text-xs font-semibold text-neutral-950 transition"
                     >
                       {tier.primaryLabel}
                       <ExternalLink className="h-3.5 w-3.5" />
@@ -379,7 +379,7 @@ export default function HostycareHostingPage() {
                       href={tier.secondaryLink}
                       target="_blank"
                       rel="noopener noreferrer sponsored"
-                      className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl border border-neutral-700 bg-neutral-800/80 px-4 py-2.5 text-xs font-semibold text-neutral-200 transition hover:bg-neutral-700 hover:text-white"
+                      className="flex-1 inline-flex items-center justify-center gap-2 rounded-xl liquid-glass-btn-secondary px-4 py-2.5 text-xs font-semibold text-neutral-200 transition hover:text-white"
                     >
                       {tier.secondaryLabel}
                       <ExternalLink className="h-3.5 w-3.5" />
@@ -438,7 +438,7 @@ export default function HostycareHostingPage() {
                 href={item.link}
                 target="_blank"
                 rel="noopener noreferrer sponsored"
-                className="group flex flex-col justify-between rounded-xl border border-neutral-800 bg-neutral-900/40 p-4 transition-all hover:border-emerald-500/40 hover:bg-neutral-900 hover:shadow-md"
+                className="group flex flex-col justify-between rounded-xl liquid-glass-card p-4 transition-all hover:border-emerald-500/40 hover:shadow-md"
               >
                 <div>
                   <div className="flex items-center justify-between text-xs font-semibold text-white group-hover:text-emerald-400">
@@ -459,7 +459,7 @@ export default function HostycareHostingPage() {
 
       {/* Zelvori Setup Assistance Service Section */}
       <section className="border-t border-neutral-900 bg-neutral-950 px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-5xl rounded-3xl border border-neutral-800 bg-gradient-to-br from-neutral-900 via-neutral-900/60 to-neutral-950 p-8 sm:p-12">
+        <div className="mx-auto max-w-5xl rounded-3xl liquid-glass-readable border border-emerald-500/20 p-8 sm:p-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-7">
               <span className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-medium text-emerald-400 border border-emerald-500/20 mb-4">
@@ -495,7 +495,7 @@ export default function HostycareHostingPage() {
             </div>
 
             <div className="lg:col-span-5 flex flex-col gap-4">
-              <div className="rounded-2xl border border-neutral-800 bg-neutral-950/80 p-5">
+              <div className="rounded-2xl liquid-glass-card p-5">
                 <h3 className="text-sm font-semibold text-white">Direct Client Sovereignty</h3>
                 <p className="mt-1 text-xs text-neutral-400 leading-relaxed">
                   You retain complete account ownership and billing authority with Hostycare. Zelvori connects via
@@ -504,7 +504,7 @@ export default function HostycareHostingPage() {
                 <div className="mt-4">
                   <Link
                     href="/contact/"
-                    className="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-emerald-500 px-4 py-3 text-xs font-semibold text-neutral-950 transition hover:bg-emerald-400"
+                    className="w-full inline-flex items-center justify-center gap-2 rounded-xl liquid-glass-btn-primary px-4 py-3 text-xs font-semibold text-neutral-950 transition"
                   >
                     Discuss Hosting Setup with Zelvori
                     <ArrowRight className="h-3.5 w-3.5" />
@@ -532,7 +532,7 @@ export default function HostycareHostingPage() {
             {FAQS.map((faq, idx) => (
               <div
                 key={idx}
-                className="rounded-xl border border-neutral-800 bg-neutral-900/40 p-5 transition hover:border-neutral-700"
+                className="rounded-xl liquid-glass-card p-5 transition hover:border-emerald-500/40"
               >
                 <div className="flex items-start gap-3">
                   <HelpCircle className="h-5 w-5 text-emerald-400 shrink-0 mt-0.5" />

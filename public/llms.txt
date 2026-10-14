@@ -20,29 +20,91 @@ Zelvori (https://zelvori.software/) is an international digital product developm
 - Application Security & Secure Software Engineering (https://zelvori.software/services/application-security/)
   Defensive software architecture, STRIDE threat modeling, API vulnerability reviews, identity & access hardening (MFA/RBAC), data protection, supply-chain verification, and AI application guardrails.
 
-## Architectural Archetypes & Capabilities
+## Industry Solutions & Master Architecture Blueprints
 
-- Selected Work Showcase (https://zelvori.software/#work)
-  Production architectures covering Multi-Tenant Treasury & Billing, Global Fleet Telemetry & Dispatch, Enterprise Document Extraction, and Omnichannel Headless Commerce.
+Zelvori provides production-ready reference architectures and phased delivery blueprints for 9 major industry verticals (https://zelvori.software/solutions/):
 
-## Industry Stories & Use Cases
+- Healthcare, Doctors & Clinics (https://zelvori.software/solutions/healthcare/)
+  HIPAA/DISHA-aware telemedicine portals, HL7/FHIR record integration, encrypted patient records, and doctor scheduling systems.
+- Lawyers, Law Firms & Legal Practice (https://zelvori.software/solutions/legal/)
+  Privileged client portals, automated conflict checking, encrypted matter document vaults, and billing time-tracking.
+- CRM, ERP & Business Operations (https://zelvori.software/solutions/business-operations/)
+  Modular operational backbones, multi-branch inventory tracking, custom approval chains, and automated executive reporting.
+- Multi-Vendor Marketplace (https://zelvori.software/solutions/marketplace/)
+  Split payments, automated vendor commission settlement, localized shipping integration, and escrow workflows.
+- On-Demand Food & Multi-Outlet Delivery (https://zelvori.software/solutions/food-delivery/)
+  Real-time delivery driver tracking, dynamic kitchen display systems (KDS), multi-branch menu sync, and POS integrations.
+- D2C Brands & High-Volume E-Commerce (https://zelvori.software/solutions/ecommerce/)
+  Sub-second headless storefronts, multi-warehouse delta stock sync, custom loyalty mechanics, and flash-sale checkout scaling.
+- Creators, Media & Digital Subscriptions (https://zelvori.software/solutions/creators/)
+  Private content vaults, recurring membership subscriptions, paywalled media streaming, and community discussion nodes.
+- Education, Academies & EdTech (https://zelvori.software/solutions/education/)
+  LMS course delivery, proctored assessments, SCORM/xAPI compliance, student analytics, and automated certification issuance.
+- Field Service, Logistics & Fleet Operations (https://zelvori.software/solutions/logistics/)
+  Offline-first driver mobile apps, real-time GPS telemetry, dispatch optimization, and geofenced proof-of-delivery signatures.
 
-- Industry stories (https://zelvori.software/stories/)
-  Illustrative digital transformation scenarios for legal practices, clinics, freelancers, growing companies, brands, creators, educators, and service organisations. These are use cases, not claimed customer testimonials.
+## Security & Trust Centre
 
-## Free Developer Resources
+Zelvori operates under an uncompromising "Verify Before Claiming" security ethos (https://zelvori.software/security/):
 
-- Developer resource hub (https://zelvori.software/resources/)
-  Curated links to AI-assisted coding tools, open-source UI libraries, animation resources, icons, fonts, design assets, starter templates, and free web-development learning materials.
+- 6-Tier Zero-Trust Architecture: Edge CDN, Next.js API Gateway, Application Logic, ACID SQL Store, External API Circuit Breakers, and Observability Telemetry.
+- STRIDE Threat Modeling: Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, and Elevation of Privilege.
+- 14 Core Defensive Security Controls: Enforced authentication, strict RBAC, database encryption at rest (AES-256) and in transit (TLS 1.3), automated secret scanning, and rate limiting.
+- SSDLC Gates G0 to G5: Discovery (G0), Architecture (G1), Build (G2), Verification (G3), Launch (G4), and Operations (G5).
+- Truth in Marketing: No unsupported "100% secure" or "unhackable" claims. Security is an ongoing engineering discipline.
+
+## Free Developer Lab & Browser Privacy Tools
+
+Free, privacy-first developer utilities executing 100% client-side in the browser with zero server data storage (https://zelvori.software/tools/):
+
+- SEO Meta Preview & SERP Simulator (https://zelvori.software/tools/seo-meta-preview/)
+  Live Google desktop and mobile search snippet preview with pixel-length guidance.
+- WCAG Color Contrast Checker (https://zelvori.software/tools/color-contrast/)
+  W3C relative luminance ratio calculator with AA and AAA pass/fail validation.
+- CSS Gradient & Box Shadow Generator (https://zelvori.software/tools/css-generator/)
+  Interactive visual builder for multi-stop gradients and multi-layered box shadows.
+- JSON Formatter, Validator & Minifier (https://zelvori.software/tools/json-formatter/)
+  RFC 8259 syntax validation and pretty-printing in browser memory.
+- Open Graph & Twitter Social Card Previewer (https://zelvori.software/tools/social-preview/)
+  Social share card simulator for Twitter, Facebook, LinkedIn, and messaging previews.
+
+## Free Developer Resources & Build Prompt Studio
+
+- Curated Developer Resources Hub (https://zelvori.software/resources/)
+  Verified references for AI-assisted coding, open-source UI libraries, animation resources, icons, fonts, design assets, and web learning materials.
 - Free Build Prompt Studio (https://zelvori.software/resources/#prompt-studio)
-  A browser-based brief generator for website and app ideas. It generates text locally from user selections; it does not call an AI model or send user data to an AI service.
+  Browser-based technical brief generator for websites and applications. Generates structured engineering prompts entirely in local browser memory without transmitting client data to external AI APIs.
 
-## Company Information
+## Transparent Pricing & Commercial Model
 
-- Website: https://zelvori.software/
-- Contact: hello@zelvori.software
-- About: https://zelvori.software/about/
-- Project Inquiry: https://zelvori.software/contact/
-- Payments & Settlements: https://zelvori.software/payments/
-- Privacy Policy: https://zelvori.software/privacy/
-- Terms of Service: https://zelvori.software/terms/
+Zelvori provides transparent milestone-based engineering packages across 7 core practices (https://zelvori.software/pricing/):
+- Fixed sprint milestones with explicit Scope of Work (SOW) documents.
+- Customer-specific advance deposit workflows via verified payment links (https://zelvori.software/payments/).
+- Zero ongoing per-seat SaaS tax; clients receive 100% intellectual property ownership upon completion.
+
+## Infrastructure & Managed Hosting
+
+- Hostycare Cloud Partnership (https://zelvori.software/hosting/hostycare/)
+  High-performance NVMe cloud hosting, cPanel management, managed WordPress, and dedicated cloud VPS recommendations with transparent affiliate disclosures.
+
+## Direct Contact & Communication Channels
+
+- Official Website: https://zelvori.software/
+- Direct Engineering Desk Email: hello@zelvori.software
+- WhatsApp Business Desk: +91 91625 30999 (https://wa.me/919162530999)
+- Project Inquiry Form: https://zelvori.software/contact/
+- About Zelvori: https://zelvori.software/about/
+
+## Legal & Compliance
+
+- Privacy Policy: https://zelvori.software/privacy-policy/ (also available at /privacy/)
+- Terms of Service: https://zelvori.software/terms-of-service/ (also available at /terms/)
+- Refund & Cancellation Policy: https://zelvori.software/refund-policy/
+- General Disclaimer: https://zelvori.software/disclaimer/
+- Affiliate Transparency Disclosure: https://zelvori.software/affiliate-disclosure/
+
+## Core Framework SDK
+
+- Package: `@zelvori/core`
+- Local Path: `packages/core/`
+- Architecture: Zero-dependency TypeScript SDK providing validation primitives, error formatting, and security utilities.

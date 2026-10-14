@@ -179,14 +179,14 @@ export default function ToolsHubPage() {
             return (
               <article
                 key={tool.slug}
-                className="group flex flex-col justify-between rounded-3xl border border-slate-800 bg-slate-900/50 p-6 sm:p-7 transition duration-200 hover:-translate-y-1 hover:border-cyan-500/40 hover:bg-slate-900/90 shadow-xl"
+                className="group flex flex-col justify-between rounded-3xl liquid-glass-card liquid-glass-card-interactive p-6 sm:p-7 transition duration-200 hover:-translate-y-1 hover:border-cyan-500/50 shadow-xl"
               >
                 <div>
                   <div className="flex items-center justify-between">
                     <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-cyan-500/20 bg-cyan-500/10 text-cyan-300">
                       <Icon className="h-6 w-6" />
                     </div>
-                    <span className="rounded-full border border-slate-800 bg-slate-950 px-2.5 py-1 text-[11px] font-mono text-slate-400">
+                    <span className="rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-1 text-[11px] font-mono text-slate-400">
                       {tool.category}
                     </span>
                   </div>
@@ -199,7 +199,7 @@ export default function ToolsHubPage() {
                     {tool.description}
                   </p>
 
-                  <ul className="mt-5 space-y-1.5 border-t border-slate-800/80 pt-4 text-[11px] text-slate-300">
+                  <ul className="mt-5 space-y-1.5 border-t border-white/10 pt-4 text-[11px] text-slate-300">
                     {tool.features.map((feature) => (
                       <li key={feature} className="flex items-center gap-2">
                         <span className="h-1.5 w-1.5 rounded-full bg-cyan-400" />
@@ -212,7 +212,7 @@ export default function ToolsHubPage() {
                 <div className="mt-7 pt-4">
                   <Link
                     href={`/tools/${tool.slug}/`}
-                    className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-slate-950 border border-slate-800 px-4 py-3 text-xs font-semibold text-cyan-300 transition group-hover:border-cyan-500/40 group-hover:bg-cyan-500/10 group-hover:text-cyan-200"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-xl liquid-glass-btn-secondary px-4 py-3 text-xs font-semibold text-cyan-300 transition group-hover:text-cyan-200"
                   >
                     <span>{tool.cta}</span>
                     <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />

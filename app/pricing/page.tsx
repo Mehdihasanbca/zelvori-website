@@ -553,13 +553,13 @@ export default function PricingPage() {
         <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
           <a
             href="#packages"
-            className="px-6 py-3 text-xs sm:text-sm font-semibold text-slate-950 bg-cyan-400 hover:bg-cyan-300 rounded-xl transition-colors shadow-lg shadow-cyan-950/50"
+            className="px-6 py-3 text-xs sm:text-sm font-semibold text-slate-950 liquid-glass-btn-primary rounded-xl transition-colors shadow-lg shadow-cyan-950/50"
           >
             Explore Practice Packages
           </a>
           <a
             href="#pass-through"
-            className="px-6 py-3 text-xs sm:text-sm font-medium text-slate-300 hover:text-white bg-slate-900 border border-slate-800 rounded-xl hover:border-slate-700 transition-colors"
+            className="px-6 py-3 text-xs sm:text-sm font-medium text-slate-300 hover:text-white liquid-glass-btn-secondary rounded-xl transition-colors"
           >
             Third-Party Pass-Through Rules
           </a>
@@ -569,7 +569,7 @@ export default function PricingPage() {
       {/* Core Principles Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3">
+          <div className="p-6 rounded-2xl liquid-glass-card space-y-3">
             <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400">
               <Layers className="w-5 h-5" />
             </div>
@@ -579,7 +579,7 @@ export default function PricingPage() {
             </p>
           </div>
 
-          <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3">
+          <div className="p-6 rounded-2xl liquid-glass-card space-y-3">
             <div className="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
               <Server className="w-5 h-5" />
             </div>
@@ -589,7 +589,7 @@ export default function PricingPage() {
             </p>
           </div>
 
-          <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3">
+          <div className="p-6 rounded-2xl liquid-glass-card space-y-3">
             <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
               <ShieldCheck className="w-5 h-5" />
             </div>
@@ -652,8 +652,8 @@ export default function PricingPage() {
                     key={tier.name}
                     className={`rounded-2xl p-6 sm:p-7 flex flex-col justify-between border transition-all ${
                       tier.popular
-                        ? 'bg-slate-900/90 border-cyan-500/40 shadow-xl shadow-cyan-950/20 relative'
-                        : 'bg-slate-900/50 border-slate-800 hover:border-slate-700'
+                        ? 'liquid-glass-card border-cyan-500/50 shadow-xl shadow-cyan-950/20 relative'
+                        : 'liquid-glass-card hover:border-slate-700'
                     }`}
                   >
                     {tier.popular && (
@@ -723,8 +723,8 @@ export default function PricingPage() {
                         href={`/contact?service=${tier.serviceSlug}`}
                         className={`w-full py-2.5 px-4 rounded-xl text-xs font-semibold flex items-center justify-center gap-2 transition-colors ${
                           tier.popular
-                            ? 'bg-cyan-400 text-slate-950 hover:bg-cyan-300'
-                            : 'bg-slate-800 text-slate-200 hover:text-white hover:bg-slate-700 border border-slate-700'
+                            ? 'liquid-glass-btn-primary'
+                            : 'liquid-glass-btn-secondary'
                         }`}
                       >
                         <span>{tier.ctaText}</span>
@@ -874,7 +874,7 @@ export default function PricingPage() {
           {milestoneProcess.map((item) => (
             <div
               key={item.step}
-              className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-3 relative flex flex-col justify-between"
+              className="p-6 rounded-2xl liquid-glass-card space-y-3 relative flex flex-col justify-between"
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
@@ -897,7 +897,7 @@ export default function PricingPage() {
 
       {/* Application Security Disclaimer Callout */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="p-6 rounded-2xl bg-amber-950/20 border border-amber-500/30 text-amber-200/90 text-xs leading-relaxed space-y-2">
+        <div className="p-6 rounded-2xl liquid-glass-readable border border-amber-500/30 text-amber-200/90 text-xs leading-relaxed space-y-2">
           <div className="flex items-center gap-2 font-bold text-amber-300 uppercase tracking-wider text-[11px]">
             <ShieldCheck className="w-4 h-4" />
             <span>Application Security Practice Boundary Disclosure</span>
@@ -910,7 +910,7 @@ export default function PricingPage() {
 
       {/* Commercial Terms & Owner Approval Disclosure */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 text-slate-300 text-xs leading-relaxed space-y-2">
+        <div className="p-6 rounded-2xl liquid-glass-readable border border-slate-800 text-slate-300 text-xs leading-relaxed space-y-2">
           <div className="flex items-center gap-2 font-semibold text-slate-200 uppercase tracking-wider text-[11px] font-mono">
             <Info className="w-4 h-4 text-cyan-400" />
             <span>Commercial Notice &amp; Scope Formalization</span>
@@ -923,7 +923,7 @@ export default function PricingPage() {
 
       {/* Bottom CTA */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-r from-slate-900 via-cyan-950/40 to-slate-900 border border-cyan-500/30 text-center space-y-6">
+        <div className="p-8 sm:p-12 rounded-3xl liquid-glass-readable border border-cyan-500/30 text-center space-y-6">
           <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
             Ready to Scope Your Next Product?
           </h2>
@@ -933,13 +933,13 @@ export default function PricingPage() {
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/contact"
-              className="px-6 py-3 text-xs sm:text-sm font-semibold text-slate-950 bg-cyan-400 hover:bg-cyan-300 rounded-xl transition-colors shadow-lg shadow-cyan-950/50"
+              className="px-6 py-3 text-xs sm:text-sm font-semibold text-slate-950 liquid-glass-btn-primary rounded-xl transition-colors shadow-lg shadow-cyan-950/50"
             >
               Request Project Proposal
             </Link>
             <Link
               href="/previews"
-              className="px-6 py-3 text-xs sm:text-sm font-medium text-slate-300 hover:text-white bg-slate-900 border border-slate-700 rounded-xl transition-colors"
+              className="px-6 py-3 text-xs sm:text-sm font-medium text-slate-300 hover:text-white liquid-glass-btn-secondary rounded-xl transition-colors"
             >
               Browse All Practice Previews
             </Link>

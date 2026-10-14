@@ -51,8 +51,8 @@ export function Navbar() {
     <header
       className={`sticky top-0 z-50 w-full transition-all duration-300 border-b ${
         scrolled
-          ? 'bg-[#070b14]/92 backdrop-blur-xl border-slate-800/90 shadow-2xl shadow-black/40'
-          : 'bg-[#070b14]/80 backdrop-blur-md border-slate-800/50'
+          ? 'liquid-glass-dock border-white/10 shadow-2xl shadow-black/80'
+          : 'bg-[#070b14]/75 backdrop-blur-xl border-white/5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-8">
@@ -62,7 +62,7 @@ export function Navbar() {
         </div>
 
         {/* Zone 2: 4-5 Concise Single-Line Nav Links */}
-        <nav className="hidden md:flex items-center gap-5 text-sm font-medium text-slate-300">
+        <nav className="hidden md:flex items-center gap-2 lg:gap-3 text-sm font-medium text-slate-300">
           {/* Services dropdown */}
           <div
             className="relative"
@@ -79,8 +79,8 @@ export function Navbar() {
               id="services-menu-button"
               type="button"
               onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
-              className={`flex items-center gap-1.5 py-2 hover:text-white transition-colors whitespace-nowrap focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-cyan-400 rounded ${
-                pathname.startsWith('/services') ? 'text-cyan-400' : 'text-slate-300'
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg hover:text-white transition-all whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 ${
+                pathname.startsWith('/services') ? 'text-cyan-300 bg-white/5 border border-cyan-500/20' : 'text-slate-300 hover:bg-white/5'
               }`}
               aria-expanded={servicesDropdownOpen}
               aria-haspopup="true"
@@ -97,8 +97,8 @@ export function Navbar() {
                 className="absolute top-full left-0 w-84 pt-2 z-50"
                 role="menu"
               >
-                <div className="p-3 bg-[#0d1424]/95 border border-slate-800/90 rounded-2xl shadow-2xl backdrop-blur-2xl">
-                  <div className="text-[10px] font-mono uppercase tracking-wider text-cyan-400 px-3 py-1.5 border-b border-slate-800/80 mb-1.5 flex items-center justify-between">
+                <div className="p-3 liquid-glass-dock border border-white/15 rounded-2xl shadow-2xl shadow-black/80">
+                  <div className="text-[10px] font-mono uppercase tracking-wider text-cyan-400 px-3 py-1.5 border-b border-white/10 mb-1.5 flex items-center justify-between">
                     <span>Engineering Practices</span>
                     <span>{siteConfig.services.length.toString().padStart(2, '0')} SERVICES</span>
                   </div>
@@ -107,7 +107,7 @@ export function Navbar() {
                       key={service.slug}
                       href={`/services/${service.slug}`}
                       onClick={closeMenus}
-                      className="block px-3 py-2.5 rounded-xl text-xs hover:bg-slate-800/80 hover:text-cyan-200 transition-colors group"
+                      className="block px-3 py-2.5 rounded-xl text-xs hover:bg-white/10 hover:text-cyan-200 transition-colors group"
                       role="menuitem"
                     >
                       <div className="font-semibold text-slate-200 group-hover:text-cyan-300 flex items-center justify-between">
@@ -119,7 +119,7 @@ export function Navbar() {
                       </p>
                     </Link>
                   ))}
-                  <div className="pt-2 mt-2 border-t border-slate-800/80 px-3">
+                  <div className="pt-2 mt-2 border-t border-white/10 px-3">
                     <Link
                       href="/previews"
                       onClick={closeMenus}
@@ -136,84 +136,84 @@ export function Navbar() {
 
           <Link
             href="/previews"
-            className={`hover:text-white transition-colors whitespace-nowrap shrink-0 py-2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-cyan-400 rounded ${
-              pathname.startsWith('/previews') ? 'text-cyan-400' : 'text-slate-300'
+            className={`px-3 py-1.5 rounded-lg hover:text-white transition-all whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 ${
+              pathname.startsWith('/previews') ? 'text-cyan-300 bg-white/5 border border-cyan-500/20' : 'text-slate-300 hover:bg-white/5'
             }`}
           >
             Previews
           </Link>
           <Link
             href="/pricing"
-            className={`hover:text-white transition-colors whitespace-nowrap shrink-0 py-2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-cyan-400 rounded ${
-              pathname === '/pricing' ? 'text-cyan-400' : 'text-slate-300'
+            className={`px-3 py-1.5 rounded-lg hover:text-white transition-all whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 ${
+              pathname === '/pricing' ? 'text-cyan-300 bg-white/5 border border-cyan-500/20' : 'text-slate-300 hover:bg-white/5'
             }`}
           >
             Pricing
           </Link>
           <Link
             href="/stories/"
-            className={`hover:text-white transition-colors whitespace-nowrap shrink-0 py-2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-cyan-400 rounded ${
-              pathname.startsWith('/stories') ? 'text-cyan-400' : 'text-slate-300'
+            className={`px-3 py-1.5 rounded-lg hover:text-white transition-all whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 ${
+              pathname.startsWith('/stories') ? 'text-cyan-300 bg-white/5 border border-cyan-500/20' : 'text-slate-300 hover:bg-white/5'
             }`}
           >
             Stories
           </Link>
           <Link
             href="/resources/"
-            className={`hover:text-white transition-colors whitespace-nowrap shrink-0 py-2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-cyan-400 rounded ${
-              pathname.startsWith('/resources') ? 'text-cyan-400' : 'text-slate-300'
+            className={`px-3 py-1.5 rounded-lg hover:text-white transition-all whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 ${
+              pathname.startsWith('/resources') ? 'text-cyan-300 bg-white/5 border border-cyan-500/20' : 'text-slate-300 hover:bg-white/5'
             }`}
           >
             Resources
           </Link>
           <Link
             href="/tools/"
-            className={`hover:text-white transition-colors whitespace-nowrap shrink-0 py-2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-cyan-400 rounded ${
-              pathname.startsWith('/tools') ? 'text-cyan-400' : 'text-slate-300'
+            className={`px-3 py-1.5 rounded-lg hover:text-white transition-all whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 ${
+              pathname.startsWith('/tools') ? 'text-cyan-300 bg-white/5 border border-cyan-500/20' : 'text-slate-300 hover:bg-white/5'
             }`}
           >
             Tools
           </Link>
           <Link
             href="/security/"
-            className={`hover:text-white transition-colors whitespace-nowrap shrink-0 py-2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-cyan-400 rounded ${
-              pathname.startsWith('/security') ? 'text-cyan-400' : 'text-slate-300'
+            className={`px-3 py-1.5 rounded-lg hover:text-white transition-all whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 ${
+              pathname.startsWith('/security') ? 'text-cyan-300 bg-white/5 border border-cyan-500/20' : 'text-slate-300 hover:bg-white/5'
             }`}
           >
             Security
           </Link>
           <Link
             href="/#work"
-            className="hover:text-white transition-colors whitespace-nowrap shrink-0 py-2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-cyan-400 rounded"
+            className="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/5 transition-all whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
           >
             Work
           </Link>
           <Link
             href="/solutions/"
-            className={`hover:text-white transition-colors whitespace-nowrap shrink-0 py-2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-cyan-400 rounded ${
-              pathname.startsWith('/solutions') ? 'text-cyan-400' : 'text-slate-300'
+            className={`px-3 py-1.5 rounded-lg hover:text-white transition-all whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 ${
+              pathname.startsWith('/solutions') ? 'text-cyan-300 bg-white/5 border border-cyan-500/20' : 'text-slate-300 hover:bg-white/5'
             }`}
           >
             Solutions
           </Link>
           <Link
             href="/#process"
-            className="hover:text-white transition-colors whitespace-nowrap shrink-0 py-2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-cyan-400 rounded"
+            className="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/5 transition-all whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
           >
             Process
           </Link>
           <Link
             href="/about"
-            className={`hover:text-white transition-colors whitespace-nowrap shrink-0 py-2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-cyan-400 rounded ${
-              pathname === '/about' ? 'text-cyan-400' : 'text-slate-300'
+            className={`px-3 py-1.5 rounded-lg hover:text-white transition-all whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 ${
+              pathname === '/about' ? 'text-cyan-300 bg-white/5 border border-cyan-500/20' : 'text-slate-300 hover:bg-white/5'
             }`}
           >
             About
           </Link>
           <Link
             href="/contact"
-            className={`hover:text-white transition-colors whitespace-nowrap shrink-0 py-2 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-cyan-400 rounded ${
-              pathname === '/contact' ? 'text-cyan-400' : 'text-slate-300'
+            className={`px-3 py-1.5 rounded-lg hover:text-white transition-all whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 ${
+              pathname === '/contact' ? 'text-cyan-300 bg-white/5 border border-cyan-500/20' : 'text-slate-300 hover:bg-white/5'
             }`}
           >
             Contact
@@ -224,7 +224,7 @@ export function Navbar() {
         <div className="hidden md:flex items-center gap-4 shrink-0">
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-semibold text-slate-950 bg-gradient-to-r from-cyan-400 via-sky-300 to-cyan-300 hover:from-cyan-300 hover:to-sky-200 rounded-xl shadow-md shadow-cyan-500/20 transition-all duration-200 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+            className="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-semibold liquid-glass-btn-primary rounded-xl transition-all duration-200 whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
           >
             <span>Start a Project</span>
             <ArrowRight className="w-3.5 h-3.5" />
@@ -238,7 +238,7 @@ export function Navbar() {
             id="mobile-menu-button"
             type="button"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2.5 text-slate-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 rounded-xl bg-slate-900/80 border border-slate-800"
+            className="p-2.5 text-slate-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 rounded-xl liquid-glass-pill"
             aria-label={mobileMenuOpen ? 'Close Navigation Menu' : 'Open Navigation Menu'}
             aria-expanded={mobileMenuOpen}
             aria-controls="mobile-navigation-drawer"
@@ -253,7 +253,7 @@ export function Navbar() {
         <div
           id="mobile-navigation-drawer"
           aria-labelledby="mobile-menu-button"
-          className="md:hidden border-b border-slate-800/90 bg-[#070b14]/98 backdrop-blur-2xl px-5 pt-3 pb-8 max-h-[85vh] overflow-y-auto space-y-4"
+          className="md:hidden border-b border-white/10 liquid-glass-dock px-5 pt-3 pb-8 max-h-[85vh] overflow-y-auto space-y-4 shadow-2xl"
         >
           <div className="space-y-1">
             <div className="py-2 px-1 text-[10px] font-mono uppercase tracking-wider text-cyan-400">

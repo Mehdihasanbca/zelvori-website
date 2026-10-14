@@ -58,8 +58,8 @@ export function ProcessSection() {
                 onClick={() => setSelectedStep(idx)}
                 className={`p-5 rounded-2xl text-left border transition-all duration-200 flex flex-col justify-between group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 ${
                   isSelected
-                    ? 'bg-gradient-to-b from-[#0f172a] to-[#0b1120] border-cyan-400/80 shadow-lg shadow-cyan-950/30'
-                    : 'bg-[#0b1120] border-slate-800 hover:border-slate-700'
+                    ? 'liquid-glass-card border-cyan-400/80 shadow-lg shadow-cyan-950/30'
+                    : 'liquid-glass-card hover:border-slate-700'
                 }`}
               >
                 <div>
@@ -75,7 +75,7 @@ export function ProcessSection() {
                       className={`text-[10px] font-mono uppercase px-2 py-0.5 rounded ${
                         isSelected
                           ? 'bg-cyan-950/80 text-cyan-300 border border-cyan-800/80'
-                          : 'text-slate-400 bg-slate-900 border border-slate-800'
+                          : 'text-slate-400 bg-white/[0.04] border border-white/10'
                       }`}
                     >
                       PHASE 0{idx + 1}
@@ -99,7 +99,7 @@ export function ProcessSection() {
                   </p>
                 </div>
 
-                <div className="mt-5 pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px]">
+                <div className="mt-5 pt-3 border-t border-white/10 flex items-center justify-between text-[11px]">
                   <span className={isSelected ? 'text-cyan-300 font-medium' : 'text-slate-400'}>
                     {isSelected ? 'Currently Viewing' : 'Click to inspect'}
                   </span>
@@ -115,7 +115,7 @@ export function ProcessSection() {
         </div>
 
         {/* Selected Phase Deep-Dive Console */}
-        <div className="p-6 sm:p-8 bg-[#0b1120] border border-cyan-500/30 rounded-2xl shadow-xl shadow-cyan-950/20">
+        <div className="p-6 sm:p-8 liquid-glass-card border-cyan-500/40 rounded-2xl shadow-xl shadow-cyan-950/20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-5 space-y-3">
               <div className="text-xs uppercase tracking-widest text-cyan-400 font-semibold font-mono">
@@ -143,7 +143,7 @@ export function ProcessSection() {
                 {processDeepDives[selectedStep].artifacts.map((art) => (
                   <div
                     key={art}
-                    className="p-3.5 bg-slate-900/90 border border-slate-800 rounded-xl space-y-1.5"
+                    className="p-3.5 bg-white/[0.03] border border-white/10 rounded-xl space-y-1.5"
                   >
                     <CheckCircle2 className="w-4 h-4 text-cyan-400" />
                     <div className="text-xs font-bold text-slate-100">{art}</div>

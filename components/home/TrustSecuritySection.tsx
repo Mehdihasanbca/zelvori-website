@@ -183,7 +183,7 @@ export function TrustSecuritySection() {
         </div>
 
         {/* Classification Legend */}
-        <div className="p-4 sm:p-5 bg-[#0b1222] border border-slate-800 rounded-2xl">
+        <div className="p-4 sm:p-5 liquid-glass-card rounded-2xl">
           <div className="text-[11px] uppercase tracking-wider text-slate-400 font-semibold mb-3">
             Control Classification Standard
           </div>
@@ -226,15 +226,15 @@ export function TrustSecuritySection() {
                   onClick={() => setSelectedPillarId(pillar.id)}
                   className={`w-full text-left p-4 rounded-xl border transition-all duration-200 flex items-start gap-3.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 ${
                     isSelected
-                      ? 'bg-[#0e1628] border-cyan-500/50 shadow-lg shadow-cyan-950/20'
-                      : 'bg-[#080d1a]/80 border-slate-800/80 hover:bg-[#0c1324] hover:border-slate-700 text-slate-300'
+                      ? 'liquid-glass-card border-cyan-500/60 shadow-lg shadow-cyan-950/20'
+                      : 'liquid-glass-card hover:border-slate-700 text-slate-300'
                   }`}
                 >
                   <div
                     className={`p-2 rounded-lg shrink-0 mt-0.5 border ${
                       isSelected
                         ? 'bg-cyan-500/10 border-cyan-500/40 text-cyan-400'
-                        : 'bg-slate-900 border-slate-800 text-slate-400'
+                        : 'bg-white/[0.04] border-white/10 text-slate-400'
                     }`}
                   >
                     <PillarIcon className="w-4 h-4" />
@@ -266,7 +266,7 @@ export function TrustSecuritySection() {
           </div>
 
           {/* Active Pillar Details Card */}
-          <div className="lg:col-span-7 p-6 sm:p-8 bg-[#0b1222] border border-cyan-500/30 rounded-3xl space-y-6 relative overflow-hidden card-shine">
+          <div className="lg:col-span-7 p-6 sm:p-8 liquid-glass-card border-cyan-500/40 rounded-3xl space-y-6 relative overflow-hidden card-shine">
             <div
               className="absolute -top-16 -right-16 w-48 h-48 bg-cyan-500/05 rounded-full blur-2xl pointer-events-none"
               aria-hidden="true"

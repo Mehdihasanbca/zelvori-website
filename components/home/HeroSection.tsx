@@ -75,7 +75,7 @@ export function HeroSection() {
             <div className="pt-2 flex flex-col sm:flex-row flex-wrap items-stretch sm:items-center gap-3 sm:gap-4">
               <Link
                 href="/contact"
-                className="group relative inline-flex items-center justify-center gap-2.5 px-6 py-3.5 text-sm font-semibold text-slate-950 bg-gradient-to-r from-cyan-400 via-sky-300 to-cyan-300 hover:from-cyan-300 hover:to-sky-200 rounded-xl shadow-lg shadow-cyan-500/25 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 whitespace-nowrap"
+                className="group relative inline-flex items-center justify-center gap-2.5 px-6 py-3.5 text-sm font-semibold liquid-glass-btn-primary rounded-xl transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 whitespace-nowrap"
               >
                 <span>Schedule Project Discovery</span>
                 <ArrowRight className="w-4 h-4 transition-transform duration-200 group-hover:translate-x-1" />
@@ -94,14 +94,14 @@ export function HeroSection() {
 
               <Link
                 href="#services"
-                className="inline-flex items-center justify-center gap-2 px-4 py-3.5 text-sm font-medium text-slate-300 hover:text-white bg-slate-900/80 hover:bg-slate-800/90 border border-slate-800 hover:border-slate-700 rounded-xl transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 whitespace-nowrap"
+                className="inline-flex items-center justify-center gap-2 px-4 py-3.5 text-sm font-medium text-slate-300 hover:text-white liquid-glass-btn-secondary rounded-xl transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-400 whitespace-nowrap"
               >
                 <span>Explore 6 Core Services</span>
               </Link>
             </div>
 
             {/* Trust and Engineering Markers */}
-            <div className="pt-6 border-t border-slate-800/80 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs text-slate-400">
+            <div className="pt-6 border-t border-white/10 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs text-slate-400">
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-cyan-400 shrink-0" />
                 <span className="font-medium text-slate-300">100% IP Ownership</span>
@@ -128,10 +128,10 @@ export function HeroSection() {
               />
 
               {/* Main Console Box */}
-              <div className="relative glass-panel rounded-2xl border border-slate-800/90 shadow-2xl shadow-black/80 overflow-hidden">
+              <div className="relative liquid-glass-card rounded-2xl shadow-2xl shadow-black/80 overflow-hidden">
                 
                 {/* Console Window Header */}
-                <div className="px-4 py-3 bg-[#0a0f1d] border-b border-slate-800/80 flex items-center justify-between gap-4">
+                <div className="px-4 py-3 bg-white/[0.03] backdrop-blur-md border-b border-white/[0.08] flex items-center justify-between gap-4">
                   <div className="flex items-center gap-2">
                     <span className="w-2.5 h-2.5 rounded-full bg-cyan-400/80" />
                     <span className="w-2.5 h-2.5 rounded-full bg-sky-400/80" />
@@ -150,8 +150,8 @@ export function HeroSection() {
                 </div>
 
                 {/* Interactive Tab Switcher */}
-                <div className="p-3 bg-[#080d1a] border-b border-slate-800/70 flex items-center justify-between gap-2 overflow-x-auto">
-                  <div className="flex items-center gap-1 p-0.5 bg-slate-900/90 rounded-lg border border-slate-800">
+                <div className="p-3 bg-white/[0.02] border-b border-white/[0.06] flex items-center justify-between gap-2 overflow-x-auto">
+                  <div className="flex items-center gap-1 p-0.5 liquid-glass-dock rounded-lg">
                     <button
                       onClick={() => setActiveTab('architecture')}
                       className={`px-3 py-1.5 text-xs font-medium rounded-md transition-all whitespace-nowrap ${
@@ -205,7 +205,7 @@ export function HeroSection() {
                         className={`p-3.5 rounded-xl border text-left transition-all ${
                           selectedNode === 'clients'
                             ? 'bg-cyan-950/40 border-cyan-400/80 shadow-md shadow-cyan-950/30'
-                            : 'bg-slate-900/70 border-slate-800 hover:border-slate-700'
+                            : 'liquid-glass-card hover:border-slate-700'
                         }`}
                       >
                         <div className="flex items-center justify-between mb-2">
@@ -222,7 +222,7 @@ export function HeroSection() {
                         className={`p-3.5 rounded-xl border text-left transition-all ${
                           selectedNode === 'gateway'
                             ? 'bg-cyan-950/40 border-cyan-400/80 shadow-md shadow-cyan-950/30'
-                            : 'bg-slate-900/70 border-slate-800 hover:border-slate-700'
+                            : 'liquid-glass-card hover:border-slate-700'
                         }`}
                       >
                         <div className="flex items-center justify-between mb-2">
@@ -239,7 +239,7 @@ export function HeroSection() {
                         className={`p-3.5 rounded-xl border text-left transition-all ${
                           selectedNode === 'data'
                             ? 'bg-cyan-950/40 border-cyan-400/80 shadow-md shadow-cyan-950/30'
-                            : 'bg-slate-900/70 border-slate-800 hover:border-slate-700'
+                            : 'liquid-glass-card hover:border-slate-700'
                         }`}
                       >
                         <div className="flex items-center justify-between mb-2">
@@ -252,7 +252,7 @@ export function HeroSection() {
                     </div>
 
                     {/* Detailed Active Node Inspector Box */}
-                    <div className="p-4 bg-slate-950/90 border border-slate-800/90 rounded-xl space-y-2.5">
+                    <div className="p-4 liquid-glass-card rounded-xl space-y-2.5">
                       <div className="flex items-center justify-between border-b border-slate-800/80 pb-2 text-xs">
                         <span className="font-semibold text-slate-200">
                           {selectedNode === 'clients' && 'Client Presentation Architecture'}
@@ -318,21 +318,21 @@ export function HeroSection() {
                     </div>
 
                     {/* Simulated SaaS Dashboard Interface */}
-                    <div className={`p-4 bg-slate-950/90 border border-slate-800 rounded-xl space-y-3 transition-all duration-300 mx-auto ${
+                    <div className={`p-4 liquid-glass-card rounded-xl space-y-3 transition-all duration-300 mx-auto ${
                       devicePreview === 'mobile' ? 'max-w-[280px]' : devicePreview === 'tablet' ? 'max-w-[380px]' : 'w-full'
                     }`}>
-                      <div className="flex items-center justify-between pb-2 border-b border-slate-800 text-[11px]">
+                      <div className="flex items-center justify-between pb-2 border-b border-white/10 text-[11px]">
                         <span className="font-semibold text-white">Operations Console</span>
                         <span className="text-cyan-400 font-mono">Q3 Performance</span>
                       </div>
 
                       <div className="grid grid-cols-2 gap-2 text-xs">
-                        <div className="p-2.5 bg-slate-900 rounded-lg border border-slate-800">
+                        <div className="p-2.5 bg-white/[0.03] rounded-lg border border-white/10">
                           <div className="text-[10px] text-slate-400">Total Volume</div>
                           <div className="text-sm font-bold text-white mt-0.5">$842,500</div>
                           <div className="text-[10px] text-emerald-400 mt-1">↑ +24.8% MoM</div>
                         </div>
-                        <div className="p-2.5 bg-slate-900 rounded-lg border border-slate-800">
+                        <div className="p-2.5 bg-white/[0.03] rounded-lg border border-white/10">
                           <div className="text-[10px] text-slate-400">Active Workflows</div>
                           <div className="text-sm font-bold text-white mt-0.5">14,290</div>
                           <div className="text-[10px] text-cyan-400 mt-1">99.98% Accuracy</div>
@@ -340,11 +340,11 @@ export function HeroSection() {
                       </div>
 
                       <div className="space-y-1.5 pt-1 text-[11px]">
-                        <div className="flex items-center justify-between text-slate-300 p-1.5 bg-slate-900/60 rounded border border-slate-800/60">
+                        <div className="flex items-center justify-between text-slate-300 p-1.5 bg-white/[0.02] rounded border border-white/10">
                           <span className="truncate">Enterprise ERP Sync</span>
                           <span className="text-emerald-400 shrink-0 font-mono">Synced</span>
                         </div>
-                        <div className="flex items-center justify-between text-slate-300 p-1.5 bg-slate-900/60 rounded border border-slate-800/60">
+                        <div className="flex items-center justify-between text-slate-300 p-1.5 bg-white/[0.02] rounded border border-white/10">
                           <span className="truncate">Client Portal Ingestion</span>
                           <span className="text-cyan-400 shrink-0 font-mono">0.4s</span>
                         </div>
@@ -362,7 +362,7 @@ export function HeroSection() {
                     </div>
 
                     <div className="space-y-2.5 font-mono text-xs">
-                      <div className="p-3 bg-slate-950/90 rounded-xl border border-slate-800 flex items-center justify-between">
+                      <div className="p-3 liquid-glass-card rounded-xl flex items-center justify-between">
                         <div className="flex items-center gap-2">
                           <span className="w-2 h-2 rounded-full bg-cyan-400" />
                           <span className="text-slate-200">contract_master_v3.pdf</span>
@@ -370,7 +370,7 @@ export function HeroSection() {
                         <span className="text-cyan-400 text-[11px]">Extracted 42 Fields</span>
                       </div>
 
-                      <div className="p-3 bg-slate-950/90 rounded-xl border border-slate-800 flex items-center justify-between">
+                      <div className="p-3 liquid-glass-card rounded-xl flex items-center justify-between">
                         <div className="flex items-center gap-2">
                           <span className="w-2 h-2 rounded-full bg-sky-400" />
                           <span className="text-slate-200">Stripe Webhook Dispatch</span>
@@ -378,7 +378,7 @@ export function HeroSection() {
                         <span className="text-sky-300 text-[11px]">Automated Reconciliation</span>
                       </div>
 
-                      <div className="p-3 bg-slate-950/90 rounded-xl border border-slate-800 flex items-center justify-between">
+                      <div className="p-3 liquid-glass-card rounded-xl flex items-center justify-between">
                         <div className="flex items-center gap-2">
                           <span className="w-2 h-2 rounded-full bg-indigo-400" />
                           <span className="text-slate-200">Vector Knowledge Indexing</span>
@@ -387,7 +387,7 @@ export function HeroSection() {
                       </div>
                     </div>
 
-                    <div className="p-3 bg-slate-900/60 rounded-xl border border-slate-800/80 text-[11px] text-slate-400 flex items-center justify-between">
+                    <div className="p-3 bg-white/[0.02] rounded-xl border border-white/10 text-[11px] text-slate-400 flex items-center justify-between">
                       <span>Deterministic Schema: Zod & Pydantic</span>
                       <span className="text-slate-300">Human-In-The-Loop Fallbacks</span>
                     </div>
@@ -395,7 +395,7 @@ export function HeroSection() {
                 )}
 
                 {/* Console Footer Status Strip */}
-                <div className="px-5 py-3 bg-[#080d19] border-t border-slate-800/80 flex items-center justify-between text-[11px] text-slate-400">
+                <div className="px-5 py-3 bg-white/[0.02] border-t border-white/[0.08] flex items-center justify-between text-[11px] text-slate-400">
                   <div className="flex items-center gap-2">
                     <Activity className="w-3.5 h-3.5 text-cyan-400" />
                     <span>Engineered by Zelvori Senior Leads</span>

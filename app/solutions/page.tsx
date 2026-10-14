@@ -205,13 +205,13 @@ export default function SolutionsHubPage() {
             <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
               <a
                 href="#blueprints"
-                className="px-6 py-3 rounded-xl bg-cyan-500 text-slate-950 font-bold text-sm hover:bg-cyan-400 transition-all shadow-lg shadow-cyan-500/20"
+                className="px-6 py-3 rounded-xl liquid-glass-btn-primary font-bold text-sm transition-all"
               >
                 Browse All 9 Blueprints
               </a>
               <Link
                 href="/contact/"
-                className="px-6 py-3 rounded-xl bg-slate-900 text-slate-200 border border-slate-700 font-semibold text-sm hover:bg-slate-800 transition-all"
+                className="px-6 py-3 rounded-xl liquid-glass-btn-secondary font-semibold text-sm transition-all"
               >
                 Book Architecture Review
               </Link>
@@ -233,7 +233,7 @@ export default function SolutionsHubPage() {
               {FIVE_CORE_QUESTIONS.map((q) => (
                 <div
                   key={q.number}
-                  className="p-5 rounded-2xl border border-slate-800 bg-slate-900/60 flex flex-col justify-between space-y-4 hover:border-slate-700 transition-colors"
+                  className="p-5 rounded-2xl liquid-glass-card flex flex-col justify-between space-y-4 hover:border-slate-700 transition-colors"
                 >
                   <div className="space-y-2">
                     <div className="flex items-center justify-between">
@@ -304,13 +304,13 @@ export default function SolutionsHubPage() {
               {DELIVERY_PHASES.map((p, idx) => (
                 <div
                   key={p.step}
-                  className="p-5 rounded-2xl border border-slate-800 bg-slate-900/60 space-y-3 relative group hover:border-cyan-500/40 transition-colors"
+                  className="p-5 rounded-2xl liquid-glass-card space-y-3 relative group hover:border-cyan-500/40 transition-colors"
                 >
                   <div className="flex items-center justify-between">
                     <span className="text-xs font-mono font-bold text-cyan-400">
                       {p.step}
                     </span>
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-400 flex items-center gap-1">
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-white/[0.04] text-slate-400 flex items-center gap-1 border border-white/10">
                       <Clock className="w-3 h-3" /> {p.timeline}
                     </span>
                   </div>
@@ -323,7 +323,7 @@ export default function SolutionsHubPage() {
           </section>
 
           {/* Bottom Callout & Next Steps */}
-          <section className="rounded-3xl border border-cyan-500/30 bg-gradient-to-br from-cyan-950/40 via-slate-900 to-blue-950/40 p-8 sm:p-12 text-center space-y-6 shadow-2xl">
+          <section className="rounded-3xl liquid-glass-card border-cyan-500/40 p-8 sm:p-12 text-center space-y-6 shadow-2xl">
             <div className="inline-flex p-3 rounded-2xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400">
               <Sparkles className="w-8 h-8" />
             </div>
@@ -340,13 +340,13 @@ export default function SolutionsHubPage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
               <Link
                 href="/contact/"
-                className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-cyan-500 text-slate-950 font-bold text-sm hover:bg-cyan-400 transition-all shadow-lg shadow-cyan-500/20"
+                className="w-full sm:w-auto px-6 py-3.5 rounded-xl liquid-glass-btn-primary font-bold text-sm transition-all"
               >
                 Schedule Architecture Consultation
               </Link>
               <Link
                 href="/payments/"
-                className="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-slate-900 text-slate-200 border border-slate-700 font-semibold text-sm hover:bg-slate-800 transition-all"
+                className="w-full sm:w-auto px-6 py-3.5 rounded-xl liquid-glass-btn-secondary font-semibold text-sm transition-all"
               >
                 Request Project Advance Link
               </Link>

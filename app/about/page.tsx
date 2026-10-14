@@ -52,7 +52,7 @@ export default function AboutPage() {
 
         {/* Core Principles Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="p-6 bg-[#0b1120] border border-slate-800 rounded-2xl space-y-3">
+          <div className="p-6 liquid-glass-card rounded-2xl space-y-3">
             <div className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center">
               <Code2 className="w-5 h-5 text-cyan-400" />
             </div>
@@ -64,7 +64,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="p-6 bg-[#0b1120] border border-slate-800 rounded-2xl space-y-3">
+          <div className="p-6 liquid-glass-card rounded-2xl space-y-3">
             <div className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center">
               <ShieldCheck className="w-5 h-5 text-sky-400" />
             </div>
@@ -76,7 +76,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="p-6 bg-[#0b1120] border border-slate-800 rounded-2xl space-y-3">
+          <div className="p-6 liquid-glass-card rounded-2xl space-y-3">
             <div className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center">
               <Zap className="w-5 h-5 text-indigo-400" />
             </div>
@@ -88,7 +88,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="p-6 bg-[#0b1120] border border-slate-800 rounded-2xl space-y-3">
+          <div className="p-6 liquid-glass-card rounded-2xl space-y-3">
             <div className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center">
               <Globe2 className="w-5 h-5 text-cyan-300" />
             </div>
@@ -105,7 +105,7 @@ export default function AboutPage() {
         <FounderSection />
 
         {/* Narrative Section: What We Believe */}
-        <div className="p-8 sm:p-12 bg-[#060a12] border border-slate-800 rounded-3xl">
+        <div className="p-8 sm:p-12 liquid-glass-readable border border-slate-800/80 rounded-3xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
             <div className="lg:col-span-5 space-y-4">
               <div className="text-xs uppercase tracking-widest text-cyan-400 font-semibold">
@@ -159,25 +159,25 @@ export default function AboutPage() {
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-xs font-mono">
-            <div className="p-4 bg-[#0b1120] border border-slate-800 rounded-xl space-y-1">
+            <div className="p-4 liquid-glass-card rounded-xl space-y-1">
               <div className="text-cyan-400 text-[11px] font-bold">FRONTEND</div>
               <div className="text-slate-200">Next.js · React · TypeScript</div>
               <div className="text-slate-400 text-[10px]">Tailwind CSS · Motion</div>
             </div>
 
-            <div className="p-4 bg-[#0b1120] border border-slate-800 rounded-xl space-y-1">
+            <div className="p-4 liquid-glass-card rounded-xl space-y-1">
               <div className="text-sky-400 text-[11px] font-bold">MOBILE</div>
               <div className="text-slate-200">React Native · Flutter</div>
               <div className="text-slate-400 text-[10px]">iOS Swift · Android Kotlin</div>
             </div>
 
-            <div className="p-4 bg-[#0b1120] border border-slate-800 rounded-xl space-y-1">
+            <div className="p-4 liquid-glass-card rounded-xl space-y-1">
               <div className="text-indigo-400 text-[11px] font-bold">BACKEND & API</div>
               <div className="text-slate-200">Node.js · Python · Go</div>
               <div className="text-slate-400 text-[10px]">REST · GraphQL · gRPC</div>
             </div>
 
-            <div className="p-4 bg-[#0b1120] border border-slate-800 rounded-xl space-y-1">
+            <div className="p-4 liquid-glass-card rounded-xl space-y-1">
               <div className="text-cyan-300 text-[11px] font-bold">DATA & INFRA</div>
               <div className="text-slate-200">PostgreSQL · Redis · Docker</div>
               <div className="text-slate-400 text-[10px]">Cloud Run · AWS · Temporal</div>
@@ -201,7 +201,7 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Reel card */}
-            <div className="p-6 bg-[#070c18]/80 rounded-2xl border border-white/10 space-y-4">
+            <div className="p-6 liquid-glass-card rounded-2xl border border-white/10 space-y-4">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-semibold text-cyan-300 font-mono">BRAND TECH REEL</span>
                 <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-950 text-cyan-400 border border-cyan-800/40">2.74 MB MP4</span>
@@ -220,7 +220,7 @@ export default function AboutPage() {
             </div>
 
             {/* Ads card */}
-            <div className="p-6 bg-[#070c18]/80 rounded-2xl border border-white/10 space-y-4">
+            <div className="p-6 liquid-glass-card rounded-2xl border border-white/10 space-y-4">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-semibold text-indigo-300 font-mono">COMMERCIAL ADS FILM</span>
                 <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-indigo-950 text-indigo-400 border border-indigo-800/40">3.99 MB MP4</span>
@@ -257,7 +257,7 @@ export default function AboutPage() {
         </div>
 
         {/* CTA */}
-        <div className="p-8 sm:p-12 bg-gradient-to-r from-[#0c1324] to-[#070b14] border border-slate-800 rounded-3xl flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div className="p-8 sm:p-12 liquid-glass-readable border border-cyan-500/30 rounded-3xl flex flex-col sm:flex-row items-center justify-between gap-6">
           <div className="space-y-1">
             <h3 className="text-xl sm:text-2xl font-bold text-white">
               Discuss an upcoming product or platform with our team.
@@ -268,7 +268,7 @@ export default function AboutPage() {
           </div>
           <Link
             href="/contact"
-            className="px-6 py-3.5 text-xs font-semibold text-slate-900 bg-gradient-to-r from-cyan-400 to-sky-300 hover:from-cyan-300 hover:to-sky-200 rounded-lg shadow-sm whitespace-nowrap transition-all"
+            className="px-6 py-3.5 text-xs font-semibold text-slate-900 liquid-glass-btn-primary rounded-xl shadow-sm whitespace-nowrap transition-all"
           >
             <span>Start a Conversation</span>
             <ArrowRight className="w-3.5 h-3.5 inline ml-1.5" />

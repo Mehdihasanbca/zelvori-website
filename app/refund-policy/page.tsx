@@ -51,7 +51,7 @@ export default function RefundPolicyPage() {
         </div>
 
         {/* Executive Principle Callout */}
-        <div className="p-4 rounded-xl border border-cyan-500/30 bg-cyan-950/20 text-xs text-slate-200 leading-relaxed flex items-start gap-3">
+        <div className="p-4 rounded-xl border border-cyan-500/30 liquid-glass-readable text-xs text-slate-200 leading-relaxed flex items-start gap-3">
           <RefreshCw className="w-5 h-5 text-cyan-400 shrink-0 mt-0.5" />
           <div>
             <strong className="text-cyan-300">Fairness Principle:</strong> Zelvori does not enforce unfair blanket clauses claiming deposits are non-refundable under any circumstance. We bill transparently against engineering milestones, verifiable hours, and accepted deliverables.
@@ -82,14 +82,14 @@ export default function RefundPolicyPage() {
               In accordance with our live advance payment workflow (<Link href="/payments/" className="text-cyan-400 hover:underline">/payments/</Link>), project advances are collected via customer-specific Razorpay Payment Links after quotation approval.
             </p>
             <div className="space-y-3 pt-2">
-              <div className="p-4 rounded-xl border border-slate-800 bg-slate-900/60 space-y-1.5 text-xs">
+              <div className="p-4 rounded-xl liquid-glass-card space-y-1.5 text-xs">
                 <h3 className="font-semibold text-slate-200">A. Cancellation Prior to Project Kick-Off</h3>
                 <p className="text-slate-400 leading-relaxed">
                   If a client requests cancellation in writing prior to the project kick-off date and before any architecture discovery, wireframing, or engineering sprints have commenced, the advance deposit will be refunded in full, minus non-recoverable payment gateway processing fees (typically 2–3% imposed by payment processors).
                 </p>
               </div>
 
-              <div className="p-4 rounded-xl border border-slate-800 bg-slate-900/60 space-y-1.5 text-xs">
+              <div className="p-4 rounded-xl liquid-glass-card space-y-1.5 text-xs">
                 <h3 className="font-semibold text-slate-200">B. Cancellation During Discovery &amp; Blueprinting (Phase 01)</h3>
                 <p className="text-slate-400 leading-relaxed">
                   If cancellation is requested while architecture discovery, data modeling, or UI wireframing is in progress, the refund will be calculated by deducting the verified hours and technical deliverables already completed at our agreed consulting rate. Any unexpended portion of the advance will be promptly returned.
@@ -127,7 +127,7 @@ export default function RefundPolicyPage() {
             <p>
               If a client identifies verifiable defects, errors, or discrepancies between delivered software and agreed SOW acceptance criteria during User Acceptance Testing (UAT) or the post-launch warranty period:
             </p>
-            <div className="p-4 rounded-xl border border-slate-800 bg-slate-900/60 text-xs text-slate-300 space-y-2">
+            <div className="p-4 rounded-xl liquid-glass-card text-xs text-slate-300 space-y-2">
               <p>
                 Our primary remedy is <strong>prompt engineering remediation</strong> at no additional cost. Zelvori will debug, rectify, and re-test non-conforming features until acceptance criteria are satisfied. A refund is considered only if Zelvori is genuinely unable or unwilling to remediate verified defects within a reasonable cure period (typically 14 business days).
               </p>
@@ -142,7 +142,7 @@ export default function RefundPolicyPage() {
             <p>
               To request a project cancellation or review an eligible refund:
             </p>
-            <div className="p-4 rounded-xl border border-slate-800 bg-slate-900/60 space-y-2 text-xs">
+            <div className="p-4 rounded-xl liquid-glass-card space-y-2 text-xs">
               <ol className="list-decimal pl-5 space-y-1.5 text-slate-400">
                 <li>Submit a written cancellation notice from the client&apos;s primary authorized email to <a href="mailto:hello@zelvori.software" className="text-cyan-400 underline font-mono">hello@zelvori.software</a>.</li>
                 <li>Include the Project Quotation ID, payment reference transaction ID, and explicit reason for cancellation.</li>
