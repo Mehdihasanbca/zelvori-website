@@ -8,7 +8,7 @@ const service = siteConfig.services.find((s) => s.slug === 'application-security
 export const metadata: Metadata = {
   title: 'Application Security & Secure Software Engineering',
   description:
-    'Application security architecture, threat modeling, and defensive engineering by Zelvori. We harden authentication, APIs, cloud secrets, and AI workflows against real-world vulnerabilities.',
+    'Application security reviews, threat modeling, and defensive engineering to strengthen APIs, authentication, cloud secrets, and AI workflows.',
   alternates: {
     canonical: 'https://zelvori.software/services/application-security/',
   },
