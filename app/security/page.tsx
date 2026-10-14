@@ -34,7 +34,7 @@ import { EvidencePackGrid } from '@/components/security/EvidencePackGrid';
 export const metadata: Metadata = {
   title: 'Security & Trust Centre | Defensive Architecture & Evidence',
   description:
-    'Explore Zelvori's security architecture, secure development controls, data handling practices, and project evidence approach.',
+    'Explore Zelvori security architecture, secure development controls, data handling practices, and project evidence approach.',
   alternates: {
     canonical: 'https://zelvori.software/security/',
   },
