@@ -7,7 +7,7 @@ import { JsonFormatterTool } from '@/components/tools/JsonFormatterTool';
 export const metadata: Metadata = {
   title: 'JSON Formatter, Validator & Minifier',
   description:
-    'Free client-side JSON formatter, validator, and minifier. Parse and beautify payloads with 2-space, 4-space, or tab indentation, view exact syntax error positions, and copy formatted output.',
+    'Format, validate, and minify JSON in your browser, with configurable indentation and clear syntax error locations.',
   alternates: {
     canonical: 'https://zelvori.software/tools/json-formatter/',
   },
