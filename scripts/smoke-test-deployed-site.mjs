@@ -30,6 +30,14 @@ const checks = [
       body.startsWith('# Zelvori') &&
       body.includes('https://zelvori.software/'),
   },
+  {
+    name: 'ads.txt',
+    path: '/ads.txt',
+    validate: (body) =>
+      body.split(/\r?\n/).some((line) =>
+        line.trim() === 'google.com, pub-1417105686781482, DIRECT, f08c47fec0942fa0'
+      ),
+  },
 ];
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
