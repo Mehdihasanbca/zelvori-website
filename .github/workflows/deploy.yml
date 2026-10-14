@@ -78,6 +78,10 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
+      - name: Smoke-test live homepage and discovery endpoints
+        run: node scripts/smoke-test-deployed-site.mjs
+        continue-on-error: true
+
       - name: Notify IndexNow of published URLs
         run: node scripts/submit-indexnow.mjs
         continue-on-error: true
