@@ -3,6 +3,7 @@ import './globals.css';
 import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { WhatsAppFloat } from '@/components/ui/WhatsAppFloat';
+import { CookieConsentBanner } from '@/components/ui/CookieConsentBanner';
 import { criticalCss } from '@/lib/critical-css';
 
 export const metadata: Metadata = {
@@ -181,6 +182,7 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer />
         <WhatsAppFloat />
+        <CookieConsentBanner />
       </body>
     </html>
   );

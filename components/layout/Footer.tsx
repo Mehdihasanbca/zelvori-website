@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { BrandLogo } from '@/components/ui/BrandLogo';
+import { CookiePreferencesButton } from '@/components/ui/CookiePreferencesButton';
 import { siteConfig } from '@/lib/site-config';
 import { Mail, ArrowUpRight } from 'lucide-react';
 
@@ -126,6 +127,9 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <CookiePreferencesButton />
+              </li>
+              <li>
                 <Link href="/terms" className="hover:text-cyan-400 transition-colors block py-0.5">
                   Terms of Service
                 </Link>
@@ -185,6 +189,10 @@ export function Footer() {
             <Link href="/terms" className="hover:text-slate-400 transition-colors">
               Terms
             </Link>
+            <CookiePreferencesButton
+              className="hover:text-slate-400 transition-colors cursor-pointer text-xs"
+              label="Cookies"
+            />
             <a
               href={`mailto:${siteConfig.contact.email}`}
               className="hover:text-slate-400 transition-colors"

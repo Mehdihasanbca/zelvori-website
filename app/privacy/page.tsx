@@ -7,14 +7,14 @@ import { siteConfig } from '@/lib/site-config';
 export const metadata: Metadata = {
   title: 'Privacy Policy',
   description:
-    'Privacy Policy for Zelvori. Learn how we handle client enquiries, mailto workflows, DPDP compliance considerations, and outbound affiliate links.',
+    'Privacy Policy for Zelvori. Learn how we handle client enquiries, mailto workflows, Google AdSense disclosures, advertising opt-outs, and DPDP compliance.',
   alternates: {
     canonical: 'https://zelvori.software/privacy/',
   },
   openGraph: {
     title: 'Privacy Policy | Zelvori',
     description:
-      'Grounded privacy policy covering email communications, zero-tracking static architecture, DPDP Act 2023 alignment, and third-party affiliate redirects.',
+      'Grounded privacy policy covering email communications, static architecture, Google AdSense disclosures, advertising opt-outs, and DPDP Act alignment.',
     url: 'https://zelvori.software/privacy/',
     images: [
       {
@@ -107,18 +107,123 @@ export default function PrivacyPolicyPage() {
           </section>
 
           {/* Section 3 */}
-          <section className="space-y-3">
+          <section id="advertising-cookies" className="space-y-4 scroll-mt-24">
             <h2 className="text-lg font-bold text-white flex items-center gap-2">
-              <span className="text-cyan-400 font-mono text-sm">03.</span> Cookies, Tracking Pixels &amp; Telemetry
+              <span className="text-cyan-400 font-mono text-sm">03.</span> Cookies, Advertising Technologies &amp; Privacy Preferences
             </h2>
-            <div className="p-4 rounded-xl border border-emerald-500/20 bg-emerald-950/10 space-y-2">
-              <div className="flex items-center gap-2 text-emerald-400 font-semibold text-xs">
-                <CheckCircle2 className="w-4 h-4" />
-                <span>Zero Tracking Architecture</span>
+
+            <div className="space-y-3">
+              {/* First-Party Storage */}
+              <div className="p-4 rounded-xl border border-slate-800 bg-slate-900/60 space-y-1.5">
+                <h3 className="font-semibold text-slate-200">A. Essential Local Storage &amp; First-Party Architecture</h3>
+                <p className="text-slate-400 text-xs leading-relaxed">
+                  Zelvori does not deploy invasive first-party user fingerprinting, session replay scripts (such as Hotjar or Clarity), or covert tracking databases. Essential UI preferences—such as your dismissal of notice banners or cookie choices—are retained exclusively on your device in standard browser <code className="text-cyan-300 font-mono">localStorage</code> without transmitting tracking profiles to our infrastructure.
+                </p>
               </div>
-              <p className="text-xs text-slate-300 leading-relaxed">
-                The Zelvori website does <strong>not</strong> set tracking cookies, use third-party analytics pixels (such as Google Analytics or Meta Pixel), or run behavioral session recorders (such as Hotjar or Clarity). You do not need to accept cookie banners because we do not set tracking cookies on your device.
-              </p>
+
+              {/* Google AdSense Disclosures */}
+              <div className="p-4 rounded-xl border border-cyan-500/30 bg-cyan-950/20 space-y-2">
+                <div className="flex items-center gap-2 text-cyan-300 font-semibold text-xs">
+                  <Shield className="w-4 h-4 text-cyan-400" />
+                  <span>B. Google AdSense &amp; Third-Party Advertising Disclosures</span>
+                </div>
+                <p className="text-xs text-slate-300 leading-relaxed">
+                  In accordance with official Google Publisher Policies and Google AdSense program requirements:
+                </p>
+                <ul className="list-disc pl-5 space-y-1.5 text-xs text-slate-300">
+                  <li>
+                    <strong>Third-Party Vendor Cookies:</strong> Third-party vendors, including Google, use cookies to serve ads based on a user&apos;s prior visits to our website or other websites on the Internet.
+                  </li>
+                  <li>
+                    <strong>Personalized Advertising:</strong> Google&apos;s use of advertising cookies enables it and its partners to serve ads to our visitors based on their visit to <code className="text-cyan-300 font-mono">zelvori.software</code> and/or other websites across the Internet.
+                  </li>
+                  <li>
+                    <strong>Publisher Identification:</strong> Zelvori participates in the Google AdSense programme under Publisher ID <code className="text-cyan-300 font-mono">pub-1417105686781482</code>. Our authorized seller relationship is publicly verified in accordance with the IAB Tech Lab standard at our root <Link href="/ads.txt" className="text-cyan-400 hover:underline">/ads.txt</Link> specification (<code className="text-slate-300 font-mono">google.com, pub-1417105686781482, DIRECT, f08c47fec0942fa0</code>).
+                  </li>
+                  <li>
+                    <strong>Ad Measurement &amp; Web Beacons:</strong> Third-party advertising partners and ad networks may also use cookies, JavaScript, or web beacons to measure advertising campaign effectiveness and personalize ad content. Zelvori does not have direct access to or control over cookies placed by third-party advertisers.
+                  </li>
+                </ul>
+              </div>
+
+              {/* Opt-Out Controls */}
+              <div className="p-4 rounded-xl border border-slate-800 bg-slate-900/60 space-y-2 text-xs">
+                <h3 className="font-semibold text-slate-200">C. Your Advertising Choices &amp; Opt-Out Mechanisms</h3>
+                <p className="text-slate-400 leading-relaxed">
+                  Visitors have the right to disable personalized advertising and manage third-party cookie preferences through any of the following independent channels:
+                </p>
+                <ul className="list-disc pl-5 space-y-1.5 text-slate-400">
+                  <li>
+                    <strong className="text-slate-300">Google Ads Settings:</strong> You may opt out of personalized advertising from Google by visiting{' '}
+                    <a
+                      href="https://www.google.com/settings/ads"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-cyan-400 hover:underline inline-flex items-center gap-1"
+                    >
+                      <span>https://www.google.com/settings/ads</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </a>{' '}
+                    or via{' '}
+                    <a
+                      href="https://adssettings.google.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-cyan-400 hover:underline inline-flex items-center gap-1"
+                    >
+                      <span>https://adssettings.google.com</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </a>.
+                  </li>
+                  <li>
+                    <strong className="text-slate-300">Digital Advertising Alliance (DAA):</strong> You may opt out of third-party behavioral advertising from participating companies by visiting the DAA WebChoices Consumer Choice tool at{' '}
+                    <a
+                      href="https://www.aboutads.info/choices/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-cyan-400 hover:underline inline-flex items-center gap-1"
+                    >
+                      <span>www.aboutads.info</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </a>.
+                  </li>
+                  <li>
+                    <strong className="text-slate-300">European Interactive Digital Advertising Alliance (EDAA):</strong> European visitors may manage their advertising preferences via{' '}
+                    <a
+                      href="https://www.youronlinechoices.eu/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-cyan-400 hover:underline inline-flex items-center gap-1"
+                    >
+                      <span>www.youronlinechoices.eu</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </a>.
+                  </li>
+                  <li>
+                    <strong className="text-slate-300">Network Advertising Initiative (NAI):</strong> You may also opt out of participating ad networks via{' '}
+                    <a
+                      href="https://optout.networkadvertising.org/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-cyan-400 hover:underline inline-flex items-center gap-1"
+                    >
+                      <span>optout.networkadvertising.org</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </a>.
+                  </li>
+                  <li>
+                    <strong className="text-slate-300">Browser Cookie Controls:</strong> You can configure your browser to block, delete, or warn before accepting cookies. If you choose to disable cookies entirely, core static content on Zelvori remains fully accessible.
+                  </li>
+                </ul>
+              </div>
+
+              {/* On-Site Consent Management */}
+              <div className="p-4 rounded-xl border border-slate-800 bg-slate-900/60 space-y-1.5 text-xs">
+                <h3 className="font-semibold text-slate-200">D. On-Site Consent Preferences</h3>
+                <p className="text-slate-400 leading-relaxed">
+                  Zelvori provides a client-side Cookie &amp; Privacy Preferences banner upon your first visit. You can choose &ldquo;Accept All&rdquo; or &ldquo;Essential Only&rdquo;. You can reset or adjust your preference at any time using the &ldquo;Cookie Preferences&rdquo; action in our site footer.
+                </p>
+              </div>
             </div>
           </section>
 

@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { ServiceItem, siteConfig } from '@/lib/site-config';
+import { SOLUTIONS_DATA } from '@/lib/solutions-data';
 import {
   ChevronRight,
   CheckCircle2,
@@ -26,6 +27,12 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
   const toggleFaq = (idx: number) => {
     setOpenFaq(openFaq === idx ? null : idx);
   };
+
+  const relatedBlueprints = SOLUTIONS_DATA.filter(
+    (b) => b.relatedServiceSlug === service.slug
+  );
+  const displayBlueprints =
+    relatedBlueprints.length >= 2 ? relatedBlueprints : SOLUTIONS_DATA.slice(0, 3);
 
   const schemaData = {
     '@context': 'https://schema.org',
@@ -389,6 +396,92 @@ export function ServicePageTemplate({ service }: ServicePageTemplateProps) {
                   <ArrowRight className="w-3.5 h-3.5 text-cyan-400 opacity-60 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all shrink-0" />
                 </Link>
               ))}
+          </div>
+        </div>
+
+        {/* Related Industry Architecture Blueprints */}
+        <div className="pt-12 border-t border-slate-800/80">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+            <div>
+              <div className="text-xs uppercase tracking-widest text-cyan-400 font-semibold font-mono">
+                Architecture Blueprints
+              </div>
+              <h2 className="text-xl sm:text-2xl font-bold text-white tracking-tight mt-1">
+                Industry Architectures Powered by {service.shortTitle}
+              </h2>
+            </div>
+            <Link
+              href="/solutions/"
+              className="text-xs font-semibold text-cyan-400 hover:text-cyan-300 flex items-center gap-1.5 transition-colors shrink-0"
+            >
+              <span>View All 9 Blueprints</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {displayBlueprints.map((bp) => (
+              <Link
+                key={bp.slug}
+                href={`/solutions/${bp.slug}/`}
+                className="p-5 rounded-2xl liquid-glass-card hover:border-cyan-500/40 transition-all flex flex-col justify-between group space-y-4"
+              >
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-cyan-950/80 text-cyan-300 border border-cyan-500/30">
+                      {bp.category}
+                    </span>
+                  </div>
+                  <h3 className="text-base font-bold text-white group-hover:text-cyan-300 transition-colors">
+                    {bp.shortTitle}
+                  </h3>
+                  <p className="text-xs text-slate-400 line-clamp-2 leading-relaxed">
+                    {bp.tagline}
+                  </p>
+                </div>
+
+                <div className="pt-3 border-t border-white/10 flex items-center justify-between text-xs font-medium text-cyan-400">
+                  <span>Inspect Blueprint &amp; Specs</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* Recommended Dev Lab Utilities */}
+        <div className="pt-8 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-4">
+          <div className="flex items-center gap-3">
+            <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+            <span className="text-xs font-semibold text-slate-300">
+              Free Client-Side Developer Lab Utilities:
+            </span>
+          </div>
+          <div className="flex flex-wrap items-center gap-2.5 text-xs">
+            <Link
+              href="/tools/seo-meta-preview/"
+              className="px-3 py-1.5 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-300 hover:text-cyan-300 hover:border-cyan-500/30 transition-colors"
+            >
+              SEO Meta Preview
+            </Link>
+            <Link
+              href="/tools/color-contrast/"
+              className="px-3 py-1.5 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-300 hover:text-cyan-300 hover:border-cyan-500/30 transition-colors"
+            >
+              WCAG Contrast
+            </Link>
+            <Link
+              href="/tools/json-formatter/"
+              className="px-3 py-1.5 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-300 hover:text-cyan-300 hover:border-cyan-500/30 transition-colors"
+            >
+              JSON Validator
+            </Link>
+            <Link
+              href="/tools/"
+              className="px-3 py-1.5 rounded-xl bg-cyan-950/40 border border-cyan-500/30 text-cyan-300 hover:text-white transition-colors"
+            >
+              All 5 Tools &rarr;
+            </Link>
           </div>
         </div>
 

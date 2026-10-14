@@ -334,6 +334,23 @@ assert(
   'about/index.html renders dedicated brand cinema identity showcase'
 );
 
+// 12. Cookie & Privacy Preferences Banner Verification
+assert(
+  rootHtml.includes('Privacy &amp; Cookies') || rootHtml.includes('Cookie Preferences'),
+  'index.html includes Cookie & Privacy Preferences banner and footer controls'
+);
+
+// 13. Service Page Cross-Linking Verification
+const webDevHtml = fs.readFileSync(path.join(outDir, 'services/web-development/index.html'), 'utf8');
+assert(
+  webDevHtml.includes('Industry Architectures Powered by') && webDevHtml.includes('/solutions/'),
+  'services/web-development links to related industry architecture blueprints'
+);
+assert(
+  webDevHtml.includes('Free Client-Side Developer Lab Utilities') && webDevHtml.includes('/tools/'),
+  'services/web-development links to Developer Lab browser tools'
+);
+
 console.log(`\n========================================`);
 console.log(`Total QA Checks Executed: ${checks}`);
 console.log(`Total QA Failures: ${errors}`);

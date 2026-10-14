@@ -98,6 +98,25 @@ const keyName = indexNowKey + '.txt';
 const keyContent = readOutput(keyName);
 assert(keyContent !== null && keyContent.trim() === indexNowKey, 'IndexNow verification key is published at site root');
 
+// AdSense Privacy Policy & Cookie Preferences Verification
+const privacyHtml = readOutput('privacy/index.html') ?? '';
+assert(
+  privacyHtml.includes('Google AdSense') && privacyHtml.includes('pub-1417105686781482'),
+  'privacy policy contains Google AdSense publisher identification and disclosures'
+);
+assert(
+  privacyHtml.includes('google.com/settings/ads') || privacyHtml.includes('adssettings.google.com'),
+  'privacy policy includes official Google Ads Settings opt-out link'
+);
+assert(
+  privacyHtml.includes('aboutads.info'),
+  'privacy policy includes DAA aboutads.info opt-out link'
+);
+assert(
+  homepage.includes('Privacy and Cookie Preferences') || homepage.includes('Cookie Preferences'),
+  'homepage renders Cookie & Privacy Preferences controls'
+);
+
 const urls = [...sitemap.matchAll(/<loc>\s*([^<]+)\s*<\/loc>/g)].map((m) => m[1].trim());
 assert(urls.length > 0, 'sitemap contains URLs');
 assert(new Set(urls).size === urls.length, 'sitemap contains no duplicate URLs');
