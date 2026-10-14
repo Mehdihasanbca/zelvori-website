@@ -67,6 +67,12 @@ assert(
   'homepage includes the Bing Webmaster verification meta tag'
 );
 
+assert(
+  homepage.includes('name="google-adsense-account"') &&
+    homepage.includes('ca-pub-1417105686781482'),
+  'homepage includes the Google AdSense publisher account meta tag'
+);
+
 const keyName = indexNowKey + '.txt';
 const keyContent = readOutput(keyName);
 assert(keyContent !== null && keyContent.trim() === indexNowKey, 'IndexNow verification key is published at site root');
