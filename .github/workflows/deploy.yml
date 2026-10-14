@@ -58,6 +58,7 @@ jobs:
           echo "Running generated-site QA and interaction audits:"
           node scripts/qa-audit.mjs
           npm run seo:audit
+          npm run check:duplicates
 
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
