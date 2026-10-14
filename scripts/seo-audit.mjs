@@ -4,6 +4,7 @@ import path from 'node:path';
 const outDir = path.resolve('out');
 const origin = 'https://zelvori.software';
 const indexNowKey = 'f5440ecc35943a75c29c1b4cf9e00d90';
+const bingVerificationToken = '06236155CCFE57BA008B422F19673DE5';
 const allowedDiscoveryBots = [
   'Googlebot', 'bingbot',
   'OAI-SearchBot', 'ChatGPT-User',
@@ -59,6 +60,12 @@ for (const bot of trainingFocusedBots) {
 assert(sitemap.includes('<urlset') && sitemap.includes('</urlset>'), 'sitemap.xml is present and has a URL-set root');
 assert(llms.includes('https://zelvori.software/'), 'llms.txt describes the canonical site');
 assert(cname !== null && cname.trim() === 'zelvori.software', 'CNAME in output matches the intended apex domain');
+
+const homepage = readOutput('index.html') ?? '';
+assert(
+  homepage.includes('name="msvalidate.01"') && homepage.includes(bingVerificationToken),
+  'homepage includes the Bing Webmaster verification meta tag'
+);
 
 const keyName = indexNowKey + '.txt';
 const keyContent = readOutput(keyName);
