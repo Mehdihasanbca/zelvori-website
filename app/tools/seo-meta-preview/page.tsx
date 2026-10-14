@@ -7,7 +7,7 @@ import { SeoMetaPreviewTool } from '@/components/tools/SeoMetaPreviewTool';
 export const metadata: Metadata = {
   title: 'SEO Meta Preview & Search Snippet Simulator',
   description:
-    'Free browser-based SEO snippet previewer. Test title and meta description character lengths, view real-time Google search snippet simulations, and generate valid HTML meta tags.',
+    'Preview SEO title and meta description lengths, simulate search snippets, and generate copy-ready HTML meta tags in your browser.',
   alternates: {
     canonical: 'https://zelvori.software/tools/seo-meta-preview/',
   },
