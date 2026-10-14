@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="250" viewBox="0 0 1200 250" role="img" aria-labelledby="title desc">
+  <title id="title">Zelvori logo</title><desc id="desc">Geometric Z symbol and Zelvori wordmark with the tagline Ideas Into Digital Reality.</desc>
+  <defs>
+    <linearGradient id="top" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#21D4E8"/><stop offset="1" stop-color="#2478F2"/></linearGradient>
+    <linearGradient id="diag" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2478F2"/><stop offset="1" stop-color="#21D4E8"/></linearGradient>
+    <linearGradient id="bottom" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2478F2"/><stop offset="1" stop-color="#28BFD1"/></linearGradient>
+  </defs>
+  <rect width="1200" height="250" rx="22" fill="#0B1220"/>
+  
+  <g id="zelvori-mark" transform="translate(34 30)">
+    <path d="M18 14 H154 Q160 14 156 20 L127 53 H60 Q54 53 59 47 L80 25 H18 Q10 25 13 19 Q14 14 18 14 Z" fill="url(#top)"/>
+    <path d="M148 20 L176 20 Q182 20 179 26 L91 124 Q88 128 82 128 H51 Q44 128 49 122 L137 24 Q141 20 148 20 Z" fill="url(#diag)"/>
+    <path d="M54 89 H121 Q127 89 132 94 L157 117 Q162 123 154 123 H29 Q22 123 27 116 L44 96 Q48 89 54 89 Z" fill="url(#bottom)"/>
+    <path d="M19 14 H154 Q160 14 156 20 L127 53" fill="none" stroke="#A4F7FF" stroke-opacity=".75" stroke-width="2" stroke-linecap="round"/>
+    <path d="M29 123 H154" fill="none" stroke="#0A6FEF" stroke-opacity=".5" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  <text x="252" y="139" font-family="DejaVu Sans, Inter, Arial, sans-serif" font-size="110" font-weight="650" letter-spacing="-4" fill="#F8FAFC">Zelvori</text>
+  <path d="M258 163 H608" stroke="#2478F2" stroke-width="3" stroke-linecap="round" opacity=".95"/>
+  <text x="258" y="196" font-family="DejaVu Sans, Inter, Arial, sans-serif" font-size="22" font-weight="500" letter-spacing="5.5" fill="#B9C5D6">IDEAS INTO DIGITAL REALITY</text>
+</svg>

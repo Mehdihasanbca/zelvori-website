@@ -15,7 +15,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8">
           {/* Brand Column */}
           <div className="lg:col-span-2 space-y-4">
-            <BrandLogo size="md" />
+            <BrandLogo size="lg" />
             <p className="text-xs text-slate-300 font-medium">
               “{siteConfig.tagline}”
             </p>

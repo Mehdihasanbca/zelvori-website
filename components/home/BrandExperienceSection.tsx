@@ -1,8 +1,9 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
-import { Play, Film, Sparkles, Download, Maximize2, Cpu, ShieldCheck, Terminal, Layers } from 'lucide-react';
+import { Play, Film, Sparkles, Download, Maximize2, Cpu, ShieldCheck, Terminal, Layers, ArrowRight } from 'lucide-react';
 import { BrandVideoModal } from '@/components/ui/BrandVideoModal';
 
 export function BrandExperienceSection() {
@@ -159,17 +160,39 @@ export function BrandExperienceSection() {
 
           {/* Right Column: Spec Cards & Wallpaper Download */}
           <div className="lg:col-span-5 space-y-5">
-            {/* Feature 1 */}
-            <div className="p-5 sm:p-6 rounded-2xl liquid-glass liquid-glass-interactive space-y-2.5">
-              <div className="flex items-center gap-3 text-cyan-400">
-                <div className="p-2 rounded-xl bg-cyan-500/10 border border-cyan-500/20">
-                  <Cpu className="w-5 h-5" />
+            {/* Feature 1: Official Brand Mark & Logo Suite */}
+            <div className="p-5 sm:p-6 rounded-2xl liquid-glass liquid-glass-interactive space-y-3">
+              <div className="flex items-center justify-between gap-3">
+                <div className="flex items-center gap-3 text-cyan-400">
+                  <div className="p-2 rounded-xl bg-cyan-500/10 border border-cyan-500/20">
+                    <Cpu className="w-5 h-5" />
+                  </div>
+                  <h3 className="text-base font-semibold text-white">Official Brand Mark &amp; Logo Suite</h3>
                 </div>
-                <h3 className="text-base font-semibold text-white">Full-Stack Digital Identity</h3>
+                <span className="text-[11px] font-mono text-cyan-300 px-2 py-0.5 rounded bg-cyan-950/60 border border-cyan-800/40">
+                  Vector SVG + PNG
+                </span>
               </div>
               <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                We combine deep system architecture with high-fidelity visual assets, 3D animations, and interface motion design that elevates your brand on international stages.
+                Engineered with the geometric Z mark, kinetic velocity gradients, and bespoke wordmark lockup across light, dark, and monochrome environments.
               </p>
+              <div className="pt-1 flex flex-wrap items-center gap-2">
+                <a
+                  href="/images/brand/zelvori-logo-dark.svg"
+                  download="zelvori-logo-dark.svg"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg liquid-glass-btn-secondary text-xs font-medium text-cyan-300 hover:text-white transition-all shadow-sm"
+                >
+                  <Download className="w-3.5 h-3.5 text-cyan-400" />
+                  <span>Download SVG Logo</span>
+                </a>
+                <Link
+                  href="/about"
+                  className="inline-flex items-center gap-1 text-xs text-slate-400 hover:text-cyan-300 transition-colors py-1 px-2.5"
+                >
+                  <span>Explore Logo Suite</span>
+                  <ArrowRight className="w-3 h-3" />
+                </Link>
+              </div>
             </div>
 
             {/* Feature 2: High-Res Wallpaper Showcase */}
