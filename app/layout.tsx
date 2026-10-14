@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     template: '%s | Zelvori',
   },
   description:
-    'International digital product development partner. Zelvori engineers high-performance web applications, mobile apps, e-commerce platforms, custom ERP/CRM software, and AI workflow automation.',
+    'Zelvori builds high-performance websites, mobile apps, e-commerce platforms, custom business software, and AI workflow automation for growing businesses.',
   keywords: [
     'Zelvori',
     'web development',
