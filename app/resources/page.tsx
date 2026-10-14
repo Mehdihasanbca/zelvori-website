@@ -21,7 +21,7 @@ import { BuildPromptStudio } from '@/components/resources/BuildPromptStudio';
 export const metadata: Metadata = {
   title: 'Free Developer Resources, AI Tools & Animation Libraries',
   description:
-    'Explore developer-friendly open-source libraries, AI coding tools, UI components, animations, icons, fonts, design assets, learning guides and app templates curated by Zelvori.',
+    'Find curated AI coding tools, open-source UI libraries, animation resources, icons, fonts, templates, and developer learning guides.',
   alternates: {
     canonical: 'https://zelvori.software/resources/',
   },
