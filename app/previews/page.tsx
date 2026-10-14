@@ -17,7 +17,7 @@ import {
 export const metadata: Metadata = {
   title: 'Interactive Service Previews — Test Architecture Before Engagement',
   description:
-    'Experience distinct, interactive sandboxes for all 7 Zelvori engineering services. Test real responsive viewports, mobile journeys, e-commerce checkouts, and AI pipelines.',
+    'Try interactive demos for seven Zelvori services, including responsive websites, mobile apps, e-commerce, and AI workflows.',
   alternates: {
     canonical: 'https://zelvori.software/previews/',
   },
