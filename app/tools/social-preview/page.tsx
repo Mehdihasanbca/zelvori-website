@@ -7,7 +7,7 @@ import { SocialPreviewTool } from '@/components/tools/SocialPreviewTool';
 export const metadata: Metadata = {
   title: 'Open Graph & Twitter Social Card Previewer',
   description:
-    'Free social card generator and previewer. Simulate link sharing previews for Facebook, LinkedIn, and X (Twitter), test 1200×630 OpenGraph dimensions, and generate copyable meta tags.',
+    'Preview social sharing cards for Facebook, LinkedIn, and X, check OpenGraph image dimensions, and generate meta tags.',
   alternates: {
     canonical: 'https://zelvori.software/tools/social-preview/',
   },
