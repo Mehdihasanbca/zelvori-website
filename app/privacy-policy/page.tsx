@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   description:
     'Privacy Policy for Zelvori. Learn how we handle client enquiries, mailto workflows, DPDP compliance considerations, and outbound affiliate links.',
   alternates: {
-    canonical: 'https://zelvori.software/privacy-policy/',
+    canonical: 'https://zelvori.software/privacy/',
   },
   openGraph: {
     title: 'Privacy Policy | Zelvori',
     description:
       'Grounded privacy policy covering email communications, zero-tracking static architecture, DPDP Act 2023 alignment, and third-party affiliate redirects.',
-    url: 'https://zelvori.software/privacy-policy/',
+    url: 'https://zelvori.software/privacy/',
     images: [
       {
         url: 'https://zelvori.software/images/brand/zelvori-og.png',

@@ -38,6 +38,11 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+  verification: {
+    other: {
+      'msvalidate.01': '06236155CCFE57BA008B422F19673DE5',
+    },
+  },
   alternates: {
     canonical: 'https://zelvori.software/',
   },
@@ -88,60 +93,54 @@ export const metadata: Metadata = {
 
 const organizationSchema = {
   '@context': 'https://schema.org',
-  '@graph': [
+  '@type': 'Organization',
+  '@id': 'https://zelvori.software/#organization',
+  name: 'Zelvori',
+  alternateName: 'Zelvori Software',
+  url: 'https://zelvori.software/',
+  logo: 'https://zelvori.software/images/brand/favicon-512.png',
+  description:
+    'Zelvori is an international digital product development partner specializing in web applications, mobile apps, e-commerce, custom ERP/CRM software, and AI workflow automation.',
+  email: 'hello@zelvori.software',
+  contactPoint: [
     {
-      '@type': 'Organization',
-      '@id': 'https://zelvori.software/#organization',
-      name: 'Zelvori',
-      alternateName: 'Zelvori',
-      url: 'https://zelvori.software',
-      logo: {
-        '@type': 'ImageObject',
-        url: 'https://zelvori.software/icon.svg',
-        width: 512,
-        height: 512,
-      },
-      description:
-        'Zelvori is an international digital product development partner specializing in web applications, mobile apps, e-commerce, custom ERP/CRM software, and AI workflow automation.',
-      email: 'hello@zelvori.software',
-      contactPoint: [
-        {
-          '@type': 'ContactPoint',
-          telephone: '+91-9162530999',
-          contactType: 'customer service',
-          areaServed: ['IN', 'AE', 'SA', 'US', 'GB', 'SG'],
-          availableLanguage: ['English', 'Hindi'],
-        },
-      ],
-      sameAs: [
-        'https://github.com/Mehdihasanbca/zelvori-website',
-      ],
-      knowsAbout: [
-        'Web Application Development',
-        'Mobile Application Development',
-        'E-Commerce Development',
-        'Custom CRM and ERP Systems',
-        'AI Workflow Automation',
-        'System Integrations',
-        'Application Security & Threat Modeling',
-        'DevSecOps & Defensive Architecture',
-      ],
-    },
-    {
-      '@type': 'WebSite',
-      '@id': 'https://zelvori.software/#website',
-      url: 'https://zelvori.software',
-      name: 'Zelvori',
-      publisher: {
-        '@id': 'https://zelvori.software/#organization',
-      },
-      potentialAction: {
-        '@type': 'SearchAction',
-        target: 'https://zelvori.software/solutions/?q={search_term_string}',
-        'query-input': 'required name=search_term_string',
-      },
+      '@type': 'ContactPoint',
+      telephone: '+91-9162530999',
+      contactType: 'customer service',
+      areaServed: ['IN', 'AE', 'SA', 'US', 'GB', 'SG'],
+      availableLanguage: ['English', 'Hindi'],
     },
   ],
+  sameAs: [
+    'https://github.com/Mehdihasanbca/zelvori-website',
+  ],
+  knowsAbout: [
+    'Web Application Development',
+    'Mobile Application Development',
+    'E-Commerce Development',
+    'Custom CRM and ERP Systems',
+    'AI Workflow Automation',
+    'System Integrations',
+    'Application Security & Threat Modeling',
+    'DevSecOps & Defensive Architecture',
+  ],
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': 'https://zelvori.software/#website',
+  name: 'Zelvori',
+  alternateName: ['Zelvori Software', 'zelvori.software'],
+  url: 'https://zelvori.software/',
+  publisher: {
+    '@id': 'https://zelvori.software/#organization',
+  },
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: 'https://zelvori.software/solutions/?q={search_term_string}',
+    'query-input': 'required name=search_term_string',
+  },
 };
 
 export default function RootLayout({
@@ -165,6 +164,12 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(organizationSchema).replace(/</g, '\\u003c'),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteSchema).replace(/</g, '\\u003c'),
           }}
         />
       </head>

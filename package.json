@@ -9,6 +9,7 @@
     "lint": "eslint .",
     "verify": "node scripts/verify-security.mjs",
     "check:duplicates": "node scripts/check-duplicates.mjs",
+    "seo:audit": "node scripts/seo-audit.mjs",
     "clean": "next clean"
   },
   "dependencies": {

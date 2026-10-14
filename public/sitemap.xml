@@ -144,19 +144,7 @@
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
-  <url>
-    <loc>https://zelvori.software/privacy-policy/</loc>
-    <lastmod>2026-10-13</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://zelvori.software/terms-of-service/</loc>
-    <lastmod>2026-10-13</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
+<url>
     <loc>https://zelvori.software/refund-policy/</loc>
     <lastmod>2026-10-13</lastmod>
     <changefreq>yearly</changefreq>

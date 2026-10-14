@@ -7,13 +7,13 @@ export const metadata: Metadata = {
   description:
     'Terms of Service governing the use of the Zelvori website, technical project proposals, and professional software engineering engagements.',
   alternates: {
-    canonical: 'https://zelvori.software/terms-of-service/',
+    canonical: 'https://zelvori.software/terms/',
   },
   openGraph: {
     title: 'Terms of Service | Zelvori',
     description:
       'Clear, defensible terms distinguishing general website browsing from signed project agreements, intellectual property ownership, and liability boundaries.',
-    url: 'https://zelvori.software/terms-of-service/',
+    url: 'https://zelvori.software/terms/',
     images: [
       {
         url: 'https://zelvori.software/images/brand/zelvori-og.png',

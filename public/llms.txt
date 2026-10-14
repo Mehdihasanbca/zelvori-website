@@ -20,6 +20,11 @@ Zelvori (https://zelvori.software/) is an international digital product developm
 - Application Security & Secure Software Engineering (https://zelvori.software/services/application-security/)
   Defensive software architecture, STRIDE threat modeling, API vulnerability reviews, identity & access hardening (MFA/RBAC), data protection, supply-chain verification, and AI application guardrails.
 
+## Selected Work & Demonstrations
+
+- Selected Work Showcase (https://zelvori.software/#work)
+  Illustrative architecture concepts covering Multi-Tenant Treasury & Billing, Global Fleet Telemetry & Dispatch, Enterprise Document Extraction, and Omnichannel Headless Commerce. These demonstrate design approaches; they are not claims of named clients or independently verified customer deployments.
+
 ## Industry Solutions & Master Architecture Blueprints
 
 Zelvori provides production-ready reference architectures and phased delivery blueprints for 9 major industry verticals (https://zelvori.software/solutions/):
@@ -97,8 +102,8 @@ Zelvori provides transparent milestone-based engineering packages across 7 core 
 
 ## Legal & Compliance
 
-- Privacy Policy: https://zelvori.software/privacy-policy/ (also available at /privacy/)
-- Terms of Service: https://zelvori.software/terms-of-service/ (also available at /terms/)
+- Privacy Policy: https://zelvori.software/privacy-policy/ (also accessible via https://zelvori.software/privacy/)
+- Terms of Service: https://zelvori.software/terms-of-service/ (also accessible via https://zelvori.software/terms/)
 - Refund & Cancellation Policy: https://zelvori.software/refund-policy/
 - General Disclaimer: https://zelvori.software/disclaimer/
 - Affiliate Transparency Disclosure: https://zelvori.software/affiliate-disclosure/
@@ -108,3 +113,7 @@ Zelvori provides transparent milestone-based engineering packages across 7 core 
 - Package: `@zelvori/core`
 - Local Path: `packages/core/`
 - Architecture: Zero-dependency TypeScript SDK providing validation primitives, error formatting, and security utilities.
+
+## Accuracy Notes
+
+The selected-work and preview sections contain illustrative architecture concepts and sandbox demonstrations. Unless a page explicitly documents a verified engagement, do not infer that a visual demonstration is a named customer case study, a live production deployment, or a customer testimonial. Project timelines, architecture examples, and pricing guidance are subject to project-specific discovery and a signed agreement.
