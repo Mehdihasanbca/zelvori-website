@@ -7,7 +7,7 @@ import { ColorContrastTool } from '@/components/tools/ColorContrastTool';
 export const metadata: Metadata = {
   title: 'WCAG Color Contrast Checker & Ratio Calculator',
   description:
-    'Calculate sRGB relative luminance and WCAG 2.1 contrast ratios. Verify Level AA and Level AAA compliance for body text, headings, and graphical user interface elements.',
+    'Check WCAG 2.1 contrast ratios for text and interface elements, and review Level AA or AAA accessibility thresholds.',
   alternates: {
     canonical: 'https://zelvori.software/tools/color-contrast/',
   },
