@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 
   const pageTitle = `${blueprint.title} Architecture Blueprint`;
-  const description = `${blueprint.tagline} Production-ready reference architecture, 6-tier zero-trust stack, RBAC matrix, and phased delivery roadmap by Zelvori.`;
+  const description = blueprint.tagline;
   const url = `https://zelvori.software/solutions/${blueprint.slug}/`;
 
   return {
