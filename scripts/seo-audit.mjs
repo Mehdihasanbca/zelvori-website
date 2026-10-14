@@ -60,12 +60,25 @@ for (const bot of trainingFocusedBots) {
 assert(sitemap.includes('<urlset') && sitemap.includes('</urlset>'), 'sitemap.xml is present and has a URL-set root');
 assert(llms.includes('https://zelvori.software/'), 'llms.txt describes the canonical site');
 
+const adsTxtPath = path.join(outDir, 'ads.txt');
+assert(fs.existsSync(adsTxtPath), 'out/ads.txt exists in static export');
 const adsTxt = readOutput('ads.txt') ?? '';
+const expectedAdSenseRecord = 'google.com, pub-1417105686781482, DIRECT, f08c47fec0942fa0';
+const adsLines = adsTxt.split(/\r?\n/).map((line) => line.trim()).filter(Boolean);
+
 assert(
-  adsTxt.split(/\r?\n/).some((line) =>
-    line.trim() === 'google.com, pub-1417105686781482, DIRECT, f08c47fec0942fa0'
-  ),
-  'ads.txt includes the correct Google AdSense publisher authorization line'
+  adsLines.includes(expectedAdSenseRecord),
+  'ads.txt contains the exact authorized Google AdSense record'
+);
+assert(
+  adsLines.some((line) => line.includes('pub-1417105686781482') && line.includes('DIRECT')) &&
+    !adsLines.some((line) => line.includes('ca-pub-')),
+  'ads.txt uses the correct pub- ID (without ca- prefix) and DIRECT relationship'
+);
+const recordOccurrences = adsLines.filter((line) => line === expectedAdSenseRecord).length;
+assert(
+  recordOccurrences === 1,
+  'expected AdSense record is not duplicated in ads.txt (found ' + recordOccurrences + ')'
 );
 assert(cname !== null && cname.trim() === 'zelvori.software', 'CNAME in output matches the intended apex domain');
 

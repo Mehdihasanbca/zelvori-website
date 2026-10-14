@@ -6,7 +6,11 @@ const checks = [
     path: '/',
     validate: (body) =>
       body.includes('<title>') &&
-      body.includes('https://zelvori.software/'),
+      body.includes('https://zelvori.software/') &&
+      body.includes('name="google-adsense-account"') &&
+      body.includes('ca-pub-1417105686781482') &&
+      body.includes('name="msvalidate.01"') &&
+      body.includes('06236155CCFE57BA008B422F19673DE5'),
   },
   {
     name: 'robots.txt',
@@ -18,10 +22,16 @@ const checks = [
   {
     name: 'sitemap.xml',
     path: '/sitemap.xml',
-    validate: (body) =>
-      body.includes('<urlset') &&
-      body.includes('</urlset>') &&
-      /<loc>https:\/\/zelvori\.software\//.test(body),
+    validate: (body) => {
+      const urls = [...body.matchAll(/<loc>\s*([^<]+)\s*<\/loc>/g)].map((m) => m[1].trim());
+      return (
+        body.includes('<urlset') &&
+        body.includes('</urlset>') &&
+        urls.length > 0 &&
+        new Set(urls).size === urls.length &&
+        urls.every((u) => u.startsWith('https://zelvori.software/'))
+      );
+    },
   },
   {
     name: 'llms.txt',
@@ -33,10 +43,14 @@ const checks = [
   {
     name: 'ads.txt',
     path: '/ads.txt',
-    validate: (body) =>
-      body.split(/\r?\n/).some((line) =>
-        line.trim() === 'google.com, pub-1417105686781482, DIRECT, f08c47fec0942fa0'
-      ),
+    validate: (body) => {
+      const lines = body.split(/\r?\n/).map((line) => line.trim()).filter(Boolean);
+      return (
+        lines.includes('google.com, pub-1417105686781482, DIRECT, f08c47fec0942fa0') &&
+        !lines.some((l) => l.includes('ca-pub-')) &&
+        lines.filter((l) => l === 'google.com, pub-1417105686781482, DIRECT, f08c47fec0942fa0').length === 1
+      );
+    },
   },
 ];
 
