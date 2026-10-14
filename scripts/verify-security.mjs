@@ -80,6 +80,7 @@ const expectedRoutes = [
   'tools/css-generator',
   'tools/json-formatter',
   'tools/social-preview',
+  'tools/scope-builder',
   'solutions',
   'solutions/healthcare',
   'solutions/legal',

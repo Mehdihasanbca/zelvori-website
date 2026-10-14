@@ -72,6 +72,8 @@ Free, privacy-first developer utilities executing 100% client-side in the browse
   RFC 8259 syntax validation and pretty-printing in browser memory.
 - Open Graph & Twitter Social Card Previewer (https://zelvori.software/tools/social-preview/)
   Social share card simulator for Twitter, Facebook, LinkedIn, and messaging previews.
+- Architecture & Scope Configurator (https://zelvori.software/tools/scope-builder/)
+  Interactive software architecture, technical capability selector, and sprint timeline estimator. Generates exportable Markdown project briefs in local browser memory without transmitting client specifications.
 
 ## Free Developer Resources & Build Prompt Studio
 

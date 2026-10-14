@@ -351,6 +351,22 @@ assert(
   'services/web-development links to Developer Lab browser tools'
 );
 
+// 14. Architecture & Scope Configurator Verification
+const scopeBuilderHtmlPath = path.join(outDir, 'tools/scope-builder/index.html');
+assert(fs.existsSync(scopeBuilderHtmlPath), 'out/tools/scope-builder/index.html exists in static export');
+if (fs.existsSync(scopeBuilderHtmlPath)) {
+  const content = fs.readFileSync(scopeBuilderHtmlPath, 'utf8');
+  assert(
+    content.includes('Software Architecture &amp; Scope Configurator') ||
+      content.includes('Software Architecture & Scope Configurator'),
+    'tools/scope-builder renders headline'
+  );
+  assert(
+    content.includes('Estimated Sprint Cadence') && content.includes('Scoping Notice'),
+    'tools/scope-builder renders live calculation and commercial scoping notice'
+  );
+}
+
 console.log(`\n========================================`);
 console.log(`Total QA Checks Executed: ${checks}`);
 console.log(`Total QA Failures: ${errors}`);

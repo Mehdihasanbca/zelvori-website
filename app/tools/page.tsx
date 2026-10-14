@@ -15,6 +15,7 @@ import {
   ExternalLink,
   Lock,
   Zap,
+  Compass,
 } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -52,6 +53,21 @@ interface ToolCard {
 }
 
 const TOOLS: ToolCard[] = [
+  {
+    slug: 'scope-builder',
+    title: 'Architecture & Scope Configurator',
+    category: 'Architecture & Scoping',
+    description:
+      'Configure technical capabilities, data persistence, and security tiers to dynamically calculate estimated sprint timelines and export structured project briefs.',
+    icon: Compass,
+    features: [
+      'Interactive architecture selector',
+      'Live sprint timeline calculator',
+      'Stack & roadmap recommendations',
+      'Downloadable Markdown brief (.md)',
+    ],
+    cta: 'Configure Architecture Scope',
+  },
   {
     slug: 'seo-meta-preview',
     title: 'SEO Meta Preview',
