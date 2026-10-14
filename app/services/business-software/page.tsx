@@ -8,7 +8,7 @@ const service = siteConfig.services.find((s) => s.slug === 'business-software')!
 export const metadata: Metadata = {
   title: 'Custom CRM, HRMS, ERP & Business Software',
   description:
-    'Tailored enterprise software designed for proprietary operations. Custom CRM, HRMS, inventory, and ERP systems with role-based access control and zero per-seat licensing fees.',
+    'Custom CRM, HRMS, inventory, and ERP software built around your operations, with role-based access and no per-seat licensing fees.',
   alternates: {
     canonical: 'https://zelvori.software/services/business-software/',
   },
