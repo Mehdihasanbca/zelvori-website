@@ -65,16 +65,16 @@ for (const f of htmlFiles) {
   // Check meta description count and recommended snippet length (25-160 characters)
   const metas = [...content.matchAll(/<meta\b(?=[^>]*\bname=["']description["'])[^>]*>/gi)].map((match) => match[0]);
   if (metas.length !== 1) {
-    issues.push(\`${rel}: Expected 1 meta description, found ${metas.length}\`);
+    issues.push(rel + ': Expected 1 meta description, found ' + metas.length);
   } else {
     const descriptionContent = metas[0].match(/\bcontent=["']([^"']*)["']/i)?.[1];
     if (descriptionContent === undefined) {
-      issues.push(\`${rel}: Meta description has no content attribute\`);
+      issues.push(rel + ': Meta description has no content attribute');
     } else {
       const description = decodeHtmlEntities(descriptionContent).trim();
       const descriptionLength = Array.from(description).length;
       if (descriptionLength < 25 || descriptionLength > 160) {
-        issues.push(\`${rel}: Meta description has ${descriptionLength} characters; expected 25-160\`);
+        issues.push(rel + ': Meta description has ' + descriptionLength + ' characters; expected 25-160');
       }
     }
   }
