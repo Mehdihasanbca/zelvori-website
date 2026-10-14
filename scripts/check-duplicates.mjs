@@ -13,6 +13,30 @@ function getAllHtml(dir) {
   return res;
 }
 
+function decodeHtmlEntities(value) {
+  const namedEntities = {
+    amp: '&',
+    quot: '"',
+    apos: "'",
+    lt: '<',
+    gt: '>',
+    nbsp: ' ',
+  };
+
+  return value.replace(/&(#x[0-9a-f]+|#\d+|amp|quot|apos|lt|gt|nbsp);/gi, (entity, token) => {
+    if (token.startsWith('#')) {
+      const codePoint = token[1].toLowerCase() === 'x'
+        ? Number.parseInt(token.slice(2), 16)
+        : Number.parseInt(token.slice(1), 10);
+      if (Number.isInteger(codePoint) && codePoint >= 0 && codePoint <= 0x10ffff) {
+        return String.fromCodePoint(codePoint);
+      }
+      return entity;
+    }
+    return namedEntities[token.toLowerCase()] ?? entity;
+  });
+}
+
 const htmlFiles = getAllHtml(outDir);
 let issues = [];
 
@@ -38,10 +62,21 @@ for (const f of htmlFiles) {
     issues.push(`${rel}: Expected 1 canonical link, found ${canons.length}`);
   }
 
-  // Check meta description count
-  const metas = content.match(/<meta name=["']description["'][^>]*>/gi) || [];
+  // Check meta description count and recommended snippet length (25-160 characters)
+  const metas = [...content.matchAll(/<meta\b(?=[^>]*\bname=["']description["'])[^>]*>/gi)].map((match) => match[0]);
   if (metas.length !== 1) {
-    issues.push(`${rel}: Expected 1 meta description, found ${metas.length}`);
+    issues.push(\`${rel}: Expected 1 meta description, found ${metas.length}\`);
+  } else {
+    const descriptionContent = metas[0].match(/\bcontent=["']([^"']*)["']/i)?.[1];
+    if (descriptionContent === undefined) {
+      issues.push(\`${rel}: Meta description has no content attribute\`);
+    } else {
+      const description = decodeHtmlEntities(descriptionContent).trim();
+      const descriptionLength = Array.from(description).length;
+      if (descriptionLength < 25 || descriptionLength > 160) {
+        issues.push(\`${rel}: Meta description has ${descriptionLength} characters; expected 25-160\`);
+      }
+    }
   }
 }
 
@@ -58,6 +93,6 @@ if (issues.length > 0) {
   console.error(`❌ Issues found:\n${issues.join('\n')}`);
   process.exit(1);
 } else {
-  console.log('✅ ZERO DUPLICATES VERIFIED! Exactly 1 title, 1 canonical, 1 meta description per page, 0 duplicate suffixes, 0 duplicate sitemap entries.');
+  console.log('✅ SEO METADATA VERIFIED! Exactly 1 title, 1 canonical, and 1 meta description (25-160 characters) per page; no duplicate title suffixes or sitemap URLs.');
   process.exit(0);
 }
