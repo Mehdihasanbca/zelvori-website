@@ -38,6 +38,9 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
+  other: {
+    'google-adsense-account': 'ca-pub-1417105686781482',
+  },
   verification: {
     other: {
       'msvalidate.01': '06236155CCFE57BA008B422F19673DE5',
