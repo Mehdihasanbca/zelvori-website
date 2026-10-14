@@ -11,7 +11,7 @@ import { StoriesFilterGrid } from '@/components/stories/StoriesFilterGrid';
 export const metadata: Metadata = {
   title: 'Digital Transformation Stories by Industry',
   description:
-    'Explore illustrative digital transformation stories for legal practices, clinics, freelancers, growing companies, brands, creators, educators, and service teams.',
+    'Explore illustrative digital transformation scenarios for clinics, legal practices, brands, creators, educators, and growing businesses.',
   alternates: {
     canonical: 'https://zelvori.software/stories/',
   },
