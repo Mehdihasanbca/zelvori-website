@@ -20,7 +20,7 @@ import {
 export const metadata: Metadata = {
   title: 'Free Developer Lab & Browser Tools',
   description:
-    'Free, privacy-first developer utilities built for web builders: SEO Meta Preview, WCAG Color Contrast Checker, CSS Gradient & Shadow Generator, JSON Formatter & Validator, and Social Card Previewer.',
+    'Free, privacy-first browser tools for SEO previews, WCAG contrast checks, CSS generation, JSON formatting, and social card previews.',
   alternates: {
     canonical: 'https://zelvori.software/tools/',
   },
