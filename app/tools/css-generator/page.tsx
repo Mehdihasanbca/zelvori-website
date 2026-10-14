@@ -7,7 +7,7 @@ import { CssGeneratorTool } from '@/components/tools/CssGeneratorTool';
 export const metadata: Metadata = {
   title: 'CSS Gradient & Box Shadow Generator',
   description:
-    'Interactive CSS generator for multi-stop linear and radial gradients, multi-layer box shadows, and smooth border radii. Live interactive visual canvas with instant copyable CSS.',
+    'Generate and preview CSS gradients, layered box shadows, and border radii, then copy the CSS into your project.',
   alternates: {
     canonical: 'https://zelvori.software/tools/css-generator/',
   },
