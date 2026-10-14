@@ -26,9 +26,10 @@ Submitting a sitemap is a discovery hint, not a guarantee that Google will crawl
 
 ## Bing Webmaster Tools
 
+- The Bing Webmaster verification meta tag is configured in the global Next.js metadata: `msvalidate.01`. It will be present in the generated page HTML after the next successful deployment.
 1. Open https://www.bing.com/webmasters/
-2. Add https://zelvori.software/ and verify ownership, or import an already-verified Search Console property when offered.
-3. Submit https://zelvori.software/sitemap.xml.
+2. Add https://zelvori.software/ and choose the HTML meta-tag verification option if Bing still shows the site as unverified. Use the existing token in `app/layout.tsx`; do not create a second token.
+3. Once Bing confirms ownership, submit https://zelvori.software/sitemap.xml.
 4. Review URL inspection, crawl diagnostics and search performance.
 
 The GitHub Actions workflow submits sitemap URLs to IndexNow after successful deployment. An accepted notification means the service received URL-change information; it does not confirm indexing or rankings.
