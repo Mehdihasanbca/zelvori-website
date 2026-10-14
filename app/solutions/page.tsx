@@ -22,7 +22,7 @@ import { CompetitivePositioningTable } from '@/components/solutions/CompetitiveP
 export const metadata: Metadata = {
   title: 'Industry Solutions & Architecture Blueprints',
   description:
-    'Production-ready reference architectures and delivery blueprints for 9 major industries. Zero SaaS per-seat tax, complete database sovereignty, and transparent milestone engineering.',
+    'Explore software architecture blueprints for nine industries, with secure workflows, data control, and transparent project delivery.',
   alternates: {
     canonical: 'https://zelvori.software/solutions/',
   },
