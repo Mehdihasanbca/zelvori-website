@@ -59,12 +59,26 @@ for (const bot of trainingFocusedBots) {
 }
 assert(sitemap.includes('<urlset') && sitemap.includes('</urlset>'), 'sitemap.xml is present and has a URL-set root');
 assert(llms.includes('https://zelvori.software/'), 'llms.txt describes the canonical site');
+
+const adsTxt = readOutput('ads.txt') ?? '';
+assert(
+  adsTxt.split(/\r?\n/).some((line) =>
+    line.trim() === 'google.com, pub-1417105686781482, DIRECT, f08c47fec0942fa0'
+  ),
+  'ads.txt includes the correct Google AdSense publisher authorization line'
+);
 assert(cname !== null && cname.trim() === 'zelvori.software', 'CNAME in output matches the intended apex domain');
 
 const homepage = readOutput('index.html') ?? '';
 assert(
   homepage.includes('name="msvalidate.01"') && homepage.includes(bingVerificationToken),
   'homepage includes the Bing Webmaster verification meta tag'
+);
+
+assert(
+  homepage.includes('name="google-adsense-account"') &&
+    homepage.includes('ca-pub-1417105686781482'),
+  'homepage includes the Google AdSense publisher account meta tag'
 );
 
 const keyName = indexNowKey + '.txt';
