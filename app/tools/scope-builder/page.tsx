@@ -7,14 +7,14 @@ import { ScopeBuilderTool } from '@/components/tools/ScopeBuilderTool';
 export const metadata: Metadata = {
   title: 'Architecture & Scope Configurator',
   description:
-    'Interactive software architecture and project scope configurator. Configure technical stacks, database layers, and security tiers to calculate estimated sprint timelines and export structured briefs.',
+    'Configure technical stacks, database layers, and security tiers to dynamically calculate estimated sprint timelines and export structured project briefs.',
   alternates: {
     canonical: 'https://zelvori.software/tools/scope-builder/',
   },
   openGraph: {
     title: 'Architecture & Scope Configurator | Zelvori',
     description:
-      'Interactive software architecture and project scope configurator. Configure technical stacks, database layers, and security tiers to calculate estimated sprint timelines and export structured briefs.',
+      'Configure technical stacks, database layers, and security tiers to dynamically calculate estimated sprint timelines and export structured project briefs.',
     url: 'https://zelvori.software/tools/scope-builder/',
     images: [
       {
