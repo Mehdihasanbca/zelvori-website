@@ -10,6 +10,7 @@ This document records website-side changes and the remaining owner-authorized ac
 - public/sitemap.xml lists only canonical paths, excluding duplicate privacy-policy and terms-of-service aliases.
 - public/llms.txt describes real service pages and labels visual architecture demos as illustrative rather than named client case studies.
 - A public IndexNow verification key file is deployed at the site root.
+- `public/ads.txt` authorizes the configured Google AdSense publisher ID using Google's standard DIRECT seller record; the build audit and post-deploy smoke test validate it.
 - scripts/seo-audit.mjs validates static output, crawler rules, sitemap routes, CNAME and IndexNow key.
 - scripts/submit-indexnow.mjs notifies IndexNow-enabled search services of sitemap URLs after deployment. The step is best-effort so an indexing service outage cannot break website deployment.
 
