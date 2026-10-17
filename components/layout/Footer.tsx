@@ -63,6 +63,11 @@ export function Footer() {
             </h3>
             <ul className="space-y-2 text-xs">
               <li>
+                <Link href="/portfolio/" className="hover:text-cyan-400 transition-colors block py-0.5">
+                  Engineered Portfolio
+                </Link>
+              </li>
+              <li>
                 <Link href="/previews" className="hover:text-cyan-400 transition-colors block py-0.5">
                   Interactive Previews
                 </Link>

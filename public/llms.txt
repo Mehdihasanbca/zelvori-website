@@ -20,10 +20,16 @@ Zelvori (https://zelvori.software/) is an international digital product developm
 - Application Security & Secure Software Engineering (https://zelvori.software/services/application-security/)
   Defensive software architecture, STRIDE threat modeling, API vulnerability reviews, identity & access hardening (MFA/RBAC), data protection, supply-chain verification, and AI application guardrails.
 
-## Selected Work & Demonstrations
+## Engineered Platforms & Production Portfolio
 
+- Production Software Portfolio (https://zelvori.software/portfolio/)
+  Production-engineered software platforms and international web systems built by Zelvori:
+  - HealthOS (Healthcare ERP): Multi-tenant Hospital Management platform with OPD/IPD bed allocation, eMAR, pharmacy POS, and Google Workspace automation.
+  - ZelvoriERP (Education ERP): Institutional campus operating system with student academic lifecycle, audited fee reversals, and native Windows installer (FrankenPHP).
+  - AVC RecruitOS (HR Tech & ATS): Modular Monolith talent acquisition platform with 14 bounded contexts, Kanban pipelines, and Tauri desktop client.
+  - Grand View Ceramic & Marble: Zero-runtime dependency international architectural portal deployed for Abu Dhabi luxury commercial sector.
 - Selected Work Showcase (https://zelvori.software/#work)
-  Illustrative architecture concepts covering Multi-Tenant Treasury & Billing, Global Fleet Telemetry & Dispatch, Enterprise Document Extraction, and Omnichannel Headless Commerce. These demonstrate design approaches; they are not claims of named clients or independently verified customer deployments.
+  Interactive homepage preview of real-world production platforms across healthcare, education, HR tech, and international client portals.
 
 ## Industry Solutions & Master Architecture Blueprints
 

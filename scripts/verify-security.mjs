@@ -54,6 +54,7 @@ const expectedRoutes = [
   'contact',
   'payments',
   'pricing',
+  'portfolio',
   'security',
   'stories',
   'resources',

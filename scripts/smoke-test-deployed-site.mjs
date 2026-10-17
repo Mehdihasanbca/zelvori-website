@@ -52,6 +52,15 @@ const checks = [
       );
     },
   },
+  {
+    name: 'portfolio',
+    path: '/portfolio/',
+    validate: (body) =>
+      body.includes('<title>') &&
+      body.includes('https://zelvori.software/portfolio/') &&
+      body.includes('HealthOS') &&
+      body.includes('ZelvoriERP'),
+  },
 ];
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));

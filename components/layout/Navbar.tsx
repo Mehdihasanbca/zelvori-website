@@ -183,10 +183,12 @@ export function Navbar() {
             Security
           </Link>
           <Link
-            href="/#work"
-            className="px-3 py-1.5 rounded-lg hover:text-white hover:bg-white/5 transition-all whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+            href="/portfolio/"
+            className={`px-3 py-1.5 rounded-lg hover:text-white transition-all whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 ${
+              pathname.startsWith('/portfolio') ? 'text-cyan-300 bg-white/5 border border-cyan-500/20' : 'text-slate-300 hover:bg-white/5'
+            }`}
           >
-            Work
+            Portfolio
           </Link>
           <Link
             href="/solutions/"
@@ -325,11 +327,11 @@ export function Navbar() {
               Payments &amp; Invoices
             </Link>
             <Link
-              href="/#work"
+              href="/portfolio/"
               onClick={closeMenus}
-              className="block px-3 py-2.5 text-sm font-medium text-slate-200 hover:text-white hover:bg-slate-900/80 rounded-xl transition-colors"
+              className="block px-3 py-2.5 text-sm font-medium text-cyan-300 hover:text-cyan-200 hover:bg-cyan-950/30 rounded-xl transition-colors"
             >
-              Selected Work
+              Engineered Portfolio
             </Link>
             <Link
               href="/solutions/"

@@ -367,6 +367,27 @@ if (fs.existsSync(scopeBuilderHtmlPath)) {
   );
 }
 
+// 15. Portfolio Verification
+const portfolioHtmlPath = path.join(outDir, 'portfolio/index.html');
+assert(fs.existsSync(portfolioHtmlPath), 'out/portfolio/index.html exists in static export');
+if (fs.existsSync(portfolioHtmlPath)) {
+  const content = fs.readFileSync(portfolioHtmlPath, 'utf8');
+  assert(
+    content.includes('Engineered platforms in active production.') ||
+      content.includes('Engineered Systems &amp; Enterprise Portfolio') ||
+      content.includes('Engineered Systems & Enterprise Portfolio'),
+    'portfolio/index.html renders headline or title'
+  );
+  assert(
+    content.includes('HealthOS') && content.includes('ZelvoriERP') && content.includes('RecruitOS') && content.includes('Grand View'),
+    'portfolio/index.html renders real production platforms (HealthOS, ZelvoriERP, RecruitOS, Grand View)'
+  );
+  assert(
+    content.includes('Commercial &amp; Architectural Notice') || content.includes('Commercial & Architectural Notice'),
+    'portfolio/index.html renders commercial notice'
+  );
+}
+
 console.log(`\n========================================`);
 console.log(`Total QA Checks Executed: ${checks}`);
 console.log(`Total QA Failures: ${errors}`);

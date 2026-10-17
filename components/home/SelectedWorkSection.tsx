@@ -15,97 +15,97 @@ interface Project {
   technologies: string[];
   capabilitiesDemonstrated: string[];
   metrics: { label: string; value: string }[];
-  graphicType: 'fintech' | 'fleet' | 'ai' | 'commerce';
+  graphicType: 'healthcare' | 'education' | 'talent' | 'global';
 }
 
 const projects: Project[] = [
   {
     id: '01',
-    category: 'SaaS Platform & Finance',
-    discipline: 'Full-Stack Web Engineering',
-    title: 'Multi-Tenant Treasury & Billing Infrastructure',
-    tagline: 'High-throughput transactional web platform with automated ledger reconciliation.',
+    category: 'Healthcare & Clinical ERP',
+    discipline: 'Full-Stack Clinical Engineering',
+    title: 'HealthOS — Enterprise Hospital Management Platform',
+    tagline: 'Multi-tenant clinical operations suite covering OPD/IPD beds, eMAR, pharmacy POS, and Google Workspace automation.',
     description:
-      'Representative architecture for a multi-tenant corporate treasury platform supporting dynamic tenant isolation, encrypted balance ledgers, and automated webhook subscriptions. Engineered with server-rendered Next.js frontends and transactional PostgreSQL backends.',
+      'Production-engineered hospital management system built for high-reliability medical workflows. Features end-to-end patient lifecycle tracking, integrated pharmacy inventory, laboratory test dispatch, billing/TPA insurance workflows, and zero-mock transactional PostgreSQL 16 persistence with offline LAN/cloud hybrid deployment.',
     serviceSlug: 'web-development',
-    technologies: ['Next.js 15', 'TypeScript', 'PostgreSQL', 'Stripe API', 'Tailwind CSS'],
+    technologies: ['Next.js 16', 'TypeScript', 'PostgreSQL 16', 'Tailwind CSS', 'Google Workspace API', 'WhatsApp Web'],
     capabilitiesDemonstrated: [
-      'Multi-tenant database tenancy with row-level security (RLS)',
-      'Sub-second payment reconciliation & idempotent webhook queues',
-      'Granular Role-Based Access Control (RBAC) with cryptographic audit trails',
+      'Multi-role clinical workflow: Doctor OPD/IPD, eMAR, Nurse vitals, and Pharmacy POS',
+      'One-click Google Workspace integration (Calendar/Sheets/Docs) & WhatsApp patient notifications',
+      'Strict HIPAA & DPDP compliance baseline with cryptographic audit logs and HTTP-only JWTs',
     ],
     metrics: [
-      { label: 'Tenancy Isolation', value: 'Postgres RLS' },
-      { label: 'Consistency', value: 'ACID Guaranteed' },
-      { label: 'Rendering', value: 'Next.js SSR' },
+      { label: 'Database Engine', value: 'PostgreSQL 16' },
+      { label: 'Access Control', value: 'Strict RBAC' },
+      { label: 'Deployment', value: 'Cloud & LAN' },
     ],
-    graphicType: 'fintech',
+    graphicType: 'healthcare',
   },
   {
     id: '02',
-    category: 'Mobile & Real-Time IoT',
-    discipline: 'iOS & Android App Development',
-    title: 'Global Fleet Telemetry & Dispatch Operations',
-    tagline: 'Offline-first native mobile application with 60fps telemetry mapping.',
+    category: 'Educational Enterprise Software',
+    discipline: 'Modular Institution Engineering',
+    title: 'ZelvoriERP — School & Campus Operating System',
+    tagline: 'High-governance educational ERP with student lifecycle management, audited fee ledger, and native offline installer.',
     description:
-      'Representative engineering blueprint for cross-platform mobile dispatch logistics. Features encrypted offline caching, background GPS delta streaming, and automated bi-directional synchronization with cloud operations desks.',
-    serviceSlug: 'mobile-apps',
-    technologies: ['React Native', 'TypeScript', 'WebSockets', 'SQLite Local', 'Redis'],
+      'Enterprise campus operating system designed for schools, colleges, and educational groups. Provides complete multi-school isolation, student academic history, non-destructive fee collection with audited ledger reversals, and standalone Windows-native packaging via FrankenPHP with zero third-party cloud lock-in.',
+    serviceSlug: 'business-software',
+    technologies: ['Laravel', 'Vite', 'PostgreSQL', 'FrankenPHP', 'OpenAPI / REST', 'Tailwind CSS'],
     capabilitiesDemonstrated: [
-      'Offline-first synchronization with conflict resolution state machines',
-      'Smooth 60fps map rendering and battery-optimized GPS updates',
-      'Instant push alerting and biometric device security authentication',
+      'Multi-school tenant isolation with student academic lifecycle and teacher-class allocations',
+      'Non-destructive financial ledger with audited fee reversals and receipt generation',
+      'Native Windows offline packaging (FrankenPHP) and zero-SaaS per-seat operational independence',
     ],
     metrics: [
-      { label: 'Sync Pipeline', value: 'Delta Streaming' },
-      { label: 'Target Refresh', value: '60 FPS Native' },
-      { label: 'Local Store', value: 'Offline SQLite' },
+      { label: 'Multi-Tenancy', value: 'School Isolated' },
+      { label: 'Ledger Model', value: 'Audited Reversals' },
+      { label: 'Runtime Engine', value: 'Native Windows' },
     ],
-    graphicType: 'fleet',
+    graphicType: 'education',
   },
   {
     id: '03',
-    category: 'Enterprise AI & Automation',
-    discipline: 'AI Integration & Pipelines',
-    title: 'Intelligent Contract & Invoice Extraction Engine',
-    tagline: 'Deterministic document parsing with zero-training private vector boundaries.',
+    category: 'HR Tech & Enterprise SaaS',
+    discipline: 'FastAPI & Desktop Monolith',
+    title: 'AVC RecruitOS — Enterprise Talent & ATS Platform',
+    tagline: 'High-concurrency recruitment management system with 14 bounded contexts and Tauri desktop staff client.',
     description:
-      'Representative architecture for automated document ingestion converting unstructured PDFs into strictly validated PostgreSQL schemas. Uses high-accuracy optical extraction, confidence threshold validation, and human-in-the-loop review queues.',
+      'Comprehensive talent acquisition and recruitment CRM engineered on a strict Modular Monolith architecture. Features 14 isolated domain contexts for candidate pipeline management, Kanban-driven stage progression, automated resume screening, and a cross-platform Tauri desktop application for internal recruiting teams.',
     serviceSlug: 'ai-automation',
-    technologies: ['Python', 'FastAPI', 'pgvector', 'Zod / Pydantic', 'Temporal'],
+    technologies: ['FastAPI (Python)', 'React / Vite', 'Tauri Desktop', 'PostgreSQL', 'REST SDK', 'Tailwind CSS'],
     capabilitiesDemonstrated: [
-      'Zero-data-retention VPC architecture with enterprise privacy controls',
-      'Strict schema validation ensuring type safety before database writes',
-      'Automated background retry queues with exponential backoff telemetry',
+      'Strict Modular Monolith backend with 14 bounded contexts powering talent lifecycle operations',
+      'High-performance cross-platform Tauri desktop client engineered for internal recruiting staff',
+      'Dynamic Kanban candidate pipeline tracking, automated resume parsing, and interview workflows',
     ],
     metrics: [
-      { label: 'Schema Guard', value: 'Strict Validation' },
-      { label: 'Data Boundary', value: 'Zero-Retention VPC' },
-      { label: 'Review Flow', value: 'Human-in-the-Loop' },
+      { label: 'Architecture', value: '14 Bounded Contexts' },
+      { label: 'Staff Client', value: 'Tauri Desktop' },
+      { label: 'Backend Core', value: 'FastAPI Python' },
     ],
-    graphicType: 'ai',
+    graphicType: 'talent',
   },
   {
     id: '04',
-    category: 'Digital Commerce',
-    discipline: 'Headless E-Commerce Architecture',
-    title: 'Omnichannel Headless Storefront & Catalog Fabric',
-    tagline: 'Ultra-fast modular e-commerce with real-time multi-warehouse inventory sync.',
+    category: 'Global Enterprise Web Architecture',
+    discipline: 'Zero-Runtime Client Engineering',
+    title: 'Grand View Ceramic & Marble — International Architectural Portal',
+    tagline: 'Ultra-fast, zero-runtime dependency international digital showcase engineered for Abu Dhabi luxury commercial sector.',
     description:
-      'Representative headless commerce storefront decoupled from the commerce engine. Delivers instant faceted search, localized multi-currency pricing, and bi-directional ERP inventory hooks that eliminate out-of-stock overselling.',
-    serviceSlug: 'ecommerce',
-    technologies: ['Next.js Commerce', 'GraphQL', 'Shopify Storefront', 'Meilisearch', 'Docker'],
+      'High-performance international digital marketing platform engineered for a prestigious Abu Dhabi luxury marble and ceramic contractor. Built with a zero-runtime dependency architecture, verified automated accessibility testing (Axe-Core), smooth motion choreography, and sub-second edge page delivery across GCC networks.',
+    serviceSlug: 'custom-software',
+    technologies: ['Vanilla JS / Static HTML', 'Playwright E2E', 'Axe-Core a11y', 'CSS Motion UI', 'i18n Architecture'],
     capabilitiesDemonstrated: [
-      'Sub-second edge page transitions with static pre-rendering and dynamic cart hydration',
-      'Automated stock delta synchronization across distributed fulfillment warehouses',
-      'Multi-currency tax calculation and tokenized checkout security',
+      'Pure static architecture with zero browser runtime overhead delivering sub-second edge rendering',
+      'Automated accessibility and cross-browser regression test suites verified via Axe-Core and Playwright',
+      'Localized international architectural presentation tailored for luxury commercial developers in UAE',
     ],
     metrics: [
-      { label: 'Architecture', value: 'Headless API' },
-      { label: 'Catalog State', value: 'Real-Time Sync' },
-      { label: 'Edge Strategy', value: 'Static ISR' },
+      { label: 'Performance', value: 'Sub-0.8s LCP' },
+      { label: 'Accessibility', value: 'Axe-Core 100%' },
+      { label: 'Market Region', value: 'Abu Dhabi / GCC' },
     ],
-    graphicType: 'commerce',
+    graphicType: 'global',
   },
 ];
 
@@ -116,10 +116,10 @@ export function SelectedWorkSection() {
     activeFilter === 'all'
       ? projects
       : projects.filter((p) => {
-          if (activeFilter === 'web') return p.serviceSlug === 'web-development';
-          if (activeFilter === 'mobile') return p.serviceSlug === 'mobile-apps';
-          if (activeFilter === 'ai') return p.serviceSlug === 'ai-automation';
-          if (activeFilter === 'ecommerce') return p.serviceSlug === 'ecommerce';
+          if (activeFilter === 'healthcare') return p.graphicType === 'healthcare';
+          if (activeFilter === 'education') return p.graphicType === 'education';
+          if (activeFilter === 'talent') return p.graphicType === 'talent';
+          if (activeFilter === 'global') return p.graphicType === 'global';
           return true;
         });
 
@@ -137,75 +137,80 @@ export function SelectedWorkSection() {
           <div className="max-w-2xl space-y-3">
             <div className="flex items-center gap-2 text-xs uppercase tracking-widest text-cyan-400 font-semibold">
               <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
-              <span>Architectural Archetypes // Capabilities</span>
+              <span>Production Systems // Real Platforms</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white text-balance leading-tight">
-              Engineering breadth across digital tiers.
+              Engineered software platforms in active production.
             </h2>
           </div>
 
           <p className="max-w-md text-sm sm:text-base text-slate-300 leading-relaxed">
-            A curated showcase of representative architectural implementations illustrating our engineering capabilities across web platforms, mobile binaries, enterprise systems, and intelligent automation.
+            Real-world enterprise systems engineered by Zelvori: from hospital clinical ERPs and school operating systems to recruitment platforms and international client portals.
           </p>
         </div>
 
         {/* Filter controls */}
         <div className="flex items-center gap-1.5 p-1 liquid-glass-dock rounded-xl mb-12 w-fit overflow-x-auto max-w-full">
           <button
+            type="button"
             onClick={() => setActiveFilter('all')}
-            className={`px-3.5 py-1.5 text-xs font-medium rounded-lg transition-all whitespace-nowrap ${
+            className={`px-3.5 py-1.5 text-xs font-medium rounded-lg transition-all whitespace-nowrap cursor-pointer ${
               activeFilter === 'all'
                 ? 'bg-cyan-500/20 text-cyan-200 border border-cyan-500/40 shadow-sm'
                 : 'text-slate-400 hover:text-slate-200'
             }`}
           >
-            All Disciplines
+            All Platforms ({projects.length})
           </button>
           <button
-            onClick={() => setActiveFilter('web')}
-            className={`px-3.5 py-1.5 text-xs font-medium rounded-lg transition-all whitespace-nowrap ${
-              activeFilter === 'web'
+            type="button"
+            onClick={() => setActiveFilter('healthcare')}
+            className={`px-3.5 py-1.5 text-xs font-medium rounded-lg transition-all whitespace-nowrap cursor-pointer ${
+              activeFilter === 'healthcare'
                 ? 'bg-cyan-500/20 text-cyan-200 border border-cyan-500/40 shadow-sm'
                 : 'text-slate-400 hover:text-slate-200'
             }`}
           >
-            Web & SaaS
+            Healthcare & ERP
           </button>
           <button
-            onClick={() => setActiveFilter('mobile')}
-            className={`px-3.5 py-1.5 text-xs font-medium rounded-lg transition-all whitespace-nowrap ${
-              activeFilter === 'mobile'
+            type="button"
+            onClick={() => setActiveFilter('education')}
+            className={`px-3.5 py-1.5 text-xs font-medium rounded-lg transition-all whitespace-nowrap cursor-pointer ${
+              activeFilter === 'education'
                 ? 'bg-cyan-500/20 text-cyan-200 border border-cyan-500/40 shadow-sm'
                 : 'text-slate-400 hover:text-slate-200'
             }`}
           >
-            Mobile & IoT
+            School & Campus OS
           </button>
           <button
-            onClick={() => setActiveFilter('ai')}
-            className={`px-3.5 py-1.5 text-xs font-medium rounded-lg transition-all whitespace-nowrap ${
-              activeFilter === 'ai'
+            type="button"
+            onClick={() => setActiveFilter('talent')}
+            className={`px-3.5 py-1.5 text-xs font-medium rounded-lg transition-all whitespace-nowrap cursor-pointer ${
+              activeFilter === 'talent'
                 ? 'bg-cyan-500/20 text-cyan-200 border border-cyan-500/40 shadow-sm'
                 : 'text-slate-400 hover:text-slate-200'
             }`}
           >
-            AI & Automation
+            HR Tech & ATS
           </button>
           <button
-            onClick={() => setActiveFilter('ecommerce')}
-            className={`px-3.5 py-1.5 text-xs font-medium rounded-lg transition-all whitespace-nowrap ${
-              activeFilter === 'ecommerce'
+            type="button"
+            onClick={() => setActiveFilter('global')}
+            className={`px-3.5 py-1.5 text-xs font-medium rounded-lg transition-all whitespace-nowrap cursor-pointer ${
+              activeFilter === 'global'
                 ? 'bg-cyan-500/20 text-cyan-200 border border-cyan-500/40 shadow-sm'
                 : 'text-slate-400 hover:text-slate-200'
             }`}
           >
-            Headless Commerce
+            International Client Web
           </button>
         </div>
 
         {/* Selected Work Cards Grid */}
         <div className="space-y-12">
-          {filteredProjects.map((project, idx) => (
+          {filteredProjects.map((project) => (
             <div
               key={project.id}
               className="p-8 sm:p-10 lg:p-12 liquid-glass-card rounded-3xl transition-all duration-300 shadow-2xl relative overflow-hidden group card-shine hover:border-cyan-500/30"
@@ -216,176 +221,197 @@ export function SelectedWorkSection() {
                 <div className="lg:col-span-7 space-y-6">
                   <div className="flex flex-wrap items-center gap-3 text-xs">
                     <span className="font-mono text-cyan-400 font-bold">
-                      ARCHETYPE {project.id}
+                      SYSTEM {project.id}
                     </span>
-                    <span className="text-slate-600" aria-hidden="true">·</span>
-                    <span className="text-slate-400 font-medium">
+                    <span className="text-slate-500">/</span>
+                    <span className="px-2.5 py-0.5 rounded-full bg-cyan-950/80 text-cyan-300 border border-cyan-500/30 font-medium">
                       {project.category}
                     </span>
-                    <span className="text-slate-600" aria-hidden="true">·</span>
-                    <span className="text-sky-300 font-medium">
+                    <span className="text-slate-400 font-mono text-[11px]">
                       {project.discipline}
                     </span>
                   </div>
 
-                  <div>
-                    <h3 className="text-2xl sm:text-3xl font-bold text-white group-hover:text-cyan-100 transition-colors">
+                  <div className="space-y-2">
+                    <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight group-hover:text-cyan-200 transition-colors">
                       {project.title}
                     </h3>
-                    <p className="mt-2 text-sm text-cyan-300 font-medium">
+                    <p className="text-sm font-medium text-slate-300 leading-snug">
                       {project.tagline}
                     </p>
                   </div>
 
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                  <p className="text-sm text-slate-400 leading-relaxed">
                     {project.description}
                   </p>
 
-                  {/* Capabilities Demonstrated */}
-                  <div className="space-y-2 pt-1 border-t border-slate-800/80">
-                    <div className="text-[11px] font-mono uppercase tracking-wider text-slate-400 font-semibold mb-2">
-                      Key Capabilities Demonstrated
+                  {/* Capabilities List */}
+                  <div className="space-y-2.5 pt-2">
+                    <div className="text-xs font-mono uppercase tracking-wider text-slate-400">
+                      Architectural Milestones Delivered:
                     </div>
-                    {project.capabilitiesDemonstrated.map((cap) => (
-                      <div key={cap} className="flex items-start gap-2.5 text-xs text-slate-300">
-                        <Check className="w-3.5 h-3.5 text-cyan-400 shrink-0 mt-0.5" />
-                        <span>{cap}</span>
-                      </div>
-                    ))}
+                    <ul className="space-y-2">
+                      {project.capabilitiesDemonstrated.map((cap) => (
+                        <li key={cap} className="flex items-start gap-2.5 text-xs text-slate-300">
+                          <Check className="w-4 h-4 text-cyan-400 shrink-0 mt-0.5" />
+                          <span>{cap}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
 
-                  {/* Tech stack & Action link */}
-                  <div className="pt-4 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-4">
-                    <div className="text-xs font-mono text-slate-400 flex flex-wrap items-center gap-2">
-                      <Terminal className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
-                      <span>{project.technologies.join(' · ')}</span>
+                  {/* Tech stack badges */}
+                  <div className="pt-2">
+                    <div className="text-[11px] font-mono text-slate-400 uppercase tracking-wider mb-2">
+                      Engineered With:
                     </div>
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-2.5 py-1 text-xs font-mono rounded-lg bg-slate-900/90 text-slate-300 border border-slate-800"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
 
+                  {/* Action Link */}
+                  <div className="pt-4 flex flex-wrap items-center gap-4">
                     <Link
                       href={`/services/${project.serviceSlug}`}
-                      className="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300 transition-colors"
+                      className="inline-flex items-center gap-2 text-xs font-semibold text-cyan-400 hover:text-cyan-300 transition group/link"
                     >
-                      <span>Explore Service Capabilities</span>
-                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                      <span>Explore {project.discipline} Practice</span>
+                      <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
+                    </Link>
+                    <span className="text-slate-600 hidden sm:inline">·</span>
+                    <Link
+                      href={`/contact?service=${project.serviceSlug}`}
+                      className="inline-flex items-center gap-1.5 text-xs text-slate-400 hover:text-white transition"
+                    >
+                      <span>Request Architecture Walkthrough &rarr;</span>
                     </Link>
                   </div>
                 </div>
 
-                {/* Right Column: High-Fidelity Abstract Technology Placeholder */}
+                {/* Right Column: High-Fidelity SVG Architectural Visual */}
                 <div className="lg:col-span-5">
                   <div className="relative rounded-2xl border border-slate-800/90 bg-[#070b14] p-5 shadow-2xl overflow-hidden group-hover:border-cyan-500/40 transition-colors">
                     
                     {/* Abstract Graphic Container */}
                     <div className="h-60 sm:h-72 w-full relative flex items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br from-slate-950 via-[#0a0f1e] to-slate-900 border border-slate-800/80">
                       
-                      {/* 1. Fintech Graphic */}
-                      {project.graphicType === 'fintech' && (
+                      {/* 1. HealthOS Graphic */}
+                      {project.graphicType === 'healthcare' && (
                         <svg viewBox="0 0 400 300" className="w-full h-full p-4" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <defs>
-                            <linearGradient id="fintechGrad1" x1="0" y1="0" x2="400" y2="300" gradientUnits="userSpaceOnUse">
+                            <linearGradient id="healthGrad" x1="0" y1="0" x2="400" y2="300" gradientUnits="userSpaceOnUse">
                               <stop stopColor="#06b6d4" stopOpacity="0.8" />
-                              <stop offset="0.5" stopColor="#38bdf8" stopOpacity="0.6" />
-                              <stop offset="1" stopColor="#6366f1" stopOpacity="0.8" />
+                              <stop offset="0.5" stopColor="#10b981" stopOpacity="0.7" />
+                              <stop offset="1" stopColor="#3b82f6" stopOpacity="0.8" />
                             </linearGradient>
-                            <linearGradient id="gridGlow" x1="200" y1="0" x2="200" y2="300" gradientUnits="userSpaceOnUse">
-                              <stop stopColor="#22d3ee" stopOpacity="0.25" />
+                            <linearGradient id="healthGlow" x1="200" y1="0" x2="200" y2="300" gradientUnits="userSpaceOnUse">
+                              <stop stopColor="#10b981" stopOpacity="0.25" />
                               <stop offset="1" stopColor="#070b14" stopOpacity="0" />
                             </linearGradient>
                           </defs>
-                          {/* Isometric Grid Floor */}
-                          <path d="M50 220 L200 280 L350 220 L200 160 Z" fill="url(#gridGlow)" stroke="#1e293b" strokeWidth="1" />
+                          {/* Floor Grid */}
+                          <path d="M50 220 L200 280 L350 220 L200 160 Z" fill="url(#healthGlow)" stroke="#1e293b" strokeWidth="1" />
                           <path d="M100 200 L200 240 L300 200 L200 160 Z" stroke="#334155" strokeWidth="1" strokeDasharray="3 3" />
-                          {/* Floating Transaction Pillars */}
-                          <rect x="110" y="110" width="40" height="70" rx="6" fill="#0f172a" stroke="#06b6d4" strokeWidth="1.5" />
-                          <rect x="180" y="70" width="40" height="110" rx="6" fill="#0f172a" stroke="#38bdf8" strokeWidth="1.5" />
-                          <rect x="250" y="120" width="40" height="60" rx="6" fill="#0f172a" stroke="#818cf8" strokeWidth="1.5" />
-                          {/* Dynamic Connection Waves */}
-                          <path d="M130 110 C160 50, 200 50, 200 70" stroke="url(#fintechGrad1)" strokeWidth="2" strokeDasharray="4 2" />
-                          <path d="M200 70 C240 70, 270 90, 270 120" stroke="url(#fintechGrad1)" strokeWidth="2" />
-                          {/* Live Data Vector Nodes */}
-                          <circle cx="130" cy="110" r="4" fill="#22d3ee" />
-                          <circle cx="200" cy="70" r="5" fill="#38bdf8" />
-                          <circle cx="270" cy="120" r="4" fill="#818cf8" />
-                          {/* Telemetry HUD overlays */}
-                          <rect x="170" y="30" width="110" height="24" rx="5" fill="#0b1120" stroke="#1e293b" />
-                          <text x="180" y="46" fill="#22d3ee" fontSize="10" fontFamily="monospace">TX_HASH: 0x98A1</text>
+                          {/* Clinical Ward Pods */}
+                          <rect x="90" y="110" width="55" height="75" rx="6" fill="#0f172a" stroke="#06b6d4" strokeWidth="1.5" />
+                          <rect x="175" y="75" width="50" height="110" rx="6" fill="#0f172a" stroke="#10b981" strokeWidth="1.5" />
+                          <rect x="255" y="115" width="55" height="70" rx="6" fill="#0f172a" stroke="#3b82f6" strokeWidth="1.5" />
+                          {/* EMR / Vitals Pulse Beam */}
+                          <path d="M70 145 L115 145 L125 125 L135 165 L145 135 L155 145 L200 145 L210 115 L220 175 L230 145 L330 145" stroke="url(#healthGrad)" strokeWidth="2.5" />
+                          {/* Station Nodes */}
+                          <circle cx="117" cy="145" r="4.5" fill="#06b6d4" />
+                          <circle cx="200" cy="145" r="5" fill="#10b981" />
+                          <circle cx="282" cy="145" r="4.5" fill="#3b82f6" />
+                          {/* Telemetry Badge */}
+                          <rect x="145" y="25" width="130" height="26" rx="6" fill="#0b1120" stroke="#10b981" strokeWidth="1" />
+                          <text x="155" y="42" fill="#34d399" fontSize="10" fontFamily="monospace">EMR: POSTGRES 16</text>
                         </svg>
                       )}
 
-                      {/* 2. Fleet Telemetry Graphic */}
-                      {project.graphicType === 'fleet' && (
+                      {/* 2. ZelvoriERP Education Graphic */}
+                      {project.graphicType === 'education' && (
                         <svg viewBox="0 0 400 300" className="w-full h-full p-4" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <defs>
-                            <radialGradient id="radarSweep" cx="50%" cy="50%" r="50%">
-                              <stop offset="0%" stopColor="#22d3ee" stopOpacity="0.2" />
-                              <stop offset="100%" stopColor="#22d3ee" stopOpacity="0" />
+                            <radialGradient id="campusSweep" cx="50%" cy="50%" r="50%">
+                              <stop offset="0%" stopColor="#38bdf8" stopOpacity="0.25" />
+                              <stop offset="100%" stopColor="#38bdf8" stopOpacity="0" />
                             </radialGradient>
                           </defs>
-                          {/* Radar concentric rings */}
-                          <circle cx="200" cy="150" r="100" stroke="#1e293b" strokeWidth="1" />
-                          <circle cx="200" cy="150" r="70" stroke="#1e293b" strokeWidth="1" strokeDasharray="4 4" />
-                          <circle cx="200" cy="150" r="40" stroke="#334155" strokeWidth="1" />
-                          <circle cx="200" cy="150" r="100" fill="url(#radarSweep)" />
-                          {/* Network Edge Nodes */}
-                          <line x1="200" y1="150" x2="130" y2="100" stroke="#06b6d4" strokeWidth="1.5" />
-                          <line x1="200" y1="150" x2="270" y2="110" stroke="#38bdf8" strokeWidth="1.5" />
-                          <line x1="200" y1="150" x2="220" y2="220" stroke="#818cf8" strokeWidth="1.5" />
-                          <line x1="200" y1="150" x2="120" y2="190" stroke="#06b6d4" strokeWidth="1.5" />
-                          {/* Pulse Markers */}
-                          <circle cx="200" cy="150" r="6" fill="#38bdf8" />
-                          <circle cx="130" cy="100" r="4.5" fill="#22d3ee" />
-                          <circle cx="270" cy="110" r="4.5" fill="#818cf8" />
-                          <circle cx="220" cy="220" r="4.5" fill="#22d3ee" />
-                          <circle cx="120" cy="190" r="4.5" fill="#38bdf8" />
-                          {/* Geolocation Tag */}
-                          <rect x="250" y="75" width="90" height="22" rx="4" fill="#0b1120" stroke="#1e293b" />
-                          <text x="258" y="90" fill="#38bdf8" fontSize="9" fontFamily="monospace">PING: 14ms GPS</text>
+                          {/* Institutional concentric boundaries */}
+                          <circle cx="200" cy="150" r="105" stroke="#1e293b" strokeWidth="1" />
+                          <circle cx="200" cy="150" r="75" stroke="#1e293b" strokeWidth="1" strokeDasharray="4 4" />
+                          <circle cx="200" cy="150" r="45" stroke="#334155" strokeWidth="1" />
+                          <circle cx="200" cy="150" r="105" fill="url(#campusSweep)" />
+                          {/* Interconnected Academic Hubs */}
+                          <line x1="200" y1="150" x2="125" y2="95" stroke="#06b6d4" strokeWidth="1.5" />
+                          <line x1="200" y1="150" x2="275" y2="105" stroke="#38bdf8" strokeWidth="1.5" />
+                          <line x1="200" y1="150" x2="225" y2="225" stroke="#818cf8" strokeWidth="1.5" />
+                          <line x1="200" y1="150" x2="115" y2="195" stroke="#06b6d4" strokeWidth="1.5" />
+                          {/* Academic Nodes */}
+                          <circle cx="200" cy="150" r="7" fill="#38bdf8" />
+                          <circle cx="125" cy="95" r="5" fill="#22d3ee" />
+                          <circle cx="275" cy="105" r="5" fill="#818cf8" />
+                          <circle cx="225" cy="225" r="5" fill="#22d3ee" />
+                          <circle cx="115" cy="195" r="5" fill="#38bdf8" />
+                          {/* Status Tag */}
+                          <rect x="235" y="65" width="125" height="24" rx="5" fill="#0b1120" stroke="#38bdf8" strokeWidth="1" />
+                          <text x="245" y="81" fill="#38bdf8" fontSize="9.5" fontFamily="monospace">CAMPUS: WIN / LAN</text>
                         </svg>
                       )}
 
-                      {/* 3. AI Document Extraction Graphic */}
-                      {project.graphicType === 'ai' && (
+                      {/* 3. AVC RecruitOS Graphic */}
+                      {project.graphicType === 'talent' && (
                         <svg viewBox="0 0 400 300" className="w-full h-full p-4" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <defs>
-                            <linearGradient id="docGrad" x1="0" y1="0" x2="0" y2="200" gradientUnits="userSpaceOnUse">
+                            <linearGradient id="talentGrad" x1="0" y1="0" x2="0" y2="200" gradientUnits="userSpaceOnUse">
                               <stop stopColor="#0f172a" />
                               <stop offset="1" stopColor="#080d19" />
                             </linearGradient>
                           </defs>
-                          {/* Layered Document Planes */}
-                          <rect x="90" y="50" width="160" height="190" rx="8" fill="url(#docGrad)" stroke="#1e293b" />
-                          <rect x="110" y="70" width="160" height="190" rx="8" fill="url(#docGrad)" stroke="#334155" />
-                          <rect x="130" y="90" width="160" height="190" rx="8" fill="#0f172a" stroke="#06b6d4" strokeWidth="1.5" />
-                          {/* Bounding box OCR coordinates */}
-                          <rect x="150" y="115" width="120" height="14" rx="2" fill="#0e7490" fillOpacity="0.2" stroke="#22d3ee" strokeDasharray="2 2" />
-                          <rect x="150" y="140" width="85" height="12" rx="2" fill="#0e7490" fillOpacity="0.2" stroke="#22d3ee" strokeDasharray="2 2" />
-                          <rect x="150" y="165" width="110" height="12" rx="2" fill="#0e7490" fillOpacity="0.2" stroke="#22d3ee" strokeDasharray="2 2" />
-                          {/* Neural Extraction Beam */}
-                          <path d="M270 122 L330 90" stroke="#38bdf8" strokeWidth="2" strokeDasharray="3 2" />
-                          <path d="M235 146 L330 150" stroke="#818cf8" strokeWidth="2" strokeDasharray="3 2" />
-                          <circle cx="330" cy="90" r="5" fill="#38bdf8" />
-                          <circle cx="330" cy="150" r="5" fill="#818cf8" />
-                          <rect x="300" y="180" width="85" height="22" rx="4" fill="#0b1120" stroke="#1e293b" />
-                          <text x="308" y="195" fill="#4ade80" fontSize="9" fontFamily="monospace">✓ SCHEMA: OK</text>
+                          {/* Kanban Columns */}
+                          <rect x="65" y="60" width="80" height="175" rx="6" fill="url(#talentGrad)" stroke="#1e293b" />
+                          <rect x="160" y="60" width="80" height="175" rx="6" fill="url(#talentGrad)" stroke="#334155" />
+                          <rect x="255" y="60" width="80" height="175" rx="6" fill="#0f172a" stroke="#06b6d4" strokeWidth="1.5" />
+                          {/* Candidate Cards */}
+                          <rect x="75" y="75" width="60" height="28" rx="4" fill="#1e293b" />
+                          <rect x="75" y="112" width="60" height="28" rx="4" fill="#1e293b" />
+                          <rect x="170" y="75" width="60" height="28" rx="4" fill="#1e293b" />
+                          <rect x="265" y="75" width="60" height="32" rx="4" fill="#0e7490" fillOpacity="0.4" stroke="#22d3ee" strokeDasharray="2 2" />
+                          {/* Pipeline Transition Path */}
+                          <path d="M135 89 L170 89" stroke="#38bdf8" strokeWidth="2" strokeDasharray="3 2" />
+                          <path d="M230 89 L265 89" stroke="#818cf8" strokeWidth="2" strokeDasharray="3 2" />
+                          <circle cx="170" cy="89" r="4" fill="#38bdf8" />
+                          <circle cx="265" cy="89" r="4" fill="#818cf8" />
+                          {/* Monolith Context Tag */}
+                          <rect x="120" y="250" width="160" height="24" rx="4" fill="#0b1120" stroke="#1e293b" />
+                          <text x="130" y="266" fill="#a7f3d0" fontSize="9" fontFamily="monospace">FASTAPI: 14 CONTEXTS</text>
                         </svg>
                       )}
 
-                      {/* 4. Headless Commerce Graphic */}
-                      {project.graphicType === 'commerce' && (
+                      {/* 4. Grand View Global Web Graphic */}
+                      {project.graphicType === 'global' && (
                         <svg viewBox="0 0 400 300" className="w-full h-full p-4" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          {/* Floating Faceted Polygonal Grid */}
+                          {/* Geometric Architectural Polygonal Grid */}
                           <polygon points="120,80 200,40 280,80 200,120" fill="#0f172a" stroke="#06b6d4" strokeWidth="1.5" />
                           <polygon points="120,80 200,120 200,180 120,140" fill="#091122" stroke="#38bdf8" strokeWidth="1.2" />
                           <polygon points="280,80 200,120 200,180 280,140" fill="#070c17" stroke="#818cf8" strokeWidth="1.2" />
-                          {/* Secondary Floating Nodes */}
+                          {/* Edge CDN Nodes */}
                           <circle cx="80" cy="170" r="16" fill="#0f172a" stroke="#22d3ee" />
                           <circle cx="320" cy="170" r="16" fill="#0f172a" stroke="#818cf8" />
                           <line x1="96" y1="170" x2="160" y2="150" stroke="#1e293b" strokeDasharray="3 2" />
                           <line x1="304" y1="170" x2="240" y2="150" stroke="#1e293b" strokeDasharray="3 2" />
                           <circle cx="200" cy="120" r="4.5" fill="#22d3ee" />
-                          {/* Commerce Status Badge */}
-                          <rect x="145" y="220" width="110" height="24" rx="5" fill="#0b1120" stroke="#1e293b" />
-                          <text x="156" y="236" fill="#38bdf8" fontSize="10" fontFamily="monospace">SYNC: LIVE STOCK</text>
+                          {/* GCC Distribution Tag */}
+                          <rect x="130" y="220" width="140" height="24" rx="5" fill="#0b1120" stroke="#1e293b" />
+                          <text x="140" y="236" fill="#38bdf8" fontSize="9.5" fontFamily="monospace">UAE EDGE: SUB-0.8S</text>
                         </svg>
                       )}
                     </div>
@@ -407,6 +433,26 @@ export function SelectedWorkSection() {
             </div>
           ))}
         </div>
+
+        {/* Bottom Hub Invitation Link */}
+        <div className="mt-16 p-6 sm:p-8 rounded-2xl liquid-glass-dock border-cyan-500/20 text-center flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div className="text-left space-y-1">
+            <h4 className="text-base sm:text-lg font-bold text-white">
+              Looking for full architectural deep-dives & blueprints?
+            </h4>
+            <p className="text-xs sm:text-sm text-slate-400">
+              Browse our comprehensive portfolio directory detailing data models, offline packaging, and enterprise security tiers.
+            </p>
+          </div>
+          <Link
+            href="/portfolio/"
+            className="px-6 py-3 rounded-xl bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-200 border border-cyan-400/30 text-xs sm:text-sm font-semibold transition-all flex items-center gap-2 whitespace-nowrap shadow-lg shadow-cyan-950/40"
+          >
+            <span>Explore Full Portfolio Directory</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        </div>
+
       </div>
     </section>
   );
